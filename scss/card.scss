@@ -80,10 +80,18 @@
 
 }
 
-@media only screen and (min-width: 1440px) and (max-width: 1599px) {
+@media only screen and (min-width: 1440px) and (max-width: 1535px) {
 
     .scene {
         height: 184px;
+    }
+
+}
+
+@media only screen and (min-width: 1536px) and (max-width: 1599px) {
+
+    .scene {
+        height: 174px;
     }
 
 }

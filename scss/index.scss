@@ -370,6 +370,17 @@ body {
 
 }
 
+
+@media only screen and (min-width: 1441px) and (max-width: 1599px) {
+
+    body {
+        padding-left: 4vw;
+        padding-right: 4vw;
+    }
+
+}
+
+
 @media only screen and (min-width: 1600px) and (max-width: 1799px) {
 
     body {
