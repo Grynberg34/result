@@ -1,5 +1,5 @@
 .scene {
-  height: 174px;
+  height: 172px;
   perspective: 600px;
   padding-left: 10px;
   padding-right: 10px;
@@ -275,6 +275,11 @@ body {
 }
 
 @media only screen and (max-width: 767px) {
+  body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   .navbar {
     padding-left: 2vw;
     padding-right: 2vw;
