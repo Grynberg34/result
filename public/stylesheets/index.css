@@ -302,14 +302,24 @@ body {
     padding-right: 2vw;
   }
 
+  .quemsomos {
+    margin-top: 8vh;
+  }
   .quemsomos .quemsomos__title {
     width: 50vw;
   }
 
+  .metodo {
+    margin-top: 8vh;
+    margin-bottom: 8vh;
+  }
   .metodo .metodo__title {
     width: 50vw;
   }
 
+  .visao {
+    margin-top: 8vh;
+  }
   .visao .visao__title {
     width: 50vw;
   }
