@@ -104,8 +104,8 @@ body {
 }
 
 .navbar .navbar__content {
-  margin-left: 18vw;
-  margin-right: 18vw;
+  margin-left: 20vw;
+  margin-right: 20vw;
   width: 100vw;
   margin-top: 4vh;
   margin-bottom: 4vh;
@@ -540,8 +540,8 @@ body {
 }
 @media only screen and (min-width: 1440px) and (max-width: 1599px) {
   .navbar .navbar__content {
-    margin-left: 22vw;
-    margin-right: 22vw;
+    margin-left: 24vw;
+    margin-right: 24vw;
   }
 
   .quemsomos .quemsomos__content {
@@ -583,8 +583,8 @@ body {
 }
 @media only screen and (min-width: 1600px) and (max-width: 1699px) {
   .navbar .navbar__content {
-    margin-left: 24vw;
-    margin-right: 24vw;
+    margin-left: 26vw;
+    margin-right: 26vw;
   }
 
   .quemsomos .quemsomos__content {
@@ -637,8 +637,8 @@ body {
 }
 @media only screen and (min-width: 1700px) {
   .navbar .navbar__content {
-    margin-left: 28vw;
-    margin-right: 28vw;
+    margin-left: 30vw;
+    margin-right: 30vw;
   }
 
   .quemsomos .quemsomos__content {
