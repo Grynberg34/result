@@ -1,5 +1,5 @@
 .scene {
-    height: 172px;
+    height: 146px;
     perspective: 600px;
     padding-left: 10px;
     padding-right: 10px;
@@ -39,15 +39,15 @@
 }
 
 
-@media only screen and (max-width: 360px) {
+@media only screen and (min-width: 360px) and (max-width: 374px) {
 
     .scene {
-        height: 174px;
+        height: 183px;
     }
 
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (min-width: 375px) and (max-width: 400px) {
 
     .scene {
         height: 190px;
@@ -99,7 +99,7 @@
 @media only screen and (min-width: 1600px) and (max-width: 1799px) {
 
     .scene {
-        height: 171px;
+        height: 150px;
     }
 
 }
@@ -107,7 +107,7 @@
 @media only screen and (min-width: 1800px) {
 
     .scene {
-        height: 181px;
+        height: 154px;
     }
 
 }

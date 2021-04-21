@@ -1,5 +1,5 @@
 .scene {
-  height: 172px;
+  height: 146px;
   perspective: 600px;
   padding-left: 10px;
   padding-right: 10px;
@@ -38,12 +38,12 @@
   transform: rotateY(180deg);
 }
 
-@media only screen and (max-width: 360px) {
+@media only screen and (min-width: 360px) and (max-width: 374px) {
   .scene {
-    height: 174px;
+    height: 183px;
   }
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (min-width: 375px) and (max-width: 400px) {
   .scene {
     height: 190px;
   }
@@ -75,12 +75,12 @@
 }
 @media only screen and (min-width: 1600px) and (max-width: 1799px) {
   .scene {
-    height: 171px;
+    height: 150px;
   }
 }
 @media only screen and (min-width: 1800px) {
   .scene {
-    height: 181px;
+    height: 154px;
   }
 }
 @keyframes fadein {
@@ -111,12 +111,11 @@ body {
   margin-bottom: 4vh;
 }
 .navbar .navbar__content .navbar__content__col {
-  border: 4px solid #000000;
-  height: 120px;
+  height: 154px;
 }
 .navbar .navbar__content .navbar__content__logo {
   display: block;
-  width: 120px;
+  width: 180px;
   margin-left: auto;
   margin-right: auto;
   padding: 10px;
@@ -124,11 +123,11 @@ body {
 .navbar .navbar__content .navbar__content__link {
   display: block;
   position: relative;
-  font-family: "sunflower", sans-serif;
-  font-size: 30px;
+  font-family: "ccbiffbamboom", sans-serif;
+  font-size: 26px;
   color: #000000;
   text-align: center;
-  top: 30%;
+  top: 50%;
 }
 .navbar .navbar__content .navbar__content__link:hover {
   text-decoration: none;
@@ -141,19 +140,6 @@ body {
   padding-top: 12vh;
   padding-bottom: 12vh;
 }
-.quemsomos .quemsomos__img__first {
-  position: absolute;
-  width: 200px;
-  top: -20%;
-  right: -17%;
-  z-index: 1000;
-}
-.quemsomos .quemsomos__img__second {
-  position: absolute;
-  width: 120px;
-  top: 80%;
-  left: -10%;
-}
 .quemsomos .quemsomos__content {
   position: relative;
   border: 4px solid #000000;
@@ -163,7 +149,7 @@ body {
 }
 .quemsomos .quemsomos__content .quemsomos__content__title {
   display: block;
-  font-family: "sunflower", sans-serif;
+  font-family: "ccbiffbamboom", sans-serif;
   font-size: 20px;
   color: #ffffff;
   background-color: #000000;
@@ -223,7 +209,7 @@ body {
 }
 .metodo .metodo__content .metodo__content__title {
   display: block;
-  font-family: "sunflower", sans-serif;
+  font-family: "ccbiffbamboom", sans-serif;
   font-size: 20px;
   color: #f2780b;
   background-color: #000000;
@@ -247,26 +233,12 @@ body {
   padding-bottom: 14vh;
   background-color: rgba(242, 120, 11, 0.87);
 }
-.visao .visao__img__first {
+.visao .visao__content__img {
   position: absolute;
-  width: 200px;
-  top: 15%;
-  left: -30%;
+  width: 160px;
   z-index: 1000;
-}
-.visao .visao__img__second {
-  position: absolute;
-  width: 180px;
-  top: 10%;
-  right: -15%;
-  z-index: 1000;
-}
-.visao .visao__img__third {
-  position: absolute;
-  width: 150px;
-  top: 60%;
-  left: -20%;
-  z-index: 1000;
+  top: -12%;
+  right: 92%;
 }
 .visao .visao__content {
   position: relative;
@@ -277,7 +249,7 @@ body {
 }
 .visao .visao__content .visao__content__title {
   display: block;
-  font-family: "sunflower", sans-serif;
+  font-family: "ccbiffbamboom", sans-serif;
   font-size: 20px;
   color: #000000;
   background-color: #ffffff;
@@ -289,10 +261,12 @@ body {
   font-size: 14px;
   color: #ffffff;
   text-align: justify;
-  padding: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   padding-left: 10vw;
   padding-right: 10vw;
   line-height: 2;
+  margin-bottom: 0;
 }
 
 .depoimentos {
@@ -308,21 +282,21 @@ body {
   background: none;
 }
 .depoimentos .depoimentos__content .depoimentos__content__title {
-  font-family: "sunflower", sans-serif;
+  font-family: "ccbiffbamboom", sans-serif;
   font-size: 40px;
   color: #000000;
   text-align: center;
   padding: 20px;
 }
 .depoimentos .depoimentos__content__row {
-  margin-left: 14vw;
-  margin-right: 14vw;
+  margin-left: 20vw;
+  margin-right: 20vw;
   margin-bottom: 4vh;
 }
 .depoimentos .depoimentos__content__row .depoimentos__content__row__aluno {
   position: relative;
   top: 20%;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
   text-align: center;
   color: #000000;
@@ -331,7 +305,7 @@ body {
   display: block;
   position: relative;
   top: 30%;
-  font-size: 50px;
+  font-size: 40px;
   color: #ffffff;
   text-align: center;
 }
@@ -340,10 +314,6 @@ body {
 }
 .depoimentos .depoimentos__content__row:last-of-type {
   margin-bottom: 4vh;
-}
-
-#logo {
-  background-color: #ffffff;
 }
 
 @media only screen and (max-width: 767px) {
@@ -374,19 +344,13 @@ body {
     font-size: 20px;
   }
 
+  #cadastro, #login {
+    margin-top: 8vw;
+  }
+
   .quemsomos {
     padding-top: 8vh;
     padding-bottom: 8vh;
-  }
-  .quemsomos .quemsomos__img__first {
-    width: 127px;
-    top: -8%;
-    right: -5%;
-  }
-  .quemsomos .quemsomos__img__second {
-    width: 80px;
-    top: 90%;
-    left: -5%;
   }
   .quemsomos .quemsomos__content {
     margin-left: 5vw;
@@ -415,11 +379,6 @@ body {
     padding-top: 8vh;
     padding-bottom: 8vh;
   }
-  .metodo .metodo__img__first {
-    width: 100px;
-    top: 2%;
-    right: 3%;
-  }
   .metodo .metodo__content {
     margin-left: 6vw;
     margin-right: 6vw;
@@ -432,13 +391,10 @@ body {
     padding-top: 8vh;
     padding-bottom: 8vh;
   }
-  .visao .visao__img__first, .visao .visao__img__second {
-    display: none;
-  }
-  .visao .visao__img__third {
-    width: 100px;
-    top: 94%;
-    left: 77%;
+  .visao .visao__content__img {
+    width: 120px;
+    top: -8%;
+    right: 70%;
   }
   .visao .visao__content {
     margin-left: 6vw;
@@ -446,6 +402,9 @@ body {
   }
   .visao .visao__content .visao__content__title {
     width: 50vw;
+  }
+  .visao .visao__content .visao__content__text {
+    padding-top: 40px;
   }
 
   .depoimentos {
@@ -493,42 +452,16 @@ body {
   }
 }
 @media only screen and (min-width: 1024px) and (max-width: 1279px) {
-  .quemsomos .quemsomos__img__first {
-    width: 120px;
-    top: -10%;
-    right: -10%;
-  }
-  .quemsomos .quemsomos__img__second {
-    width: 80px;
-    top: 90%;
-    left: -5%;
-  }
-
   .equipe .equipe__content .equipe__content__img {
     width: 120px;
     top: -11%;
     left: 85%;
   }
 
-  .metodo .metodo__img__first {
-    width: 140px;
-    top: 10%;
-    right: 20%;
-  }
-
-  .visao .visao__img__first {
-    width: 100px;
-    top: 26%;
-    left: -17%;
-  }
-  .visao .visao__img__second {
-    width: 100px;
-    top: 28%;
-    right: -11%;
-  }
-  .visao .visao__img__third {
-    width: 100px;
-    left: -17%;
+  .visao .visao__content__img {
+    width: 120px;
+    top: -11%;
+    right: 85%;
   }
 
   .depoimentos .depoimentos__content__row .depoimentos__content__row__aluno {
@@ -558,27 +491,19 @@ body {
     top: -4%;
   }
 
-  .metodo .metodo__img__first {
-    width: 180px;
-    top: 10%;
-    right: 19%;
-  }
   .metodo .metodo__content {
     margin-left: 26vw;
     margin-right: 26vw;
   }
 
-  .visao .visao__img__second {
-    width: 160px;
-  }
-  .visao .visao__content {
-    margin-left: 26vw;
-    margin-right: 26vw;
+  .visao .visao__content__img {
+    width: 140px;
+    top: -4%;
   }
 
   .depoimentos .depoimentos__content__row {
-    margin-left: 18vw;
-    margin-right: 18vw;
+    margin-left: 20vw;
+    margin-right: 20vw;
   }
 }
 @media only screen and (min-width: 1600px) and (max-width: 1699px) {
@@ -631,8 +556,8 @@ body {
   }
 
   .depoimentos .depoimentos__content__row {
-    margin-left: 20vw;
-    margin-right: 20vw;
+    margin-left: 24vw;
+    margin-right: 24vw;
   }
 }
 @media only screen and (min-width: 1700px) {
@@ -685,8 +610,8 @@ body {
   }
 
   .depoimentos .depoimentos__content__row {
-    margin-left: 24vw;
-    margin-right: 24vw;
+    margin-left: 28vw;
+    margin-right: 28vw;
   }
 }
 

@@ -25,13 +25,12 @@ body {
         margin-bottom: 4vh;
     
         .navbar__content__col {
-            border: 4px solid $preto;
-            height: 120px;
+            height: 154px;
         }
     
         .navbar__content__logo {
             display: block;
-            width: 120px;
+            width: 180px;
             margin-left: auto;
             margin-right: auto;
             padding: 10px;
@@ -40,11 +39,11 @@ body {
         .navbar__content__link {
             display: block;
             position: relative;
-            font-family: 'sunflower', sans-serif;
-            font-size: 30px;
+            font-family: 'ccbiffbamboom', sans-serif;
+            font-size: 26px;
             color: $preto;
             text-align: center;
-            top: 30%;
+            top: 50%;
     
             &:hover {
                 text-decoration: none;
@@ -61,20 +60,6 @@ body {
     padding-top: 12vh;
     padding-bottom: 12vh;
 
-    .quemsomos__img__first {
-        position: absolute;
-        width: 200px;
-        top: -20%;
-        right: -17%;
-        z-index: 1000;
-    }
-
-    .quemsomos__img__second {
-        position: absolute;
-        width: 120px;
-        top: 80%;
-        left: -10%;
-    }
 
     .quemsomos__content {
         position: relative;
@@ -85,7 +70,7 @@ body {
     
         .quemsomos__content__title {
             display: block;
-            font-family: 'sunflower', sans-serif;
+            font-family: 'ccbiffbamboom', sans-serif;
             font-size: 20px;
             color: $branco;
             background-color: $preto;
@@ -154,7 +139,7 @@ body {
     
         .metodo__content__title {
             display: block;
-            font-family: 'sunflower', sans-serif;
+            font-family: 'ccbiffbamboom', sans-serif;
             font-size: 20px;
             color: $laranja;
             background-color: $preto;
@@ -182,28 +167,12 @@ body {
     padding-bottom: 14vh;
     background-color: rgba($color: $laranja, $alpha: 0.87);
 
-    .visao__img__first {
+    .visao__content__img {
         position: absolute;
-        width: 200px;
-        top: 15%;
-        left: -30%;
+        width: 160px;
         z-index: 1000;
-    }
-
-    .visao__img__second {
-        position: absolute;
-        width: 180px;
-        top: 10%;
-        right: -15%;
-        z-index: 1000;
-    }
-
-    .visao__img__third {
-        position: absolute;
-        width: 150px;
-        top: 60%;
-        left: -20%;
-        z-index: 1000;
+        top: -12%;
+        right: 92%;
     }
 
     .visao__content {
@@ -215,7 +184,7 @@ body {
     
         .visao__content__title {
             display: block;
-            font-family: 'sunflower', sans-serif;
+            font-family: 'ccbiffbamboom', sans-serif;
             font-size: 20px;
             color: $preto;
             background-color: $branco;
@@ -228,10 +197,12 @@ body {
             font-size: 14px;
             color: $branco;
             text-align: justify;
-            padding: 20px;
+            padding-top: 30px;
+            padding-bottom: 30px;
             padding-left: 10vw;
             padding-right: 10vw;
             line-height: 2;
+            margin-bottom: 0;
         }
     
     }
@@ -251,7 +222,7 @@ body {
         background: none;
     
         .depoimentos__content__title {
-            font-family: 'sunflower', sans-serif;
+            font-family: 'ccbiffbamboom', sans-serif;
             font-size: 40px;
             color: $preto;
             text-align: center;
@@ -261,15 +232,15 @@ body {
     
     .depoimentos__content__row {
 
-        margin-left: 14vw;
-        margin-right: 14vw;
+        margin-left: 20vw;
+        margin-right: 20vw;
         margin-bottom: 4vh;
     
     
         .depoimentos__content__row__aluno {
             position: relative;
             top: 20%;
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 500;
             text-align: center;
             color: $preto;
@@ -279,7 +250,7 @@ body {
             display: block;
             position: relative;
             top: 30%;
-            font-size: 50px;
+            font-size: 40px;
             color: $branco;
             text-align: center;
     
@@ -294,10 +265,6 @@ body {
         }
     
     }
-}
-
-#logo {
-    background-color: $branco;
 }
 
 
@@ -334,22 +301,14 @@ body {
         }
     }
 
+    #cadastro, #login {
+        margin-top: 8vw;
+    }
+
     .quemsomos {
         padding-top: 8vh;
         padding-bottom: 8vh;
-    
-        .quemsomos__img__first {
-            width: 127px;
-            top: -8%;
-            right: -5%;
-        }
-    
-        .quemsomos__img__second {
-            width: 80px;
-            top: 90%;
-            left: -5%;
-        }
-    
+        
         .quemsomos__content {
             margin-left: 5vw;
             margin-right: 5vw;
@@ -384,12 +343,6 @@ body {
     .metodo {
         padding-top: 8vh;
         padding-bottom: 8vh;
-
-        .metodo__img__first {
-            width: 100px;
-            top: 2%;
-            right: 3%;
-        }
     
         .metodo__content {
             margin-left: 6vw;
@@ -405,14 +358,10 @@ body {
         padding-top: 8vh;
         padding-bottom: 8vh;
 
-        .visao__img__first, .visao__img__second {
-            display: none;
-        }
-
-        .visao__img__third {
-            width: 100px;
-            top: 94%;
-            left: 77%;
+        .visao__content__img {
+            width: 120px;
+            top: -8%;
+            right: 70%;
         }
     
         .visao__content {
@@ -421,7 +370,11 @@ body {
             
             .visao__content__title {
                 width: 50vw;
-            }        
+            }  
+            
+            .visao__content__text {
+                padding-top: 40px;
+            }
         }
     }
 
@@ -486,20 +439,6 @@ body {
 
 @media only screen and (min-width: 1024px) and (max-width: 1279px) {
 
-    .quemsomos {
-    
-        .quemsomos__img__first {
-            width: 120px;
-            top: -10%;
-            right: -10%;
-        }
-    
-        .quemsomos__img__second {
-            width: 80px;
-            top: 90%;
-            left: -5%;
-        }
-    }
 
     .equipe {
 
@@ -515,31 +454,12 @@ body {
         }
     }
 
-    .metodo {
-
-        .metodo__img__first {
-            width: 140px;
-            top: 10%;
-            right: 20%;
-        }
-    }
 
     .visao {
-        .visao__img__first {
-            width: 100px;
-            top: 26%;
-            left: -17%;
-        }
-
-        .visao__img__second {
-            width: 100px;
-            top: 28%;
-            right: -11%;
-        }
-
-        .visao__img__third {
-            width: 100px;
-            left: -17%;
+        .visao__content__img {
+            width: 120px;
+            top: -11%;
+            right: 85%;
         }
     }
 
@@ -587,12 +507,6 @@ body {
 
     .metodo {
 
-        .metodo__img__first {
-            width: 180px;
-            top: 10%;
-            right: 19%;
-        }
-
         .metodo__content {
             margin-left: 26vw;
             margin-right: 26vw;
@@ -601,21 +515,17 @@ body {
 
     .visao {
 
-        .visao__img__second {
-            width: 160px;
-        }
-        
-        .visao__content {
-            margin-left: 26vw;
-            margin-right: 26vw;
+        .visao__content__img {
+            width: 140px;
+            top: -4%;
         }
     }
 
     .depoimentos {
 
         .depoimentos__content__row {
-            margin-left: 18vw;
-            margin-right: 18vw;
+            margin-left: 20vw;
+            margin-right: 20vw;
         }
 
     }
@@ -693,8 +603,8 @@ body {
     .depoimentos {
 
         .depoimentos__content__row {
-            margin-left: 20vw;
-            margin-right: 20vw;
+            margin-left: 24vw;
+            margin-right: 24vw;
         }
 
     }
@@ -772,8 +682,8 @@ body {
     .depoimentos {
 
         .depoimentos__content__row {
-            margin-left: 24vw;
-            margin-right: 24vw;
+            margin-left: 28vw;
+            margin-right: 28vw;
         }
 
     }
