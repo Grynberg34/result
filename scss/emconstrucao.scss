@@ -1,5 +1,7 @@
+@import 'colors.scss';
+
 body {
-    font-family: 'sunflower', sans-serif;
+    font-family: 'work-sans', sans-serif;
     background-image: url('/images/fundo.png');
 }
 
@@ -7,4 +9,5 @@ h1 {
     font-size: 40px;
     text-align: center;
     margin-top: 40vh;
+    color: $cinza-claro;
 }
