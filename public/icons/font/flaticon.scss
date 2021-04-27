@@ -2,11 +2,11 @@ $flaticon-font: "flaticon";
 
 @font-face {
     font-family: $flaticon-font;
-    src: url("./flaticon.ttf?5174b029d1aeeb53ac418601173df282") format("truetype"),
-url("./flaticon.woff?5174b029d1aeeb53ac418601173df282") format("woff"),
-url("./flaticon.woff2?5174b029d1aeeb53ac418601173df282") format("woff2"),
-url("./flaticon.eot?5174b029d1aeeb53ac418601173df282#iefix") format("embedded-opentype"),
-url("./flaticon.svg?5174b029d1aeeb53ac418601173df282#flaticon") format("svg");
+    src: url("./flaticon.ttf?cc867a573620ffa0d7c0bf158b69c8ad") format("truetype"),
+url("./flaticon.woff?cc867a573620ffa0d7c0bf158b69c8ad") format("woff"),
+url("./flaticon.woff2?cc867a573620ffa0d7c0bf158b69c8ad") format("woff2"),
+url("./flaticon.eot?cc867a573620ffa0d7c0bf158b69c8ad#iefix") format("embedded-opentype"),
+url("./flaticon.svg?cc867a573620ffa0d7c0bf158b69c8ad#flaticon") format("svg");
 }
 
 i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
@@ -22,8 +22,28 @@ i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
 
 $flaticon-map: (
     "play-button": "\f101",
+    "discuss": "\f102",
+    "people": "\f103",
+    "eye": "\f104",
+    "info": "\f105",
+    "method": "\f106",
 );
 
 .flaticon-play-button:before {
     content: map-get($flaticon-map, "play-button");
+}
+.flaticon-discuss:before {
+    content: map-get($flaticon-map, "discuss");
+}
+.flaticon-people:before {
+    content: map-get($flaticon-map, "people");
+}
+.flaticon-eye:before {
+    content: map-get($flaticon-map, "eye");
+}
+.flaticon-info:before {
+    content: map-get($flaticon-map, "info");
+}
+.flaticon-method:before {
+    content: map-get($flaticon-map, "method");
 }

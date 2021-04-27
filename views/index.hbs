@@ -16,77 +16,81 @@
 <body>
 
 
-    <div class="navbar">
-        <div class="row navbar__content">
-            <div class="col-md-4">
-                <div class="navbar__content__col" id="logo">
-                    <img class="navbar__content__logo" src="/images/logo.png" alt="">
-                </div>
-            </div>
-            <div class="col-md-4 col-6">
-                <div class="navbar__content__col" id="cadastro">
-                    <a href="/cadastro" class="navbar__content__link">CADASTRO</a>
-                </div>
-            </div>
-            <div class="col-md-4 col-6">
-                <div class="navbar__content__col" id="login">
-                    <a href="/login" class="navbar__content__link">LOGIN</a>
-                </div>
-            </div>
-
+    <div class="navbar row">
+        <div class="col-md-6 navbar__col" id="logo">
+            <a href="/"><img class="navbar__logo" src="/images/logo.png" alt=""></a>
         </div>
+        <div class="col-md-2 col-6 navbar__col" id="cadastro">
+            <a href="/cadastro" class="navbar__link">CADASTRO</a>
+        </div>
+        <div class="col-md-2 col-6 navbar__col" id="login">
+            <a href="/login" class="navbar__link">LOGIN</a>
+        </div>
+        <div class="col-md-2"></div>
     </div>
 
+    <div class="quemsomos row">
+        <div data-aos="fade-right" data-aos-duration="3000" class="col-md-6 quemsomos__col">
+            <div class="quemsomos__content" data-aos="fade-right" data-aos-duration="3000">
+                <h1 class="quemsomos__content__title">QUEM</h1>
+                <h2 class="quemsomos__content__subtitle">SOMOS</h2>
+            </div>
 
-    <div class="quemsomos">
+            <i class="quemsomos__icon flaticon-info" data-aos="fade-down" data-aos-duration="3000"></i>
+        </div>
 
-        <div data-aos="fade-up" data-aos-duration="3000" class="quemsomos__content">
-            <h1 class="quemsomos__content__title">QUEM SOMOS</h1>
-            <p class="quemsomos__content__text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Aenean blandit vitae velit pharetra vestibulum. Aliquam in lectus ipsum. Vivamus justo tellus, blandit in iaculis nec, 
-                mollis eget velit. Morbi porttitor ut dui pulvinar auctor. Morbi imperdiet ante justo, nec commodo nibh tincidunt a. 
-                Duis at felis in urna viverra aliquet id at quam. Phasellus a ullamcorper massa.
+        <div class="col-md-6 quemsomos__col">
+            <p data-aos="fade-up" data-aos-duration="3000" class="quemsomos__text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
         </div>
     </div>
 
-
-
-    <div class="equipe">
-        <div class="equipe__content">
-            <img data-aos="fade-up" data-aos-duration="3000" data-aos-offset="300"  class="equipe__content__img" src="/images/equipe.png" alt="">
-            <div data-aos="fade-right" data-aos-duration="3000" data-aos-offset="300"  class="equipe__content__video">
+    <div class="equipe row">
+        <div class="col-md-6 equipe__col order-md-1 order-2">
+            <div data-aos="fade-right" data-aos-duration="3000"  class="equipe__video">
                 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } 
                 .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
                 <div class='embed-container'><iframe src="https://www.youtube.com/embed/pVE92TNDwUk?feature=oembed&amp;playsinline=1&amp;wmode=opaque&amp;loop=1&amp;controls=1&amp;rel=0&amp;modestbranding=1" frameborder='0' allowfullscreen></iframe></div>
             </div>
         </div>
-    </div>
 
-    <div class="metodo">
-        <div data-aos="flip-left" data-aos-duration="3000" class="metodo__content">
-            <h1 class="metodo__content__title">NOSSO MÉTODO</h1>
-            <p class="metodo__content__text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean blandit vitae velit pharetra vestibulum. Aliquam in lectus ipsum. Vivamus justo tellus, blandit in iaculis nec, mollis eget velit. Morbi porttitor ut dui pulvinar auctor. Morbi imperdiet ante justo, nec commodo nibh tincidunt a. Duis at felis in urna viverra aliquet id at quam. Nulla ante leo, tempor id tincidunt nec, molestie sit amet nisl. Integer hendrerit tellus metus, quis tincidunt nibh aliquet eu. Duis vestibulum, nunc et convallis tristique, felis urna tincidunt dui, in ornare dolor erat at ligula. Nullam gravida ligula ac nibh volutpat finibus.
-            </p>
+        <div data-aos="fade-left" data-aos-duration="3000" class="col-md-6 equipe__col order-md-2 order-1">
+            <div class="equipe__content" data-aos="fade-left" data-aos-duration="3000">
+                <h1 class="equipe__content__title">NOSSA</h1>
+                <h2 class="equipe__content__subtitle">EQUIPE</h2>
+            </div>
+
+            <i class="equipe__icon flaticon-people" data-aos="fade-down" data-aos-duration="3000"></i>
+
         </div>
     </div>
 
-    <div class="visao">
 
-        <div data-aos="fade-up" data-aos-duration="3000" class="visao__content">
-            <img data-aos="fade-right" data-aos-duration="3000" data-aos-offset="300"  class="visao__content__img" src="/images/visao.png" alt="">
-            <p class="visao__content__text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean blandit vitae velit pharetra vestibulum. Aliquam in lectus ipsum. Vivamus justo tellus, blandit in iaculis nec, mollis eget velit. Morbi porttitor ut dui pulvinar auctor. Morbi imperdiet ante justo, nec commodo nibh tincidunt a. Duis at felis in urna viverra aliquet id at quam. Phasellus a ullamcorper massa. Ut dictum, eros eget pharetra condimentum, ante mauris sagittis lacus, non laoreet ipsum lacus sed tellus. Sed nisl massa, eleifend ac libero lobortis, ullamcorper venenatis mi. Nulla ante leo, tempor id tincidunt nec, molestie sit amet nisl. Integer hendrerit tellus metus, quis tincidunt nibh aliquet eu.
+    <div class="categorias row">
+
+        <div class="col-md-6 metodo order-md-1 order-2" data-aos="fade-right" data-aos-duration="3000">
+            <h1 class="metodo__title" data-aos="fade-right" data-aos-duration="3000"><i class="metodo__icon flaticon-method"></i> <span class="metodo__title__thin">NOSSO</span> MÉTODO</h1>
+            <p class="metodo__text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In massa tempor nec feugiat nisl. Feugiat in fermentum posuere urna nec tincidunt praesent semper feugiat. Tincidunt nunc pulvinar sapien et. Facilisis mauris sit amet massa vitae. Aliquet bibendum enim facilisis gravida neque convallis a cras. Consectetur adipiscing elit ut aliquam purus sit amet luctus venenatis. Nisl rhoncus mattis rhoncus urna neque viverra. Sit amet tellus cras adipiscing enim eu. Feugiat in fermentum posuere urna nec tincidunt praesent semper. Mus mauris vitae ultricies leo integer. Neque volutpat ac tincidunt vitae semper quis lectus. 
             </p>
         </div>
-    </div>
 
+        <div class="col-md-6 visao order-md-2 order-1" data-aos="fade-left" data-aos-duration="3000">
+            <h1 class="visao__title" data-aos="fade-left" data-aos-duration="3000"><i class="visao__icon flaticon-eye"></i> <span class="visao__title__thin">NOSSA</span> VISÃO</h1>
+            <p class="visao__text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In massa tempor nec feugiat nisl. Feugiat in fermentum posuere urna nec tincidunt praesent semper feugiat. Tincidunt nunc pulvinar sapien et. Facilisis mauris sit amet massa vitae. Aliquet bibendum enim facilisis gravida neque convallis a cras. Consectetur adipiscing elit ut aliquam purus sit amet luctus venenatis. Nisl rhoncus mattis rhoncus urna neque viverra. Sit amet tellus cras adipiscing enim eu. Feugiat in fermentum posuere urna nec tincidunt praesent semper. Mus mauris vitae ultricies leo integer. Neque volutpat ac tincidunt vitae semper quis lectus.
+            </p>
+        </div>
+
+    </div>
 
     <div class="depoimentos">
-        <div class="depoimentos__content">
-            <h1 class="depoimentos__content__title">DEPOIMENTOS</h1>
+        <div class="depoimentos__content" data-aos="fade-up" data-aos-duration="3000">
+            <h1 class="depoimentos__content__title"><i class="depoimentos__content__icon flaticon-discuss"></i> DEPOIMENTOS</h1>
         </div>
 
         <div class="row depoimentos__content__row">
@@ -191,6 +195,9 @@
             </div>            
         </div>
     </div>
+
+
+   
 
     <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
     <script>AOS.init()</script>

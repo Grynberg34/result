@@ -5,8 +5,12 @@
 
 
 body {
-    font-family: 'quasimoda', sans-serif;
-    background-image: url('/images/fundo.png');
+    font-family: 'work-sans', sans-serif;
+    background-color: $preto;
+    background-image: url('/images/fundo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .row {
@@ -17,194 +21,251 @@ body {
 }
 
 .navbar {
-    .navbar__content {
-        margin-left: 20vw;
-        margin-right: 20vw;
-        width: 100vw;
-        margin-top: 4vh;
-        margin-bottom: 4vh;
+    background-color: $laranja;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 8vh;
+    clip-path: polygon(0 0, 100% 0, 100% 66%, 0% 100%);
     
-        .navbar__content__col {
-            height: 154px;
+    .navbar__col {
+        height: 140px;
+
+        &:first-of-type {
+            clip-path: polygon(0 0, 80% 0%, 86% 100%, 0% 100%);
+            background-color: $cinza-claro;
         }
-    
-        .navbar__content__logo {
-            display: block;
-            width: 180px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 10px;
-        }
-    
-        .navbar__content__link {
-            display: block;
-            position: relative;
-            font-family: 'ccbiffbamboom', sans-serif;
-            font-size: 26px;
-            color: $preto;
-            text-align: center;
-            top: 50%;
-    
-            &:hover {
-                text-decoration: none;
-                color: $laranja;
-            }
-        }
-    
     }
+
+    .navbar__logo {
+        display: block;
+        width: 140px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+    }
+
+    .navbar__link {
+        display: block;
+        position: relative;
+        font-size: 20px;
+        font-weight: 700;
+        color: $preto;
+        text-align: center;
+        top: 30%;
+
+        &:hover {
+            text-decoration: none;
+            color: $cinza-claro;
+        }
+    }
+    
 }
 
 .quemsomos {
-    position: relative;
-    background-color: rgba($color: $laranja, $alpha: 0.87);
-    padding-top: 12vh;
-    padding-bottom: 12vh;
 
+    overflow-x: hidden; 
+    overflow-y: hidden;
+    margin-bottom: 10vh;
+    padding-left: 4vw;
+    padding-right: 4vw;
+
+    .quemsomos__col {
+
+        overflow-x: hidden; 
+        overflow-y: hidden;
+
+        &:first-of-type {
+            clip-path: polygon(14% 17%, 95% 8%, 86% 84%, 4% 92%);
+            background-color: $laranja;
+        }
+
+    }
 
     .quemsomos__content {
         position: relative;
-        border: 4px solid $preto;
-        margin-left: 22vw;
-        margin-right: 22vw;
-        background-color: $branco;
-    
+        top: 30%;
+        left: 8%;
+        padding: 20px;
+
         .quemsomos__content__title {
-            display: block;
-            font-family: 'ccbiffbamboom', sans-serif;
-            font-size: 20px;
-            color: $branco;
-            background-color: $preto;
-            padding: 10px;
-            width: 14vw;
             text-align: center;
+            color: $cinza-claro;
+            font-size: 42px;
+            font-weight: 900;
+            margin-bottom: 0;
         }
-        
-        .quemsomos__content__text {
-            font-size: 14px;
+
+        .quemsomos__content__subtitle {
+            text-align: center;
             color: $preto;
-            text-align: justify;
-            padding: 20px;
-            padding-left: 10vw;
-            padding-right: 10vw;
-            line-height: 2;
+            font-size: 34px;
+            font-weight: 400;
         }
-    
+    }
+
+    .quemsomos__icon {
+        position: relative;
+        top: 3%;
+        right: 12%;
+        display: block;
+        font-size: 60px;
+        color: $cinza-claro;
+        text-align: center;
+    }
+
+    .quemsomos__text {
+        text-align: justify;
+        font-size: 14px;
+        color: $cinza-claro;
+        line-height: 2;
+        padding-left: 120px;
+        padding-right: 120px;
+        padding-top: 70px;
+        padding-bottom: 60px;
+        margin-bottom: 0;
     }
 }
 
 .equipe {
 
-    padding-top: 12vh;
-    padding-bottom: 12vh;
-    background-color: rgba($color: $preto, $alpha: 0.87);
+    overflow-x: hidden; 
+    overflow-y: hidden;
+    margin-bottom: 10vh;
+    padding-left: 4vw;
+    padding-right: 4vw;
+
+    .equipe__col {
+
+        overflow-x: hidden; 
+        overflow-y: hidden;
+
+        &:last-of-type {
+            clip-path: polygon(19% 19%, 89% 9%, 94% 70%, 22% 86%);
+            background: $cinza-claro;
+        }
+    }
+
+    .equipe__video {
+        padding: 40px;
+    }
 
     .equipe__content {
         position: relative;
-        margin-left: 25vw;
-        margin-right: 25vw;
-    
-        .equipe__content__img {
-            position: absolute;
-            width: 160px;
-            z-index: 1000;
-            top: -12%;
-            left: 92%;
+        top: 30%;
+        left: 10%;
+        padding: 20px;
+
+        .equipe__content__title {
+            text-align: center;
+            color: $preto;
+            font-size: 40px;
+            font-weight: 500;
+            margin-bottom: 0;
         }
 
-        .equipe__content__video {
-            border: 4px solid $laranja;
+        .equipe__content__subtitle {
+            text-align: center;
+            color: $laranja;
+            font-size: 36px;
+            font-weight: 700;
+            font-style: italic;
         }
     }
+
+    .equipe__icon {
+        position: relative;
+        top: 0%;
+        right: 10%;
+        display: block;
+        font-size: 60px;
+        color: $laranja;
+        text-align: center;
+    }
+
+}
+
+.categorias {
+    margin-bottom: 10vh;
+    overflow-x: hidden; 
+    overflow-y: hidden;
+    padding-left: 4vw;
+    padding-right: 4vw;
 }
 
 .metodo {
-    position: relative;
-    padding-top: 14vh;
-    padding-bottom: 14vh;
-    background: none;
+    overflow-x: hidden; 
+    overflow-y: hidden;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    background-color: $cinza-claro;
+    clip-path: polygon(14% 0, 91% 5%, 87% 100%, 7% 95%);
 
-    .metodo__img__first {
-        position: absolute;
-        width: 200px;
-        top: 10%;
-        right: 15%;
-        z-index: 1000;
+    .metodo__title {
+        text-align: center;
+        color: $laranja;
+        font-size: 30px;
+        font-weight: 700;
+        margin-top: 12vh;
+        margin-bottom: 4vh;
     }
 
-    .metodo__content {
-        margin-left: 22vw;
-        margin-right: 22vw;
-        border: 4px solid $preto;
-        background-color: rgba($color: $laranja, $alpha: 0.87);
-    
-        .metodo__content__title {
-            display: block;
-            font-family: 'ccbiffbamboom', sans-serif;
-            font-size: 20px;
-            color: $laranja;
-            background-color: $preto;
-            padding: 10px;
-            width: 14vw;
-            text-align: center;
-        }
-        
-        .metodo__content__text {
-            font-size: 14px;
-            color: $branco;
-            text-align: justify;
-            padding: 20px;
-            padding-left: 10vw;
-            padding-right: 10vw;
-            line-height: 2;
-        }
-    
+    .metodo__title__thin {
+        font-weight: 500;
+    }
+
+    .metodo__icon {
+        color: $laranja;
+        font-size: 40px;
+        vertical-align: middle;
+    }
+
+    .metodo__text {
+        font-size: 14px;
+        color: $preto;
+        padding-left: 8vw;
+        padding-right: 8vw;
+        text-align: justify;
+        line-height: 2;
+        margin-bottom: 12vh;
     }
 }
 
 .visao {
-    position: relative;
-    padding-top: 14vh;
-    padding-bottom: 14vh;
-    background-color: rgba($color: $laranja, $alpha: 0.87);
+    overflow-x: hidden; 
+    overflow-y: hidden;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    background-color: $laranja;
+    clip-path: polygon(14% 5%, 92% 0, 87% 95%, 7% 100%);
 
-    .visao__content__img {
-        position: absolute;
-        width: 160px;
-        z-index: 1000;
-        top: -12%;
-        right: 92%;
+    .visao__title {
+        text-align: center;
+        color: $cinza-claro;
+        font-size: 30px;
+        font-weight: 700;
+        margin-top: 12vh;
+        margin-bottom: 4vh;
     }
 
-    .visao__content {
-        position: relative;
-        margin-left: 22vw;
-        margin-right: 22vw;
-        border: 4px solid $branco;
-        background-color: $preto;
-    
-        .visao__content__title {
-            display: block;
-            font-family: 'ccbiffbamboom', sans-serif;
-            font-size: 20px;
-            color: $preto;
-            background-color: $branco;
-            padding: 10px;
-            width: 14vw;
-            text-align: center;
-        }
-        
-        .visao__content__text {
-            font-size: 14px;
-            color: $branco;
-            text-align: justify;
-            padding-top: 30px;
-            padding-bottom: 30px;
-            padding-left: 10vw;
-            padding-right: 10vw;
-            line-height: 2;
-            margin-bottom: 0;
-        }
-    
+    .visao__title__thin {
+        font-weight: 500;
+    }
+
+    .visao__icon {
+        margin-top: 10px;
+        color: $cinza-claro;
+        font-size: 40px;
+        vertical-align: middle;
+    }
+
+    .visao__text {
+        font-size: 14px;
+        color: $preto;
+        padding-left: 8vw;
+        padding-right: 8vw;
+        text-align: justify;
+        margin-bottom: 12vh;
+        line-height: 2;
     }
 }
 
@@ -212,21 +273,30 @@ body {
 
     padding-top: 12vh;
     padding-bottom: 12vh;
-    background: none;
+    overflow-x: hidden; 
+    overflow-y: hidden;
 
     .depoimentos__content {
         margin-top: 4vh;
         margin-bottom: 8vh;
-        margin-left: 15vw;
-        margin-right: 15vw;
-        background: none;
+        margin-left: 30vw;
+        margin-right: 30vw;
+        background: $laranja;
+        clip-path: polygon(14% 12%, 96% 0, 91% 84%, 5% 93%);
     
         .depoimentos__content__title {
-            font-family: 'ccbiffbamboom', sans-serif;
             font-size: 40px;
-            color: $preto;
+            font-weight: 700;
+            color: $cinza-claro;
             text-align: center;
-            padding: 20px;
+            padding: 40px;
+            font-style: italic;
+        }
+
+        .depoimentos__content__icon {
+            font-size: 40px;
+            color: $cinza-claro;
+            vertical-align: middle;
         }
     }
     
@@ -251,7 +321,7 @@ body {
             position: relative;
             top: 30%;
             font-size: 40px;
-            color: $branco;
+            color: $laranja;
             text-align: center;
     
             &:hover {
@@ -270,164 +340,184 @@ body {
 
 @media only screen and (max-width: 767px) {
 
-    body {
-        padding-left: 0;
-        padding-right: 0;
-        overflow-x: auto;
-        width: 100vw;
-    }
-
-    .col-md-4 {
-        padding: 0;
-    }
-
     .navbar {
 
-        padding-left: 6vw;
-        padding-right: 6vw;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 92%);
 
-        .navbar__content {
-            margin-left: 0;
-            margin-right: 0;
+        .navbar__col {
 
-            .navbar__content__col {
-                margin-bottom: 2vw;
-                height: unset;
+            height: 120px;
+
+            &:first-of-type {
+                clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+                height: 190px;
             }
+        }
 
-            .navbar__content__link {
-                font-size: 20px;
-            }
+        .navbar__logo {
+            margin-top: 8vw;
+        }
+
+        .navbar__link {
+            margin-bottom: 4vw;
         }
     }
 
-    #cadastro, #login {
-        margin-top: 8vw;
-    }
 
     .quemsomos {
-        padding-top: 8vh;
-        padding-bottom: 8vh;
-        
-        .quemsomos__content {
-            margin-left: 5vw;
-            margin-right: 5vw;
-        
-            .quemsomos__content__title {
-                width: 50vw;
+
+        margin-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+    
+        .quemsomos__col {
+    
+    
+            &:first-of-type {
+                clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 100%);
+                background: none;
             }
-            
-        
+    
+        }
+    
+        .quemsomos__content {
+            position: relative;
+            top: 26%;
+            left: 8%;
+            padding: 0;
+
+    
+            .quemsomos__content__subtitle {
+                color: $laranja;
+
+            }
+        }
+    
+        .quemsomos__icon {
+            top: -20%;
+            right: 25%;
+            font-size: 60px;
+            color: $laranja;
+        }
+    
+        .quemsomos__text {
+            font-size: 14px;
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-top: 0;
+            padding-bottom: 60px;
+
         }
     }
 
     .equipe {
 
-        padding-top: 10vh;
-        padding-bottom: 10vh;
+        margin-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 30vw;
+        background-color: $cinza-claro;
+        clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 92%);
+    
+        .equipe__col {
+    
+            &:last-of-type {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+                background: none;
+            }
+        }
+    
+        .equipe__video {
+            padding: 0;
+        }
     
         .equipe__content {
             position: relative;
-            margin-left: 6vw;
-            margin-right: 6vw;
-        
-            .equipe__content__img {
-                width: 120px;
-                top: -20%;
-                left: 68%;
-            }
-    
+            top: 30%;
+            left: 10%;
+            padding: 20px;
         }
+    
+        .equipe__icon {
+            top: -18%;
+            right: 25%;
+        }
+    
     }
 
+    .categorias {
+        margin-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
     .metodo {
-        padding-top: 8vh;
-        padding-bottom: 8vh;
+        padding-left: 0;
+        padding-right: 0;
+        background-color: $cinza-claro;
+        clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 92%);
     
-        .metodo__content {
-            margin-left: 6vw;
-            margin-right: 6vw;
-
-            .metodo__content__title {
-                width: 50vw;
-            }        
+        .metodo__title {
+            text-align: center;
+            color: $laranja;
+            font-size: 30px;
+            font-weight: 700;
+            margin-top: 16vh;
+            margin-bottom: 4vh;
+        }
+    
+    
+        .metodo__text {
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-bottom: 16vh;
         }
     }
-
+    
     .visao {
-        padding-top: 8vh;
-        padding-bottom: 8vh;
+        padding-left: 0;
+        padding-right: 0;
+        background-color: $laranja;
+        clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 92%);
 
-        .visao__content__img {
-            width: 120px;
-            top: -8%;
-            right: 70%;
+        .visao__title {
+            margin-top: 16vh;
         }
     
-        .visao__content {
-            margin-left: 6vw;
-            margin-right: 6vw;
-            
-            .visao__content__title {
-                width: 50vw;
-            }  
-            
-            .visao__content__text {
-                padding-top: 40px;
-            }
+        .visao__text {
+            padding-left: 40px;
+            padding-right: 40px;
+            margin-bottom: 16vh;
         }
     }
 
     .depoimentos {
 
-        padding-top: 4vh;
-        padding-bottom: 8vh;
-    
         .depoimentos__content {
-            margin-top: 4vh;
-            margin-bottom: 4vh;
+            clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 92%);
             margin-left: 0;
             margin-right: 0;
-        
+            margin-bottom: 0;
+            margin-top: 0;
+            background: none;
+
             .depoimentos__content__title {
                 font-size: 34px;
+                color: $laranja;
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            .depoimentos__content__icon {
+                font-size: 34px;
+                color: $laranja;
             }
         }
-        
+
         .depoimentos__content__row {
-    
             margin-left: 6vw;
             margin-right: 6vw;
             margin-bottom: 0;
-        
-        
-            .depoimentos__content__row__aluno {
-                position: relative;
-                top: 20%;
-                font-size: 24px;
-                font-weight: 500;
-                text-align: center;
-                color: $preto;
-            }
-            
-            .depoimentos__content__row__button {
-                display: block;
-                position: relative;
-                top: 30%;
-                font-size: 50px;
-                color: $branco;
-                text-align: center;
-        
-                &:hover {
-                    color: $preto;
-                }
-        
-            }
-        
-            &:last-of-type {
-                margin-bottom: 4vh;
-            }
-        
         }
 
         .scene {
@@ -437,255 +527,100 @@ body {
 
 }
 
+
 @media only screen and (min-width: 1024px) and (max-width: 1279px) {
 
 
+}
+
+@media only screen and (min-width: 1280px) and (max-width: 1365px) {
+
+    .quemsomos {
+        padding-left: 2vw;
+        padding-right: 2vw;
+
+    }
+
     .equipe {
+        padding-left: 2vw;
+        padding-right: 2vw;  
 
-    
-        .equipe__content {
-        
-            .equipe__content__img {
-                width: 120px;
-                top: -11%;
-                left: 85%;
-            }
-    
-        }
+
     }
 
-
-    .visao {
-        .visao__content__img {
-            width: 120px;
-            top: -11%;
-            right: 85%;
-        }
-    }
-
-    .depoimentos {
-        .depoimentos__content__row {
-            .depoimentos__content__row__aluno {
-                font-size: 18px;
-            }
-
-            .depoimentos__content__row__button {
-                font-size: 34px;
-            }
-        }
+    .categorias {
+        padding-left: 2vw;
+        padding-right: 2vw;
     }
 
 }
 
 @media only screen and (min-width: 1440px) and (max-width: 1599px) {
 
-    .navbar {
-        .navbar__content {
-            margin-left: 24vw;
-            margin-right: 24vw;
-        }
-    }
-
     .quemsomos {
-        .quemsomos__content {
-            margin-left: 26vw;
-            margin-right: 26vw;
+        .quemsomos__icon {
+            top: 1%;
         }
     }
 
     .equipe {
-        .equipe__content {
-            margin-left: 29vw;
-            margin-right: 29vw;
-
-            .equipe__content__img {
-                width: 140px;
-                top: -4%;
-            }
+        .equipe__icon {
+            top: 3%;
         }
-    }
-
-    .metodo {
-
-        .metodo__content {
-            margin-left: 26vw;
-            margin-right: 26vw;
-        }
-    }
-
-    .visao {
-
-        .visao__content__img {
-            width: 140px;
-            top: -4%;
-        }
-    }
-
-    .depoimentos {
-
-        .depoimentos__content__row {
-            margin-left: 20vw;
-            margin-right: 20vw;
-        }
-
     }
 
 }
 
 @media only screen and (min-width: 1600px) and (max-width: 1699px) {
 
-    .navbar {
-        .navbar__content {
-            margin-left: 26vw;
-            margin-right: 26vw;
-        }
-    }
-
     .quemsomos {
-        .quemsomos__content {
-            margin-left: 28vw;
-            margin-right: 28vw;
+        padding-left: 6vw;
+        padding-right: 6vw;
 
-            .quemsomos__content__text {
-                padding-left: 5vw;
-                padding-right: 5vw;
-            }
+        .quemsomos__icon {
+            top: 0%;
         }
     }
 
     .equipe {
-        .equipe__content {
-            margin-left: 31vw;
-            margin-right: 31vw;
+        padding-left: 6vw;
+        padding-right: 6vw;  
 
-            .equipe__content__img {
-                width: 140px;
-                top: -4%;
-            }
+        .equipe__icon {
+            top: 3%;
         }
     }
 
-    .metodo {
-
-        .metodo__img__first {
-            width: 140px;
-            right: 23%;
-        }
-
-        .metodo__content {
-            margin-left: 28vw;
-            margin-right: 28vw;
-
-            .metodo__content__text {
-                padding-left: 5vw;
-                padding-right: 5vw;
-            }
-        }
-    }
-
-    .visao {
-
-        .visao__img__second {
-            width: 160px;
-        }
-        
-        .visao__content {
-            margin-left: 28vw;
-            margin-right: 28vw;
-
-            .visao__content__text {
-                padding-left: 5vw;
-                padding-right: 5vw;
-            }
-        }
-    }
-
-    .depoimentos {
-
-        .depoimentos__content__row {
-            margin-left: 24vw;
-            margin-right: 24vw;
-        }
-
+    .categorias {
+        padding-left: 6vw;
+        padding-right: 6vw;
     }
 
 }
 
 @media only screen and (min-width: 1700px) {
 
-    .navbar {
-        .navbar__content {
-            margin-left: 30vw;
-            margin-right: 30vw;
-        }
-    }
-
     .quemsomos {
-        .quemsomos__content {
-            margin-left: 32vw;
-            margin-right: 32vw;
+        padding-left: 10vw;
+        padding-right: 10vw;
 
-            .quemsomos__content__text {
-                padding-left: 5vw;
-                padding-right: 5vw;
-            }
+        .quemsomos__icon {
+            top: -3%;
         }
     }
 
     .equipe {
-        .equipe__content {
-            margin-left: 35vw;
-            margin-right: 35vw;
+        padding-left: 10vw;
+        padding-right: 10vw;  
 
-            .equipe__content__img {
-                width: 140px;
-                top: -4%;
-            }
+        .equipe__icon {
+            top: 6%;
         }
     }
 
-    .metodo {
-
-        .metodo__img__first {
-            width: 180px;
-            right: 26%;
-        }
-
-        .metodo__content {
-            margin-left: 32vw;
-            margin-right: 32vw;
-
-            .metodo__content__text {
-                padding-left: 5vw;
-                padding-right: 5vw;
-            }
-        }
-    }
-
-    .visao {
-
-        .visao__img__second {
-            width: 160px;
-        }
-        
-        .visao__content {
-            margin-left: 32vw;
-            margin-right: 32vw;
-
-            .visao__content__text {
-                padding-left: 5vw;
-                padding-right: 5vw;
-            }
-        }
-    }
-
-    .depoimentos {
-
-        .depoimentos__content__row {
-            margin-left: 28vw;
-            margin-right: 28vw;
-        }
-
+    .categorias {
+        padding-left: 10vw;
+        padding-right: 10vw;
     }
 
 }

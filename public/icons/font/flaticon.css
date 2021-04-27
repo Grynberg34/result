@@ -1,10 +1,10 @@
 @font-face {
     font-family: "flaticon";
-    src: url("./flaticon.ttf?5174b029d1aeeb53ac418601173df282") format("truetype"),
-url("./flaticon.woff?5174b029d1aeeb53ac418601173df282") format("woff"),
-url("./flaticon.woff2?5174b029d1aeeb53ac418601173df282") format("woff2"),
-url("./flaticon.eot?5174b029d1aeeb53ac418601173df282#iefix") format("embedded-opentype"),
-url("./flaticon.svg?5174b029d1aeeb53ac418601173df282#flaticon") format("svg");
+    src: url("./flaticon.ttf?cc867a573620ffa0d7c0bf158b69c8ad") format("truetype"),
+url("./flaticon.woff?cc867a573620ffa0d7c0bf158b69c8ad") format("woff"),
+url("./flaticon.woff2?cc867a573620ffa0d7c0bf158b69c8ad") format("woff2"),
+url("./flaticon.eot?cc867a573620ffa0d7c0bf158b69c8ad#iefix") format("embedded-opentype"),
+url("./flaticon.svg?cc867a573620ffa0d7c0bf158b69c8ad#flaticon") format("svg");
 }
 
 i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
@@ -20,4 +20,19 @@ i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
 
 .flaticon-play-button:before {
     content: "\f101";
+}
+.flaticon-discuss:before {
+    content: "\f102";
+}
+.flaticon-people:before {
+    content: "\f103";
+}
+.flaticon-eye:before {
+    content: "\f104";
+}
+.flaticon-info:before {
+    content: "\f105";
+}
+.flaticon-method:before {
+    content: "\f106";
 }
