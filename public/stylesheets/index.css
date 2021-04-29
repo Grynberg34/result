@@ -121,7 +121,7 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 66%, 0% 100%);
 }
 .navbar .navbar__col {
-  height: 140px;
+  height: 180px;
 }
 .navbar .navbar__col:first-of-type {
   clip-path: polygon(0 0, 80% 0%, 86% 100%, 0% 100%);
@@ -129,7 +129,7 @@ body {
 }
 .navbar .navbar__logo {
   display: block;
-  width: 140px;
+  width: 180px;
   margin-left: auto;
   margin-right: auto;
   padding: 10px;
@@ -395,7 +395,7 @@ body {
     height: 190px;
   }
   .navbar .navbar__logo {
-    margin-top: 8vw;
+    margin-top: 5vw;
   }
   .navbar .navbar__link {
     margin-bottom: 4vw;
