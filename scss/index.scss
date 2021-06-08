@@ -61,6 +61,46 @@ body {
     
 }
 
+.dropdown {
+    display: block;
+    position: relative;
+    top: 30%;
+
+    #dropdownMenuButton {
+        &:focus {
+            outline: none;
+            border: none;
+            box-shadow: none;
+        }
+    }
+    
+    .dropdown-toggle {
+        color: $preto;
+        padding-top:0;
+    }
+    
+    
+    .dropdown-menu {
+        background: none;
+        padding: 0;
+        margin-top: 0;
+        border: 0;
+        min-width: 60px;
+    }
+    
+    .dropdown-item {
+        padding-left: 14px;
+        padding-top: 0;
+        padding-bottom: 8px;
+    }
+    
+    .dropdown-item:hover {
+        background: none;
+        outline: none;
+        transform: none;
+    }
+}
+
 .quemsomos {
 
     overflow-x: hidden; 
@@ -98,7 +138,7 @@ body {
         .quemsomos__content__subtitle {
             text-align: center;
             color: $preto;
-            font-size: 34px;
+            font-size: 22px;
             font-weight: 400;
         }
     }
@@ -154,6 +194,7 @@ body {
         top: 30%;
         left: 10%;
         padding: 20px;
+        height: 300px;
 
         .equipe__content__title {
             text-align: center;
@@ -166,7 +207,7 @@ body {
         .equipe__content__subtitle {
             text-align: center;
             color: $laranja;
-            font-size: 36px;
+            font-size: 32px;
             font-weight: 700;
             font-style: italic;
         }
@@ -174,7 +215,7 @@ body {
 
     .equipe__icon {
         position: relative;
-        top: 0%;
+        top: -40%;
         right: 10%;
         display: block;
         font-size: 60px;
@@ -182,6 +223,57 @@ body {
         text-align: center;
     }
 
+    .equipe__menu {
+        padding-left: 4vw;
+        padding-right: 4vw;
+        padding-top: 12vh;
+
+        .equipe__menu__option {
+            color: $cinza-claro;
+            font-size: 14px;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: 700;
+            cursor: pointer;
+
+            &:hover {
+                color: $laranja;
+            }
+        }
+
+        .equipe__active {
+            background-color: $laranja;
+            color: $preto;
+            clip-path: polygon(0 0, 96% 1%, 100% 100%, 3% 100%);
+
+            &:hover {
+                color: $preto;
+            }
+        }
+    }
+
+    .equipe__members {
+        margin-top: 8vh;
+
+        .equipe__members__member {
+
+            height: 350px;
+
+            .equipe__members__member__text {
+                font-size: 14px;
+                font-weight: 400;
+                text-align: justify;
+                color: $cinza-claro;
+                padding-left: 4vw;
+                padding-right: 4vw;
+            }
+        }
+    }
+
+}
+
+#t-daniel, #t-jean, #t-kenner {
+    display: none;
 }
 
 .categorias {
@@ -267,7 +359,87 @@ body {
         margin-bottom: 12vh;
         line-height: 2;
     }
+
 }
+
+.missao {
+    overflow-x: hidden; 
+    overflow-y: hidden;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    background-color: $laranja;
+    clip-path: polygon(14% 0, 91% 5%, 87% 100%, 7% 95%);
+
+    .missao__title {
+        text-align: center;
+        color: $cinza-claro;
+        font-size: 30px;
+        font-weight: 700;
+        margin-top: 12vh;
+        margin-bottom: 4vh;
+    }
+
+    .missao__title__thin {
+        font-weight: 500;
+    }
+
+    .missao__icon {
+        margin-top: 10px;
+        color: $cinza-claro;
+        font-size: 40px;
+        vertical-align: middle;
+    }
+
+    .missao__text {
+        font-size: 14px;
+        color: $preto;
+        padding-left: 10vw;
+        padding-right: 10vw;
+        text-align: justify;
+        margin-bottom: 12vh;
+        line-height: 2;
+    }
+
+}
+
+.valores {
+    overflow-x: hidden; 
+    overflow-y: hidden;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    background-color: $cinza-claro;
+    clip-path: polygon(14% 5%, 92% 0, 87% 95%, 7% 100%);
+
+    .valores__title {
+        text-align: center;
+        color: $laranja;
+        font-size: 30px;
+        font-weight: 700;
+        margin-top: 12vh;
+        margin-bottom: 4vh;
+    }
+
+    .valores__title__thin {
+        font-weight: 500;
+    }
+
+    .valores__icon {
+        color: $laranja;
+        font-size: 40px;
+        vertical-align: middle;
+    }
+
+    .valores__text {
+        font-size: 14px;
+        color: $preto;
+        padding-left: 8vw;
+        padding-right: 8vw;
+        text-align: center;
+        line-height: 2;
+        margin-bottom: 12vh;
+    }
+}
+
 
 .depoimentos {
 
@@ -360,6 +532,8 @@ body {
 
         .navbar__link {
             margin-bottom: 4vw;
+            font-size: 18px;
+            text-align: center;
         }
     }
 
@@ -416,8 +590,6 @@ body {
         padding-left: 0;
         padding-right: 0;
         padding-bottom: 30vw;
-        background-color: $cinza-claro;
-        clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 92%);
     
         .equipe__col {
     
@@ -436,11 +608,37 @@ body {
             top: 30%;
             left: 10%;
             padding: 20px;
+            height: unset;
+
+            .equipe__content__title {
+                color: $cinza-claro;
+            }
         }
     
         .equipe__icon {
             top: -18%;
             right: 25%;
+        }
+
+        .equipe__menu {
+            padding-top: 0;
+            padding-left: 40px;
+            padding-right: 40px;
+
+            .equipe__menu__option {
+                font-size: 10px;
+            }
+        }
+
+        .equipe__members {
+            .equipe__members__member {
+                height: unset;
+
+                .equipe__members__member__text {
+                    padding-left: 40px;
+                    padding-right: 40px;
+                }
+            }
         }
     
     }
@@ -485,6 +683,46 @@ body {
         }
     
         .visao__text {
+            padding-left: 40px;
+            padding-right: 40px;
+            margin-bottom: 16vh;
+        }
+    }
+
+    .valores {
+        padding-left: 0;
+        padding-right: 0;
+        background-color: $cinza-claro;
+        clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 92%);
+    
+        .valores__title {
+            text-align: center;
+            color: $laranja;
+            font-size: 30px;
+            font-weight: 700;
+            margin-top: 16vh;
+            margin-bottom: 4vh;
+        }
+    
+    
+        .valores__text {
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-bottom: 16vh;
+        }
+    }
+
+    .missao {
+        padding-left: 0;
+        padding-right: 0;
+        background-color: $laranja;
+        clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 92%);
+
+        .missao__title {
+            margin-top: 16vh;
+        }
+    
+        .missao__text {
             padding-left: 40px;
             padding-right: 40px;
             margin-bottom: 16vh;
@@ -565,7 +803,7 @@ body {
 
     .equipe {
         .equipe__icon {
-            top: 3%;
+            top: -19%;
         }
     }
 
@@ -587,7 +825,7 @@ body {
         padding-right: 6vw;  
 
         .equipe__icon {
-            top: 3%;
+            top: -19%;
         }
     }
 
@@ -614,7 +852,7 @@ body {
         padding-right: 10vw;  
 
         .equipe__icon {
-            top: 6%;
+            top: -16%;
         }
     }
 
