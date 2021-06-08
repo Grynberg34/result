@@ -276,7 +276,7 @@ body {
 }
 .equipe .equipe__icon {
   position: relative;
-  top: -40%;
+  top: -24%;
   right: 10%;
   display: block;
   font-size: 60px;
@@ -409,7 +409,7 @@ body {
   padding-left: 4vw;
   padding-right: 4vw;
   background-color: #f2780b;
-  clip-path: polygon(14% 0, 91% 5%, 87% 100%, 7% 95%);
+  clip-path: polygon(14% 0, 87% 5%, 91% 100%, 7% 95%);
 }
 .missao .missao__title {
   text-align: center;
@@ -444,7 +444,7 @@ body {
   padding-left: 4vw;
   padding-right: 4vw;
   background-color: #d9d7d7;
-  clip-path: polygon(14% 5%, 92% 0, 87% 95%, 7% 100%);
+  clip-path: polygon(14% 5%, 87% 0, 92% 95%, 7% 100%);
 }
 .valores .valores__title {
   text-align: center;
