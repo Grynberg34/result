@@ -235,6 +235,7 @@ body {
             text-align: center;
             font-weight: 700;
             cursor: pointer;
+            user-select: none;
 
             &:hover {
                 color: $laranja;
@@ -534,8 +535,11 @@ body {
             margin-bottom: 4vw;
             font-size: 18px;
             text-align: center;
+            padding-left: 20px;
+            padding-right: 20px;
         }
     }
+
 
 
     .quemsomos {
