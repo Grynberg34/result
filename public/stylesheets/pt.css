@@ -158,11 +158,6 @@ body {
   border: none;
   box-shadow: none;
 }
-.dropdown #dropdownMenuButton:active {
-  outline: none;
-  border: none;
-  box-shadow: none;
-}
 .dropdown .dropdown-toggle {
   color: #000000;
   padding-top: 0;
@@ -209,14 +204,14 @@ body {
 .quemsomos .quemsomos__content .quemsomos__content__title {
   text-align: center;
   color: #d9d7d7;
-  font-size: 42px;
+  font-size: 34px;
   font-weight: 900;
   margin-bottom: 0;
 }
 .quemsomos .quemsomos__content .quemsomos__content__subtitle {
   text-align: center;
   color: #000000;
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 400;
 }
 .quemsomos .quemsomos__icon {
@@ -268,7 +263,7 @@ body {
 .equipe .equipe__content .equipe__content__title {
   text-align: center;
   color: #000000;
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 500;
   margin-bottom: 0;
 }
@@ -804,4 +799,4 @@ body {
   }
 }
 
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=pt.css.map */

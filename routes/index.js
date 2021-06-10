@@ -24,4 +24,8 @@ router.get('/', checkAuthentication, function(req, res) {
  res.render('index')
 });
 
+router.get('/pt', checkAuthentication, function(req, res) {
+  res.render('pt')
+});
+
 module.exports = router;

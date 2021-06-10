@@ -72,12 +72,6 @@ body {
             border: none;
             box-shadow: none;
         }
-
-        &:active {
-            outline: none;
-            border: none;
-            box-shadow: none;
-        }
     }
     
     .dropdown-toggle {
@@ -136,7 +130,7 @@ body {
         .quemsomos__content__title {
             text-align: center;
             color: $cinza-claro;
-            font-size: 42px;
+            font-size: 34px;
             font-weight: 900;
             margin-bottom: 0;
         }
@@ -144,7 +138,7 @@ body {
         .quemsomos__content__subtitle {
             text-align: center;
             color: $preto;
-            font-size: 22px;
+            font-size: 26px;
             font-weight: 400;
         }
     }
@@ -205,7 +199,7 @@ body {
         .equipe__content__title {
             text-align: center;
             color: $preto;
-            font-size: 40px;
+            font-size: 36px;
             font-weight: 500;
             margin-bottom: 0;
         }
