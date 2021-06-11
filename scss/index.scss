@@ -67,13 +67,17 @@ body {
     top: 30%;
 
     #dropdownMenuButton {
+        outline: none;
+        border: none;
+        box-shadow: none;
+
         &:focus {
             outline: none;
             border: none;
             box-shadow: none;
         }
 
-        &:active {
+        &:focusout {
             outline: none;
             border: none;
             box-shadow: none;

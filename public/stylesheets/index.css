@@ -153,12 +153,17 @@ body {
   position: relative;
   top: 30%;
 }
+.dropdown #dropdownMenuButton {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
 .dropdown #dropdownMenuButton:focus {
   outline: none;
   border: none;
   box-shadow: none;
 }
-.dropdown #dropdownMenuButton:active {
+.dropdown #dropdownMenuButton:focusout {
   outline: none;
   border: none;
   box-shadow: none;
