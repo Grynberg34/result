@@ -1,0 +1,79 @@
+@import 'colors.scss';
+@import 'card.scss';
+@import 'animations.scss';
+@import 'navbar.scss';
+@import 'menu_mobile.scss';
+
+
+
+body {
+    font-family: 'work-sans', sans-serif;
+    background-color: $preto;
+    background-image: url('/images/fundo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.menu {
+    padding: 20px;
+    padding-top: 0;
+    margin-bottom: 8vh;
+
+    .menu__title {
+        display: block;
+        font-size: 30px;
+        color: $laranja;
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 5vh;
+    }
+
+    .menu__label {
+        display: block;
+        font-size: 14px;
+        color: $cinza-claro;
+        text-align: center;
+    }
+
+    .menu__input {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 2vh;
+        font-size: 12px;
+        text-align: center;
+        width: 50%;
+        clip-path: polygon(9% 1%, 100% 0, 91% 99%, 0% 100%);
+
+        &:focus {
+            outline: none;
+        }
+        
+    }
+
+    .menu__button {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 6vh;
+        margin-bottom: 2vh;
+        color: $preto;
+        background: $laranja;
+        border: none;
+        clip-path: polygon(9% 1%, 100% 0, 91% 99%, 0% 100%);
+        padding: 10px;
+        width: 50%;
+
+        &:hover {
+            background-color: $cinza-claro;
+        }
+    }
+}

@@ -1,5 +1,5 @@
 const express = require('express');
-const cadastroController = require('../controllers/CadastroController');
+const cadastroController = require('../controllers/cadastroController');
 const router = express.Router();
 
 function checkAuthentication(req,res,next){

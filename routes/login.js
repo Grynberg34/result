@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const passport = require('passport');
 
 function checkAuthentication(req,res,next){
   if (req.isAuthenticated()) {
@@ -20,12 +21,10 @@ function checkAuthentication(req,res,next){
   }
 }
 
-router.get('/', function(req, res) {
-  res.render('emconstrucao')
+router.get('/', checkAuthentication, function(req, res) {
+  res.render('login',  { message: req.flash('message') })
 });
 
-router.get('/1', checkAuthentication, function(req, res) {
-  
-});
+router.post('/', passport.authenticate('users',{successRedirect:'/aluno', failureRedirect: '/login', failureFlash: true }));
 
 module.exports = router;
