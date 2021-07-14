@@ -20,23 +20,38 @@
         <div class="col-md-6 navbar__col" id="logo">
             <a href="/"><img class="navbar__logo" src="/images/logo.png" alt=""></a>
         </div>
-        <div class="col-md-2 col-4 navbar__col" id="cadastro">
+        <div class="col-md-2 navbar__col" id="cadastro">
             <a href="/cadastro" class="navbar__link">REGISTER</a>
         </div>
-        <div class="col-md-2 col-4 navbar__col" id="login">
+        <div class="col-md-2 navbar__col" id="login">
             <a href="/login" class="navbar__link">LOGIN</a>
         </div>
-        <div class="col-md-2 col-3 navbar__col">
-                <div class="dropdown">
-                    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <img src="/images/en.png" alt="">
-                    </button>
-                    <div class="dropdown-menu order-1" aria-labelledby="dropdownMenuButton">
-                      <a class="dropdown-item" href="/pt"><img src="/images/pt.png" alt=""></a>
-                    </div>
+
+        <div class="col-3 col-md-0" id="space"></div>
+
+        <div class="col-3 navbar__col" id="mobile">
+
+            <nav>
+                <input type="checkbox" id="hamburger1" />
+                <label class="label" for="hamburger1"></label>
+            </nav>
+
+        </div>
+        <div class="col-md-2 col-6 navbar__col">
+            <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="/images/en.png" alt="">
+                </button>
+                <div class="dropdown-menu order-1" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="/pt"><img src="/images/pt.png" alt=""></a>
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="mobile__menu">
+        <a class="mobile__menu__link" href="/cadastro">CADASTRO</a>
+        <a class="mobile__menu__link" href="/login">LOGIN</a>
     </div>
 
     <div class="quemsomos row">
@@ -288,6 +303,7 @@
 
     <script src="/scripts/cardflip.js"></script>
     <script src="/scripts/index.js"></script>
+    <script src="/scripts/menu_mobile.js"></script>
 
 
 </body>

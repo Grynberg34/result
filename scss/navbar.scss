@@ -1,0 +1,141 @@
+.navbar {
+    background-color: $laranja;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 8vh;
+    clip-path: polygon(0 0, 100% 0, 100% 66%, 0% 100%);
+    
+    .navbar__col {
+        height: 180px;
+
+        &:first-of-type {
+            clip-path: polygon(0 0, 80% 0%, 86% 100%, 0% 100%);
+            background-color: $cinza-claro;
+        }
+    }
+
+    .navbar__logo {
+        display: block;
+        width: 180px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+    }
+
+    .navbar__link {
+        display: block;
+        position: relative;
+        font-size: 20px;
+        font-weight: 700;
+        color: $preto;
+        text-align: center;
+        top: 30%;
+
+        &:hover {
+            text-decoration: none;
+            color: $cinza-claro;
+        }
+    }
+
+    .active {
+        color: $cinza-claro;
+    }
+    
+}
+
+.dropdown {
+    display: block;
+    position: relative;
+    top: 30%;
+
+    #dropdownMenuButton {
+        outline: none;
+        border: none;
+        box-shadow: none;
+
+        &:focus {
+            outline: none;
+            border: none;
+            box-shadow: none;
+        }
+
+        &:focusout {
+            outline: none;
+            border: none;
+            box-shadow: none;
+        }
+    }
+    
+    .dropdown-toggle {
+        color: $preto;
+        padding-top:0;
+    }
+    
+    
+    .dropdown-menu {
+        background: none;
+        padding: 0;
+        margin-top: 0;
+        border: 0;
+        min-width: 60px;
+    }
+    
+    .dropdown-item {
+        padding-left: 14px;
+        padding-top: 0;
+        padding-bottom: 8px;
+    }
+    
+    .dropdown-item:hover {
+        background: none;
+        outline: none;
+        transform: none;
+    }
+}
+
+#space {
+    display: none;
+}
+
+@media only screen and (max-width: 767px) {
+    
+    .navbar {
+
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 92%);
+
+        .navbar__col {
+
+            height: 120px;
+
+            &:first-of-type {
+                clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+                height: 190px;
+            }
+        }
+
+        .navbar__logo {
+            margin-top: 5vw;
+        }
+
+        .navbar__link {
+            margin-bottom: 4vw;
+            font-size: 18px;
+            text-align: center;
+            padding-left: 20px;
+            padding-right: 20px;
+            
+        }
+    }
+
+    #cadastro, #login {
+        display: none;
+    }
+
+    #mobile {
+        display: block;
+    }
+    
+    #space {
+        display: block;
+    }
+}

@@ -1,7 +1,8 @@
 @import 'colors.scss';
 @import 'card.scss';
 @import 'animations.scss';
-
+@import 'navbar.scss';
+@import 'menu_mobile.scss';
 
 
 body {
@@ -18,97 +19,6 @@ body {
     margin-right: 0;
     padding-left: 0;
     padding-right: 0;
-}
-
-.navbar {
-    background-color: $laranja;
-    padding-top: 0;
-    padding-bottom: 0;
-    margin-bottom: 8vh;
-    clip-path: polygon(0 0, 100% 0, 100% 66%, 0% 100%);
-    
-    .navbar__col {
-        height: 180px;
-
-        &:first-of-type {
-            clip-path: polygon(0 0, 80% 0%, 86% 100%, 0% 100%);
-            background-color: $cinza-claro;
-        }
-    }
-
-    .navbar__logo {
-        display: block;
-        width: 180px;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 10px;
-    }
-
-    .navbar__link {
-        display: block;
-        position: relative;
-        font-size: 20px;
-        font-weight: 700;
-        color: $preto;
-        text-align: center;
-        top: 30%;
-
-        &:hover {
-            text-decoration: none;
-            color: $cinza-claro;
-        }
-    }
-    
-}
-
-.dropdown {
-    display: block;
-    position: relative;
-    top: 30%;
-
-    #dropdownMenuButton {
-        outline: none;
-        border: none;
-        box-shadow: none;
-
-        &:focus {
-            outline: none;
-            border: none;
-            box-shadow: none;
-        }
-
-        &:focusout {
-            outline: none;
-            border: none;
-            box-shadow: none;
-        }
-    }
-    
-    .dropdown-toggle {
-        color: $preto;
-        padding-top:0;
-    }
-    
-    
-    .dropdown-menu {
-        background: none;
-        padding: 0;
-        margin-top: 0;
-        border: 0;
-        min-width: 60px;
-    }
-    
-    .dropdown-item {
-        padding-left: 14px;
-        padding-top: 0;
-        padding-bottom: 8px;
-    }
-    
-    .dropdown-item:hover {
-        background: none;
-        outline: none;
-        transform: none;
-    }
 }
 
 .quemsomos {
@@ -520,6 +430,10 @@ body {
     }
 }
 
+#mobile {
+    display: none;
+}
+
 
 @media only screen and (max-width: 767px) {
 
@@ -551,6 +465,13 @@ body {
         }
     }
 
+    #cadastro, #login {
+        display: none;
+    }
+
+    #mobile {
+        display: block;
+    }
 
 
     .quemsomos {

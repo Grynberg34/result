@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/cadastro.css">
+    <link rel="stylesheet" href="/icons/font/flaticon.css">
+    <link rel="stylesheet" href="https://use.typekit.net/gvd0wuw.css">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <title>Result - English in the family</title>
+</head>
+<body>
+
+    <div class="navbar row">
+        <div class="col-md-6 navbar__col" id="logo">
+            <a href="/"><img class="navbar__logo" src="/images/logo.png" alt=""></a>
+        </div>
+        <div class="col-md-2 navbar__col" id="cadastro">
+            <a href="/cadastro" class="navbar__link">REGISTER</a>
+        </div>
+        <div class="col-md-2 navbar__col" id="login">
+            <a href="/login" class="navbar__link">LOGIN</a>
+        </div>
+
+        <div class="col-3 col-md-0" id="space"></div>
+
+        <div class="col-3 navbar__col" id="mobile">
+
+            <nav>
+                <input type="checkbox" id="hamburger1" />
+                <label class="label" for="hamburger1"></label>
+            </nav>
+
+        </div>
+        <div class="col-md-2 col-6 navbar__col">
+            <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="/images/pt.png" alt="">
+                </button>
+                <div class="dropdown-menu order-1" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="/"><img src="/images/en.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile__menu">
+        <a class="mobile__menu__link" href="/cadastro">CADASTRO</a>
+        <a class="mobile__menu__link" href="/login">LOGIN</a>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4"></div>
+
+            <div class="col-md-4">
+
+                <div class="menu" role="menu">
+                    <form action="/cadastro" method="post">
+
+                        <h3 class="menu__msg">{{passdontmatch}}{{userexists}}{{whitespace}}{{invalidcode}}</h3>
+
+                        <label class="menu__label" for="name"><b>nome completo</b></label>
+                        <input class="menu__input" type="text" name="name" id="name" aria-required="true" required>
+
+                        <label class="menu__label" for="email"><b>email</b></label>
+                        <input class="menu__input" type="email" name="email" id="email" aria-required="true" required>
+
+                        <label class="menu__label" for="code"><b>código de cadastro</b></label>
+                        <input class="menu__input" type="text" placeholder="Insira o código" name="code" id="code" aria-required="true" required>
+
+                        <label class="menu__label" for="password"><b>senha</b></label>
+                        <input class="menu__input" type="password" placeholder="Insira a senha" name="password" id="password" minlength="8" aria-required="true" required>
+
+                        <label class="menu__label" for="repeatpassword"><b>repetir senha</b></label>
+                        <input class="menu__input" type="password" placeholder="Repetir a senha" name="repeatpassword" id="repeatpassword" aria-required="true" required>
+
+
+                        <button role="button" class="menu__button" type="submit">cadastrar</button>
+
+                    </form>
+                </div>
+
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+
+    <!--Bootstrap-->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="/scripts/menu_mobile.js"></script>
+
+</body>
+</html>

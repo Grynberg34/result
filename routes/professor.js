@@ -7,7 +7,11 @@ function checkAuthentication(req,res,next){
       res.redirect('/admin')
     }
   
-    else if (req.user.tipo_conta == 'user') {
+    else if (req.user.tipo_conta == 'aluno') {
+      res.redirect('/aluno')
+    }
+
+    else if (req.user.tipo_conta == 'professor') {
       next()
     }
   }
@@ -18,17 +22,17 @@ function checkAuthentication(req,res,next){
 
 router.get('/', checkAuthentication, function(req, res) {
   var user_id = req.user.id
-  res.redirect(`/user/${user_id}`)
+  res.redirect(`/professor/${user_id}`)
  });
  
- router.get('/:id', checkAuthentication, function(req, res) {
-   var id = req.params.id
-   var user_id = req.user.id
-   if(user_id == id) {
-     res.render('user', {user_id})
-    }
-   else res.redirect('/')
- });
+router.get('/:id', checkAuthentication, function(req, res) {
+  var id = req.params.id
+  var user_id = req.user.id
+  if(user_id == id) {
+    res.render('professor', {user_id})
+  }
+  else res.redirect('/')
+});
 
 
 module.exports = router;

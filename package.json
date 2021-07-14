@@ -17,14 +17,14 @@
     "express-session": "^1.17.1",
     "hbs": "^4.1.1",
     "http-errors": "~1.6.3",
-    "mercadopago": "^1.5.2",
-    "mysql": "^2.18.1",
-    "mysql-express-session": "^0.5.2",
+    "mysql2": "^2.2.5",
     "nodemailer": "^6.4.14",
     "nodemailer-smtp-transport": "^2.7.4",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "sass": "^1.32.4",
+    "sequelize": "^5.3.5",
+    "sequelize-cli": "^6.2.0",
     "uuid": "^8.3.1"
   },
   "devDependencies": {}
