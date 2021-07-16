@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="/stylesheets/cadastro.css">
+    <link rel="stylesheet" href="/stylesheets/redefinir.css">
     <link rel="stylesheet" href="/icons/font/flaticon.css">
     <link rel="stylesheet" href="https://use.typekit.net/gvd0wuw.css">
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
-    <title>Result - English in the family | Register</title>
+    <title>Result - English in the family | Login</title>
 </head>
 <body>
 
@@ -18,7 +18,7 @@
             <a href="/"><img class="navbar__logo" src="/images/logo.png" alt=""></a>
         </div>
         <div class="col-md-2 navbar__col" id="cadastro">
-            <a href="/cadastro" class="navbar__link active">REGISTER</a>
+            <a href="/cadastro" class="navbar__link">REGISTER</a>
         </div>
         <div class="col-md-2 navbar__col" id="login">
             <a href="/login" class="navbar__link">LOGIN</a>
@@ -37,17 +37,17 @@
         <div class="col-md-2 col-6 navbar__col">
             <div class="dropdown">
                 <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img src="/images/en.png" alt="">
+                    <img src="/images/pt.png" alt="">
                 </button>
                 <div class="dropdown-menu order-1" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="/cadastro/pt"><img src="/images/pt.png" alt=""></a>
+                    <a class="dropdown-item" href="/"><img src="/images/en.png" alt=""></a>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="mobile__menu">
-        <a class="mobile__menu__link" href="/cadastro">REGISTER</a>
+        <a class="mobile__menu__link" href="/cadastro">CADASTRO</a>
         <a class="mobile__menu__link" href="/login">LOGIN</a>
     </div>
 
@@ -58,27 +58,25 @@
             <div class="col-md-4">
 
                 <div class="menu" role="menu">
-                    <form action="/cadastro" method="post">
+                    <form action="/redefinir/mudar" method="post">
 
-                        <h3 class="menu__msg">{{passdontmatch}}{{userexists}}{{whitespace}}{{invalidcode}}</h3>
+                        <h1 class="menu__title">Código enviado!</h1>
 
-                        <label class="menu__label" for="name"><b>Full name</b></label>
-                        <input class="menu__input" type="text" placeholder="Insert name" name="name" id="name" aria-required="true" required>
+                        <h3 class="menu__msg">{{message}}{{message2}}</h3>
 
-                        <label class="menu__label" for="email"><b>Email</b></label>
-                        <input class="menu__input" type="email" placeholder="Insert your name" name="email" id="email" aria-required="true" required>
+                        <label class="menu__label" for="code"><b>Código</b></label>
 
-                        <label class="menu__label" for="code"><b>Register code</b></label>
-                        <input class="menu__input" type="text" placeholder="Insert code" name="code" id="code" aria-required="true" required>
+                        <input class="menu__input" type="text" placeholder="Inserir código" name="code" id="code" required>
 
-                        <label class="menu__label" for="password"><b>Password</b></label>
-                        <input class="menu__input" type="password" placeholder="Insert password" name="password" id="password" minlength="8" aria-required="true" required>
+                        <label class="menu__label" for="password"><b>Nova senha</b></label>
 
-                        <label class="menu__label" for="repeatpassword"><b>Repeat password</b></label>
-                        <input class="menu__input" type="password" placeholder="Repeat password" name="repeatpassword" id="repeatpassword" aria-required="true" required>
+                        <input class="menu__input" type="password" placeholder="Inserir nova senha" name="password" id="password" minlength="8" required>
 
+                        <label class="menu__label" for="repeatpassword"><b>Repetir senha</b></label>
 
-                        <button role="button" class="menu__button" type="submit">Register</button>
+                        <input class="menu__input" type="password" placeholder="Repetir senha" name="repeatpassword" id="repeatpassword" required>
+
+                        <button class="menu__button" type="submit">Redefinir</button>
 
                     </form>
                 </div>

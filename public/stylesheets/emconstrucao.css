@@ -10,4 +10,16 @@ h1 {
   color: #d9d7d7;
 }
 
+a {
+  display: block;
+  font-size: 20px;
+  text-align: center;
+  color: #f2780b;
+  margin-top: 4vh;
+}
+a:hover {
+  text-decoration: none;
+  color: #d9d7d7;
+}
+
 /*# sourceMappingURL=emconstrucao.css.map */

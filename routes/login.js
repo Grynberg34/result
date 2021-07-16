@@ -25,6 +25,28 @@ router.get('/', checkAuthentication, function(req, res) {
   res.render('login',  { message: req.flash('message') })
 });
 
-router.post('/', passport.authenticate('users',{successRedirect:'/aluno', failureRedirect: '/login', failureFlash: true }));
+router.get('/pt', checkAuthentication, function(req, res) {
+  res.render('login-pt',  { message: req.flash('message') })
+});
+
+router.post('/', function(req,res,next) {
+
+  passport.authenticate('users', function(err, user,info){
+    if (!user) {
+      req.session.save(
+        function() {
+          return res.redirect('/login')
+        }
+      )
+    }
+    else if (user) {
+      req.logIn(user, function(err) {
+        if (err) { return next(err); }
+        return res.redirect('/aluno');
+      });
+    }
+  })(req,res,next)
+
+});
 
 module.exports = router;

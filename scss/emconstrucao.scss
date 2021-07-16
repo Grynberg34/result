@@ -11,3 +11,16 @@ h1 {
     margin-top: 40vh;
     color: $cinza-claro;
 }
+
+a {
+    display: block;
+    font-size: 20px;
+    text-align: center;
+    color: $laranja;
+    margin-top: 4vh;
+
+    &:hover {
+        text-decoration: none;
+        color: $cinza-claro;
+    }
+}

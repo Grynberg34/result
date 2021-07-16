@@ -8,11 +8,14 @@ const bcrypt = require('bcrypt');
 const session = require('express-session');
 const flash = require('connect-flash');
 const connection = require('./config/database');
+const User = require('./models/User');
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 const indexRouter = require('./routes/index');
 const cadastroRouter = require('./routes/cadastro');
 const loginRouter = require('./routes/login');
 const logoutRouter = require('./routes/logout');
+const redefinirRouter = require('./routes/redefinir');
 const alunoRouter = require('./routes/aluno');
 const professorRouter = require('./routes/professor');
 const adminRouter = require('./routes/admin');
@@ -36,17 +39,23 @@ app.use((req, res, next) => {
   next();
 });
 
+//Cookie store
+var sessionStore = new SequelizeStore({
+  db: connection,
+});
 
 //Passport configs
 app.use(session({
   key: 'session_cookie_name',
-  secret: 'session_cookie_secret',
+  secret: 'englishtest',
+  store: sessionStore,
   resave: false,
   saveUninitialized: false,
   cookie : {
     maxAge: 1000* 60 * 60 *24 * 365
   },
 }));
+
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
@@ -58,36 +67,41 @@ passport.serializeUser(function(user, done) {
   });
 });
 
-passport.deserializeUser(function(user, done) {
-  connection.query(`select * from users where id = `+user.id,function(err,rows){	
-    done(err, rows[0]);
-  });
+passport.deserializeUser((user, done) => {
+  User.findByPk(user.id).then((user) => {
+    done(null, user);
+  }).catch(done);
 });
-
 
 // Local Strategy
 passport.use('users', new LocalStrategy({
   usernameField: 'email',
   passReqToCallback: true,
 },
-function(req, username, password, done) {
-  let sql = 'SELECT * FROM users WHERE email = ?';
-  connection.query(sql, [username], function(err, rows) {
-    if (err)
-      return done(err);
-    if (!rows.length) {
-      return done(null, false, req.flash('message', 'email inválido'));
+function(req, email, password, done) {
+
+  User.findOne({
+    where: {
+      email: email
     }
-    bcrypt.compare(password, rows[0].hashedpassword, function(err, isMatch) {
+  }).then(function(user) {
+    if (user == null) {
+      
+      return done(null, false, req.flash('message', 'Email inválido.'));
+    }
+
+    bcrypt.compare(password, user.password, function(err, isMatch) {
       if(err)
         return done(err);
       if(isMatch){
-        return done(null, rows[0]);
+        return done(null, user);
       } else {
-        return done(null, false, req.flash('message', 'senha inválida'));
+        return done(null, false, req.flash('message', 'Senha inválida.'));
       }
     });
-  });
+
+
+  })
 }));
 
 
@@ -96,6 +110,7 @@ app.use('/', indexRouter);
 app.use('/cadastro', cadastroRouter);
 app.use('/login', loginRouter);
 app.use('/logout', logoutRouter);
+app.use('/redefinir', redefinirRouter);
 app.use('/aluno', alunoRouter);
 app.use('/professor', professorRouter);
 app.use('/admin', adminRouter);

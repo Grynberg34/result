@@ -430,11 +430,6 @@ body {
     }
 }
 
-#mobile {
-    display: none;
-}
-
-
 @media only screen and (max-width: 767px) {
 
     .navbar {
@@ -468,11 +463,6 @@ body {
     #cadastro, #login {
         display: none;
     }
-
-    #mobile {
-        display: block;
-    }
-
 
     .quemsomos {
 

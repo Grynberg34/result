@@ -224,6 +224,10 @@ nav {
   height: auto;
 }
 
+#mobile {
+  display: none;
+}
+
 input[type=checkbox] {
   opacity: 0;
   visibility: hidden;
@@ -328,6 +332,11 @@ input[type=checkbox]:checked ~ .nav-links li {
   text-decoration: none;
 }
 
+@media only screen and (max-width: 767px) {
+  #mobile {
+    display: block;
+  }
+}
 body {
   font-family: "work-sans", sans-serif;
   background-color: #000000;
@@ -693,10 +702,6 @@ body {
   margin-bottom: 4vh;
 }
 
-#mobile {
-  display: none;
-}
-
 @media only screen and (max-width: 767px) {
   .navbar {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 92%);
@@ -721,10 +726,6 @@ body {
 
   #cadastro, #login {
     display: none;
-  }
-
-  #mobile {
-    display: block;
   }
 
   .quemsomos {

@@ -1,5 +1,5 @@
 const express = require('express');
-const cadastroController = require('../controllers/cadastroController');
+const redefinirController = require('../controllers/redefinirController');
 const router = express.Router();
 
 function checkAuthentication(req,res,next){
@@ -21,14 +21,12 @@ function checkAuthentication(req,res,next){
   }
 }
 
-router.get('/', function(_, res) {
-  res.render('cadastro')
+router.get('/', checkAuthentication, function(req, res) {
+  res.render('redefinir')
 });
 
-router.get('/pt', function(_, res) {
-  res.render('cadastro-pt')
-});
+router.post('/', checkAuthentication, redefinirController.pedirRefinicaoSenha);
 
-router.post('/', checkAuthentication, cadastroController.cadastrar);
+router.post('/mudar', checkAuthentication, redefinirController.mudarSenha);
 
 module.exports = router;

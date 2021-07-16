@@ -362,7 +362,7 @@ body {
 }
 .menu .menu__title {
   display: block;
-  font-size: 30px;
+  font-size: 24px;
   color: #f2780b;
   font-weight: 600;
   text-align: center;
@@ -412,7 +412,7 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 4vh;
+  margin-top: 8vh;
   margin-bottom: 2vh;
   color: #000000;
   background: #f2780b;
@@ -429,4 +429,4 @@ body {
   border: none;
 }
 
-/*# sourceMappingURL=login.css.map */
+/*# sourceMappingURL=redefinir.css.map */

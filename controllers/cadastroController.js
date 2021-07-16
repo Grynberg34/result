@@ -29,6 +29,7 @@ module.exports= {
                     try {
                         var user =  await User.create({ nome: name, email: email, password: hashed, tipo_conta: 'aluno' });
                         console.log(user);
+                        res.redirect('/login');
                     }
                     catch(err){
                         console.log(err)
@@ -39,6 +40,4 @@ module.exports= {
         }
         else res.render('cadastro', {passdontmatch})
     }
-    
-
 }

@@ -37,17 +37,17 @@
         <div class="col-md-2 col-6 navbar__col">
             <div class="dropdown">
                 <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img src="/images/pt.png" alt="">
+                    <img src="/images/en.png" alt="">
                 </button>
                 <div class="dropdown-menu order-1" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="/"><img src="/images/en.png" alt=""></a>
+                    <a class="dropdown-item" href="/login/pt"><img src="/images/pt.png" alt=""></a>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="mobile__menu">
-        <a class="mobile__menu__link" href="/cadastro">CADASTRO</a>
+        <a class="mobile__menu__link" href="/cadastro">REGISTER</a>
         <a class="mobile__menu__link" href="/login">LOGIN</a>
     </div>
 
@@ -60,25 +60,17 @@
                 <div class="menu" role="menu">
                     <form action="/login" method="post">
 
-                        <h3 class="menu__msg">{{passdontmatch}}{{userexists}}{{whitespace}}{{invalidcode}}</h3>
+                        <h3 class="menu__msg">{{message}}</h3>
 
-                        <label class="menu__label" for="name"><b>nome completo</b></label>
-                        <input class="menu__input" type="text" name="name" id="name" aria-required="true" required>
+                        <label class="menu__label" for="email"><b>Email</b></label>
+                        <input class="menu__input" type="email" placeholder="Insira seu email" name="email" id="email" aria-required="true" required>
 
-                        <label class="menu__label" for="email"><b>email</b></label>
-                        <input class="menu__input" type="email" name="email" id="email" aria-required="true" required>
-
-                        <label class="menu__label" for="code"><b>código de cadastro</b></label>
-                        <input class="menu__input" type="text" placeholder="Insira o código" name="code" id="code" aria-required="true" required>
-
-                        <label class="menu__label" for="password"><b>senha</b></label>
+                        <label class="menu__label" for="password"><b>Password</b></label>
                         <input class="menu__input" type="password" placeholder="Insira a senha" name="password" id="password" minlength="8" aria-required="true" required>
 
-                        <label class="menu__label" for="repeatpassword"><b>repetir senha</b></label>
-                        <input class="menu__input" type="password" placeholder="Repetir a senha" name="repeatpassword" id="repeatpassword" aria-required="true" required>
+                        <a href="/redefinir" class="menu__link">Forgot your password?</a>
 
-
-                        <button role="button" class="menu__button" type="submit">cadastrar</button>
+                        <button role="button" class="menu__button" type="submit">Register</button>
 
                     </form>
                 </div>

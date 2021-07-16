@@ -50,13 +50,22 @@ body {
         margin-bottom: 2vh;
         font-size: 12px;
         text-align: center;
-        width: 50%;
+        width: 70%;
         clip-path: polygon(9% 1%, 100% 0, 91% 99%, 0% 100%);
 
         &:focus {
             outline: none;
         }
         
+    }
+
+    .menu__msg {
+        display: block;
+        font-size: 14px;
+        color: $cinza-claro;
+        font-weight: 400;
+        text-align: center;
+        margin-bottom: 4vh;
     }
 
     .menu__button {
@@ -70,10 +79,15 @@ body {
         border: none;
         clip-path: polygon(9% 1%, 100% 0, 91% 99%, 0% 100%);
         padding: 10px;
-        width: 50%;
+        width: 70%;
 
         &:hover {
             background-color: $cinza-claro;
+        }
+
+        &:focus {
+            outline: none;
+            border: none;
         }
     }
 }
