@@ -19,6 +19,15 @@ const User = connection.define('User', {
       unique: true,
       allowNull: false,
     },
+    telefone: { 
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    data_nascimento: { 
+      type: DataTypes.STRING,
+      unique: true,
+      allowNull: false,
+    },
     password: {
       type: DataTypes.STRING,
       allowNull: false

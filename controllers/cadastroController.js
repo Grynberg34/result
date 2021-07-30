@@ -8,6 +8,8 @@ module.exports= {
         var name = req.body.name;
         var email = req.body.email;
         var code = req.body.code;
+        var tel = req.body.tel;
+        var birthday = req.body.birthday;
         var password = req.body.password;
         var repeat = req.body.repeatpassword;
         var userexists = "Esse email ou nome já foi utilizado por outro usuário.";
@@ -27,7 +29,7 @@ module.exports= {
                 else if (count > 0) {
                     var hashed = bcrypt.hashSync(password, 10);
                     try {
-                        var user =  await User.create({ nome: name, email: email, password: hashed, tipo_conta: 'aluno' });
+                        var user =  await User.create({ nome: name, email: email, telefone: tel, data_nascimento: birthday, password: hashed, tipo_conta: 'aluno' });
                         console.log(user);
                         res.redirect('/login');
                     }
