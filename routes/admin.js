@@ -57,6 +57,8 @@ router.get('/materiais', checkAuthentication, adminController.mostrarMenuMateria
 
 router.get('/materiais/nivel/:id', checkAuthentication, adminController.mostrarMateriaisPorNivel);
 
+router.post('/materiais/nivel/:id', checkAuthentication, adminController.removerMaterial);
+
 router.get('/materiais/adicionar', checkAuthentication, function(req, res) {
   res.render('admin-materiais-adicionar');
 });

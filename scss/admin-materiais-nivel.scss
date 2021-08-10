@@ -47,7 +47,7 @@ body {
         }
 
         .materiais__material__link {
-            display: block;
+            display: inline-block;
             text-align: center;
             font-size: 16px;
             color: $laranja;
@@ -59,8 +59,21 @@ body {
                 text-decoration: none;
             }
         }
+
+        .materiais__material__icon {
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 14px;
+            color: $cinza-claro;
+            text-align: center;
+            cursor: pointer;
+        }
     }
 
+}
+
+#form {
+    display: none;
 }
 
 

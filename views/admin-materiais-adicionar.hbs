@@ -21,7 +21,7 @@
 
                 <h1 class="menu__title">ADICIONAR MATERIAL</h1>
 
-                <form id="form" class="menu__form" method="POST">
+                <form id="form" class="menu__form" method="POST" enctype="multipart/form-data">
 
                     <label class="menu__label" for="nome"><b>Nome</b></label>
                     <input class="menu__input" type="text" placeholder="Nome do Material" name="nome" id="nome" aria-required="true" required>
@@ -37,7 +37,7 @@
 
                 </form>
 
-                <a href="/admin/turmas/ver/{{turma.id}}" class="menu__link">VOLTAR</a>
+                <a href="/admin/materiais" class="menu__link">VOLTAR</a>
             </div>
         </div>
     </div>

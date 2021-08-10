@@ -41,7 +41,7 @@ body {
   border-top: none;
 }
 .materiais .materiais__material .materiais__material__link {
-  display: block;
+  display: inline-block;
   text-align: center;
   font-size: 16px;
   color: #f2780b;
@@ -51,6 +51,18 @@ body {
 .materiais .materiais__material .materiais__material__link:hover {
   color: #d9d7d7;
   text-decoration: none;
+}
+.materiais .materiais__material .materiais__material__icon {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 14px;
+  color: #d9d7d7;
+  text-align: center;
+  cursor: pointer;
+}
+
+#form {
+  display: none;
 }
 
 @media only screen and (max-width: 767px) {

@@ -191,11 +191,25 @@ module.exports = {
     adicionarMaterial: async function (req,res) {
         var nome = req.body.nome;
         var nivel = req.body.nivel;
-        console.log(nome)
-        console.log(nivel)
-        console.log(req.file)
+        var link = `/materiais/${req.file.filename}`;
+
+        await Material.create({
+            nome: nome,
+            nivel: nivel,
+            link: link
+        })
 
         res.redirect('/admin/materiais');
+    },
+
+    removerMaterial: async function (req,res) {
+        var material = req.body.material;
+        var id = req.params.id;
+
+        await Material.destroy({where: {id : material}})
+        .then(function(){
+            res.redirect(`/admin/materiais/nivel/${id}`);
+        });
     }
 
 }
