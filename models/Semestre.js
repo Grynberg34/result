@@ -19,6 +19,11 @@ const Semestre = connection.define('Semestre', {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    link_aulas: { 
+      type: DataTypes.STRING,
+      allowNull: true,
+      defaultValue: null
+    },
     concluido: { 
       type: DataTypes.BOOLEAN,
       allowNull: false,

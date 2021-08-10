@@ -53,6 +53,8 @@ router.get('/turmas/ver/:id/semestres/:sid', checkAuthentication, adminControlle
 
 router.post('/turmas/ver/:id/semestres/:sid', checkAuthentication, adminController.concluirSemestre);
 
+router.post('/turmas/ver/:id/semestres/:sid/alterar-link', checkAuthentication, adminController.alterarLinkSemestre);
+
 router.get('/materiais', checkAuthentication, adminController.mostrarMenuMateriais);
 
 router.get('/materiais/nivel/:id', checkAuthentication, adminController.mostrarMateriaisPorNivel);

@@ -75,6 +75,7 @@ body {
 .menu .menu__link {
   display: block;
   margin-top: 6vh;
+  margin-bottom: 12vh;
   text-align: center;
   color: #d9d7d7;
   font-size: 14px;

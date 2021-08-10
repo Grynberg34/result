@@ -70,9 +70,34 @@ body {
 .menu .menu__button:hover {
   background-color: #d9d7d7;
 }
+.menu .menu__icon {
+  font-size: 16px;
+  color: #f2780b;
+  cursor: pointer;
+  margin-left: 5px;
+}
+.menu .menu__info__input {
+  width: 70%;
+  font-size: 12px;
+}
+
+#submit {
+  display: inline;
+  border: none;
+  background: none;
+  padding: 0;
+}
+#submit:focus {
+  outline: none;
+  border: none;
+}
 
 .laranja {
   color: #f2780b;
+}
+
+#link {
+  display: inline-block;
 }
 
 @media only screen and (max-width: 767px) {

@@ -131,9 +131,10 @@ module.exports = {
         var id = req.params.id;
         var data = req.body.data;
         var nivel = req.body.nivel;
+        var link = req.body.link;
         var professor = req.body.professores;
 
-        await Semestre.create({data: data, nivel: nivel, professorId: professor, turmaId: id}).then(function(){
+        await Semestre.create({data: data, nivel: nivel, link_aulas: link, professorId: professor, turmaId: id}).then(function(){
             res.redirect(`/admin/turmas/ver/${id}`);
         })
     },
@@ -156,14 +157,29 @@ module.exports = {
         var semestre = req.body.semestre;
         var id = req.params.id;
 
-        console.log(semestre);
-
         Semestre.update(
             { concluido: true },
             { where: { id: semestre } }
         )
         .then(function(){
             res.redirect(`/admin/turmas/ver/${id}`);
+        })
+        .catch(function(err){
+            console.log(err)
+        })
+    },
+
+    alterarLinkSemestre: async function (req,res) {
+        var link = req.body.link;
+        var id_semestre = req.params.sid;
+        var id = req.params.id;
+
+        Semestre.update(
+            { link_aulas: link },
+            { where: { id: id_semestre } }
+        )
+        .then(function(){
+            res.redirect(`/admin/turmas/ver/${id}/semestres/${id_semestre}`);
         })
         .catch(function(err){
             console.log(err)

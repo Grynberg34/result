@@ -2,11 +2,11 @@ $flaticon-font: "flaticon";
 
 @font-face {
     font-family: $flaticon-font;
-    src: url("./flaticon.ttf?0985267469e07290feab8810c1d6c510") format("truetype"),
-url("./flaticon.woff?0985267469e07290feab8810c1d6c510") format("woff"),
-url("./flaticon.woff2?0985267469e07290feab8810c1d6c510") format("woff2"),
-url("./flaticon.eot?0985267469e07290feab8810c1d6c510#iefix") format("embedded-opentype"),
-url("./flaticon.svg?0985267469e07290feab8810c1d6c510#flaticon") format("svg");
+    src: url("./flaticon.ttf?d0d413073cf7149c47d2b46487b2db02") format("truetype"),
+url("./flaticon.woff?d0d413073cf7149c47d2b46487b2db02") format("woff"),
+url("./flaticon.woff2?d0d413073cf7149c47d2b46487b2db02") format("woff2"),
+url("./flaticon.eot?d0d413073cf7149c47d2b46487b2db02#iefix") format("embedded-opentype"),
+url("./flaticon.svg?d0d413073cf7149c47d2b46487b2db02#flaticon") format("svg");
 }
 
 i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
@@ -30,6 +30,7 @@ $flaticon-map: (
     "ethics": "\f107",
     "edit": "\f108",
     "trash": "\f109",
+    "diskette": "\f10a",
 );
 
 .flaticon-play-button:before {
@@ -58,4 +59,7 @@ $flaticon-map: (
 }
 .flaticon-trash:before {
     content: map-get($flaticon-map, "trash");
+}
+.flaticon-diskette:before {
+    content: map-get($flaticon-map, "diskette");
 }

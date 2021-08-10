@@ -31,6 +31,11 @@
 
                         <h2 class="menu__info"><span class="laranja">Professor:</span> {{semestre.Professor.User.nome}}</h2>
 
+                        <form id="form__link" action="/admin/turmas/ver/{{semestre.Turma.id}}/semestres/{{semestre.id}}/alterar-link" method="POST">
+                            <h2 id="link" class="menu__info"><span class="laranja">Link:</span></h2> <input class="menu__info__input" name="link" value="{{semestre.link_aulas}}" type="text">
+                            <button id="submit" type="submit"><i class="flaticon-diskette menu__icon"></i></button>
+                        </form>
+
                         {{#if semestre.concluido}}
                         <h2 class="menu__info"><span class="laranja">Concluído:</span> Sim</h2>
                         {{else}}
