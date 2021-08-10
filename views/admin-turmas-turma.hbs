@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/admin-turmas-turma.css">
+    <link rel="stylesheet" href="/icons/font/flaticon.css">
+    <link rel="stylesheet" href="https://use.typekit.net/gvd0wuw.css">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <title>Result - English in the family | Admin</title>
+</head>
+<body>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6 menu">
+
+                <h1 class="menu__title">{{turma.nome}}</h1>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="semestres">
+                            <div class="semestres__atual">
+                                <h2 class="semestres__atual__title">Semestre atual</h2>
+
+                                {{#each atual}}
+                                    <a class="semestres__atual__link" href="/admin/turmas/ver/{{../turma.id}}/semestres/{{this.id}}">{{this.data}}</a>
+                                {{/each}}
+
+                            </div>
+
+                            <div class="semestres__concluidos">
+                                <h2 class="semestres__concluidos__title">Semestres concluídos</h2>
+
+                                {{#each concluidos}}
+                                    <a class="semestres__concluidos__link" href="/admin/turmas/ver/{{../turma.id}}/semestres/{{this.id}}">{{this.data}}</a>
+                                {{/each}}
+
+                            </div>
+
+                            <a class="semestres__link" href="/admin/turmas/ver/{{turma.id}}/criar-semestre">CRIAR SEMESTRE</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 alunos">
+                        <h2 class="alunos__title">Alunos</h2>
+                        <ul class="alunos__lista">
+                            {{#each alunos}} 
+                                <li class="alunos__lista__aluno">{{this.User.nome}}</li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+
+                <a href="/admin/turmas/" class="menu__link">VOLTAR</a>
+            </div>
+        </div>
+    </div>
+
+    <!--Bootstrap-->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

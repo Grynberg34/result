@@ -1,0 +1,153 @@
+@import 'colors.scss';
+
+body {
+    font-family: 'work-sans', sans-serif;
+    background-color: $preto;
+    background-image: url('/images/fundo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.menu {
+    margin-top: 30vh;
+
+    .menu__title {
+        font-size: 20px;
+        color: $cinza-claro;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .menu__link {
+        display: block;
+        margin-top: 6vh;
+        margin-bottom: 12vh;
+        text-align: center;
+        color: $cinza-claro;
+        font-size: 14px;
+
+        &:hover {
+            text-decoration: none;
+            color: $laranja;
+        }
+    }
+}
+
+.alunos {
+    border-left: 2px solid $cinza-claro;
+    padding-left: 20px;
+
+    .alunos__title {
+        font-size: 20px;
+        color: $laranja;
+        font-weight: 600;
+        margin-bottom: 4vh;
+    }
+
+    .alunos__lista {
+        padding-left: 0;
+        list-style: none;
+
+        .alunos__lista__aluno {
+            font-size: 14px;
+            color: $cinza-claro;
+            margin-bottom: 2vh;
+        }
+    }
+}
+
+.semestres {
+    .semestres__atual {
+
+        border-bottom: 2px solid $cinza-claro;
+        padding-bottom: 4vh;
+
+        .semestres__atual__title {
+            font-size: 16px;
+            color: $laranja;
+            font-weight: 600;
+            margin-bottom: 4vh;
+        }
+
+        .semestres__atual__link {
+            display: block;
+            font-size: 14px;
+            color: $cinza-claro;
+            margin-bottom: 2vh;
+
+            &:hover {
+                color: $laranja;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .semestres__concluidos {
+
+        border-bottom: 2px solid $cinza-claro;
+        padding-bottom: 4vh;
+
+        .semestres__concluidos__title {
+            font-size: 16px;
+            color: $laranja;
+            font-weight: 600;
+            margin-bottom: 4vh;
+            margin-top: 2vh;
+        }
+
+        .semestres__concluidos__link {
+            display: block;
+            font-size: 14px;
+            color: $cinza-claro;
+            margin-bottom: 2vh;
+
+            &:hover {
+                color: $laranja;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .semestres__link {
+        display: block;
+        font-size: 12px;
+        background-color: $laranja;
+        padding: 10px;
+        color: $preto;
+        font-weight: 700;
+        margin-top: 4vh;
+        width: 50%;
+
+        &:hover {
+            background-color: $cinza-claro;
+            text-decoration: none;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 767px) {
+
+    .menu {
+        .menu__row {
+            margin-left: 5vw;
+            margin-right: 5vw;
+            margin-bottom: 2vh;
+
+            .menu__row__col {
+                &:hover {
+                    background-color: $laranja;
+                }
+            }
+        }
+    }
+
+    .menu__link {
+        &:hover {
+            color: $cinza-claro;
+        }
+    }
+
+}

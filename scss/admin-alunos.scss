@@ -1,0 +1,253 @@
+@import 'colors.scss';
+
+body {
+    font-family: 'work-sans', sans-serif;
+    background-color: $preto;
+    background-image: url('/images/fundo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.menu {
+    margin-top: 20vh;
+
+    .menu__title {
+        font-size: 20px;
+        color: $cinza-claro;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .menu__table {
+
+        border-bottom: 2px solid $cinza-claro;
+        padding-top: 4vh;
+
+        .menu__table__head {
+            font-size: 14px;
+            color: $laranja;
+            font-weight: 700;
+            margin-bottom: 4vh;
+        }
+
+        .menu__table__data {
+            font-size: 11px;
+            color: $cinza-claro;
+            font-weight: 500;
+            margin-bottom: 4vh;
+
+            .menu__table__data__icon {
+                margin-left: 10px;
+                font-size: 14px;
+                color: $laranja;
+                text-align: center;
+                cursor: pointer;
+
+                &:hover {
+                    color: $cinza-claro;
+                }
+            }
+
+            .delete__icon {
+                display: block;
+                text-align: center;
+                margin-left: 0;
+            }
+            
+        }
+
+    }
+
+    .menu__link {
+        display: block;
+        margin-top: 2vh;
+        margin-bottom: 6vh;
+        text-align: center;
+        color: $cinza-claro;
+        font-size: 14px;
+
+        &:first-of-type {
+            margin-top: 8vh;
+        }
+
+        &:hover {
+            text-decoration: none;
+            color: $laranja;
+        }
+    }
+}
+
+.edit {
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25vh;
+
+    .edit__input {
+        display: none;
+    }
+
+    .edit__label {
+        display: block;
+        font-size: 20px;
+        color: $laranja;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .edit__aluno {
+        font-size: 14px;
+        color: $cinza-claro;
+        text-align: center;
+        margin-bottom: 4vh;
+        margin-top: 4vh;
+    }
+
+    .edit__select {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 15vw;
+        text-align: center;
+
+    }
+
+    .edit__button {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: $laranja;
+        color: $preto;
+        font-size: 14px;
+        font-weight: 700;
+        margin-top: 4vh;
+        margin-bottom: 4vh;
+        border: none;
+        width: 15vw;
+
+        &:hover {
+            background-color: $cinza-claro;
+        }
+
+        &:focus {
+            border: none;
+            outline: none;
+        }
+    }
+}
+
+.delete {
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25vh;
+
+    .delete__input {
+        display: none;
+    }
+
+    .delete__label {
+        display: block;
+        font-size: 20px;
+        color: $laranja;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .delete__aluno {
+        font-size: 14px;
+        color: $cinza-claro;
+        text-align: center;
+        margin-bottom: 4vh;
+        margin-top: 4vh;
+    }
+
+    .delete__select {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 15vw;
+        text-align: center;
+
+    }
+
+    .delete__button {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: $laranja;
+        color: $preto;
+        font-size: 14px;
+        font-weight: 700;
+        margin-top: 4vh;
+        margin-bottom: 4vh;
+        border: none;
+        width: 15vw;
+
+        &:hover {
+            background-color: $cinza-claro;
+        }
+
+        &:focus {
+            border: none;
+            outline: none;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 767px) {
+
+    .menu {
+        .menu__row {
+            margin-left: 5vw;
+            margin-right: 5vw;
+            margin-bottom: 2vh;
+
+            .menu__row__col {
+                &:hover {
+                    background-color: $laranja;
+                }
+            }
+        }
+
+        .menu__link {
+            &:hover {
+                color: $cinza-claro;
+            }
+        }
+    }
+
+    .edit {
+
+        .edit__select {
+            width: 50vw;
+        }
+
+        .edit__button {
+            width: 50vw;
+        }
+
+    }
+
+    .delete {
+
+        .delete__input {
+            width: 50vw;
+        }
+
+        .delete__button {
+            width: 50vw;
+        }
+    }
+
+
+    #head {
+        display: none;
+    }
+
+
+
+}

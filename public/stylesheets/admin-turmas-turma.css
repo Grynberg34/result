@@ -1,0 +1,124 @@
+body {
+  font-family: "work-sans", sans-serif;
+  background-color: #000000;
+  background-image: url("/images/fundo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.menu {
+  margin-top: 30vh;
+}
+.menu .menu__title {
+  font-size: 20px;
+  color: #d9d7d7;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.menu .menu__link {
+  display: block;
+  margin-top: 6vh;
+  margin-bottom: 12vh;
+  text-align: center;
+  color: #d9d7d7;
+  font-size: 14px;
+}
+.menu .menu__link:hover {
+  text-decoration: none;
+  color: #f2780b;
+}
+
+.alunos {
+  border-left: 2px solid #d9d7d7;
+  padding-left: 20px;
+}
+.alunos .alunos__title {
+  font-size: 20px;
+  color: #f2780b;
+  font-weight: 600;
+  margin-bottom: 4vh;
+}
+.alunos .alunos__lista {
+  padding-left: 0;
+  list-style: none;
+}
+.alunos .alunos__lista .alunos__lista__aluno {
+  font-size: 14px;
+  color: #d9d7d7;
+  margin-bottom: 2vh;
+}
+
+.semestres .semestres__atual {
+  border-bottom: 2px solid #d9d7d7;
+  padding-bottom: 4vh;
+}
+.semestres .semestres__atual .semestres__atual__title {
+  font-size: 16px;
+  color: #f2780b;
+  font-weight: 600;
+  margin-bottom: 4vh;
+}
+.semestres .semestres__atual .semestres__atual__link {
+  display: block;
+  font-size: 14px;
+  color: #d9d7d7;
+  margin-bottom: 2vh;
+}
+.semestres .semestres__atual .semestres__atual__link:hover {
+  color: #f2780b;
+  text-decoration: none;
+}
+.semestres .semestres__concluidos {
+  border-bottom: 2px solid #d9d7d7;
+  padding-bottom: 4vh;
+}
+.semestres .semestres__concluidos .semestres__concluidos__title {
+  font-size: 16px;
+  color: #f2780b;
+  font-weight: 600;
+  margin-bottom: 4vh;
+  margin-top: 2vh;
+}
+.semestres .semestres__concluidos .semestres__concluidos__link {
+  display: block;
+  font-size: 14px;
+  color: #d9d7d7;
+  margin-bottom: 2vh;
+}
+.semestres .semestres__concluidos .semestres__concluidos__link:hover {
+  color: #f2780b;
+  text-decoration: none;
+}
+.semestres .semestres__link {
+  display: block;
+  font-size: 12px;
+  background-color: #f2780b;
+  padding: 10px;
+  color: #000000;
+  font-weight: 700;
+  margin-top: 4vh;
+  width: 50%;
+}
+.semestres .semestres__link:hover {
+  background-color: #d9d7d7;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 767px) {
+  .menu .menu__row {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-bottom: 2vh;
+  }
+  .menu .menu__row .menu__row__col:hover {
+    background-color: #f2780b;
+  }
+
+  .menu__link:hover {
+    color: #d9d7d7;
+  }
+}
+
+/*# sourceMappingURL=admin-turmas-turma.css.map */

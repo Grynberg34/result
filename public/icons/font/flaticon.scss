@@ -2,11 +2,11 @@ $flaticon-font: "flaticon";
 
 @font-face {
     font-family: $flaticon-font;
-    src: url("./flaticon.ttf?dec42438a508f845850296431589d443") format("truetype"),
-url("./flaticon.woff?dec42438a508f845850296431589d443") format("woff"),
-url("./flaticon.woff2?dec42438a508f845850296431589d443") format("woff2"),
-url("./flaticon.eot?dec42438a508f845850296431589d443#iefix") format("embedded-opentype"),
-url("./flaticon.svg?dec42438a508f845850296431589d443#flaticon") format("svg");
+    src: url("./flaticon.ttf?0985267469e07290feab8810c1d6c510") format("truetype"),
+url("./flaticon.woff?0985267469e07290feab8810c1d6c510") format("woff"),
+url("./flaticon.woff2?0985267469e07290feab8810c1d6c510") format("woff2"),
+url("./flaticon.eot?0985267469e07290feab8810c1d6c510#iefix") format("embedded-opentype"),
+url("./flaticon.svg?0985267469e07290feab8810c1d6c510#flaticon") format("svg");
 }
 
 i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
@@ -27,8 +27,9 @@ $flaticon-map: (
     "eye": "\f104",
     "info": "\f105",
     "method": "\f106",
-    "mission": "\f107",
-    "ethics": "\f108",
+    "ethics": "\f107",
+    "edit": "\f108",
+    "trash": "\f109",
 );
 
 .flaticon-play-button:before {
@@ -49,9 +50,12 @@ $flaticon-map: (
 .flaticon-method:before {
     content: map-get($flaticon-map, "method");
 }
-.flaticon-mission:before {
-    content: map-get($flaticon-map, "mission");
-}
 .flaticon-ethics:before {
     content: map-get($flaticon-map, "ethics");
+}
+.flaticon-edit:before {
+    content: map-get($flaticon-map, "edit");
+}
+.flaticon-trash:before {
+    content: map-get($flaticon-map, "trash");
 }

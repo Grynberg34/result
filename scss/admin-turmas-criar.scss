@@ -1,0 +1,97 @@
+@import 'colors.scss';
+
+body {
+    font-family: 'work-sans', sans-serif;
+    background-color: $preto;
+    background-image: url('/images/fundo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.menu {
+    margin-top: 30vh;
+
+    .menu__title {
+        font-size: 20px;
+        color: $cinza-claro;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .menu__link {
+        display: block;
+        margin-top: 6vh;
+        text-align: center;
+        color: $cinza-claro;
+        font-size: 14px;
+
+        &:hover {
+            text-decoration: none;
+            color: $laranja;
+        }
+    }
+
+    .menu__label {
+        display: block;
+        font-size: 16px;
+        text-align: center;
+        color: $laranja;
+        margin-top: 2vh;
+        margin-bottom: 4vh;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .menu__input {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    .menu__button {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 14px;
+        font-weight: 800;
+        padding: 10px;
+        margin-top: 4vh;
+        background-color: $laranja;
+        border: none;
+
+        &:hover {
+            background-color: $cinza-claro;
+        }
+    }
+}
+
+#form {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (max-width: 767px) {
+
+    .menu {
+        .menu__row {
+            margin-left: 5vw;
+            margin-right: 5vw;
+            margin-bottom: 2vh;
+
+            .menu__row__col {
+                &:hover {
+                    background-color: $laranja;
+                }
+            }
+        }
+    }
+
+    .menu__link {
+        &:hover {
+            color: $cinza-claro;
+        }
+    }
+
+}

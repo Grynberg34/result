@@ -1,0 +1,84 @@
+body {
+  font-family: "work-sans", sans-serif;
+  background-color: #000000;
+  background-image: url("/images/fundo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.menu {
+  margin-top: 30vh;
+}
+.menu .menu__title {
+  font-size: 20px;
+  color: #d9d7d7;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.menu .menu__info {
+  font-size: 14px;
+  color: #d9d7d7;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.menu .menu__link {
+  display: block;
+  margin-top: 6vh;
+  margin-bottom: 12vh;
+  text-align: center;
+  color: #d9d7d7;
+  font-size: 14px;
+}
+.menu .menu__link:hover {
+  text-decoration: none;
+  color: #f2780b;
+}
+.menu .menu__option {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2vh;
+  color: #000000;
+  background: #f2780b;
+  border: none;
+  padding: 10px;
+  width: 50%;
+  text-align: center;
+  font-weight: 600;
+  font-size: 12px;
+}
+.menu .menu__option:hover {
+  background-color: #d9d7d7;
+  text-decoration: none;
+}
+.menu .menu__input {
+  display: none;
+}
+.menu .menu__button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 10px;
+  margin-top: 6vh;
+  background-color: #f2780b;
+  border: none;
+}
+.menu .menu__button:hover {
+  background-color: #d9d7d7;
+}
+
+.laranja {
+  color: #f2780b;
+}
+
+@media only screen and (max-width: 767px) {
+  .menu__link:hover {
+    color: #d9d7d7;
+  }
+}
+
+/*# sourceMappingURL=admin-semestres-semestre.css.map */

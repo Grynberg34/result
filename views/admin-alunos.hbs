@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/admin-alunos.css">
+    <link rel="stylesheet" href="/icons/font/flaticon.css">
+    <link rel="stylesheet" href="https://use.typekit.net/gvd0wuw.css">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <title>Result - English in the family | Admin</title>
+</head>
+<body>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10 menu">
+                <h1 class="menu__title">ALUNOS</h1>
+
+                <div id="head" class="row menu__table">
+                    <div class="col-md-3 menu__table__head">Nome</div>
+                    <div class="col-md-2 menu__table__head">Email</div>
+                    <div class="col-md-2 menu__table__head">Telefone</div>
+                    <div class="col-md-2 menu__table__head">Data nasc.</div>
+                    <div class="col-md-2 menu__table__head">Turma</div>
+                    <div class="col-md-1 menu__table__head">Deletar</div>
+                </div>
+
+
+                {{#each alunos}}
+
+                <div class="row menu__table">
+                    <div class="col-md-3 menu__table__data {{this.id}}">{{this.User.nome}}</div>
+                    <div class="col-md-2 menu__table__data">{{this.User.email}}</div>
+                    <div class="col-md-2 menu__table__data">{{this.User.telefone}}</div>
+                    <div class="col-md-2 menu__table__data nascimento"><span class="timestamp">{{this.User.data_nascimento}}</span></div>
+                    <div class="col-md-2 menu__table__data">{{this.Turma.nome}} <i id="{{this.id}}" class="flaticon-edit menu__table__data__icon edit__icon"></i></div>
+                    <div class="col-md-1 menu__table__data"><i id="{{this.User.id}}" class="flaticon-trash menu__table__data__icon delete__icon"></i></div>
+                </div>
+
+                {{/each}}
+
+                <a href="/admin" class="menu__link">VOLTAR</a>
+            </div>
+
+            <div class="edit col-md-10">
+                <form id="edit__form" action="/admin/alunos/editar" method="POST">
+
+                    <label class="edit__label" for="turmas">Editar turma</label>
+
+                    <p class="edit__aluno"></p>
+
+                    <input type="text" value="" name="aluno" class="edit__input">
+
+                    <select name="turmas" class="edit__select" id="turmas">
+
+                        <option value="nenhuma">Sem turma</option>
+                        {{#each turmas}}
+                        <option value="{{this.id}}">{{this.nome}}</option>
+                        {{/each}}
+
+                    </select>
+
+                    <button id="editSubmit" class="edit__button" type="button">sim</button>
+                </form>
+                <button id="editReturn" class="edit__button">voltar</button>
+            </div>
+
+
+            <div class="delete">
+                <form id="delete__form" action="/admin/alunos/deletar" method="POST">
+                    <input class="delete__input" type="text" id="del" name="del">
+                    <label class="delete__label">deletar usuário?</label>
+                    <button id="deleteSubmit" class="delete__button" type="button">sim</button>
+                </form>
+                <button id="deleteReturn" class="delete__button">não</button>
+            </div>
+    
+        </div>
+    </div>
+
+    <!--Bootstrap-->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="/scripts/admin-alunos.js"></script>
+
+</body>
+</html>

@@ -1,4 +1,5 @@
 const User = require('../models/User');
+const Aluno = require('../models/Aluno');
 const Code = require('../models/Code');
 const bcrypt = require('bcrypt');
 
@@ -30,7 +31,8 @@ module.exports= {
                     var hashed = bcrypt.hashSync(password, 10);
                     try {
                         var user =  await User.create({ nome: name, email: email, telefone: tel, data_nascimento: birthday, password: hashed, tipo_conta: 'aluno' });
-                        console.log(user);
+                        var aluno = await Aluno.create({userId: user.id});
+                        console.log(aluno);
                         res.redirect('/login');
                     }
                     catch(err){

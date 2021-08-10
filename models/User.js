@@ -21,11 +21,11 @@ const User = connection.define('User', {
     },
     telefone: { 
       type: DataTypes.STRING,
+      unique: true,
       allowNull: false,
     },
     data_nascimento: { 
       type: DataTypes.STRING,
-      unique: true,
       allowNull: false,
     },
     password: {

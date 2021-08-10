@@ -58,7 +58,7 @@
             <div class="col-md-4">
 
                 <div class="menu" role="menu">
-                    <form action="/cadastro" method="post">
+                    <form id="form" action="/cadastro" method="post">
 
                         <h3 class="menu__msg">{{passdontmatch}}{{userexists}}{{whitespace}}{{invalidcode}}</h3>
 
@@ -68,11 +68,11 @@
                         <label class="menu__label" for="email"><b>Email</b></label>
                         <input class="menu__input" type="email" placeholder="Insira seu email" name="email" id="email" aria-required="true" required>
 
-                        <label class="menu__label" for="email"><b>Telefone</b></label>
-                        <input class="menu__input" type="email" placeholder="Insira seu telefone" name="tel" id="tel" aria-required="true" required>
+                        <label class="menu__label" for="tel"><b>Telefone</b></label>
+                        <input class="menu__input" type="tel" placeholder="Insira seu telefone" name="tel" id="tel" aria-required="true" required>
 
-                        <label class="menu__label" for="email"><b>Data de nascimento</b></label>
-                        <input class="menu__input" type="email" placeholder="Insira sua data de nascimento" name="birthday" id="birthday" aria-required="true" required>
+                        <label class="menu__label" for="birthday"><b>Data de nascimento</b></label>
+                        <input class="menu__input" type="date" placeholder="Insira sua data de nascimento" name="birthday" id="birthday" aria-required="true" required>
 
                         <label class="menu__label" for="code"><b>Código de cadastro</b></label>
                         <input class="menu__input" type="text" placeholder="Insira o código" name="code" id="code" aria-required="true" required>

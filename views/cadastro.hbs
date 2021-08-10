@@ -58,7 +58,7 @@
             <div class="col-md-4">
 
                 <div class="menu" role="menu">
-                    <form action="/cadastro" method="post">
+                    <form id="form" action="/cadastro" method="post">
 
                         <h3 class="menu__msg">{{passdontmatch}}{{userexists}}{{whitespace}}{{invalidcode}}</h3>
 
@@ -68,11 +68,11 @@
                         <label class="menu__label" for="email"><b>Email</b></label>
                         <input class="menu__input" type="email" placeholder="Insert your name" name="email" id="email" aria-required="true" required>
 
-                        <label class="menu__label" for="email"><b>Telephone</b></label>
-                        <input class="menu__input" type="email" placeholder="Insert your telephone" name="tel" id="tel" aria-required="true" required>
+                        <label class="menu__label" for="tel"><b>Telephone</b></label>
+                        <input class="menu__input" type="tel" placeholder="Insert your telephone" name="tel" id="tel" aria-required="true" required>
 
-                        <label class="menu__label" for="email"><b>Birthday</b></label>
-                        <input class="menu__input" type="email" placeholder="Insert your birthday" name="birthday" id="birthday" aria-required="true" required>
+                        <label class="menu__label" for="s"><b>Birthday</b></label>
+                        <input class="menu__input" type="date" placeholder="Insert your birthday" name="birthday" id="birthday" aria-required="true" required>
 
                         <label class="menu__label" for="code"><b>Register code</b></label>
                         <input class="menu__input" type="text" placeholder="Insert code" name="code" id="code" aria-required="true" required>
@@ -101,6 +101,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <script src="/scripts/menu_mobile.js"></script>
+    <script src="/scripts/submitForm.js"></script>
 
 </body>
 </html>
