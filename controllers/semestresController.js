@@ -29,7 +29,10 @@ module.exports = {
 
         Semestre.update(
             { concluido: true },
-            { where: { concluido: false } }
+            { where: { 
+                concluido: false,
+                turmaId: id } 
+            }
         ).then(function(){
 
             Semestre.create({data: data, nivel: nivel, link_aulas: link, professorId: professor, turmaId: id}).then(function(){
