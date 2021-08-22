@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="/stylesheets/professor.css">
+    <link rel="stylesheet" href="/stylesheets/professor-turma-aulas-chamada.css">
     <link rel="stylesheet" href="/icons/font/flaticon.css">
     <link rel="stylesheet" href="https://use.typekit.net/gvd0wuw.css">
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
@@ -18,21 +18,27 @@
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6 menu">
-                <h1 class="menu__title">ÁREA DO PROFESSOR</h1>
 
+                <h1 class="menu__title">FAZER CHAMADA</h1>
 
-                <div class="semestres">
-                    {{#each semestres}}
+                <form id="form" class="menu__form" method="POST">
 
-                        <div class="semestres__semestre">
-                            <a href="/professor/{{this.id}}" class="semestres__semestre__link"><span class="turma">{{this.Turma.nome}}: </span>{{this.data}}</a>
-                        </div>
+                    <div class="alunos">
+                        {{#each alunos}}
+                            <div class="alunos__aluno">
+                                <label class="alunos__aluno__label" for="{{this.id}}">{{this.User.nome}}</label>
+                                <input class="alunos__aluno__input" type="checkbox" id="{{this.id}}" name="{{this.id}}">
+                            </div>
+                        {{/each}}
+                    </div>
 
-                    {{/each}}
-                </div>
+                    <input type="text" name="alunos" id="alunos">
 
+                    <button class="menu__button" type="submit">CONCLUIR</button>
 
-                <a href="/logout" class="menu__link">SAIR</a>
+                </form>
+
+                <a href="/professor/{{id}}/aulas" class="menu__link">VOLTAR</a>
             </div>
         </div>
     </div>
@@ -42,6 +48,9 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="/scripts/submitForm.js"></script>
+    <script src="/scripts/professor-turma-aulas-chamada.js"></script>
 
 </body>
 </html>

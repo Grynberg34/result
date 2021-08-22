@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/admin-avaliacoes-criar.css">
+    <link rel="stylesheet" href="/icons/font/flaticon.css">
+    <link rel="stylesheet" href="https://use.typekit.net/gvd0wuw.css">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <title>Result - English in the family | Admin</title>
+</head>
+<body>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6 menu">
+                <h1 class="menu__title">AVALIAÇÃO</h1>
+                <div class="row menu__row">
+
+                    <form id="form" method="POST">
+                    
+                        <label class="menu__label" for="nome">Nome da avaliação:</label>
+                        <input class="menu__input" type="text" name="nome" id="nome">
+
+                        <label class="menu__label" for="nivel">Nível:</label>
+                        <input class="menu__input" type="text" name="nivel" id="nivel">
+
+                        <label class="menu__label" for="tipo">Tipo:</label>
+                        <select class="menu__select" name="tipo" id="tipo">
+                            <option value="" disabled selected></option>
+                            <option value="múltipla escolha">Múltipla escolha</option>
+                            <option value="completar texto">Completar texto</option>
+                            <option value="perguntas abertas">Perguntas abertas</option>
+                        </select>
+
+                        <label class="menu__label" for="texto">Texto das perguntas:</label>
+                        <textarea id="texto" class="menu__textarea" name="texto" rows="22" cols="40" maxlength="10000"></textarea> 
+
+                        <label class="menu__label" for="numero">Número de perguntas:</label>
+                        <input class="menu__input" type="number" name="numero" id="numero">
+
+                        <div class="gabarito">
+
+                            <h2 class="gabarito__title">Gabarito</h2>
+
+                        </div>
+
+
+                        <button class="menu__button" type="submit">CRIAR AVALIAÇÃO</button>
+
+                    </form>
+
+
+                </div>
+
+
+                <a href="/admin/avaliacoes" class="menu__link">VOLTAR</a>
+            </div>
+        </div>
+    </div>
+
+    <!--Bootstrap-->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="/scripts/submitForm.js"></script>
+    <script src="/scripts/admin-avaliacoes-criar.js"></script>
+
+</body>
+</html>

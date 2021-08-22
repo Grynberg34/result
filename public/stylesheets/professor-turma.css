@@ -1,0 +1,68 @@
+body {
+  font-family: "work-sans", sans-serif;
+  background-color: #000000;
+  background-image: url("/images/fundo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.menu {
+  margin-top: 30vh;
+}
+.menu .menu__title {
+  font-size: 20px;
+  color: #d9d7d7;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.menu .menu__row {
+  margin-bottom: 4vh;
+}
+.menu .menu__row .menu__row__col {
+  display: block;
+  height: 10vh;
+  background-color: #f2780b;
+  clip-path: polygon(8% 0, 100% 0, 92% 100%, 0% 100%);
+}
+.menu .menu__row .menu__row__col:hover {
+  text-decoration: none;
+  background-color: #d9d7d7;
+}
+.menu .menu__row .menu__row__col .menu__row__col__text {
+  text-align: center;
+  color: #000000;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 16px;
+  margin-top: 4vh;
+}
+.menu .menu__link {
+  display: block;
+  margin-top: 6vh;
+  text-align: center;
+  color: #d9d7d7;
+  font-size: 14px;
+}
+.menu .menu__link:hover {
+  text-decoration: none;
+  color: #f2780b;
+}
+
+@media only screen and (max-width: 767px) {
+  .menu .menu__row {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-bottom: 2vh;
+  }
+  .menu .menu__row .menu__row__col:hover {
+    background-color: #f2780b;
+  }
+
+  .menu__link:hover {
+    color: #d9d7d7;
+  }
+}
+
+/*# sourceMappingURL=professor-turma.css.map */

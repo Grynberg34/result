@@ -1,4 +1,5 @@
 const express = require('express');
+const professorController = require('../controllers/professorController');
 const router = express.Router();
 
 function checkAuthentication(req,res,next){
@@ -20,19 +21,29 @@ function checkAuthentication(req,res,next){
   }
 }
 
-router.get('/', checkAuthentication, function(req, res) {
-  var user_id = req.user.id
-  res.redirect(`/professor/${user_id}`)
- });
- 
-router.get('/:id', checkAuthentication, function(req, res) {
-  var id = req.params.id
-  var user_id = req.user.id
-  if(user_id == id) {
-    res.render('professor', {user_id})
-  }
-  else res.redirect('/')
+router.get('/', checkAuthentication, professorController.mostrarTurmasProfessor);
+
+router.get('/:id', checkAuthentication, professorController.mostrarMenuSemestreTurma);
+
+router.get('/:id/aulas', checkAuthentication, professorController.mostrarAulasSemestreTurma);
+
+router.post('/:id/aulas', checkAuthentication, professorController.editarAula);
+
+router.get('/:id/aulas/criar', checkAuthentication, function (req,res){
+  var id = req.params.id;
+  res.render('professor-turma-aulas-criar', {id});
 });
 
+router.post('/:id/aulas/criar', checkAuthentication, professorController.criarAula);
+
+router.get('/:id/aulas/chamada/:sid', checkAuthentication, professorController.mostrarChamada);
+
+router.post('/:id/aulas/chamada/:sid', checkAuthentication, professorController.fazerChamada);
+
+router.get('/:id/materiais', checkAuthentication, professorController.mostrarMaterial);
+
+router.get('/:id/alunos', checkAuthentication, professorController.mostrarAlunos);
+
+router.get('/:id/alunos/:sid', checkAuthentication, professorController.mostrarAlunoPorId);
 
 module.exports = router;

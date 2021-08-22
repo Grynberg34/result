@@ -1,0 +1,139 @@
+@import 'colors.scss';
+
+body {
+    font-family: 'work-sans', sans-serif;
+    background-color: $preto;
+    background-image: url('/images/fundo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.menu {
+    margin-top: 10vw;
+    margin-bottom: 10vw;
+
+    .menu__title {
+        font-size: 20px;
+        color: $cinza-claro;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .menu__link {
+        display: block;
+        margin-top: 6vh;
+        text-align: center;
+        color: $cinza-claro;
+        font-size: 14px;
+
+        &:hover {
+            text-decoration: none;
+            color: $laranja;
+        }
+    }
+
+    .menu__edit {
+        margin-left: 10px;
+        color: $laranja;
+
+        &:hover {
+            text-decoration: none;
+            color: $cinza-claro;
+        }
+    }
+
+}
+
+.avaliacao {
+    margin-top: 4vw;
+    margin-bottom: 4vw;
+    border: 2px solid $laranja;
+    padding: 20px;
+
+    .avaliacao__info {
+        font-size: 14px;
+        color: $cinza-claro;
+        font-weight: 400;
+
+    }
+}
+
+.perguntas {
+    border: 2px solid $laranja;
+    padding: 20px;
+    margin-bottom: 4vw;
+
+    .perguntas__title {
+        font-size: 16px;
+        font-weight: 600;
+        text-align: center;
+        color: $laranja;
+        margin-bottom: 2vw;
+    }
+
+    .perguntas__texto {
+        font-size: 12px;
+        color: $cinza-claro;
+        text-align: justify;
+        white-space: pre-wrap;
+    }
+
+}
+
+.gabarito {
+    border: 2px solid $laranja;
+    padding: 20px;
+    margin-bottom: 4vw;
+
+    .gabarito__title {
+        font-size: 16px;
+        font-weight: 600;
+        text-align: center;
+        color: $laranja;
+        margin-bottom: 2vw;
+    }
+
+    .gabarito__lista {
+        padding-left: 0;
+        list-style: none;
+
+        .gabarito__lista__resposta {
+            font-size: 14px;
+            color: $cinza-claro;
+            font-weight: 400;
+            margin-bottom: 1vw;
+        }
+    }
+}
+
+.laranja {
+    color: $laranja;
+}
+
+
+
+@media only screen and (max-width: 767px) {
+
+    .menu {
+        .menu__row {
+            margin-left: 5vw;
+            margin-right: 5vw;
+            margin-bottom: 2vh;
+
+            .menu__row__col {
+                &:hover {
+                    background-color: $laranja;
+                }
+            }
+        }
+    }
+
+    .menu__link {
+        &:hover {
+            color: $cinza-claro;
+        }
+    }
+
+}

@@ -1,0 +1,131 @@
+@import 'colors.scss';
+
+body {
+    font-family: 'work-sans', sans-serif;
+    background-color: $preto;
+    background-image: url('/images/fundo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.menu {
+    margin-top: 30vh;
+    margin-bottom: 20vh;
+
+    .menu__title {
+        font-size: 20px;
+        color: $cinza-claro;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .menu__link {
+        display: block;
+        margin-top: 6vh;
+        text-align: center;
+        color: $cinza-claro;
+        font-size: 14px;
+
+        &:hover {
+            text-decoration: none;
+            color: $laranja;
+        }
+    }
+
+    .menu__label {
+        display: block;
+        font-size: 16px;
+        text-align: center;
+        color: $laranja;
+        margin-top: 4vh;
+        margin-bottom: 2vh;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .menu__input {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu__select {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+
+    .menu__textarea {
+        font-size: 11px;
+    }
+
+    .menu__button {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 14px;
+        font-weight: 800;
+        padding: 10px;
+        margin-top: 8vh;
+        background-color: $laranja;
+        border: none;
+
+        &:hover {
+            background-color: $cinza-claro;
+        }
+    }
+
+}
+
+#form {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gabarito {
+    margin-top: 6vh;
+    display: none;
+    border: 2px solid $laranja;
+    padding: 20px;
+    padding-bottom: 40px;
+
+    .gabarito__title {
+        font-size: 20px;
+        color: $laranja;
+        font-weight: 800;
+        text-align: center;
+    }
+}
+
+.num__pergunta {
+    display: none;
+}
+
+@media only screen and (max-width: 767px) {
+
+    .menu {
+        .menu__row {
+            margin-left: 5vw;
+            margin-right: 5vw;
+            margin-bottom: 2vh;
+
+            .menu__row__col {
+                &:hover {
+                    background-color: $laranja;
+                }
+            }
+        }
+    }
+
+    .menu__link {
+        &:hover {
+            color: $cinza-claro;
+        }
+    }
+
+}

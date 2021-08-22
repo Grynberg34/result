@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/admin-avaliacoes-avaliacao-editar.css">
+    <link rel="stylesheet" href="/icons/font/flaticon.css">
+    <link rel="stylesheet" href="https://use.typekit.net/gvd0wuw.css">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <title>Result - English in the family | Admin</title>
+</head>
+<body>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6 menu">
+                <h1 class="menu__title">{{avaliacao.nome}} <i class="flaticon-trash menu__delete"></i></h1>
+
+                <div class="avaliacao">
+
+                    <h2 class="avaliacao__info"><span class="laranja">Nível:</span> {{avaliacao.nivel}}</h2>
+                    <h2 class="avaliacao__info"><span class="laranja">Tipo:</span> {{avaliacao.tipo}}</h2>
+                    <h2 class="avaliacao__info"><span class="laranja">Número de perguntas:</span> {{avaliacao.numero_perguntas}}</h2>
+                    
+                </div>
+
+                <form id="form" method="POST">
+
+                    <div class="perguntas">
+                        <h2 class="perguntas__title">Perguntas</h2>
+                        <textarea id="texto" class="perguntas__textarea" name="texto" rows="25" cols="60" maxlength="10000">{{avaliacao.texto}}</textarea> 
+                    </div>
+
+                    {{#if gabaritos}}
+                        <div class="gabarito">
+
+                            <h2 class="gabarito__title">Gabarito</h2>
+
+                            <ul class="gabarito__lista">
+                                {{#each gabaritos}}
+
+                                    <li class="gabarito__lista__resposta"><span class="laranja">{{this.numero_pergunta}}:</span>
+
+                                        <input type="text" name="{{this.numero_pergunta}}" value="{{this.resposta}}" class="gabarito__lista__resposta__input">                                    
+                                    
+                                    </li>
+
+                                {{/each}}
+                            </ul>
+
+                        </div>
+                    {{/if}}
+
+                    <button class="menu__button" type="submit">SALVAR</button>
+
+                </form>
+
+                <form action="/admin/avaliacoes/ver/{{avaliacao.nivel}}/{{avaliacao.id}}/deletar" method="POST" class="delete" id="delete-form">
+
+                    <input type="text" name="avaliacao" value="{{avaliacao.id}}">
+
+                </form>
+
+
+                <a href="/admin/avaliacoes/ver/{{avaliacao.nivel}}/{{avaliacao.id}}" class="menu__link">VOLTAR</a>
+            </div>
+        </div>
+    </div>
+
+    <!--Bootstrap-->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="/scripts/submitForm.js"></script>
+    <script src="/scripts/admin-avaliacoes-avaliacao-editar.js"></script>
+
+</body>
+</html>

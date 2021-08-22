@@ -1,6 +1,6 @@
-document.getElementsByClassName('menu__button').addEventListener('click', submitForm);
+document.getElementsByClassName('menu__button')[0].addEventListener('click', submitForm);
 
 function submitForm() {
-    document.getElementsByClassName('menu__button').disabled = "true";
+    document.getElementsByClassName('menu__button')[0].disabled = "true";
     document.getElementById('form').submit()
 }

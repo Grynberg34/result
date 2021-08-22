@@ -1,0 +1,127 @@
+@import 'colors.scss';
+
+body {
+    font-family: 'work-sans', sans-serif;
+    background-color: $preto;
+    background-image: url('/images/fundo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.menu {
+    margin-top: 10vw;
+    margin-bottom: 10vw;
+
+    .menu__title {
+        font-size: 20px;
+        color: $cinza-claro;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .menu__link {
+        display: block;
+        margin-top: 6vh;
+        text-align: center;
+        color: $cinza-claro;
+        font-size: 14px;
+
+        &:hover {
+            text-decoration: none;
+            color: $laranja;
+        }
+    }
+}
+
+.aluno {
+    margin-top: 2vw;
+    padding: 20px;
+    border: 2px solid $laranja;
+
+    .aluno__info {
+        font-size: 14px;
+        color: $cinza-claro;
+        font-weight: 400;
+    }
+
+    .aluno__chamadas {
+        margin-top: 2vw;
+        margin-bottom: 2vw;
+        padding: 20px;
+        border: 2px solid $laranja;
+        
+        .aluno__chamadas__title {
+            font-size: 18px;
+            margin-bottom: 2vw;
+
+        }
+
+        .aluno__chamadas__info {
+            font-size: 14px;
+            color: $cinza-claro;
+            font-weight: 400;
+            margin-top: 1vw;
+        }
+
+        .aluno__chamadas__total {
+            margin-top: 2vw;
+            color: $cinza-claro;
+            font-size: 16px;
+        }
+    }
+
+    .aluno__link {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2vw;
+        margin-bottom: 2vw;
+        color: $preto;
+        text-align: center;
+        width: 40%;
+        background-color: $laranja;
+        padding: 10px;
+
+        &:hover {
+            text-decoration: none;
+            background-color: $cinza-claro;
+        }
+    }
+}
+
+.presença {
+    margin-left: 10px;
+    font-size: 11px;
+}
+
+.laranja {
+    color: $laranja;
+}
+
+@media only screen and (max-width: 767px) {
+
+    .menu {
+        .menu__row {
+            margin-left: 5vw;
+            margin-right: 5vw;
+            margin-bottom: 2vh;
+
+            .menu__row__col {
+                &:hover {
+                    background-color: $laranja;
+                }
+            }
+        }
+    }
+
+    .menu__link {
+        &:hover {
+            color: $cinza-claro;
+        }
+    }
+
+}
