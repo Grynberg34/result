@@ -15,5 +15,12 @@ for (var i=0; i < presença.length; i++) {
 
 }
 
+var aulas = document.getElementsByClassName('aula');
 
-console.log(presença.length)
+for (var i=0; i < aulas.length; i++) {
+
+    if (aulas[i].innerText == 'Aula :') {
+        aulas[i].parentElement.style.display = 'none'
+    }
+
+}

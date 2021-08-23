@@ -8,7 +8,8 @@ body {
 }
 
 .menu {
-  margin-top: 30vh;
+  margin-top: 15vw;
+  margin-bottom: 10vw;
 }
 .menu .menu__title {
   font-size: 20px;

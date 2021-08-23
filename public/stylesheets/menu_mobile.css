@@ -1,0 +1,125 @@
+nav {
+  display: block;
+  position: relative;
+  top: 15%;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+}
+
+#mobile {
+  display: none;
+}
+
+input[type=checkbox] {
+  opacity: 0;
+  visibility: hidden;
+}
+input[type=checkbox]:checked + .label {
+  border: 4px solid #000000;
+  border-radius: 50%;
+  height: 28px;
+  top: 16px;
+  left: 18px;
+  width: 28px;
+  transform: rotate(-135deg);
+}
+input[type=checkbox]:checked + .label::before {
+  background: #000000;
+  top: 8px;
+  left: 4px;
+  width: 12px;
+}
+input[type=checkbox]:checked + .label::after {
+  background: #000000;
+  opacity: 1;
+  top: 8px;
+  left: 4px;
+  visibility: visible;
+  width: 12px;
+}
+input[type=checkbox]:checked + .label:hover {
+  border-color: #000000;
+}
+input[type=checkbox]:checked + .label:hover::before, input[type=checkbox]:checked + .label:hover::after {
+  background: #000000;
+}
+input[type=checkbox]:checked ~ .nav-links::before {
+  opacity: 1;
+  visibility: visible;
+}
+input[type=checkbox]:checked ~ .nav-links li {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.label {
+  background: none transparent;
+  border: 4px solid #000000;
+  border-left: 0 solid transparent;
+  border-right: 0 solid transparent;
+  cursor: pointer;
+  display: block;
+  height: 24px;
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  width: 24px;
+  transition: all 0.2s;
+}
+.label::before {
+  background: #000000;
+  content: "";
+  height: 4px;
+  left: 0;
+  position: absolute;
+  top: 6px;
+  width: 24px;
+  transition: all 0.2s;
+}
+.label::after {
+  background: #000000;
+  content: "";
+  height: 4px;
+  left: 0;
+  position: absolute;
+  top: 6px;
+  opacity: 0;
+  visibility: hidden;
+  width: 100%;
+  transform: rotate(90deg);
+  transition: all 0.2s;
+}
+
+.mobile__menu {
+  display: none;
+  position: absolute;
+  background-color: rgba(217, 215, 215, 0.7);
+  clip-path: polygon(0 0, 100% 8%, 100% 92%, 0 100%);
+  width: 40vw;
+  top: 39vh;
+  left: 30vw;
+  z-index: 1000;
+}
+.mobile__menu .mobile__menu__link {
+  display: block;
+  padding: 10px;
+  color: #000000;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 700;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+.mobile__menu .mobile__menu__link:hover {
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 767px) {
+  #mobile {
+    display: block;
+  }
+}
+
+/*# sourceMappingURL=menu_mobile.css.map */

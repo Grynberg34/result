@@ -218,7 +218,7 @@ module.exports = {
                 }, 
                 include: [Aula]})
 
-                if (chamada[0].presença == true) {
+                if (chamada[0] && (chamada[0].presença == true)) {
                     presenças.push(chamada[0]);
                 }
 

@@ -29,21 +29,27 @@ router.get('/pt', checkAuthentication, function(req, res) {
   res.render('login-pt',  { message: req.flash('message') })
 });
 
-router.post('/', function(req,res,next) {
+router.post('/', checkAuthentication, function(req,res,next) {
 
   passport.authenticate('users', function(err, user,info){
     if (!user) {
-      req.session.save(
-        function() {
-          return res.redirect('/login')
-        }
-      )
+
+      setTimeout(function(){ 
+        req.session.save(
+          function() {
+            return res.redirect('/login')
+          }
+        )
+      }, 2000);
+
     }
     else if (user) {
-      req.logIn(user, function(err) {
+      setTimeout(function(){       
+        req.logIn(user, function(err) {
         if (err) { return next(err); }
         return res.redirect('/aluno');
-      });
+      }); }, 2000);
+
     }
   })(req,res,next)
 
