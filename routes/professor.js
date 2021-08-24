@@ -46,4 +46,6 @@ router.get('/:id/alunos', checkAuthentication, professorController.mostrarAlunos
 
 router.get('/:id/alunos/:sid', checkAuthentication, professorController.mostrarAlunoPorId);
 
+router.get('/:id/alunos/:sid/relatorio', checkAuthentication, professorController.gerarRelatorioAluno);
+
 module.exports = router;

@@ -81,6 +81,14 @@ body {
   background-color: #d9d7d7;
 }
 
+.timestamp {
+  font-size: 11px;
+}
+
+.aula {
+  width: 100% !important;
+}
+
 .presença {
   margin-left: 10px;
   font-size: 11px;
