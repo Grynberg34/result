@@ -48,4 +48,10 @@ router.get('/:id/alunos/:sid', checkAuthentication, professorController.mostrarA
 
 router.get('/:id/alunos/:sid/relatorio', checkAuthentication, professorController.gerarRelatorioAluno);
 
+router.get('/:id/avaliacoes', checkAuthentication, professorController.mostrarAvaliacoes);
+
+router.get('/:id/avaliacoes/criar', checkAuthentication, professorController.mostrarFormularioAvaliacoes);
+
+router.post('/:id/avaliacoes/criar', checkAuthentication, professorController.criarAvaliacaoSemestre);
+
 module.exports = router;

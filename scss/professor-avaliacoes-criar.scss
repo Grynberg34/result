@@ -1,0 +1,121 @@
+@import 'colors.scss';
+
+body {
+    font-family: 'work-sans', sans-serif;
+    background-color: $preto;
+    background-image: url('/images/fundo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.menu {
+    margin-top: 30vh;
+
+    .menu__title {
+        font-size: 20px;
+        color: $cinza-claro;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .menu__label {
+        display: block;
+        font-size: 14px;
+        color: $cinza-claro;
+        text-align: center;
+        margin-top: 2vw;
+    }
+
+    .menu__input {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 2vh;
+        font-size: 12px;
+        text-align: center;
+        width: 40%;
+
+        &:focus {
+            outline: none;
+        }
+        
+    }
+
+    .menu__textarea {
+        display: block;
+        font-size: 11px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .menu__button {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 6vh;
+        margin-bottom: 2vh;
+        color: $preto;
+        background: $laranja;
+        border: none;
+        clip-path: polygon(9% 1%, 100% 0, 91% 99%, 0% 100%);
+        padding: 10px;
+        width: 40%;
+
+        &:hover {
+            background-color: $cinza-claro;
+        }
+
+        &:focus {
+            outline: none;
+            border: none;
+        }
+    }
+
+    .menu__select {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+    }
+
+    .menu__link {
+        display: block;
+        margin-top: 6vh;
+        margin-bottom: 12vh;
+        text-align: center;
+        color: $cinza-claro;
+        font-size: 14px;
+
+        &:hover {
+            text-decoration: none;
+            color: $laranja;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 767px) {
+
+    .menu {
+        .menu__row {
+            margin-left: 5vw;
+            margin-right: 5vw;
+            margin-bottom: 2vh;
+
+            .menu__row__col {
+                &:hover {
+                    background-color: $laranja;
+                }
+            }
+        }
+    }
+
+    .menu__link {
+        &:hover {
+            color: $cinza-claro;
+        }
+    }
+
+}

@@ -6,8 +6,10 @@ const Aluno = require("../models/Aluno");
 const User = require("../models/User");
 const Chamada = require("../models/Chamada");
 const Material = require("../models/Material");
-
+const Avaliação = require("../models/Avaliação");
+const Avaliação_Semestre = require("../models/Avaliação_Semestre");
 const PDFDocument = require('pdfkit');
+
 
 module.exports = {
 
@@ -370,8 +372,74 @@ module.exports = {
 
         })
         
+    },
+
+    mostrarAvaliacoes: async function (req,res) {
+        var id = req.params.id;
+
+        Semestre.findByPk(id).then(async function(semestre){
+            
+            var avaliacoes = await Avaliação_Semestre.findAll({where: {
+                    semestreId: semestre.id
+                },  include: [Avaliação]
+            });
+
+            res.render('professor-avaliacoes', {id, avaliacoes})
+        })
 
 
+    },
+
+    mostrarFormularioAvaliacoes: async function (req,res) {
+        var id = req.params.id;
+
+        Semestre.findByPk(id).then(async function(semestre){
+            
+            var avaliacoes = await Avaliação.findAll({where: {
+                nivel: semestre.nivel
+            }});
+
+            res.render('professor-avaliacoes-criar', {id, avaliacoes})
+        })
+
+
+    },
+
+    criarAvaliacaoSemestre: async function (req,res) {
+        var id = req.params.id;
+        var pontos = req.body.pontos;
+        var a_id = req.body.a_id;
+
+        Avaliação.findByPk(a_id).then(async function(avaliacao){
+
+            if (avaliacao.tipo == 'perguntas abertas') {
+                var corrigido = false;
+            }
+            
+            else{
+                var corrigido = true;
+            }
+
+            var pontos_total = pontos * avaliacao.numero_perguntas;
+
+            var numero_anterior = await Avaliação_Semestre.findAll({where: {
+                semestreId: id
+            }})
+
+            var numero_final = numero_anterior.length + 1;
+
+            Avaliação_Semestre.create({
+                numero: numero_final,
+                pontos_pergunta: pontos,
+                pontos_total: pontos_total,
+                corrigido: corrigido,
+                semestreId: id,
+                avaliaçãoId: avaliacao.id
+            })
+
+            res.redirect(`/professor/${id}/avaliacoes`)
+
+        })
 
 
     }

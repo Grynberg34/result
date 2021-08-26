@@ -1,0 +1,132 @@
+@import 'colors.scss';
+
+body {
+    font-family: 'work-sans', sans-serif;
+    background-color: $preto;
+    background-image: url('/images/fundo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.menu {
+    margin-top: 10vw;
+    margin-bottom: 10vw;
+
+    .menu__title {
+        font-size: 20px;
+        color: $cinza-claro;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .menu__link {
+        display: block;
+        margin-top: 6vh;
+        text-align: center;
+        color: $cinza-claro;
+        font-size: 14px;
+
+        &:hover {
+            text-decoration: none;
+            color: $laranja;
+        }
+    }
+
+    .menu__adicionar {
+        display: block;
+        font-size: 12px;
+        background-color: $laranja;
+        padding: 10px;
+        color: $preto;
+        font-weight: 700;
+        margin-bottom: 4vh;
+        width: 30%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+
+        &:hover {
+            background-color: $cinza-claro;
+            text-decoration: none;
+        }
+    }
+
+
+}
+
+.avaliacoes {
+
+    .avaliacoes__avaliacao {
+        margin-top: 2vw;
+        border: 2px solid $laranja;
+        padding: 20px;
+
+        .avaliacoes__avaliacao__title {
+            font-size: 20px;
+            color: $laranja;
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 2vw;
+        }
+
+        .avaliacoes__avaliacao__info {
+            font-size: 14px;
+            color: $cinza-claro;
+            font-weight: 500;
+            margin-bottom: 1vw;
+        }
+
+        .avaliacoes__avaliacao__button {
+            display: block;
+            border: 2px solid $laranja;
+            background: none;
+            padding: 10px;
+            color: $laranja;
+            text-align: center;
+            font-weight: 600;
+            margin-top: 2vw;
+            margin-bottom: 2vw;
+            margin-left: auto;
+            margin-right: auto;
+            width: 30%;
+
+            &:hover {
+                text-decoration: none;
+                color: $cinza-claro;
+                border: 2px solid $cinza-claro;
+            }
+        }
+
+    }
+
+}
+
+.laranja {
+    color: $laranja;
+}
+
+@media only screen and (max-width: 767px) {
+
+    .menu {
+        .menu__row {
+            margin-left: 5vw;
+            margin-right: 5vw;
+            margin-bottom: 2vh;
+
+            .menu__row__col {
+                &:hover {
+                    background-color: $laranja;
+                }
+            }
+        }
+    }
+
+    .menu__link {
+        &:hover {
+            color: $cinza-claro;
+        }
+    }
+
+}
