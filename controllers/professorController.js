@@ -390,6 +390,38 @@ module.exports = {
 
     },
 
+    abrirFecharAvaliacao: async function (req,res) {
+        var id = req.params.id;
+        var a_id = req.body.a_id;
+
+        console
+
+        Avaliação_Semestre.findByPk(a_id).then(function(avaliacao){
+
+            if (avaliacao.disponivel == true) {
+                Avaliação_Semestre.update(
+                    { disponivel: false },
+                    { where: { id: a_id } }
+                ).then(function(){
+                    return res.redirect(`/professor/${id}/avaliacoes`)
+                })
+            }
+            else if (avaliacao.disponivel == false) {
+
+                Avaliação_Semestre.update(
+                    { disponivel: true },
+                    { where: { id: a_id } }
+                ).then(function(){
+                    return res.redirect(`/professor/${id}/avaliacoes`)
+                })
+
+            }
+
+        })
+
+
+    },
+
     mostrarFormularioAvaliacoes: async function (req,res) {
         var id = req.params.id;
 

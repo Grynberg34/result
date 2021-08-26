@@ -50,6 +50,8 @@ router.get('/:id/alunos/:sid/relatorio', checkAuthentication, professorControlle
 
 router.get('/:id/avaliacoes', checkAuthentication, professorController.mostrarAvaliacoes);
 
+router.post('/:id/avaliacoes', checkAuthentication, professorController.abrirFecharAvaliacao);
+
 router.get('/:id/avaliacoes/criar', checkAuthentication, professorController.mostrarFormularioAvaliacoes);
 
 router.post('/:id/avaliacoes/criar', checkAuthentication, professorController.criarAvaliacaoSemestre);
