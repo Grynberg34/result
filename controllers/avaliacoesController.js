@@ -30,7 +30,12 @@ module.exports = {
                     })
                 }
             }
+            
 
+        })            
+        .catch(function(err){
+            res.render('error')
+            console.log(err)
         })
         
         res.redirect('/admin/avaliacoes')
@@ -86,7 +91,8 @@ module.exports = {
         )
         .then(function(){
             
-            Avaliação.findByPk(id).then(async function(avaliacao){
+            Avaliação.findByPk(id)
+            .then(async function(avaliacao){
                 if (avaliacao.tipo == "múltipla escolha" || avaliacao.tipo == "completar texto") {
 
                     var value = parseInt(avaliacao.numero_perguntas) + 1
@@ -107,10 +113,15 @@ module.exports = {
 
                 res.redirect(`/admin/avaliacoes/ver/${avaliacao.nivel}/${id}`)
             })
+            .catch(function(err){
+                res.render('error')
+                console.log(err)
+            })
 
 
         })
         .catch(function(err){
+            res.render('error')
             console.log(err)
         })
     },
@@ -121,6 +132,10 @@ module.exports = {
 
         Avaliação.destroy({where: {id: id}}).then(function(){
             res.redirect(`/admin/avaliacoes/ver/${nivel}`);
+        })
+        .catch(function(err){
+            res.render('error')
+            console.log(err)
         });
     }
 

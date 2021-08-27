@@ -30,6 +30,7 @@ module.exports = {
                 res.redirect('/admin/alunos');
             })
             .catch(function(err){
+                res.render('error')
                 console.log(err)
             })
         }
@@ -43,6 +44,7 @@ module.exports = {
                 res.redirect('/admin/alunos');
             })
             .catch(function(err){
+                res.render('error')
                 console.log(err)
             })
         }
@@ -52,18 +54,26 @@ module.exports = {
     deletarAluno: async function (req,res) {
         var del = req.body.del;
 
-        await User.destroy({where: {id: del}})
+        User.destroy({where: {id: del}})
         .then(function(){
             res.redirect('/admin/alunos');
+        })
+        .catch(function(err){
+            res.render('error')
+            console.log(err)
         });
     },
 
     criarTurma: async function (req,res) {
         var turma = req.body.turma;
 
-        await Turma.create({nome: turma})
+        Turma.create({nome: turma})
         .then(function(){
             res.redirect('/admin/turmas/ver');
+        })
+        .catch(function(err){
+            res.render('error')
+            console.log(err)
         });
     },
 

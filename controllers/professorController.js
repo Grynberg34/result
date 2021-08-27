@@ -16,13 +16,17 @@ module.exports = {
     mostrarTurmasProfessor: async function (req,res) {
         var user_id = req.user.id;
 
-        await Professor.findOne({where: { userId: user_id} })
+        Professor.findOne({where: { userId: user_id} })
         .then(async function(professor) {
             var semestres = await Semestre.findAll({where: {professorId: professor.id, concluido: false },
                 include: [Turma],
             });
             res.render('professor', {semestres})
 
+        })
+        .catch(function(err){
+            res.render('error')
+            console.log(err)
         })
     
     },
@@ -86,6 +90,10 @@ module.exports = {
             res.redirect(`/professor/${id}/aulas`)
 
         })
+        .catch(function(err){
+            res.render('error')
+            console.log(err)
+        })
 
 
     },
@@ -106,6 +114,10 @@ module.exports = {
 
             res.redirect(`/professor/${id}/aulas`)
 
+        })
+        .catch(function(err){
+            res.render('error')
+            console.log(err)
         })
 
     },
@@ -135,6 +147,10 @@ module.exports = {
     
                 res.render('professor-turma-aulas-chamada', {alunos});
             
+            })
+            .catch(function(err){
+                res.render('error')
+                console.log(err)
             })
 
         }
@@ -169,6 +185,10 @@ module.exports = {
                     id: sid
                 }})
             })
+            .catch(function(err){
+                res.render('error')
+                console.log(err)
+            })
 
         });
 
@@ -187,6 +207,10 @@ module.exports = {
             res.render('professor-materiais', {materiais, id})
 
         })
+        .catch(function(err){
+            res.render('error')
+            console.log(err)
+        })
 
 
     },
@@ -203,6 +227,10 @@ module.exports = {
 
             res.render('professor-alunos', {alunos, id})
 
+        })
+        .catch(function(err){
+            res.render('error')
+            console.log(err)
         })
 
     },
@@ -250,6 +278,10 @@ module.exports = {
 
 
             res.render('professor-alunos-aluno', {aluno, semestre, id, chamadas, num_aulas, num_presenças, percentual});
+        })
+        .catch(function(err){
+            res.render('error')
+            console.log(err)
         })
 
     },
@@ -371,6 +403,10 @@ module.exports = {
             doc.end();
 
         })
+        .catch(function(err){
+            res.render('error')
+            console.log(err)
+        })
         
     },
 
@@ -385,6 +421,10 @@ module.exports = {
             });
 
             res.render('professor-avaliacoes', {id, avaliacoes})
+        })
+        .catch(function(err){
+            res.render('error')
+            console.log(err)
         })
 
 
@@ -405,6 +445,10 @@ module.exports = {
                 ).then(function(){
                     return res.redirect(`/professor/${id}/avaliacoes`)
                 })
+                .catch(function(err){
+                    res.render('error')
+                    console.log(err)
+                })
             }
             else if (avaliacao.disponivel == false) {
 
@@ -414,9 +458,17 @@ module.exports = {
                 ).then(function(){
                     return res.redirect(`/professor/${id}/avaliacoes`)
                 })
+                .catch(function(err){
+                    res.render('error')
+                    console.log(err)
+                })
 
             }
 
+        })
+        .catch(function(err){
+            res.render('error')
+            console.log(err)
         })
 
 
@@ -432,6 +484,10 @@ module.exports = {
             }});
 
             res.render('professor-avaliacoes-criar', {id, avaliacoes})
+        })
+        .catch(function(err){
+            res.render('error')
+            console.log(err)
         })
 
 
@@ -471,6 +527,10 @@ module.exports = {
 
             res.redirect(`/professor/${id}/avaliacoes`)
 
+        })
+        .catch(function(err){
+            res.render('error')
+            console.log(err)
         })
 
 

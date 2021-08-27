@@ -40,6 +40,10 @@ module.exports = {
             })
 
         })
+        .catch(function(err){
+            res.render('error')
+            console.log(err)
+        })
     },
 
     mostrarSemestre: async function (req,res) {
@@ -68,6 +72,7 @@ module.exports = {
             res.redirect(`/admin/turmas/ver/${id}`);
         })
         .catch(function(err){
+            res.render('error')
             console.log(err)
         })
     },
@@ -85,6 +90,7 @@ module.exports = {
             res.redirect(`/admin/turmas/ver/${id}/semestres/${id_semestre}`);
         })
         .catch(function(err){
+            res.render('error')
             console.log(err)
         })
     },

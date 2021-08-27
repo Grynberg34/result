@@ -57,7 +57,11 @@ module.exports = {
       Material.destroy({where: {id : material}})
       .then(function(){
         res.redirect(`/admin/materiais/nivel/${id}`);
-      });
+      })
+      .catch(function(err){
+        res.render('error')
+        console.log(err)
+    });
     }
 
 }

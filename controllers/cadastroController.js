@@ -41,6 +41,10 @@ module.exports= {
                     }
                 }
             })
+            .catch(function(err){
+                res.render('error')
+                console.log(err)
+            })
         }
         else res.render('cadastro', {passdontmatch})
     }

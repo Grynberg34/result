@@ -50,6 +50,10 @@ module.exports= {
                 res.render('mudar')
             }
         })
+        .catch(function(err){
+            res.render('error')
+            console.log(err)
+        })
     },
 
     mudarSenha: function (req,res) {
@@ -75,6 +79,10 @@ module.exports= {
                     res.render('sucesso')
                 }
 
+            })
+            .catch(function(err){
+                res.render('error')
+                console.log(err)
             })
 
         } 
