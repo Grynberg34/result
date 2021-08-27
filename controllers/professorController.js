@@ -302,7 +302,8 @@ module.exports = {
         Aula.findAll({where: {
             semestreId: id,
             chamada: true
-        }}).then(async function(aulas) {
+        }})
+        .then(async function(aulas) {
 
             var chamadas = [];
 
@@ -321,7 +322,9 @@ module.exports = {
                     presenças.push(chamada[0]);
                 }
 
-                chamadas.push(chamada[0])
+                if (chamada[0]) {
+                    chamadas.push(chamada[0])
+                }
             }
 
             var num_presenças = presenças.length;
@@ -407,6 +410,7 @@ module.exports = {
             res.render('error')
             console.log(err)
         })
+
         
     },
 
