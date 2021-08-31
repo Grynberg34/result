@@ -111,6 +111,10 @@ body {
 
 }
 
+#form {
+    display: none;
+}
+
 .laranja {
     color: $laranja;
 }
@@ -118,6 +122,8 @@ body {
 @media only screen and (max-width: 767px) {
 
     .menu {
+        margin-top: 20vw;
+
         .menu__row {
             margin-left: 5vw;
             margin-right: 5vw;
@@ -129,12 +135,42 @@ body {
                 }
             }
         }
+
+        .menu__title {
+            margin-bottom: 5vw;
+        }
+
+        .menu__subtitle {
+            margin-bottom: 10vw;
+        }
+
+        .menu__adicionar {
+            width: 70%;
+        }
     }
 
     .menu__link {
         &:hover {
             color: $cinza-claro;
         }
+    }
+
+    .avaliacoes {
+
+        .avaliacoes__avaliacao {
+            margin-bottom: 10vw;
+
+            .avaliacoes__avaliacao__title {
+                margin-bottom: 10vw;
+            }
+
+            .avaliacoes__avaliacao__button {
+                margin-top: 10vw;
+                width: 60%;
+            }
+        }
+
+
     }
 
 }

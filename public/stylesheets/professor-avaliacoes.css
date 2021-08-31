@@ -92,11 +92,18 @@ body {
   border: 2px solid #d9d7d7;
 }
 
+#form {
+  display: none;
+}
+
 .laranja {
   color: #f2780b;
 }
 
 @media only screen and (max-width: 767px) {
+  .menu {
+    margin-top: 20vw;
+  }
   .menu .menu__row {
     margin-left: 5vw;
     margin-right: 5vw;
@@ -105,9 +112,29 @@ body {
   .menu .menu__row .menu__row__col:hover {
     background-color: #f2780b;
   }
+  .menu .menu__title {
+    margin-bottom: 5vw;
+  }
+  .menu .menu__subtitle {
+    margin-bottom: 10vw;
+  }
+  .menu .menu__adicionar {
+    width: 70%;
+  }
 
   .menu__link:hover {
     color: #d9d7d7;
+  }
+
+  .avaliacoes .avaliacoes__avaliacao {
+    margin-bottom: 10vw;
+  }
+  .avaliacoes .avaliacoes__avaliacao .avaliacoes__avaliacao__title {
+    margin-bottom: 10vw;
+  }
+  .avaliacoes .avaliacoes__avaliacao .avaliacoes__avaliacao__button {
+    margin-top: 10vw;
+    width: 60%;
   }
 }
 

@@ -183,4 +183,31 @@ body {
         }
     }
 
+    .aulas {
+        .aulas__aula {
+            margin-bottom: 10vw;
+
+            .aulas__aula__title {
+                margin-bottom: 10vw;
+            }
+
+            .aulas__aula__textarea {
+                width: 100%;
+            }
+
+            .aulas__aula__chamada {
+                margin-top: 10vw;
+
+                .aulas__aula__chamada__title {
+                    margin-bottom: 5vw;
+                }
+            }
+
+            .aulas__aula__link {
+                width: 70%;
+                margin-top: 10vw;
+            }
+        }
+    }
+
 }

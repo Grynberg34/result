@@ -145,6 +145,26 @@ body {
   .menu__link:hover {
     color: #d9d7d7;
   }
+
+  .aulas .aulas__aula {
+    margin-bottom: 10vw;
+  }
+  .aulas .aulas__aula .aulas__aula__title {
+    margin-bottom: 10vw;
+  }
+  .aulas .aulas__aula .aulas__aula__textarea {
+    width: 100%;
+  }
+  .aulas .aulas__aula .aulas__aula__chamada {
+    margin-top: 10vw;
+  }
+  .aulas .aulas__aula .aulas__aula__chamada .aulas__aula__chamada__title {
+    margin-bottom: 5vw;
+  }
+  .aulas .aulas__aula .aulas__aula__link {
+    width: 70%;
+    margin-top: 10vw;
+  }
 }
 
 /*# sourceMappingURL=professor-turma-aulas.css.map */

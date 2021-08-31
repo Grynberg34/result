@@ -111,6 +111,20 @@ body {
   .menu__link:hover {
     color: #d9d7d7;
   }
+
+  .aluno .aluno__chamadas {
+    margin-top: 10vw;
+    margin-bottom: 10vw;
+  }
+  .aluno .aluno__chamadas .aluno__chamadas__title {
+    margin-bottom: 5vw;
+  }
+  .aluno .aluno__chamadas .aluno__chamadas__total {
+    margin-top: 5vw;
+  }
+  .aluno .aluno__link {
+    width: 70%;
+  }
 }
 
 /*# sourceMappingURL=professor-alunos-aluno.css.map */

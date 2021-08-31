@@ -15,36 +15,20 @@ function submitForm() {
 
     var t = "t" + id;
 
+    var d = "d" + id;
+
     document.getElementsByClassName('form__input')[0].value = id;
 
     document.getElementsByClassName('form__input')[1].value = document.getElementById(c).value;
 
     document.getElementsByClassName('form__input')[2].value = document.getElementById(t).value;
 
+    document.getElementsByClassName('form__input')[3].value = document.getElementById(d).value;
+
+
     document.getElementById('form').submit();
 
 }
-
-
-// Formatar data
-
-function formatarData() {
-
-    var data = document.getElementsByClassName('timestamp')
-
-    for (var i = 0; i < data.length; i++) {
-        let dia = data[i].textContent.substr(8,2);
-        let anohora = data[i].textContent.substr(0, 4);
-        let mes = data[i].textContent.substr(5,2);
-        
-        let str = dia + '/' + mes + '/' + anohora;
-
-        data[i].textContent = str;
-    }
-
-}
-
-formatarData();
 
 // Chamada
 

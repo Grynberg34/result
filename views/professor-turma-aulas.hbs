@@ -31,7 +31,7 @@
 
                         <div class="aulas__aula">
                             <h2 class="aulas__aula__title">Aula {{this.numero_aula}} <i class="aulas__aula__icon flaticon-diskette" id="{{this.id}}"></i></h2>
-                            <p class="aulas__aula__info">Data: <span class="timestamp">{{this.data}}</span></p>
+                            <p class="aulas__aula__info">Data: <input type="date" value="{{this.data}}" id="d{{this.id}}"></p>
                             <p class="aulas__aula__info">Tema: <input type="text" value="{{this.tema}}" id="t{{this.id}}"></p>
                             <p class="aulas__aula__info">Comentários:</p>
                             <textarea id="c{{this.id}}" class="aulas__aula__textarea" name="texto" rows="15" cols="50" maxlength="50000">{{this.comentarios}}</textarea> 
@@ -85,6 +85,7 @@
 
         <input class="form__input" type="text" name="tema">
 
+        <input class="form__input" type="date" name="data">
 
     </form>
 

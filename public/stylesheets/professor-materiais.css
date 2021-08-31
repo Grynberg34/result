@@ -8,7 +8,7 @@ body {
 }
 
 .menu {
-  margin-top: 15vw;
+  margin-top: 10vw;
   margin-bottom: 10vw;
 }
 .menu .menu__title {
@@ -17,27 +17,6 @@ body {
   font-weight: 700;
   text-align: center;
   margin-bottom: 40px;
-}
-.menu .menu__row {
-  margin-bottom: 4vh;
-}
-.menu .menu__row .menu__row__col {
-  display: block;
-  height: 10vh;
-  background-color: #f2780b;
-  clip-path: polygon(8% 0, 100% 0, 92% 100%, 0% 100%);
-}
-.menu .menu__row .menu__row__col:hover {
-  text-decoration: none;
-  background-color: #d9d7d7;
-}
-.menu .menu__row .menu__row__col .menu__row__col__text {
-  text-align: center;
-  color: #000000;
-  font-weight: 800;
-  text-transform: uppercase;
-  font-size: 16px;
-  margin-top: 4vh;
 }
 .menu .menu__link {
   display: block;
@@ -51,28 +30,40 @@ body {
   color: #f2780b;
 }
 
-.semestres {
+.materiais {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
 }
-.semestres .semestres__semestre {
+.materiais .materiais__material {
   border-top: 2px solid #f2780b;
 }
-.semestres .semestres__semestre:first-of-type {
+.materiais .materiais__material:first-of-type {
   border-top: none;
 }
-.semestres .semestres__semestre .semestres__semestre__link {
-  display: block;
+.materiais .materiais__material .materiais__material__link {
+  display: inline-block;
   text-align: center;
   font-size: 16px;
   color: #f2780b;
   margin-top: 2vh;
   margin-bottom: 2vh;
 }
-.semestres .semestres__semestre .semestres__semestre__link:hover {
+.materiais .materiais__material .materiais__material__link:hover {
   color: #d9d7d7;
   text-decoration: none;
+}
+.materiais .materiais__material .materiais__material__icon {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 14px;
+  color: #d9d7d7;
+  text-align: center;
+  cursor: pointer;
+}
+
+#form {
+  display: none;
 }
 
 @media only screen and (max-width: 767px) {
@@ -91,6 +82,10 @@ body {
   .menu__link:hover {
     color: #d9d7d7;
   }
+
+  .materiais {
+    width: 100%;
+  }
 }
 
-/*# sourceMappingURL=professor.css.map */
+/*# sourceMappingURL=professor-materiais.css.map */

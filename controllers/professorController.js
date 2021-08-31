@@ -9,6 +9,7 @@ const Material = require("../models/Material");
 const Avaliação = require("../models/Avaliação");
 const Avaliação_Semestre = require("../models/Avaliação_Semestre");
 const PDFDocument = require('pdfkit');
+const fs = require('fs')
 
 
 module.exports = {
@@ -103,11 +104,15 @@ module.exports = {
         var aula = req.body.aula;
         var comentarios = req.body.comentarios;
         var tema = req.body.tema;
+        var data = req.body.data;
+
+        console.log(data)
 
         Aula.update(           
             {   
                 comentarios: comentarios, 
-                tema: tema
+                tema: tema,
+                data: data
             },
             { where: { id: aula } 
         }).then(function(){
@@ -145,7 +150,7 @@ module.exports = {
                 },
                 include: [User]})
     
-                res.render('professor-turma-aulas-chamada', {alunos});
+                res.render('professor-turma-aulas-chamada', {alunos, id});
             
             })
             .catch(function(err){
@@ -333,6 +338,10 @@ module.exports = {
         
             const doc = new PDFDocument();
 
+            var pdf_number = Math.floor(Math.random() * 10001);
+
+            doc.pipe(fs.createWriteStream(`./public/relatorios/relatorio_${id}_${id}_${pdf_number}.pdf`));
+
             doc.image('./public/images/logo.png', 400, 15, {fit: [100, 100], align: 'center', valign: 'center'})
     
             doc
@@ -399,11 +408,10 @@ module.exports = {
             .lineTo(0, 470)
             .lineTo(650, 470)
             .stroke();   
-        
-    
-            doc.pipe(res); 
     
             doc.end();
+
+            setTimeout(function(){ res.redirect(`/relatorios/relatorio_${id}_${id}_${pdf_number}.pdf`);}, 2000);            
 
         })
         .catch(function(err){
@@ -421,7 +429,8 @@ module.exports = {
             
             var avaliacoes = await Avaliação_Semestre.findAll({where: {
                     semestreId: semestre.id
-                },  include: [Avaliação]
+                },  include: [Avaliação],
+                order: [['id', 'ASC']]
             });
 
             res.render('professor-avaliacoes', {id, avaliacoes})

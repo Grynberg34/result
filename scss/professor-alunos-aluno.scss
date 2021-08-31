@@ -132,4 +132,24 @@ body {
         }
     }
 
+    .aluno {
+        .aluno__chamadas {
+            margin-top: 10vw;
+            margin-bottom: 10vw;
+
+            .aluno__chamadas__title {
+                margin-bottom: 5vw;
+            }
+
+            .aluno__chamadas__total {
+                margin-top: 5vw;
+            }
+        }
+        
+
+        .aluno__link {
+            width: 70%;
+        }
+    }
+
 }
