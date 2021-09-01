@@ -1,4 +1,5 @@
 const express = require('express');
+const alunoController = require('../controllers/alunoController');
 const router = express.Router();
 
 function checkAuthentication(req,res,next){
@@ -20,19 +21,6 @@ function checkAuthentication(req,res,next){
   }
 }
 
-router.get('/', checkAuthentication, function(req, res) {
-  var user_id = req.user.id
-  res.redirect(`/aluno/${user_id}`)
-});
-
-router.get('/:id', checkAuthentication, function(req, res) {
-  var id = req.params.id
-  var user_id = req.user.id
-  if(user_id == id) {
-    res.render('aluno', {user_id})
-  }
-  else res.redirect('/')
-});
-
+router.get('/', checkAuthentication, alunoController.mostrarMenuInicial);
 
 module.exports = router;
