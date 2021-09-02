@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="/stylesheets/aluno.css">
+    <link rel="stylesheet" href="/stylesheets/aluno-aulas.css">
     <link rel="stylesheet" href="/icons/font/flaticon.css">
     <link rel="stylesheet" href="https://use.typekit.net/gvd0wuw.css">
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
@@ -18,37 +18,39 @@
         <div class="row">
             <div class="col-md-3 menu">
 
-                <img class="menu__logo" src="/images/logo.png" alt="">
+                <div class="menu__sidebar">
 
-                <div class="menu__options">
-                    <a href="/aluno" class="menu__options__option active">SEMESTRE</a>
-                    <a href="/aluno/aulas" class="menu__options__option">AULAS</a>
-                    <a href="/aluno/avaliacoes" class="menu__options__option">AVALIAÇÕES</a>
-                    <a href="/aluno/materiais" class="menu__options__option">MATERIAIS</a>
-                    <a href="/logout" id="sair" class="menu__options__option">SAIR</a>
+                    <img class="menu__logo" src="/images/logo.png" alt="">
+
+                    <div class="menu__options">
+                        <a href="/aluno" class="menu__options__option">SEMESTRE</a>
+                        <a href="/aluno/aulas" class="menu__options__option active">AULAS</a>
+                        <a href="/aluno/avaliacoes" class="menu__options__option">AVALIAÇÕES</a>
+                        <a href="/aluno/materiais" class="menu__options__option">MATERIAIS</a>
+                        <a href="/logout" id="sair" class="menu__options__option">SAIR</a>
+                    </div>
+
                 </div>
 
             </div>
 
             <div class="col-md-2"></div>
 
-            <div class="col-md-4 aluno">
+            <div class="col-md-6 aulas">
 
-                <h1 class="aluno__title">Olá, {{aluno.User.nome}}!</h1>
+                <h1 class="aulas__title">AULAS</h1>
 
-                <div class="aluno__semestre">
-                    {{#each semestre}}
-                        <h2 class="aluno__semestre__info"><span class="bold">Turma:</span> {{this.Turma.nome}}</h2>
-                        <h2 class="aluno__semestre__info"><span class="bold">Data:</span> {{this.data}}</h2>
-                        <h2 class="aluno__semestre__info"><span class="bold">Nível:</span> {{this.nivel}}</h2>
-                    {{/each}}
-                </div>
+                <h2 class="aulas__presencas">Presenças: {{num_presenças}}/{{num_aulas}} ({{percentual}}%)</h2>
 
-                <div class="aluno__professor">
-                    <h2 class="aluno__professor__info"><span class="bold">Professor:</span>{{professor.User.nome}}</h2>
-                    <h2 class="aluno__professor__info"><span class="bold">Email:</span>{{professor.User.email}}</h2>
-                    <h2 class="aluno__professor__info"><span class="bold">Telefone:</span>{{professor.User.telefone}}</h2>
-                </div>
+                {{#each aulas}}
+
+                    <div class="aulas__aula row">
+                        <div class="col-3"><h2 class="aulas__aula__title">Aula {{this.numero_aula}}</h2></div>
+                        <div class="col-4"><h3 class="aulas__aula__info"><span class="timestamp">{{this.data}}</span></h3></div>
+                        <div class="col-5"><h3 class="aulas__aula__info">{{this.tema}}</h3></div>
+                    </div>
+
+                {{/each}}
 
             </div>
         </div>
@@ -65,7 +67,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+    <script src="/scripts/aluno-aulas.js"></script>
     <script src="/scripts/menu_aluno.js"></script>
+
 
 </body>
 </html>

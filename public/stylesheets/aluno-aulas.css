@@ -230,65 +230,69 @@ body {
   background-attachment: fixed;
 }
 
-.aluno {
+.aulas {
   margin-top: 5vw;
+  margin-bottom: 10vw;
 }
-.aluno .aluno__title {
-  font-size: 20px;
-  font-weight: 800;
+.aulas .aulas__title {
+  font-size: 30px;
   color: #f2780b;
+  margin-bottom: 2vw;
   text-align: center;
+  font-weight: 800;
 }
-.aluno .aluno__semestre {
-  margin-top: 4vw;
-  margin-bottom: 4vw;
-  padding: 3vw;
-  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
-  background-color: #f2780b;
-}
-.aluno .aluno__semestre .aluno__semestre__info {
-  font-size: 14px;
+.aulas .aulas__presencas {
+  font-size: 16px;
   color: #000000;
-  font-weight: 500;
-  margin-bottom: 1vw;
-}
-.aluno .aluno__professor {
-  padding: 3vw;
-  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
+  font-weight: 800;
+  padding: 1vw;
   background-color: #d9d7d7;
+  margin-bottom: 2vw;
+  clip-path: polygon(0 0%, 100% 0, 100% 90%, 0% 100%);
+  text-align: center;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
-.aluno .aluno__professor .aluno__professor__info {
+.aulas .aulas__aula {
+  border-bottom: 2px solid #f2780b;
+  padding: 2vw;
+}
+.aulas .aulas__aula .aulas__aula__title {
   font-size: 14px;
-  color: #000000;
-  font-weight: 500;
-  margin-bottom: 1vw;
+  color: #f2780b;
+  font-weight: 700;
+}
+.aulas .aulas__aula .aulas__aula__info {
+  font-size: 14px;
+  color: #d9d7d7;
+  font-weight: 400;
 }
 
 @media only screen and (max-width: 767px) {
-  .aluno {
+  .aulas {
     margin-top: 20vw;
-    margin-bottom: 20vw;
+    margin-bottom: 30vw;
     padding-left: 10vw;
     padding-right: 10vw;
   }
-  .aluno .aluno__title {
+  .aulas .aulas__title {
     margin-bottom: 10vw;
   }
-  .aluno .aluno__semestre {
-    padding: 8vw;
-    margin-bottom: 8vw;
+  .aulas .aulas__presencas {
+    margin-bottom: 10vw;
+    width: 75%;
   }
-  .aluno .aluno__semestre .aluno__semestre__info {
-    margin-bottom: 4vw;
-    line-height: 2;
+  .aulas .aulas__aula {
+    padding: 5vw;
   }
-  .aluno .aluno__professor {
-    padding: 8vw;
+  .aulas .aulas__aula .aulas__aula__info {
+    font-size: 12px;
+    line-height: 1.5;
   }
-  .aluno .aluno__professor .aluno__professor__info {
-    margin-bottom: 4vw;
-    line-height: 2;
+  .aulas .aulas__aula .aulas__aula__title {
+    font-size: 12px;
   }
 }
 
-/*# sourceMappingURL=aluno.css.map */
+/*# sourceMappingURL=aluno-aulas.css.map */

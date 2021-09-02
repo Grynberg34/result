@@ -23,4 +23,6 @@ function checkAuthentication(req,res,next){
 
 router.get('/', checkAuthentication, alunoController.mostrarMenuInicial);
 
+router.get('/aulas', checkAuthentication, alunoController.mostrarAulasSemestre);
+
 module.exports = router;

@@ -1,0 +1,92 @@
+@import 'colors.scss';
+@import 'menu_mobile.scss';
+@import 'menu_aluno.scss';
+
+body {
+    font-family: 'work-sans', sans-serif;
+    background-color: $preto;
+    background-image: url('/images/fundo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.aulas {
+    margin-top: 5vw;
+    margin-bottom: 10vw;
+
+    .aulas__title {
+        font-size: 30px;
+        color: $laranja;
+        margin-bottom: 2vw;
+        text-align: center;
+        font-weight: 800;
+        
+    }
+
+    .aulas__presencas {
+        font-size: 16px;
+        color: $preto;
+        font-weight: 800;
+        padding: 1vw;
+        background-color: $cinza-claro;
+        margin-bottom: 2vw;
+        clip-path: polygon(0 0%, 100% 0, 100% 90%, 0% 100%);
+        text-align: center;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .aulas__aula {
+        border-bottom: 2px solid $laranja;
+        padding: 2vw;
+
+        .aulas__aula__title {
+            font-size: 14px;
+            color: $laranja;
+            font-weight: 700;
+        }
+
+        .aulas__aula__info {
+            font-size: 14px;
+            color: $cinza-claro;
+            font-weight: 400;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 767px) {
+
+    .aulas {
+        margin-top: 20vw;
+        margin-bottom: 30vw;
+        padding-left: 10vw;
+        padding-right: 10vw;
+
+        .aulas__title {
+            margin-bottom: 10vw;
+        }
+
+        .aulas__presencas {
+            margin-bottom: 10vw;
+            width: 75%;
+        }
+        
+        .aulas__aula {
+            padding: 5vw;
+
+            .aulas__aula__info {
+                font-size: 12px;
+                line-height: 1.5;
+            }
+            .aulas__aula__title {
+                font-size: 12px;
+            }
+        }
+    }
+
+    
+
+}

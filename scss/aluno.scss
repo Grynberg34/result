@@ -1,5 +1,6 @@
 @import 'colors.scss';
 @import 'menu_mobile.scss';
+@import 'menu_aluno.scss';
 
 body {
     font-family: 'work-sans', sans-serif;
@@ -8,51 +9,6 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-}
-
-.menu {
-    background-color: $laranja;
-    min-height: 100vh;
-    padding-left: 0;
-    padding-right: 0;
-
-    .menu__logo {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 40%;
-        margin-top: 4vw;
-
-    }
-
-    .menu__options {
-        margin-top: 5vw;
-        
-        .menu__options__option {
-            display: block;
-            font-size: 14px;
-            color: $preto;
-            font-weight: 800;
-            text-align: center;
-            padding: 2vw;
-
-            &:hover {
-                text-decoration: none;
-                color: $cinza-claro;
-            }
-            
-        }
-
-        .active {
-            clip-path: polygon(0 20%, 100% 0, 100% 80%, 0% 100%);
-            background-color: $cinza-claro;
-
-            &:hover {
-                color: $preto;
-            }
-        }
-    }
-
 }
 
 .aluno {
@@ -94,53 +50,11 @@ body {
     }
 }
 
-nav {
-    display: none;
-    position: absolute;
-    top: 9%;
-    right: 25%;
-    margin-left: auto;
-    margin-right: auto;
-    height: auto;
-}
-  
 
-.bold {
-    font-weight: 800;
-    margin-right: 10px;
-}
-
-#sair {
-    color: $cinza-claro;
-}
 
 @media only screen and (max-width: 767px) {
 
-    .menu {
-        min-height: unset;
-        clip-path: polygon(0 0%, 100% 0, 100% 90%, 0% 100%);
-        padding-bottom: 10vw;
 
-        .menu__logo {
-            width: 40%;
-        }
-
-        .menu__options {
-            display: none;
-
-            .menu__options__option {
-                padding: 6vw;
-
-                &:hover {
-                    color: $preto;
-                }
-            }
-        }
-    }
-
-    nav {
-        display: block;
-    }
 
     .aluno {
         margin-top: 20vw;
