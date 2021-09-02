@@ -1,0 +1,88 @@
+@import 'colors.scss';
+@import 'menu_mobile.scss';
+@import 'menu_aluno.scss';
+
+body {
+    font-family: 'work-sans', sans-serif;
+    background-color: $preto;
+    background-image: url('/images/fundo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.materiais {
+    margin-top: 5vw;
+    margin-bottom: 10vw;
+
+    .materiais__title {
+        font-size: 24px;
+        color: $laranja;
+        margin-bottom: 2vw;
+        text-align: center;
+        font-weight: 800;
+    }
+
+    .materiais__link {
+        display: block;
+        font-size: 14px;
+        color: $cinza-claro;
+        padding: 2vw;
+        border-bottom: 2px solid $laranja;
+
+        &:hover {
+            text-decoration: none;
+            color: $laranja;
+        }
+
+        &:last-of-type {
+            border: none;
+        }
+    }
+
+    .materiais__nivel {
+        margin-top: 4vw;
+        margin-bottom: 4vw;
+        border: 2px solid $laranja;
+        padding: 2vw;
+
+        .materiais__nivel__title {
+            font-size: 18px;
+            color: $laranja;
+            margin-bottom: 2vw;
+            text-align: center;
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+
+    .materiais {
+        margin-top: 20vw;
+        margin-bottom: 20vw;
+        padding-left: 10vw;
+        padding-right: 10vw;
+
+        .materiais__title {
+            margin-bottom: 10vw;
+        }
+
+        .materiais__link {
+            padding: 8vw;
+        }
+
+        .materiais__nivel {
+            margin-bottom: 10vw;
+
+            .materiais__nivel__title {
+                margin-top: 5vw;
+                margin-bottom: 5vw;
+            }
+
+
+        }
+    }
+    
+
+}

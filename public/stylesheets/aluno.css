@@ -252,6 +252,13 @@ body {
   font-weight: 500;
   margin-bottom: 1vw;
 }
+.aluno .aluno__semestre .aluno__semestre__link {
+  color: #000000;
+}
+.aluno .aluno__semestre .aluno__semestre__link:hover {
+  color: #d9d7d7;
+  text-decoration: none;
+}
 .aluno .aluno__professor {
   padding: 3vw;
   clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
@@ -281,6 +288,9 @@ body {
   .aluno .aluno__semestre .aluno__semestre__info {
     margin-bottom: 4vw;
     line-height: 2;
+  }
+  .aluno .aluno__semestre .aluno__semestre__link:hover {
+    color: #000000;
   }
   .aluno .aluno__professor {
     padding: 8vw;

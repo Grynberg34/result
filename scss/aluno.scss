@@ -34,6 +34,15 @@ body {
             font-weight: 500;
             margin-bottom: 1vw;
         }
+
+        .aluno__semestre__link {
+            color: $preto;
+            
+            &:hover {
+                color: $cinza-claro;
+                text-decoration: none;
+            }
+        }
     }
 
     .aluno__professor {
@@ -73,6 +82,13 @@ body {
             .aluno__semestre__info {
                 margin-bottom: 4vw;
                 line-height: 2;
+            }
+
+            .aluno__semestre__link {
+                
+                &:hover {
+                    color: $preto;
+                }
             }
         }
 

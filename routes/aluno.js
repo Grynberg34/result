@@ -25,4 +25,6 @@ router.get('/', checkAuthentication, alunoController.mostrarMenuInicial);
 
 router.get('/aulas', checkAuthentication, alunoController.mostrarAulasSemestre);
 
+router.get('/materiais', checkAuthentication, alunoController.mostrarMateriais);
+
 module.exports = router;

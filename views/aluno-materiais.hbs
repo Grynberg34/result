@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="/stylesheets/aluno.css">
+    <link rel="stylesheet" href="/stylesheets/aluno-materiais.css">
     <link rel="stylesheet" href="/icons/font/flaticon.css">
     <link rel="stylesheet" href="https://use.typekit.net/gvd0wuw.css">
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
@@ -23,10 +23,10 @@
                     <img class="menu__logo" src="/images/logo.png" alt="">
 
                     <div class="menu__options">
-                        <a href="/aluno" class="menu__options__option active">SEMESTRE</a>
+                        <a href="/aluno" class="menu__options__option">SEMESTRE</a>
                         <a href="/aluno/aulas" class="menu__options__option">AULAS</a>
                         <a href="/aluno/avaliacoes" class="menu__options__option">AVALIAÇÕES</a>
-                        <a href="/aluno/materiais" class="menu__options__option">MATERIAIS</a>
+                        <a href="/aluno/materiais" class="menu__options__option active">MATERIAIS</a>
                         <a href="/logout" id="sair" class="menu__options__option">SAIR</a>
                     </div>
 
@@ -36,24 +36,27 @@
 
             <div class="col-md-2"></div>
 
-            <div class="col-md-4 aluno">
+            <div class="col-md-4 materiais">
 
-                <h1 class="aluno__title">Olá, {{aluno.User.nome}}!</h1>
+                <h1 class="materiais__title">MATERIAIS DIDÁTICOS</h1>
 
-                <div class="aluno__semestre">
-                    {{#each semestre}}
-                        <h2 class="aluno__semestre__info"><span class="bold">Turma:</span> {{this.Turma.nome}}</h2>
-                        <h2 class="aluno__semestre__info"><span class="bold">Data:</span> {{this.data}}</h2>
-                        <h2 class="aluno__semestre__info"><span class="bold">Nível:</span> {{this.nivel}}</h2>
-                        <h2 class="aluno__semestre__info"><span class="bold">Link para aulas:</span> <a target="_blank" rel="noreferrer" href="{{this.link_aulas}}" class="aluno__semestre__link">acessar</a></h2>
-                    {{/each}}
-                </div>
+                {{#each niveis}}
 
-                <div class="aluno__professor">
-                    <h2 class="aluno__professor__info"><span class="bold">Professor:</span>{{professor.User.nome}}</h2>
-                    <h2 class="aluno__professor__info"><span class="bold">Email:</span>{{professor.User.email}}</h2>
-                    <h2 class="aluno__professor__info"><span class="bold">Telefone:</span>{{professor.User.telefone}}</h2>
-                </div>
+                    <div id="{{this}}" class="materiais__nivel">
+
+                        <h2 class="materiais__nivel__title">{{this}}</h2>
+
+                    </div>
+
+                {{/each}}
+
+                {{#each materiais}}
+
+                    <a class="materiais__link {{this.nivel}}" href="{{this.link}}">{{this.nome}}</a>
+
+                {{/each}}
+
+
 
             </div>
         </div>
@@ -71,6 +74,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <script src="/scripts/menu_aluno.js"></script>
+    <script src="/scripts/aluno-materiais.js"></script>
 
 </body>
 </html>

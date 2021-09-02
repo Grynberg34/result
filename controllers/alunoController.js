@@ -5,6 +5,7 @@ const Turma = require("../models/Turma");
 const User = require("../models/User");
 const Aula = require("../models/Aula");
 const Chamada = require("../models/Chamada");
+const Material = require("../models/Material");
 
 module.exports = {
     mostrarMenuInicial: async function (req,res) {
@@ -90,6 +91,58 @@ module.exports = {
             console.log(err)
         })
 
+
+    },
+
+    mostrarMateriais: async function (req,res) {
+        var id = req.user.id;
+
+        var aluno = await Aluno.findOne({where: {userId: id}});
+
+        var niveis = [];
+
+
+        Chamada.findAll({where: {alunoId: aluno.id}}).then(async function(chamadas){
+            
+            for (var i=0; i < chamadas.length; i++) {
+                var aula = await Aula.findOne({where: {id: chamadas[i].aulaId}});
+
+                var semestre = await Semestre.findOne({where: { id: aula.semestreId}});
+
+                if (!niveis.includes(semestre.nivel)) {
+                    niveis.push(semestre.nivel)
+                }
+
+            }
+
+
+            var materiais = [];
+
+            for (var i=0; i < niveis.length; i++) {
+                
+                await Material.findAll({where: {nivel: niveis[i]},
+                order: [['nome', 'ASC']]}).then(function(materiais_nivel){
+
+
+                    for (var i=0; i < materiais_nivel.length; i++) {
+                        materiais.push(materiais_nivel[i])
+                    }
+
+                })        
+                .catch(function(err){
+                    res.render('error')
+                    console.log(err)
+                });
+
+            };
+
+            res.render('aluno-materiais', {materiais, niveis});
+
+        })
+        .catch(function(err){
+            res.render('error')
+            console.log(err)
+        });
 
     }
 }
