@@ -9,7 +9,7 @@ const Material = require("../models/Material");
 const Avaliação = require("../models/Avaliação");
 const Avaliação_Semestre = require("../models/Avaliação_Semestre");
 const PDFDocument = require('pdfkit');
-const fs = require('fs')
+const fs = require('fs');
 
 
 module.exports = {
