@@ -21,10 +21,10 @@ function checkAuthentication(req,res,next){
   }
 }
 
-router.get('/', checkAuthentication, alunoController.mostrarMenuInicial);
+router.get('/', checkAuthentication, alunoController.checarTurmaAluno, alunoController.mostrarMenuInicial);
 
-router.get('/aulas', checkAuthentication, alunoController.mostrarAulasSemestre);
+router.get('/aulas', checkAuthentication, alunoController.checarTurmaAluno, alunoController.mostrarAulasSemestre);
 
-router.get('/materiais', checkAuthentication, alunoController.mostrarMateriais);
+router.get('/materiais', checkAuthentication, alunoController.checarTurmaAluno, alunoController.mostrarMateriais);
 
 module.exports = router;
