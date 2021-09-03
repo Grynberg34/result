@@ -8,6 +8,19 @@ const Chamada = require("../models/Chamada");
 const Material = require("../models/Material");
 
 module.exports = {
+
+    checarTurmaAluno: async function (req,res) {
+        var aluno = await Aluno.findOne({ where: {userId: id}});
+
+        if (!aluno.turmaId) {
+            res.redirect('/logout');
+        }
+
+        else {
+            next();
+        }
+    },
+
     mostrarMenuInicial: async function (req,res) {
         var id = req.user.id;
 

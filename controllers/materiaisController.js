@@ -7,10 +7,10 @@ var storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, 'public/materiais/')
   },
-  filename: function (req, file, cb) {
-    cb(null, Date.now() + path.extname(file.originalname))
+  filename: function (req, file, callback) {
+    callback(null, file.originalname);
   }
-})
+});
 
 const upload = multer({
   dest: 'public/materiais/',
