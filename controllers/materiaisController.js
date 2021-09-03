@@ -5,7 +5,7 @@ const path = require('path');
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'public/materiais/')
+    cb(null, 'public/materiais_didaticos/')
   },
   filename: function (req, file, callback) {
     callback(null, file.originalname);
@@ -13,7 +13,7 @@ var storage = multer.diskStorage({
 });
 
 const upload = multer({
-  dest: 'public/materiais/',
+  dest: 'public/materiais_didaticos/',
   storage: storage
 })
 
@@ -39,7 +39,7 @@ module.exports = {
     adicionarMaterial: async function (req,res) {
       var nome = req.body.nome;
       var nivel = req.body.nivel;
-      var link = `/materiais/${req.file.filename}`;
+      var link = `/materiais_didaticos/${req.file.filename}`;
 
       await Material.create({
         nome: nome,
