@@ -2,6 +2,7 @@ const Material = require("../models/Material");
 
 const multer = require('multer');
 const path = require('path');
+const fs = require('fs');
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -39,12 +40,12 @@ module.exports = {
     adicionarMaterial: async function (req,res) {
       var nome = req.body.nome;
       var nivel = req.body.nivel;
-      var link = `/materiais_didaticos/${req.file.filename}`;
 
       await Material.create({
         nome: nome,
         nivel: nivel,
-        link: link
+        dados: fs.readFileSync("public/materiais_didaticos/" + req.file.filename
+        ),
       })
 
       res.redirect('/admin/materiais');
