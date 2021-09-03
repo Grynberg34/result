@@ -9,7 +9,8 @@ const Material = require("../models/Material");
 
 module.exports = {
 
-    checarTurmaAluno: async function (req,res) {
+    checarTurmaAluno: async function (req,res,next) {
+        var id = req.user.id;
         var aluno = await Aluno.findOne({ where: {userId: id}});
 
         if (!aluno.turmaId) {
@@ -19,6 +20,7 @@ module.exports = {
         else {
             next();
         }
+
     },
 
     mostrarMenuInicial: async function (req,res) {
