@@ -159,5 +159,25 @@ module.exports = {
             console.log(err)
         });
 
+    },
+
+    mostrarAvaliacoes: async function (req,res) {
+        var id = req.user.id;
+        var aluno = await Aluno.findOne({where: {userId: id}});
+
+        Semestre.findAll({where: {turmaId: aluno.turmaId},
+            limit: 1,
+            order: [['id', 'DESC']],
+            include: [Turma]
+        }).then(function(semestre){
+            console.log(semestre[0]);
+            res.render('aluno-avaliacoes')
+        })
+        .catch(function(err){
+            res.render('error')
+            console.log(err)
+        });
+
+
     }
 }
