@@ -1,0 +1,302 @@
+nav {
+  display: block;
+  position: relative;
+  top: 15%;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+}
+
+#mobile {
+  display: none;
+}
+
+input[type=checkbox] {
+  opacity: 0;
+  visibility: hidden;
+}
+input[type=checkbox]:checked + .label {
+  border: 4px solid #000000;
+  border-radius: 50%;
+  height: 28px;
+  top: 16px;
+  left: 18px;
+  width: 28px;
+  transform: rotate(-135deg);
+}
+input[type=checkbox]:checked + .label::before {
+  background: #000000;
+  top: 8px;
+  left: 4px;
+  width: 12px;
+}
+input[type=checkbox]:checked + .label::after {
+  background: #000000;
+  opacity: 1;
+  top: 8px;
+  left: 4px;
+  visibility: visible;
+  width: 12px;
+}
+input[type=checkbox]:checked + .label:hover {
+  border-color: #000000;
+}
+input[type=checkbox]:checked + .label:hover::before, input[type=checkbox]:checked + .label:hover::after {
+  background: #000000;
+}
+input[type=checkbox]:checked ~ .nav-links::before {
+  opacity: 1;
+  visibility: visible;
+}
+input[type=checkbox]:checked ~ .nav-links li {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.label {
+  background: none transparent;
+  border: 4px solid #000000;
+  border-left: 0 solid transparent;
+  border-right: 0 solid transparent;
+  cursor: pointer;
+  display: block;
+  height: 24px;
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  width: 24px;
+  transition: all 0.2s;
+}
+.label::before {
+  background: #000000;
+  content: "";
+  height: 4px;
+  left: 0;
+  position: absolute;
+  top: 6px;
+  width: 24px;
+  transition: all 0.2s;
+}
+.label::after {
+  background: #000000;
+  content: "";
+  height: 4px;
+  left: 0;
+  position: absolute;
+  top: 6px;
+  opacity: 0;
+  visibility: hidden;
+  width: 100%;
+  transform: rotate(90deg);
+  transition: all 0.2s;
+}
+
+.mobile__menu {
+  display: none;
+  position: absolute;
+  background-color: rgba(217, 215, 215, 0.7);
+  clip-path: polygon(0 0, 100% 8%, 100% 92%, 0 100%);
+  width: 40vw;
+  top: 39vh;
+  left: 30vw;
+  z-index: 1000;
+}
+.mobile__menu .mobile__menu__link {
+  display: block;
+  padding: 10px;
+  color: #000000;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 700;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+.mobile__menu .mobile__menu__link:hover {
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 767px) {
+  #mobile {
+    display: block;
+  }
+}
+body {
+  font-family: "work-sans", sans-serif;
+  background-color: #000000;
+  background-image: url("/images/fundo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.menu {
+  background-color: #f2780b;
+  min-height: 100vh;
+  padding-left: 0;
+  padding-right: 0;
+}
+.menu .menu__sidebar {
+  position: fixed;
+  width: 25%;
+}
+.menu .menu__logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  margin-top: 4vw;
+}
+.menu .menu__options {
+  margin-top: 5vw;
+}
+.menu .menu__options .menu__options__option {
+  display: block;
+  font-size: 14px;
+  color: #000000;
+  font-weight: 800;
+  text-align: center;
+  padding: 2vw;
+}
+.menu .menu__options .menu__options__option:hover {
+  text-decoration: none;
+  color: #d9d7d7;
+}
+.menu .menu__options .active {
+  clip-path: polygon(0 20%, 100% 0, 100% 80%, 0% 100%);
+  background-color: #d9d7d7;
+}
+.menu .menu__options .active:hover {
+  color: #000000;
+}
+
+nav {
+  display: none;
+  position: absolute;
+  top: 9%;
+  right: 25%;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+}
+
+.bold {
+  font-weight: 800;
+  margin-right: 10px;
+}
+
+#sair {
+  color: #d9d7d7;
+}
+
+@media only screen and (min-width: 400px) and (max-width: 414px) {
+  nav {
+    top: 10%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .menu {
+    min-height: unset;
+    clip-path: polygon(0 0%, 100% 0, 100% 90%, 0% 100%);
+    padding-bottom: 10vw;
+  }
+  .menu .menu__sidebar {
+    position: unset;
+    width: unset;
+  }
+  .menu .menu__logo {
+    width: 40%;
+  }
+  .menu .menu__options {
+    display: none;
+  }
+  .menu .menu__options .menu__options__option {
+    padding: 6vw;
+  }
+  .menu .menu__options .menu__options__option:hover {
+    color: #000000;
+  }
+
+  nav {
+    display: block;
+  }
+}
+body {
+  font-family: "work-sans", sans-serif;
+  background-color: #000000;
+  background-image: url("/images/fundo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.avaliacoes {
+  margin-top: 5vw;
+  margin-bottom: 10vw;
+}
+.avaliacoes .avaliacoes__title {
+  font-size: 30px;
+  color: #f2780b;
+  margin-bottom: 2vw;
+  text-align: center;
+  font-weight: 800;
+}
+.avaliacoes .avaliacoes__pontos {
+  font-size: 16px;
+  color: #000000;
+  font-weight: 800;
+  padding: 1vw;
+  background-color: #d9d7d7;
+  margin-bottom: 2vw;
+  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
+  text-align: center;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.avaliacoes .avaliacoes__avaliacao {
+  margin-top: 4vw;
+  padding: 2vw;
+  border: 2px solid #f2780b;
+}
+.avaliacoes .avaliacoes__avaliacao .avaliacoes__avaliacao__title {
+  font-size: 18px;
+  color: #d9d7d7;
+  margin-bottom: 2vw;
+  text-align: center;
+  font-weight: 700;
+}
+.avaliacoes .avaliacoes__avaliacao .avaliacoes__avaliacao__info {
+  font-size: 14px;
+  color: #d9d7d7;
+  font-weight: 400;
+  margin-bottom: 1vw;
+}
+.avaliacoes .avaliacoes__avaliacao .avaliacoes__avaliacao__button {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2vw;
+  color: #f2780b;
+  text-align: center;
+  width: 50%;
+  border: 2px solid #f2780b;
+  padding: 10px;
+}
+.avaliacoes .avaliacoes__avaliacao .avaliacoes__avaliacao__button:hover {
+  text-decoration: none;
+  color: #d9d7d7;
+  border: 2px solid #d9d7d7;
+}
+.avaliacoes .avaliacoes__avaliacao .avaliacoes__avaliacao__button:focus {
+  outline: none;
+}
+
+.laranja_bold {
+  color: #f2780b;
+  font-weight: 700;
+}
+
+/*# sourceMappingURL=aluno-avaliacoes.css.map */

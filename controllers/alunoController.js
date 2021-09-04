@@ -5,7 +5,12 @@ const Turma = require("../models/Turma");
 const User = require("../models/User");
 const Aula = require("../models/Aula");
 const Chamada = require("../models/Chamada");
+const Gabarito = require("../models/Gabarito");
 const Material = require("../models/Material");
+const Avaliação_Semestre = require("../models/Avaliação_Semestre");
+const Avaliação = require("../models/Avaliação");
+const Avaliação_Nota = require("../models/Avaliação_Nota");
+const Avaliação_Resposta = require("../models/Avaliação_Resposta");
 
 module.exports = {
 
@@ -96,14 +101,14 @@ module.exports = {
                 res.render('aluno-aulas', {aulas, chamadas, num_aulas, num_presenças, percentual})
             })
             .catch(function(err){
-                res.render('error')
-                console.log(err)
+                res.render('error');
+                console.log(err);
             })
 
         })
         .catch(function(err){
-            res.render('error')
-            console.log(err)
+            res.render('error');
+            console.log(err);
         })
 
 
@@ -145,8 +150,8 @@ module.exports = {
 
                 })        
                 .catch(function(err){
-                    res.render('error')
-                    console.log(err)
+                    res.render('error');
+                    console.log(err);
                 });
 
             };
@@ -155,8 +160,8 @@ module.exports = {
 
         })
         .catch(function(err){
-            res.render('error')
-            console.log(err)
+            res.render('error');
+            console.log(err);
         });
 
     },
@@ -169,15 +174,163 @@ module.exports = {
             limit: 1,
             order: [['id', 'DESC']],
             include: [Turma]
-        }).then(function(semestre){
-            console.log(semestre[0]);
-            res.render('aluno-avaliacoes')
+        }).then(async function(semestre){
+            var avaliacoes = await Avaliação_Semestre.findAll({where: {semestreId: semestre[0].id},
+                order: [['numero', 'ASC']],
+                include: [Avaliação]
+            });
+
+            var pontos = 0;
+
+            for (var i=0; i < avaliacoes.length; i++) {
+                
+                var nota = await Avaliação_Nota.findOne({where: {avaliação_semestreId: avaliacoes[i].id, alunoId: aluno.id}});
+
+                if (nota) {
+                    avaliacoes[i].disponivel = false;
+                    pontos = pontos + nota.nota;
+                    avaliacoes[i].nota = nota.nota;
+                }
+            }
+
+            res.render('aluno-avaliacoes', {avaliacoes, pontos});
         })
         .catch(function(err){
-            res.render('error')
-            console.log(err)
+            res.render('error');
+            console.log(err);
         });
 
+    },
+
+    mostrarAvaliacaoAluno: async function (req,res) {
+        var a_id = req.params.id;
+        var id = req.user.id;
+
+        var aluno = await Aluno.findOne({where: {userId: id},
+            include: [Turma]
+        });
+
+        var avaliacao = await Avaliação_Semestre.findOne({where: {id: a_id},
+            include: [Avaliação]
+        });
+
+        var perguntas = [];
+        for (var i = 0; i < avaliacao.Avaliação.numero_perguntas; i++) {
+            perguntas.push(i+1);
+        };
+
+        // Checar Tipo da Avaliação
+
+        if (avaliacao.Avaliação.tipo == 'perguntas abertas') {
+            var aberta = false;
+        }
+
+        else {
+            var aberta = true;
+        }
+
+        // Checar se aluno realizou a avaliação previamente
+
+        var nota = await Avaliação_Nota.findOne({where: {avaliação_semestreId: avaliacao.id, alunoId: aluno.id}});
+
+        // Checar se avaliação corresponde à turma do aluno
+
+        var semestre = await Semestre.findOne({where: {id: avaliacao.semestreId}});
+
+        if (semestre.turmaId == aluno.turmaId) {
+            var turma = true;
+        }
+
+        else {
+            var turma = false;
+        }
+
+        if (avaliacao.disponivel == false || nota || !turma) {
+            res.redirect('/aluno/avaliacoes');
+        }
+
+        else res.render('aluno-avaliacoes-fazer', {avaliacao, perguntas, aberta, a_id});
+
+    },
+    
+    receberRespostasAvaliacao: async function (req,res) {
+        var a_id = req.params.id;
+        var id = req.user.id;
+        var avaliacao_id = req.body.avaliacao;
+
+        var aluno = await Aluno.findOne({where: {userId: id},
+            include: [Turma]
+        });
+
+        var avaliacao = await Avaliação_Semestre.findOne({where: {id: avaliacao_id},
+            include: [Avaliação]
+        });
+
+        var semestre = await Semestre.findOne({where: {id: avaliacao.semestreId}});
+
+        if (a_id !== avaliacao_id || semestre.turmaId !== aluno.turmaId) {
+            return res.redirect('/aluno/avaliacoes');
+        }
+
+        for (var i=0; i < avaliacao.Avaliação.numero_perguntas; i++) {
+            await Avaliação_Resposta.create({
+                avaliação_semestreId: avaliacao.id,
+                numero_pergunta: i+1,
+                resposta: req.body[`${i+1}`].toLowerCase()
+            });
+
+        }
+
+        var nota = 0;
+
+        var pontos = avaliacao.pontos_pergunta;
+
+        if (avaliacao.Avaliação.tipo == 'perguntas abertas') {
+            Avaliação_Nota.create({
+                nota: 0,
+                avaliação_semestreId: avaliacao.id,
+                alunoId: aluno.id
+            })
+
+            console.log('abertas')
+
+            res.redirect('/aluno/avaliacoes');
+        }
+
+        else {
+
+            for (var i=0; i < avaliacao.Avaliação.numero_perguntas; i++) {
+
+                var gabarito = await Gabarito.findOne({where: {
+                    avaliaçãoId: avaliacao.Avaliação.id,
+                    numero_pergunta: i+1
+                }});
+
+                var resposta = await Avaliação_Resposta.findOne({where: {
+                    avaliação_semestreId: avaliacao.id,
+                    numero_pergunta: i+1
+                }});
+
+                console.log(gabarito.resposta);
+                console.log(resposta.resposta);
+
+                if (gabarito.resposta == resposta.resposta) {
+                    nota = nota + pontos;
+                }
+
+            }
+
+            console.log(nota)
+
+            await Avaliação_Nota.create({
+                nota: nota,
+                avaliação_semestreId: avaliacao.id,
+                alunoId: aluno.id
+            })
+
+            res.redirect('/aluno/avaliacoes');
+
+        }
 
     }
 }
