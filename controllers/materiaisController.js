@@ -1,22 +1,31 @@
 const Material = require("../models/Material");
 
 const multer = require('multer');
-const path = require('path');
-const fs = require('fs');
+const aws = require('aws-sdk');
+const multerS3 = require('multer-s3');
 
-var storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, 'public/materiais_didaticos/')
-  },
-  filename: function (req, file, callback) {
-    callback(null, file.originalname);
-  }
-})
+const spacesEndpoint = new aws.Endpoint('nyc3.digitaloceanspaces.com');
+const s3 = new aws.S3({
+  endpoint: spacesEndpoint,
+  accessKeyId: 'FKRSQNNKJW26VGVS25BI',
+  secretAccessKey: 'QTKl3LHzw6+Nk9q0uP4272oirY7irocmQn/VHmGdnA8',
+  region: 'nyc3'
+});
 
 const upload = multer({
-  dest: 'public/materiais_didaticos/',
-  storage: storage
-})
+  storage: multerS3({
+    s3: s3,
+    bucket: 'grynberg34',
+    acl: 'public-read',
+    contentType: multerS3.AUTO_CONTENT_TYPE,
+    metadata: function (req, file, cb) {
+      cb(null, {fieldName: file.fieldname});
+    },
+    key: function (req, file, cb) {
+      cb(null, file.originalname);
+    }
+  })
+}).array('zip', 1);
 
 module.exports = {
 
@@ -30,23 +39,36 @@ module.exports = {
     mostrarMateriaisPorNivel: async function (req,res) {
       var id= req.params.id;
       var materiais = await Material.findAll({where: {nivel: id},
-      order: [['nome', 'ASC']]})
+      order: [['nome', 'ASC']]});
 
       res.render('admin-materiais-nivel', {materiais, id});
     },
 
-    adicionarPastaMaterial: upload.single('zip'),
+    adicionarPastaMaterial: function (req,res,next){
 
-    adicionarMaterial: async function (req,res) {
+      upload(req, res, function (error) {
+        if (error) {
+          console.log(error);
+          return res.render('error');
+        }
+        console.log('File uploaded successfully.');
+        next();
+      });
+
+    },
+
+    adicionarMaterial: async function (req, res) {
       var nome = req.body.nome;
       var nivel = req.body.nivel;
 
       await Material.create({
         nome: nome,
         nivel: nivel,
-        dados: fs.readFileSync("public/materiais_didaticos/" + req.file.filename
-        ),
+        link: req.files[0].location,
       })
+      .catch(function(err){
+        console.log(err)
+      });
 
       res.redirect('/admin/materiais');
     },
@@ -62,7 +84,7 @@ module.exports = {
       .catch(function(err){
         res.render('error')
         console.log(err)
-    });
+      });
     }
 
 }

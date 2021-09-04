@@ -18,9 +18,8 @@ const Material = connection.define('Material', {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    dados: {
-      allowNull: false,
-      type: DataTypes.BLOB("long"),
+    link: {
+      type: DataTypes.STRING,
     },
 },{
   tableName: 'materiais'
