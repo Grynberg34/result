@@ -14,7 +14,7 @@ module.exports = {
         type: DataTypes.INTEGER
       },
       resposta: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(50000),
         allowNull: true
       },
       avaliação_semestreId: {
@@ -23,6 +23,18 @@ module.exports = {
         references: {
           model: {
             tableName: 'avaliações_semestre'
+          },
+          key: 'id',
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
+      },
+      alunoId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: {
+            tableName: 'alunos'
           },
           key: 'id',
         },

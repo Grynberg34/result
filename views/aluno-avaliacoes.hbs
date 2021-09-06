@@ -49,7 +49,7 @@
                         <h3 class="avaliacoes__avaliacao__info"><span class="laranja_bold">Nota:</span> <span class="nota">{{this.nota}}</span></h3>
                         <h3 class="avaliacoes__avaliacao__info"><span class="laranja_bold">Pontos:</span> {{this.pontos_total}}</h3>
                         <h3 class="avaliacoes__avaliacao__info"><span class="laranja_bold">Número de perguntas:</span> {{this.Avaliação.numero_perguntas}}</h3>
-                        <h3 class="avaliacoes__avaliacao__info"><span class="laranja_bold">Tipo:</span> {{this.Avaliação.tipo}}</h3>
+                        <h3 class="avaliacoes__avaliacao__info"><span class="laranja_bold">Tipo:</span> <span class="tipo">{{this.Avaliação.tipo}}</span></h3>
 
                         {{#if this.disponivel}}
                             <a id="{{this.id}}" href="/aluno/avaliacoes/{{this.id}}" class="avaliacoes__avaliacao__button">FAZER</a>

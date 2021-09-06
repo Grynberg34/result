@@ -7,7 +7,9 @@ const User = require("../models/User");
 const Chamada = require("../models/Chamada");
 const Material = require("../models/Material");
 const Avaliação = require("../models/Avaliação");
+const Avaliação_Nota = require("../models/Avaliação_Nota");
 const Avaliação_Semestre = require("../models/Avaliação_Semestre");
+const Avaliação_Resposta = require("../models/Avaliação_Resposta");
 const PDFDocument = require('pdfkit');
 const fs = require('fs');
 
@@ -105,8 +107,6 @@ module.exports = {
         var comentarios = req.body.comentarios;
         var tema = req.body.tema;
         var data = req.body.data;
-
-        console.log(data)
 
         Aula.update(           
             {   
@@ -433,6 +433,21 @@ module.exports = {
                 order: [['id', 'ASC']]
             });
 
+            for (var i=0; i < avaliacoes.length; i++) {
+
+
+                var notas = await Avaliação_Nota.findAll({where: {
+                    avaliação_semestreId: avaliacoes[i].id
+                },
+                include: [{
+                    model: Aluno,
+                    include: User
+                }]})
+    
+                avaliacoes[i].notas = notas;
+    
+            }
+
             res.render('professor-avaliacoes', {id, avaliacoes})
         })
         .catch(function(err){
@@ -446,8 +461,6 @@ module.exports = {
     abrirFecharAvaliacao: async function (req,res) {
         var id = req.params.id;
         var a_id = req.body.a_id;
-
-        console
 
         Avaliação_Semestre.findByPk(a_id).then(function(avaliacao){
 
@@ -545,7 +558,65 @@ module.exports = {
             res.render('error')
             console.log(err)
         })
+    },
 
+    mostrarRespostasAvaliacao: async function (req,res) {
+        var id = req.params.id;
+        var sid = req.params.sid;
+
+        var avaliacao = await Avaliação_Semestre.findByPk(sid, {
+            include: [Avaliação]
+        });
+
+        var respostas = await Avaliação_Resposta.findAll({where:
+        {
+            avaliação_semestreId: sid
+        },
+        include: [{
+            model: Aluno,
+            include: User
+            }]
+        });
+
+        var alunos = [];
+
+        for (var i=0; i < respostas.length; i++) {
+
+            if (alunos.indexOf(respostas[i].alunoId) === -1) {
+                alunos.push(respostas[i].alunoId)
+            }
+
+        }
+
+        for (var i=0; i < alunos.length; i++) {
+            alunos[i] = await Aluno.findOne({where: {id: alunos[i]},
+            include: [User]})
+
+            var nota = await Avaliação_Nota.findOne({where: {
+                alunoId: alunos[i].id,
+                avaliação_semestreId: avaliacao.id
+            }});
+
+            alunos[i].nota = nota.nota;
+        }
+
+        res.render('professor-avaliacoes-corrigir', {avaliacao, id, alunos, respostas})
+
+    },
+
+    salvarNotaAvaliacao: async function (req,res) {
+        var id = req.params.id;
+        var sid = req.params.sid;
+        var aluno_id = req.body.aluno_id;
+        var nota = req.body.nota;
+
+        await Avaliação_Nota.update(
+            { nota: nota },
+            { where: { alunoId: aluno_id,
+            avaliação_semestreId: sid } 
+        });
+
+        res.redirect(`/professor/${id}/avaliacoes/corrigir/${sid}`)
 
     }
 

@@ -99,10 +99,12 @@ body {
   border: 2px solid #d9d7d7;
 }
 .aulas .aulas__aula .aulas__aula__chamada {
-  margin-top: 2vw;
+  margin-top: 4vw;
   margin-bottom: 2vw;
   padding: 20px;
   border: 2px solid #f2780b;
+  margin-left: 2vw;
+  margin-right: 2vw;
 }
 .aulas .aulas__aula .aulas__aula__chamada .aulas__aula__chamada__title {
   font-size: 18px;
@@ -120,6 +122,11 @@ body {
   color: #d9d7d7;
   font-weight: 400;
   margin-bottom: 1vw;
+}
+
+.aluno {
+  display: inline-block;
+  width: 20vw;
 }
 
 .presença {

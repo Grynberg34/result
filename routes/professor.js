@@ -56,4 +56,13 @@ router.get('/:id/avaliacoes/criar', checkAuthentication, professorController.mos
 
 router.post('/:id/avaliacoes/criar', checkAuthentication, professorController.criarAvaliacaoSemestre);
 
+router.get('/:id/avaliacoes/corrigir', function (req,res){
+  var id = req.params.id;
+  res.redirect(`/professor/${id}/avaliacoes`)
+});
+
+router.get('/:id/avaliacoes/corrigir/:sid', checkAuthentication, professorController.mostrarRespostasAvaliacao);
+
+router.post('/:id/avaliacoes/corrigir/:sid', checkAuthentication, professorController.salvarNotaAvaliacao);
+
 module.exports = router;

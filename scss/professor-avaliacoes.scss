@@ -14,7 +14,7 @@ body {
     margin-bottom: 10vw;
 
     .menu__title {
-        font-size: 20px;
+        font-size: 30px;
         color: $cinza-claro;
         font-weight: 700;
         text-align: center;
@@ -67,9 +67,9 @@ body {
 .avaliacoes {
 
     .avaliacoes__avaliacao {
-        margin-top: 2vw;
+        margin-top: 4vw;
         border: 2px solid $laranja;
-        padding: 20px;
+        padding: 40px;
 
         .avaliacoes__avaliacao__title {
             font-size: 20px;
@@ -107,6 +107,37 @@ body {
             }
         }
 
+        .avaliacoes__avaliacao__notas {
+            margin-top: 4vw;
+            margin-bottom: 4vw;
+            padding: 20px;
+            border: 2px solid $laranja;
+            margin-left: 2vw;
+            margin-right: 2vw;
+
+            .avaliacoes__avaliacao__notas__title {
+                font-size: 18px;
+                font-weight: 800;
+                color: $laranja;
+                margin-bottom: 2vw;
+                text-align: center;
+            }
+
+            .avaliacoes__avaliacao__notas__lista {
+                padding-left: 0;
+                list-style: none;
+
+                .avaliacoes__avaliacao__notas__lista__aluno {
+                    font-size: 14px;
+                    color: $cinza-claro;
+                    font-weight: 400;
+                    margin-bottom: 1vw;
+                }
+
+            }
+
+        }
+
     }
 
 }
@@ -117,6 +148,17 @@ body {
 
 .laranja {
     color: $laranja;
+}
+
+.aluno {
+    display: inline-block;
+    width: 20vw;
+}
+
+.nota {
+    color: $laranja;
+    font-weight: 800;
+    margin-left: 1vw;
 }
 
 @media only screen and (max-width: 767px) {

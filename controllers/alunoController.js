@@ -275,8 +275,9 @@ module.exports = {
         for (var i=0; i < avaliacao.Avaliação.numero_perguntas; i++) {
             await Avaliação_Resposta.create({
                 avaliação_semestreId: avaliacao.id,
+                alunoId: aluno.id,
                 numero_pergunta: i+1,
-                resposta: req.body[`${i+1}`].toLowerCase()
+                resposta: req.body[`${i+1}`]
             });
 
         }
@@ -290,9 +291,7 @@ module.exports = {
                 nota: 0,
                 avaliação_semestreId: avaliacao.id,
                 alunoId: aluno.id
-            })
-
-            console.log('abertas')
+            });
 
             res.redirect('/aluno/avaliacoes');
         }
@@ -308,19 +307,15 @@ module.exports = {
 
                 var resposta = await Avaliação_Resposta.findOne({where: {
                     avaliação_semestreId: avaliacao.id,
-                    numero_pergunta: i+1
+                    alunoId: aluno.id,
+                    numero_pergunta: i+1,
                 }});
 
-                console.log(gabarito.resposta);
-                console.log(resposta.resposta);
-
-                if (gabarito.resposta == resposta.resposta) {
+                if (gabarito.resposta.toLowerCase() == resposta.resposta.toLowerCase()) {
                     nota = nota + pontos;
                 }
 
             }
-
-            console.log(nota)
 
             await Avaliação_Nota.create({
                 nota: nota,

@@ -1,6 +1,7 @@
 const connection = require('../config/database');
 const { DataTypes } = require('sequelize');
 const Avaliação_Semestre = require('./Avaliação_Semestre');
+const Aluno = require('./Aluno');
 
 const Avaliação_Resposta = connection.define('Avaliação_Resposta', {
   id: { 
@@ -14,7 +15,7 @@ const Avaliação_Resposta = connection.define('Avaliação_Resposta', {
     type: DataTypes.INTEGER
   },
   resposta: {
-    type: DataTypes.STRING,
+    type: DataTypes.STRING(50000),
     allowNull: true
   }
 },{
@@ -22,5 +23,6 @@ const Avaliação_Resposta = connection.define('Avaliação_Resposta', {
 });
 
 Avaliação_Resposta.belongsTo(Avaliação_Semestre, {foreignKey: 'avaliação_semestreId', onUpdate: 'cascade', onDelete: 'cascade'});
+Avaliação_Resposta.belongsTo(Aluno, {foreignKey: 'alunoId', onUpdate: 'cascade', onDelete: 'cascade'});
 
 module.exports = Avaliação_Resposta;

@@ -1,0 +1,147 @@
+body {
+  font-family: "work-sans", sans-serif;
+  background-color: #000000;
+  background-image: url("/images/fundo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.menu {
+  margin-top: 10vw;
+  margin-bottom: 10vw;
+}
+.menu .menu__title {
+  font-size: 30px;
+  color: #d9d7d7;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2vw;
+}
+.menu .menu__subtitle {
+  font-size: 16px;
+  color: #f2780b;
+  font-weight: 600;
+  margin-bottom: 4vw;
+  text-align: center;
+}
+.menu .menu__link {
+  display: block;
+  margin-top: 6vh;
+  text-align: center;
+  color: #d9d7d7;
+  font-size: 14px;
+}
+.menu .menu__link:hover {
+  text-decoration: none;
+  color: #f2780b;
+}
+
+.perguntas {
+  padding: 40px;
+  border: 2px solid #d9d7d7;
+}
+.perguntas .perguntas__text {
+  font-size: 12px;
+  color: #d9d7d7;
+  text-align: justify;
+  white-space: pre-wrap;
+}
+
+.aluno {
+  padding: 40px;
+  border: 2px solid #d9d7d7;
+  margin-top: 4vw;
+}
+.aluno .aluno__icon {
+  margin-left: 10px;
+  color: #d9d7d7;
+  cursor: pointer;
+  font-size: 16px;
+}
+.aluno .aluno__nome {
+  font-size: 22px;
+  color: #f2780b;
+  text-align: center;
+  font-weight: 700;
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+}
+.aluno .aluno__nota {
+  display: block;
+  margin-top: 1vw;
+  margin-bottom: 2vw;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.aluno .aluno__nota .aluno__nota__label {
+  display: block;
+  font-size: 14px;
+  color: #d9d7d7;
+  font-weight: 500;
+  text-align: center;
+}
+.aluno .aluno__nota .aluno__nota__input {
+  display: block;
+  text-align: center;
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.resposta {
+  margin-bottom: 2vw;
+  padding-top: 2vw;
+  border-top: 2px solid #d9d7d7;
+}
+.resposta .resposta__numero {
+  font-size: 18px;
+  color: #f2780b;
+  font-weight: 800;
+  margin-bottom: 1vw;
+}
+.resposta .resposta__texto {
+  font-size: 12px;
+  color: #d9d7d7;
+  text-align: justify;
+  white-space: pre-wrap;
+  padding-bottom: 2vw;
+}
+
+.laranja {
+  color: #f2780b;
+}
+
+#form {
+  display: none;
+}
+
+@media only screen and (max-width: 767px) {
+  .menu {
+    margin-top: 20vw;
+  }
+  .menu .menu__row {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-bottom: 2vh;
+  }
+  .menu .menu__row .menu__row__col:hover {
+    background-color: #f2780b;
+  }
+  .menu .menu__title {
+    margin-bottom: 5vw;
+  }
+  .menu .menu__subtitle {
+    margin-bottom: 10vw;
+  }
+  .menu .menu__adicionar {
+    width: 70%;
+  }
+
+  .menu__link:hover {
+    color: #d9d7d7;
+  }
+}
+
+/*# sourceMappingURL=professor-avaliacoes-corrigir.css.map */

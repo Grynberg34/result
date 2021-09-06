@@ -42,6 +42,26 @@
 
                             <p class="avaliacoes__avaliacao__info"><span class="laranja">Total de pontos:</span> <span class="pontos">{{this.pontos_total}}</span></p>
 
+                            {{#if notas}}
+
+
+                                <div class="avaliacoes__avaliacao__notas">
+                                    <h3 class="avaliacoes__avaliacao__notas__title">Notas</h3>
+
+                                    <ul class="avaliacoes__avaliacao__notas__lista">
+                                        {{#each notas}}
+
+                                            <li class="avaliacoes__avaliacao__notas__lista__aluno"><span class="aluno">{{this.Aluno.User.nome}}</span> <span class="nota">{{this.nota}} / {{../this.pontos_total}}</span></li>
+
+                                        {{/each}}
+                                    </ul>
+
+                                </div>
+
+
+                            {{/if}}
+
+
                             {{#if disponivel}}
 
     
@@ -58,7 +78,7 @@
 
                                 {{else}}
 
-                                <a href="" class="avaliacoes__avaliacao__button" id="{{this.id}}">CORRIGIR</a>
+                                <a href="/professor/{{../id}}/avaliacoes/corrigir/{{this.id}}" class="avaliacoes__avaliacao__button" id="{{this.id}}">CORRIGIR</a>
 
                             {{/if}}
 
