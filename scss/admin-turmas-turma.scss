@@ -132,6 +132,9 @@ body {
 @media only screen and (max-width: 767px) {
 
     .menu {
+        padding-left: 10vw;
+        padding-right: 10vw;
+
         .menu__row {
             margin-left: 5vw;
             margin-right: 5vw;
@@ -149,6 +152,15 @@ body {
         &:hover {
             color: $cinza-claro;
         }
+    }
+
+    .alunos {
+        padding-top: 10vw;
+        padding-bottom: 10vw;
+        margin-top: 10vw;
+        border-top: 2px solid $laranja;
+        border-bottom: 2px solid $laranja;
+        border-left: none;
     }
 
 }

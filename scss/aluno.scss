@@ -68,8 +68,8 @@ body {
     .aluno {
         margin-top: 20vw;
         margin-bottom: 20vw;
-        padding-left: 10vw;
-        padding-right: 10vw;
+        padding-left: 0;
+        padding-right: 0;
 
         .aluno__title {
             margin-bottom: 10vw;
@@ -78,6 +78,8 @@ body {
         .aluno__semestre {
             padding: 8vw;
             margin-bottom: 8vw;
+            padding-top: 20vw;
+            padding-bottom: 20vw;
 
             .aluno__semestre__info {
                 margin-bottom: 4vw;
@@ -94,6 +96,8 @@ body {
 
         .aluno__professor {
             padding: 8vw;
+            padding-top: 20vw;
+            padding-bottom: 20vw;
 
             .aluno__professor__info {
                 margin-bottom: 4vw;

@@ -20,28 +20,32 @@
             <div class="col-md-10 menu">
                 <h1 class="menu__title">ALUNOS</h1>
 
-                <div id="head" class="row menu__table">
-                    <div class="col-md-3 menu__table__head">Nome</div>
-                    <div class="col-md-2 menu__table__head">Email</div>
-                    <div class="col-md-2 menu__table__head">Telefone</div>
-                    <div class="col-md-2 menu__table__head">Data nasc.</div>
-                    <div class="col-md-2 menu__table__head">Turma</div>
-                    <div class="col-md-1 menu__table__head">Deletar</div>
+                <div class="container">
+
+                    <div id="head" class="row menu__table">
+                        <div class="col-md-3 menu__table__head">Nome</div>
+                        <div class="col-md-2 menu__table__head">Email</div>
+                        <div class="col-md-2 menu__table__head">Telefone</div>
+                        <div class="col-md-2 menu__table__head">Data nasc.</div>
+                        <div class="col-md-2 menu__table__head">Turma</div>
+                        <div class="col-md-1 menu__table__head">Deletar</div>
+                    </div>
+
+
+                    {{#each alunos}}
+
+                    <div class="row menu__table">
+                        <div class="col-md-3 menu__table__data {{this.id}}">{{this.User.nome}}</div>
+                        <div class="col-md-2 menu__table__data">{{this.User.email}}</div>
+                        <div class="col-md-2 menu__table__data">{{this.User.telefone}}</div>
+                        <div class="col-md-2 menu__table__data nascimento"><span class="timestamp">{{this.User.data_nascimento}}</span></div>
+                        <div class="col-md-2 menu__table__data">{{this.Turma.nome}} <i id="{{this.id}}" class="flaticon-edit menu__table__data__icon edit__icon"></i></div>
+                        <div class="col-md-1 menu__table__data"><i id="{{this.User.id}}" class="flaticon-trash menu__table__data__icon delete__icon"></i></div>
+                    </div>
+
+                    {{/each}}
+
                 </div>
-
-
-                {{#each alunos}}
-
-                <div class="row menu__table">
-                    <div class="col-md-3 menu__table__data {{this.id}}">{{this.User.nome}}</div>
-                    <div class="col-md-2 menu__table__data">{{this.User.email}}</div>
-                    <div class="col-md-2 menu__table__data">{{this.User.telefone}}</div>
-                    <div class="col-md-2 menu__table__data nascimento"><span class="timestamp">{{this.User.data_nascimento}}</span></div>
-                    <div class="col-md-2 menu__table__data">{{this.Turma.nome}} <i id="{{this.id}}" class="flaticon-edit menu__table__data__icon edit__icon"></i></div>
-                    <div class="col-md-1 menu__table__data"><i id="{{this.User.id}}" class="flaticon-trash menu__table__data__icon delete__icon"></i></div>
-                </div>
-
-                {{/each}}
 
                 <a href="/admin" class="menu__link">VOLTAR</a>
             </div>

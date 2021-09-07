@@ -18,7 +18,7 @@ body {
         color: $cinza-claro;
         font-weight: 700;
         text-align: center;
-        margin-bottom: 40px;
+        padding-bottom: 40px;
     }
 
     .menu__table {
@@ -202,6 +202,12 @@ body {
 @media only screen and (max-width: 767px) {
 
     .menu {
+        margin-top: 25vw;
+
+        .menu__title {
+            border-bottom: 2px solid $cinza-claro;
+        }
+
         .menu__row {
             margin-left: 5vw;
             margin-right: 5vw;

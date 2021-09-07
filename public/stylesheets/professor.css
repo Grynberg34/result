@@ -88,6 +88,10 @@ body {
     background-color: #f2780b;
   }
 
+  .semestres {
+    width: 80%;
+  }
+
   .menu__link:hover {
     color: #d9d7d7;
   }

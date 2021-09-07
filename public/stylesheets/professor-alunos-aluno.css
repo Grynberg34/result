@@ -142,6 +142,9 @@ body {
     color: #d9d7d7;
   }
 
+  .aluno {
+    border: none;
+  }
   .aluno .aluno__chamadas {
     margin-top: 10vw;
     margin-bottom: 10vw;
@@ -150,10 +153,30 @@ body {
     margin-bottom: 5vw;
   }
   .aluno .aluno__chamadas .aluno__chamadas__total {
-    margin-top: 5vw;
+    margin-top: 10vw;
+  }
+  .aluno .aluno__notas {
+    margin-top: 10vw;
+    margin-bottom: 10vw;
+  }
+  .aluno .aluno__notas .aluno__notas__title {
+    margin-bottom: 5vw;
+  }
+  .aluno .aluno__notas .aluno__notas__total {
+    margin-top: 10vw;
   }
   .aluno .aluno__link {
     width: 70%;
+  }
+
+  .aula {
+    display: inline-block;
+    width: 35%;
+  }
+
+  .nota {
+    display: inline-block;
+    width: 45%;
   }
 }
 

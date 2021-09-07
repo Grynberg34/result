@@ -171,6 +171,8 @@ body {
 @media only screen and (max-width: 767px) {
 
     .menu {
+        margin-top: 20vw;
+
         .menu__row {
             margin-left: 5vw;
             margin-right: 5vw;
@@ -191,7 +193,9 @@ body {
     }
 
     .aulas {
+
         .aulas__aula {
+            padding: 20px;
             margin-bottom: 10vw;
 
             .aulas__aula__title {
@@ -215,6 +219,15 @@ body {
                 margin-top: 10vw;
             }
         }
+    }
+
+    .aluno {
+        width: 35vw;
+        font-size: 11px;
+    }
+
+    .presença {
+        font-size: 11px;
     }
 
 }

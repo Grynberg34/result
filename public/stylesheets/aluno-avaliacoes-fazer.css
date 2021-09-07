@@ -178,6 +178,7 @@ nav {
   margin-left: auto;
   margin-right: auto;
   height: auto;
+  z-index: 999;
 }
 
 .bold {
@@ -334,6 +335,41 @@ body {
 
 #avaliacao {
   display: none;
+}
+
+@media only screen and (max-width: 767px) {
+  .avaliacao {
+    margin-top: 20vw;
+    margin-bottom: 40vw;
+  }
+  .avaliacao .avaliacao__title {
+    margin-bottom: 5vw;
+  }
+  .avaliacao .avaliacao__subtitle {
+    margin-bottom: 10vw;
+  }
+  .avaliacao .avaliacao__perguntas {
+    padding: 8vw;
+  }
+  .avaliacao .avaliacao__perguntas .avaliacao__perguntas__title {
+    margin-bottom: 10vw;
+  }
+  .avaliacao .avaliacao__respostas {
+    margin-top: 20vw;
+    padding: 8vw;
+  }
+  .avaliacao .avaliacao__respostas .avaliacao__respostas__title {
+    margin-bottom: 10vw;
+  }
+  .avaliacao .avaliacao__respostas .avaliacao__respostas__label {
+    margin-bottom: 4vw;
+  }
+  .avaliacao .avaliacao__respostas .avaliacao__respostas__input, .avaliacao .avaliacao__respostas .avaliacao__respostas__textarea {
+    margin-bottom: 10vw;
+  }
+  .avaliacao .avaliacao__respostas .avaliacao__respostas__button {
+    margin-top: 20vw;
+  }
 }
 
 /*# sourceMappingURL=aluno-avaliacoes-fazer.css.map */

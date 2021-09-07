@@ -118,6 +118,22 @@ body {
 
 @media only screen and (max-width: 767px) {
 
+    .menu {
+        margin-top: 20vw;
+        padding-left: 10vw;
+        padding-right: 10vw;
+
+
+        .menu__button {
+            width: 50%;
+        }
+
+        .menu__option {
+            margin-top: 10vw;
+            width: 50%;
+        }
+    }
+
     .menu__link {
         &:hover {
             color: $cinza-claro;

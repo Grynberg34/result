@@ -108,6 +108,10 @@ body {
 }
 
 @media only screen and (max-width: 767px) {
+  .menu {
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
   .menu .menu__row {
     margin-left: 5vw;
     margin-right: 5vw;
@@ -119,6 +123,15 @@ body {
 
   .menu__link:hover {
     color: #d9d7d7;
+  }
+
+  .alunos {
+    padding-top: 10vw;
+    padding-bottom: 10vw;
+    margin-top: 10vw;
+    border-top: 2px solid #f2780b;
+    border-bottom: 2px solid #f2780b;
+    border-left: none;
   }
 }
 

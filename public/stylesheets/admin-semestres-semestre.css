@@ -102,6 +102,19 @@ body {
 }
 
 @media only screen and (max-width: 767px) {
+  .menu {
+    margin-top: 20vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+  .menu .menu__button {
+    width: 50%;
+  }
+  .menu .menu__option {
+    margin-top: 10vw;
+    width: 50%;
+  }
+
   .menu__link:hover {
     color: #d9d7d7;
   }

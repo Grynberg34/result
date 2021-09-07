@@ -16,7 +16,7 @@ body {
   color: #d9d7d7;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 40px;
+  padding-bottom: 40px;
 }
 .menu .menu__table {
   border-bottom: 2px solid #d9d7d7;
@@ -168,6 +168,12 @@ body {
 }
 
 @media only screen and (max-width: 767px) {
+  .menu {
+    margin-top: 25vw;
+  }
+  .menu .menu__title {
+    border-bottom: 2px solid #d9d7d7;
+  }
   .menu .menu__row {
     margin-left: 5vw;
     margin-right: 5vw;

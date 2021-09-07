@@ -200,6 +200,7 @@ body {
     .avaliacoes {
 
         .avaliacoes__avaliacao {
+            padding: 20px;
             margin-bottom: 10vw;
 
             .avaliacoes__avaliacao__title {
@@ -213,6 +214,15 @@ body {
         }
 
 
+    }
+
+    .aluno {
+        width: 35vw;
+        font-size: 11px;
+    }
+
+    .presença {
+        font-size: 11px;
     }
 
 }

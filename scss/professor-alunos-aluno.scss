@@ -168,6 +168,8 @@ body {
     }
 
     .aluno {
+        border: none;
+
         .aluno__chamadas {
             margin-top: 10vw;
             margin-bottom: 10vw;
@@ -177,14 +179,38 @@ body {
             }
 
             .aluno__chamadas__total {
-                margin-top: 5vw;
+                margin-top: 10vw;
             }
+            
         }
-        
+    
+        .aluno__notas {
+            margin-top: 10vw;
+            margin-bottom: 10vw;
+
+            .aluno__notas__title {
+                margin-bottom: 5vw;
+            }
+
+            .aluno__notas__total {
+                margin-top: 10vw;
+            }
+            
+        }
 
         .aluno__link {
             width: 70%;
         }
+    }
+
+    .aula {
+        display: inline-block;
+        width: 35%;
+    }
+
+    .nota {
+        display: inline-block;
+        width: 45%;
     }
 
 }

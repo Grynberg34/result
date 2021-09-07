@@ -137,7 +137,47 @@ body {
 @media only screen and (max-width: 767px) {
 
 
+    .avaliacao {
+        margin-top: 20vw;
+        margin-bottom: 40vw;
 
+        .avaliacao__title{
+            margin-bottom: 5vw;
+        }
+
+        .avaliacao__subtitle {
+            margin-bottom: 10vw;
+        }
+
+        .avaliacao__perguntas {
+            padding: 8vw;
+
+            .avaliacao__perguntas__title {
+                margin-bottom: 10vw;
+            }
+        }
+
+        .avaliacao__respostas {
+            margin-top: 20vw;
+            padding: 8vw;
+
+            .avaliacao__respostas__title {
+                margin-bottom: 10vw;
+            }
+
+            .avaliacao__respostas__label {
+                margin-bottom: 4vw;
+            }
+
+            .avaliacao__respostas__input, .avaliacao__respostas__textarea {
+                margin-bottom: 10vw;
+            }
+
+            .avaliacao__respostas__button {
+                margin-top: 20vw;
+            }
+        }
+    }
     
 
 }

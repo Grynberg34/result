@@ -28,18 +28,18 @@ body {
         margin-bottom: 4vw;
         text-align: center;
     }
+}
 
-    .menu__link {
-        display: block;
-        margin-top: 6vh;
-        text-align: center;
-        color: $cinza-claro;
-        font-size: 14px;
+.voltar {
+    display: block;
+    margin-top: 6vh;
+    text-align: center;
+    color: $cinza-claro;
+    font-size: 14px;
 
-        &:hover {
-            text-decoration: none;
-            color: $laranja;
-        }
+    &:hover {
+        text-decoration: none;
+        color: $laranja;
     }
 }
 
@@ -166,6 +166,26 @@ body {
     .menu__link {
         &:hover {
             color: $cinza-claro;
+        }
+    }
+
+    .perguntas {
+        margin-top: 20vw;
+        margin-bottom: 20vw;
+        padding: 20px;
+    }
+
+    .resposta {
+        padding-top: 5vw;
+        padding-bottom: 5vw;
+    }
+
+    .aluno {
+        padding: 20px;
+
+        .aluno__nota {
+            margin-top: 5vw;
+            margin-bottom: 5vw;
         }
     }
 

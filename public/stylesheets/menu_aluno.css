@@ -55,6 +55,7 @@ nav {
   margin-left: auto;
   margin-right: auto;
   height: auto;
+  z-index: 999;
 }
 
 .bold {

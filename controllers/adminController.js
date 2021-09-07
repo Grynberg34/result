@@ -8,9 +8,7 @@ module.exports = {
     mostrarAlunos: async function (req,res) {
         var alunos = await Aluno.findAll({
             include: [User, Turma],
-        },
-        {order: [['nome', 'ASC']]}
-        );
+        });
 
         var turmas = await Turma.findAll({order: [['nome', 'ASC']]});
         res.render('admin-alunos', {alunos, turmas})

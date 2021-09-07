@@ -71,6 +71,10 @@ body {
     background-color: #f2780b;
   }
 
+  .alunos {
+    width: 80%;
+  }
+
   .menu__link:hover {
     color: #d9d7d7;
   }

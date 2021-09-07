@@ -92,7 +92,36 @@ body {
 
 @media only screen and (max-width: 767px) {
 
+    .avaliacoes {
+        margin-top: 20vw;
 
+        .avaliacoes__title {
+            margin-bottom: 10vw;
+        }
+
+        .avaliacoes__pontos {
+            margin-bottom: 10vw;
+        }
+
+        .avaliacoes__avaliacao {
+            padding: 5vw;
+            margin-top: 10vw;
+            margin-bottom: 10vw;
+
+            .avaliacoes__avaliacao__title {
+                margin-bottom: 10vw;
+            }
+
+            .avaliacoes__avaliacao__info {
+                margin-bottom: 5vw;
+            }
+
+            .avaliacoes__avaliacao__button {
+                margin-top: 10vw;
+                margin-bottom: 5vw;
+            }
+        }
+    }
 
     
 

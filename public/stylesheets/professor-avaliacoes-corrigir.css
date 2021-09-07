@@ -25,14 +25,15 @@ body {
   margin-bottom: 4vw;
   text-align: center;
 }
-.menu .menu__link {
+
+.voltar {
   display: block;
   margin-top: 6vh;
   text-align: center;
   color: #d9d7d7;
   font-size: 14px;
 }
-.menu .menu__link:hover {
+.voltar:hover {
   text-decoration: none;
   color: #f2780b;
 }
@@ -141,6 +142,25 @@ body {
 
   .menu__link:hover {
     color: #d9d7d7;
+  }
+
+  .perguntas {
+    margin-top: 20vw;
+    margin-bottom: 20vw;
+    padding: 20px;
+  }
+
+  .resposta {
+    padding-top: 5vw;
+    padding-bottom: 5vw;
+  }
+
+  .aluno {
+    padding: 20px;
+  }
+  .aluno .aluno__nota {
+    margin-top: 5vw;
+    margin-bottom: 5vw;
   }
 }
 
