@@ -34,11 +34,23 @@
                                 
                                 <h3 class="aluno__chamadas__info"><span class="aula">Aula {{this.Aula.numero_aula}} :</span> <span class="presença laranja">{{this.presença}}</span></h3>
 
+                            {{/each}}
+
+                            <h3 class="aluno__chamadas__total">Presenças: {{num_presenças}}/{{num_aulas}}  ({{percentual}}%)</h3>
+
+                        </div>
+
+                        <div class="aluno__notas">
+
+                            <h2 class="aluno__notas__title"><span class="laranja">Notas</h2>  
+
+                            {{#each notas}}
+                                
+                                <h3 class="aluno__notas__info"><span class="nota">Avaliação {{this.Avaliação_Semestre.numero}} :</span> <span class="laranja">{{this.nota}}/{{this.Avaliação_Semestre.pontos_total}}</span></h3>
 
                             {{/each}}
 
-                            <h3 class="aluno__chamadas__total">Presenças: {{num_presenças}}/{{num_aulas}}  ({{percentual}}%)</span></h3>
-
+                            <h3 class="aluno__notas__total">Pontos: {{pontos_aluno}}/{{pontos_total}} ({{percentual_pontos}}%)</h3>
                         </div>
 
                         <a target="_blank" rel="noreferrer" href="/professor/{{semestre.id}}/alunos/{{aluno.id}}/relatorio" class="aluno__link">GERAR RELATÓRIO</a>

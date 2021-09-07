@@ -7,13 +7,13 @@ for(var i=0; i< option.length; i++){
 
 function selectOption() {
     
-    for (var i=0; i < option.length; i++) {
-        option[i].classList.remove('equipe__active');
-        document.getElementsByClassName('equipe__members__member')[i].style.display = 'none'
-    }
+  for (var i=0; i < option.length; i++) {
+    option[i].classList.remove('equipe__active');
+    document.getElementsByClassName('equipe__members__member')[i].style.display = 'none'
+  }
 
-    document.getElementById(this.id).classList.add('equipe__active')
+  document.getElementById(this.id).classList.add('equipe__active');
 
-    document.getElementById(`t-${this.id}`).style.display = "block"
+  document.getElementById(`t-${this.id}`).style.display = "block";
 
 }

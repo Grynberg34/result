@@ -37,7 +37,7 @@ body {
 
 .aluno {
     margin-top: 2vw;
-    padding: 20px;
+    padding: 40px;
     border: 2px solid $laranja;
 
     .aluno__info {
@@ -47,10 +47,12 @@ body {
     }
 
     .aluno__chamadas {
-        margin-top: 2vw;
-        margin-bottom: 2vw;
+        margin-top: 4vw;
+        margin-bottom: 4vw;
         padding: 20px;
         border: 2px solid $laranja;
+        margin-left: 2vw;
+        margin-right: 2vw;
         
         .aluno__chamadas__title {
             font-size: 18px;
@@ -66,6 +68,34 @@ body {
         }
 
         .aluno__chamadas__total {
+            margin-top: 2vw;
+            color: $cinza-claro;
+            font-size: 16px;
+        }
+    }
+
+    .aluno__notas {
+        margin-top: 2vw;
+        margin-bottom: 4vw;
+        padding: 20px;
+        border: 2px solid $laranja;
+        margin-left: 2vw;
+        margin-right: 2vw;
+        
+        .aluno__notas__title {
+            font-size: 18px;
+            margin-bottom: 2vw;
+
+        }
+
+        .aluno__notas__info {
+            font-size: 14px;
+            color: $cinza-claro;
+            font-weight: 400;
+            margin-top: 1vw;
+        }
+
+        .aluno__notas__total {
             margin-top: 2vw;
             color: $cinza-claro;
             font-size: 16px;
@@ -98,16 +128,21 @@ body {
 }
 
 .aula {
-    width: 100% !important;
+    display: inline-block;
+    width: 15%;
 }
 
 .presença {
-    margin-left: 10px;
     font-size: 11px;
 }
 
 .laranja {
     color: $laranja;
+}
+
+.nota {
+    display: inline-block;
+    width: 25%;
 }
 
 @media only screen and (max-width: 767px) {

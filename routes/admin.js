@@ -54,6 +54,8 @@ router.post('/turmas/ver/:id/criar-semestre', checkAuthentication, semestresCont
 
 router.get('/turmas/ver/:id/semestres/:sid', checkAuthentication, semestresController.mostrarSemestre);
 
+router.get('/turmas/ver/:id/semestres/:sid/relatorio', checkAuthentication, semestresController.gerarRelatorioSemestre);
+
 router.post('/turmas/ver/:id/semestres/:sid', checkAuthentication, semestresController.concluirSemestre);
 
 router.post('/turmas/ver/:id/semestres/:sid/alterar-link', checkAuthentication, semestresController.alterarLinkSemestre);

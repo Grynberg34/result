@@ -281,8 +281,34 @@ module.exports = {
 
             var percentual = Math.floor(((num_presenças * 100) / num_aulas));
 
+            var avaliacoes = await Avaliação_Semestre.findAll({where: {semestreId: semestre.id}});
 
-            res.render('professor-alunos-aluno', {aluno, semestre, id, chamadas, num_aulas, num_presenças, percentual});
+            var notas = [];
+
+            var pontos_aluno = 0;
+
+            var pontos_total = 0;
+
+            for (var i=0; i < avaliacoes.length; i++) {
+
+                pontos_total = pontos_total + avaliacoes[i].pontos_total;
+
+                var nota = await Avaliação_Nota.findOne({where:
+                {
+                    avaliação_semestreId : avaliacoes[i].id
+                },
+                include: [{
+                    model: Avaliação_Semestre,
+                    include: Avaliação
+                }] });
+
+                notas.push(nota);
+                pontos_aluno = pontos_aluno + nota.nota;
+                var percentual_pontos = Math.floor(((pontos_aluno * 100) / pontos_total));
+
+            }
+
+            res.render('professor-alunos-aluno', {aluno, semestre, id, chamadas, num_aulas, num_presenças, percentual, notas, pontos_aluno, pontos_total, percentual_pontos});
         })
         .catch(function(err){
             res.render('error')
@@ -302,7 +328,6 @@ module.exports = {
         var semestre = await Semestre.findByPk(id, {
             include: [Turma]
         });
-
 
         Aula.findAll({where: {
             semestreId: id,
@@ -340,7 +365,7 @@ module.exports = {
 
             var pdf_number = Math.floor(Math.random() * 10001);
 
-            doc.pipe(fs.createWriteStream(`./public/relatorios/relatorio_${id}_${id}_${pdf_number}.pdf`));
+            doc.pipe(fs.createWriteStream(`./public/relatorios/relatorio_${id}_${pdf_number}.pdf`));
 
             doc.image('./public/images/logo.png', 400, 15, {fit: [100, 100], align: 'center', valign: 'center'})
     
@@ -408,10 +433,57 @@ module.exports = {
             .lineTo(0, 470)
             .lineTo(650, 470)
             .stroke();   
+
+            var avaliacoes = await Avaliação_Semestre.findAll({where: {semestreId: semestre.id}});
+
+            var pontos_aluno = 0;
+
+            var pontos_total = 0;
+
+            for (var i=0; i < avaliacoes.length; i++) {
+
+                pontos_total = pontos_total + avaliacoes[i].pontos_total;
+
+                var nota = await Avaliação_Nota.findOne({where:
+                {
+                    avaliação_semestreId : avaliacoes[i].id,
+                    alunoId: aluno.id
+                },
+                include: [{
+                    model: Avaliação_Semestre,
+                    include: Avaliação
+                }] });
+
+                pontos_aluno = pontos_aluno + nota.nota;
+
+                if (i < 7) {
+                    var largura = 100
+                    var altura = 570 + (i * 25);
+                }
+
+                else if (i > 6) {
+                    var largura = 320
+                    var altura = 570 + ((i-7) * 25);
+                }
+
+                doc
+                .fontSize(10)
+                .text(`Avaliação ${nota.Avaliação_Semestre.numero} (${nota.Avaliação_Semestre.Avaliação.tipo}): ${nota.nota}/${nota.Avaliação_Semestre.pontos_total} `, largura, altura);
+
+
+            }
+
+
+            var percentual_pontos = Math.floor(((pontos_aluno * 100) / pontos_total));
+
+            doc
+            .fontSize(14)
+            .fillColor('#000000')
+            .text(`Pontos: ${pontos_aluno}/${pontos_total} (${percentual_pontos}%)`, 100, 520, {align: 'center'});
     
             doc.end();
 
-            setTimeout(function(){ res.redirect(`/relatorios/relatorio_${id}_${id}_${pdf_number}.pdf`);}, 2000);            
+            setTimeout(function(){ res.redirect(`/relatorios/relatorio_${id}_${pdf_number}.pdf`);}, 2000);            
 
         })
         .catch(function(err){
