@@ -274,7 +274,7 @@ module.exports = {
                     presenças.push(chamada[0]);
                 }
 
-                chamadas.push(chamada[0])
+                chamadas.push(chamada[0]);
             }
 
             var num_presenças = presenças.length;
@@ -295,16 +295,27 @@ module.exports = {
 
                 var nota = await Avaliação_Nota.findOne({where:
                 {
-                    avaliação_semestreId : avaliacoes[i].id
+                    avaliação_semestreId : avaliacoes[i].id,
+                    alunoId: aluno.id
                 },
                 include: [{
                     model: Avaliação_Semestre,
                     include: Avaliação
                 }] });
 
-                notas.push(nota);
-                pontos_aluno = pontos_aluno + nota.nota;
-                var percentual_pontos = Math.floor(((pontos_aluno * 100) / pontos_total));
+
+                if (nota) {
+                    notas.push(nota);
+                    pontos_aluno = pontos_aluno + nota.nota;
+                }
+
+                if (pontos_aluno == 0 && pontos_total == 0) {
+                    var percentual_pontos = 0
+                }
+    
+                else {
+                    var percentual_pontos = Math.floor(((pontos_aluno * 100) / pontos_total));
+                }
 
             }
 
@@ -454,7 +465,6 @@ module.exports = {
                     include: Avaliação
                 }] });
 
-                pontos_aluno = pontos_aluno + nota.nota;
 
                 if (i < 7) {
                     var largura = 100
@@ -466,15 +476,22 @@ module.exports = {
                     var altura = 570 + ((i-7) * 25);
                 }
 
-                doc
-                .fontSize(10)
-                .text(`Avaliação ${nota.Avaliação_Semestre.numero} (${nota.Avaliação_Semestre.Avaliação.tipo}): ${nota.nota}/${nota.Avaliação_Semestre.pontos_total} `, largura, altura);
-
+                if (nota) {
+                    pontos_aluno = pontos_aluno + nota.nota;
+                    doc
+                    .fontSize(10)
+                    .text(`Avaliação ${nota.Avaliação_Semestre.numero} (${nota.Avaliação_Semestre.Avaliação.tipo}): ${nota.nota}/${nota.Avaliação_Semestre.pontos_total} `, largura, altura);
+                }
 
             }
 
+            if (pontos_aluno == 0 && pontos_total == 0) {
+                var percentual_pontos = 0
+            }
 
-            var percentual_pontos = Math.floor(((pontos_aluno * 100) / pontos_total));
+            else {
+                var percentual_pontos = Math.floor(((pontos_aluno * 100) / pontos_total));
+            }
 
             doc
             .fontSize(14)
