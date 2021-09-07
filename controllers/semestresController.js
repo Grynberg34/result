@@ -104,17 +104,41 @@ module.exports = {
     },
 
     gerarRelatorioSemestre: async function (req,res) {
-        var id = req.params.id;
         var sid = req.params.sid;
 
         var pdf_number = Math.floor(Math.random() * 10001);
         const doc = new PDFDocument();
 
+        var alunos_id = [];
+
+        var aulas = await Aula.findAll({where: {semestreId: sid}});
+
+        for (var i=0; i < aulas.length; i++) {
+
+            var ids = await Chamada.findAll({
+                where: { aulaId: aulas[i].id },
+                attributes: ['alunoId']
+            });
+
+            if (ids.length > 0) {
+                for (var e = 0; e < ids.length; e++)
+                {
+                    if (!alunos_id.includes(ids[e].alunoId)) {
+                        alunos_id.push(ids[e].alunoId)
+                    }
+                }
+            }
+
+
+        }
+
         var alunos = await Aluno.findAll({where: {
-            turmaId: id
+            id: alunos_id
         },
         include: [User],
         order: [[`User`, `nome`, `ASC`]]});
+
+        console.log(alunos.length)
 
         var semestre = await Semestre.findByPk(sid, {
             include: [Turma]
