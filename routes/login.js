@@ -40,7 +40,7 @@ router.post('/', checkAuthentication, function(req,res,next) {
             return res.redirect('/login')
           }
         )
-      }, 2000);
+      }, 2500);
 
     }
     else if (user) {
@@ -48,7 +48,7 @@ router.post('/', checkAuthentication, function(req,res,next) {
         req.logIn(user, function(err) {
         if (err) { return next(err); }
         return res.redirect('/aluno');
-      }); }, 2000);
+      }); }, 2500);
 
     }
   })(req,res,next)
