@@ -27,7 +27,14 @@
                     <input class="menu__input" type="text" placeholder="Ex: 2021/1" name="data" id="data" aria-required="true" required>
 
                     <label class="menu__label" for="nivel"><b>Nível</b></label>
-                    <input class="menu__input" type="text" placeholder="Ex: C1" name="nivel" id="nivel" aria-required="true" required>
+                    <select name="nivel" class="menu__select" id="nivel" required>
+
+                        <option class="menu__options" value="A1-A2">A1-A2</option>
+                        <option class="menu__options" value="A1-A2">A2-B1</option>
+                        <option class="menu__options" value="A1-A2">B1-B2</option>
+                        <option class="menu__options" value="A1-A2">B2-C1</option>
+
+                    </select>
 
                     <label class="menu__label" for="link"><b>Link para aulas</b></label>
                     <input class="menu__input" type="text" placeholder="Opcional" name="link" id="link">

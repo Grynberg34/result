@@ -23,6 +23,7 @@ module.exports = {
         .then(async function(professor) {
             var semestres = await Semestre.findAll({where: {professorId: professor.id, concluido: false },
                 include: [Turma],
+                order: [[`Turma`, `nome`, `ASC`]]
             });
             res.render('professor', {semestres})
 
@@ -58,15 +59,14 @@ module.exports = {
             },
             include: [{
                 model: Aluno,
-                include: User
-            }]})
+                include: User,
+                order: [[`User`, `nome`, `ASC`]]
+            }],
+            order: [[`Aluno`,`User`, `nome`, `ASC`]]})
 
             aulas[i].chamadas = chamadas;
 
         }
-
-
-
 
         res.render('professor-turma-aulas', {aulas, id})
 
@@ -148,7 +148,8 @@ module.exports = {
                 var alunos = await Aluno.findAll({where: {
                     turmaId: semestre.turmaId
                 },
-                include: [User]})
+                include: [User],
+                order: [[`User`, `nome`, `ASC`]]})
     
                 res.render('professor-turma-aulas-chamada', {alunos, id});
             
@@ -228,7 +229,8 @@ module.exports = {
             var alunos =  await Aluno.findAll({where: {
                 turmaId: semestre.turmaId
             },
-            include: [User]})
+            include: [User],
+            order: [[`User`, `nome`, `ASC`]]})
 
             res.render('professor-alunos', {alunos, id})
 
@@ -531,7 +533,8 @@ module.exports = {
                 include: [{
                     model: Aluno,
                     include: User
-                }]})
+                }],
+                order: [[`Aluno`,`User`, `nome`, `ASC`]]})
     
                 avaliacoes[i].notas = notas;
     

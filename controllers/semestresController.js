@@ -113,7 +113,8 @@ module.exports = {
         var alunos = await Aluno.findAll({where: {
             turmaId: id
         },
-        include: [User]});
+        include: [User],
+        order: [[`User`, `nome`, `ASC`]]});
 
         var semestre = await Semestre.findByPk(sid, {
             include: [Turma]

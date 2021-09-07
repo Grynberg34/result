@@ -8,6 +8,7 @@ module.exports = {
     mostrarAlunos: async function (req,res) {
         var alunos = await Aluno.findAll({
             include: [User, Turma],
+            order: [[`User`, `nome`, `ASC`]]
         });
 
         var turmas = await Turma.findAll({order: [['nome', 'ASC']]});
@@ -91,9 +92,8 @@ module.exports = {
         var alunos = await Aluno.findAll({
             include: [User],
             where: {turmaId : id},
-        },
-        {order: [['nome', 'ASC']]}
-        );
+            order: [[`User`, `nome`, `ASC`]]
+        });
 
         var atual = await Semestre.findAll({where: {turmaId: id, concluido : false}});
 

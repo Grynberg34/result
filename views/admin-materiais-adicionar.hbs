@@ -27,7 +27,14 @@
                     <input class="menu__input" type="text" placeholder="Nome do Material" name="nome" id="nome" aria-required="true" required>
 
                     <label class="menu__label" for="nivel"><b>Nível</b></label>
-                    <input class="menu__input" type="text" placeholder="Nível do Material" name="nivel" id="nivel" aria-required="true" required>
+                    <select name="nivel" class="menu__select" id="nivel" required>
+
+                        <option class="menu__options" value="A1-A2">A1-A2</option>
+                        <option class="menu__options" value="A1-A2">A2-B1</option>
+                        <option class="menu__options" value="A1-A2">B1-B2</option>
+                        <option class="menu__options" value="A1-A2">B2-C1</option>
+
+                    </select>
 
                     <label class="menu__label" for="zip"><b>Selecionar pasta (.zip)</b></label>
                     <input class="menu__input" type="file" name="zip"/>

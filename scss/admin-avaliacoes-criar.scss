@@ -57,8 +57,22 @@ body {
         display: block;
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: 2vh;
+        font-size: 14px;
+        text-align: center;
         width: 100%;
+        padding-right: 40px;
+
+        &:focus {
+            outline: none;
+        }
     }
+
+    .menu__option {
+        text-align: center;
+        font-size: 14px;
+    }
+
 
     .menu__textarea {
         font-size: 11px;

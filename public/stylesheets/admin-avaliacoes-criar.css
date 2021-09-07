@@ -50,7 +50,18 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 2vh;
+  font-size: 14px;
+  text-align: center;
   width: 100%;
+  padding-right: 40px;
+}
+.menu .menu__select:focus {
+  outline: none;
+}
+.menu .menu__option {
+  text-align: center;
+  font-size: 14px;
 }
 .menu .menu__textarea {
   font-size: 11px;
