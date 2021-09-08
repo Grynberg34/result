@@ -152,7 +152,7 @@ body {
 
 .aluno {
     display: inline-block;
-    width: 20vw;
+    width: 60%;
 }
 
 .nota {
@@ -203,6 +203,11 @@ body {
             padding: 20px;
             margin-bottom: 10vw;
 
+            .avaliacoes__avaliacao__notas {
+                margin-top: 10vw;
+                margin-bottom: 10vw;
+            }
+
             .avaliacoes__avaliacao__title {
                 margin-bottom: 10vw;
             }
@@ -217,7 +222,6 @@ body {
     }
 
     .aluno {
-        width: 35vw;
         font-size: 11px;
     }
 

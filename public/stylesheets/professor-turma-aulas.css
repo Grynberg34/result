@@ -126,7 +126,7 @@ body {
 
 .aluno {
   display: inline-block;
-  width: 20vw;
+  width: 60%;
 }
 
 .presença {
@@ -142,6 +142,9 @@ body {
 @media only screen and (max-width: 767px) {
   .menu {
     margin-top: 20vw;
+  }
+  .menu .menu__title {
+    font-size: 28px;
   }
   .menu .menu__row {
     margin-left: 5vw;
@@ -178,7 +181,6 @@ body {
   }
 
   .aluno {
-    width: 35vw;
     font-size: 11px;
   }
 

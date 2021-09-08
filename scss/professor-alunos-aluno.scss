@@ -129,7 +129,7 @@ body {
 
 .aula {
     display: inline-block;
-    width: 15%;
+    width: 30%;
 }
 
 .presença {
@@ -142,7 +142,7 @@ body {
 
 .nota {
     display: inline-block;
-    width: 25%;
+    width: 40%;
 }
 
 @media only screen and (max-width: 767px) {
@@ -169,6 +169,7 @@ body {
 
     .aluno {
         border: none;
+        padding: 20px;
 
         .aluno__chamadas {
             margin-top: 10vw;
@@ -180,6 +181,7 @@ body {
 
             .aluno__chamadas__total {
                 margin-top: 10vw;
+                font-size: 14px;
             }
             
         }
@@ -194,6 +196,7 @@ body {
 
             .aluno__notas__total {
                 margin-top: 10vw;
+                font-size: 14px;
             }
             
         }
@@ -206,11 +209,18 @@ body {
     .aula {
         display: inline-block;
         width: 35%;
+        font-size: 11px;
+    }
+
+    .nota_num {
+        font-size: 11px;
     }
 
     .nota {
         display: inline-block;
         width: 45%;
+        font-size: 11px;
     }
+    
 
 }

@@ -154,7 +154,7 @@ body {
 
 .aluno {
     display: inline-block;
-    width: 20vw;
+    width: 60%;
 }
 
 .presença {
@@ -172,6 +172,10 @@ body {
 
     .menu {
         margin-top: 20vw;
+
+        .menu__title {
+            font-size: 28px;
+        }
 
         .menu__row {
             margin-left: 5vw;
@@ -222,7 +226,6 @@ body {
     }
 
     .aluno {
-        width: 35vw;
         font-size: 11px;
     }
 

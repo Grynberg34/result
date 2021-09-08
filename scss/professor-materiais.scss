@@ -104,6 +104,12 @@ body {
 
     .materiais {
         width: 100%;
+
+        .materiais__material {
+            .materiais__material__link {
+                font-size: 14px;
+            }
+        }
     }
 
 }

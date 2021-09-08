@@ -86,6 +86,9 @@ body {
   .materiais {
     width: 100%;
   }
+  .materiais .materiais__material .materiais__material__link {
+    font-size: 14px;
+  }
 }
 
 /*# sourceMappingURL=professor-materiais.css.map */
