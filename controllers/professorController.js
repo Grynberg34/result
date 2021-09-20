@@ -36,6 +36,30 @@ module.exports = {
     
     },
 
+    checarSemestreProfessor: async function (req,res, next) {
+        var id = req.params.id;
+
+        var professor = await Professor.findOne({where: {
+            userId: req.user.id
+        }});
+
+        var semestre = await Semestre.findOne({where: {
+            id: id,
+            professorId: professor.id
+        }});
+
+        console.log(semestre);
+
+        if (semestre == null) {
+            res.redirect('/professor')
+        }
+
+        else {
+            next();
+        }
+
+    },
+
     mostrarMenuSemestreTurma: async function (req,res) {
         var id = req.params.id;
 
