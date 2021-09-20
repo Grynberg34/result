@@ -36,6 +36,10 @@ router.get('/:id/aulas/criar', checkAuthentication, function (req,res){
 
 router.post('/:id/aulas/criar', checkAuthentication, professorController.criarAula);
 
+router.post('/:id/aulas/link', checkAuthentication, professorController.adicionarLink);
+
+router.post('/:id/aulas/link/deletar', checkAuthentication, professorController.deletarLink);
+
 router.get('/:id/aulas/chamada/:sid', checkAuthentication, professorController.mostrarChamada);
 
 router.post('/:id/aulas/chamada/:sid', checkAuthentication, professorController.fazerChamada);

@@ -11,6 +11,7 @@ const Avaliação_Semestre = require("../models/Avaliação_Semestre");
 const Avaliação = require("../models/Avaliação");
 const Avaliação_Nota = require("../models/Avaliação_Nota");
 const Avaliação_Resposta = require("../models/Avaliação_Resposta");
+const Link_Aula = require("../models/Link_Aula");
 
 module.exports = {
 
@@ -69,6 +70,15 @@ module.exports = {
         .then(async function(semestre){
             var aulas = await Aula.findAll({where:{ semestreId: semestre[0].id }});
 
+            for (var i=0; i < aulas.length; i++) {
+                var links = await Link_Aula.findAll({where:
+                {
+                    aulaId: aulas[i].id
+                }})
+    
+                aulas[i].links = links
+            };
+
             Aula.findAll({where: {
                 semestreId: semestre[0].id,
                 chamada: true
@@ -92,13 +102,13 @@ module.exports = {
                     }
     
                     chamadas.push(chamada[0])
-                }
+                };
     
                 var num_presenças = presenças.length;
     
                 var percentual = Math.floor(((num_presenças * 100) / num_aulas));
 
-                res.render('aluno-aulas', {aulas, chamadas, num_aulas, num_presenças, percentual})
+                res.render('aluno-aulas', {aulas, chamadas, num_aulas, num_presenças, percentual});
             })
             .catch(function(err){
                 res.render('error');

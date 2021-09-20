@@ -98,6 +98,27 @@ body {
   color: #d9d7d7;
   border: 2px solid #d9d7d7;
 }
+.aulas .aulas__aula .aulas__aula__links {
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+}
+.aulas .aulas__aula .aulas__aula__links .aulas__aula__links__link {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 1vw;
+  color: #f2780b;
+}
+.aulas .aulas__aula .aulas__aula__links .aulas__aula__links__link:hover {
+  text-decoration: none;
+  color: #d9d7d7;
+}
+.aulas .aulas__aula .aulas__aula__links .aulas__aula__links__icon {
+  margin-left: 10px;
+  color: #d9d7d7;
+  cursor: pointer;
+  font-size: 12px;
+}
 .aulas .aulas__aula .aulas__aula__chamada {
   margin-top: 4vw;
   margin-bottom: 2vw;
@@ -135,7 +156,53 @@ body {
   color: #f2780b;
 }
 
-#form {
+#form, #form2 {
+  display: none;
+}
+
+.form-link {
+  margin-top: 4vw;
+  padding: 40px;
+  border: 2px solid #f2780b;
+  margin-bottom: 4vw;
+  margin-left: 2vw;
+  margin-right: 2vw;
+}
+.form-link .form-link__label {
+  display: block;
+  font-size: 14px;
+  color: #f2780b;
+  text-align: center;
+  margin-bottom: 1vw;
+}
+.form-link .form-link__input {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2vw;
+  font-size: 12px;
+}
+.form-link .form-link__button {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4vw;
+  color: #f2780b;
+  text-align: center;
+  width: 30%;
+  border: 2px solid #f2780b;
+  padding: 10px;
+  background: none;
+}
+.form-link .form-link__button:hover {
+  text-decoration: none;
+  color: #d9d7d7;
+  border: 2px solid #d9d7d7;
+}
+
+#numero_aula {
   display: none;
 }
 
@@ -175,9 +242,35 @@ body {
   .aulas .aulas__aula .aulas__aula__chamada .aulas__aula__chamada__title {
     margin-bottom: 5vw;
   }
+  .aulas .aulas__aula .aulas__aula__links {
+    margin-top: 5vw;
+    margin-bottom: 10vw;
+  }
+  .aulas .aulas__aula .aulas__aula__links .aulas__aula__links__link {
+    margin-bottom: 2.5vw;
+  }
   .aulas .aulas__aula .aulas__aula__link {
     width: 70%;
     margin-top: 10vw;
+  }
+
+  .form-link {
+    margin-top: 4vw;
+    padding: 40px;
+    border: 2px solid #f2780b;
+    margin-bottom: 4vw;
+    margin-left: 2vw;
+    margin-right: 2vw;
+  }
+  .form-link .form-link__label {
+    margin-bottom: 2.5vw;
+  }
+  .form-link .form-link__input {
+    margin-bottom: 5vw;
+  }
+  .form-link .form-link__button {
+    margin-top: 10vw;
+    width: 50%;
   }
 
   .aluno {

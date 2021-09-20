@@ -10,6 +10,7 @@ const Avaliação = require("../models/Avaliação");
 const Avaliação_Nota = require("../models/Avaliação_Nota");
 const Avaliação_Semestre = require("../models/Avaliação_Semestre");
 const Avaliação_Resposta = require("../models/Avaliação_Resposta");
+const Link_Aula = require("../models/Link_Aula");
 const PDFDocument = require('pdfkit');
 const fs = require('fs');
 
@@ -68,8 +69,46 @@ module.exports = {
 
         }
 
+        for (var i=0; i < aulas.length; i++) {
+            var links = await Link_Aula.findAll({where:
+            {
+                aulaId: aulas[i].id
+            }})
+
+            aulas[i].links = links
+        }
+
         res.render('professor-turma-aulas', {aulas, id})
 
+    },
+
+    adicionarLink: async function (req,res) {
+        var id = req.params.id;
+        var numero_aula = req.body.numero_aula;
+        var nome = req.body.nome;
+        var link = req.body.link;
+
+        console.log(id);
+
+        await Link_Aula.create({
+            nome: nome,
+            link: link,
+            aulaId: numero_aula
+        })
+
+        res.redirect(`/professor/${id}/aulas`);
+
+    },
+
+    deletarLink: async function (req,res) {
+        var id= req.params.id;
+        var link = req.body.link;
+
+        await Link_Aula.destroy({where: {
+            id: link
+        }});
+
+        res.redirect(`/professor/${id}/aulas`);
     },
 
     criarAula: async function (req,res) {

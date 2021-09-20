@@ -44,10 +44,21 @@
 
                 {{#each aulas}}
 
-                    <div class="aulas__aula row">
-                        <div class="col-3"><h2 class="aulas__aula__title">Aula {{this.numero_aula}}</h2></div>
-                        <div class="col-4"><h3 class="aulas__aula__info"><span class="timestamp">{{this.data}}</span></h3></div>
-                        <div class="col-5"><h3 class="aulas__aula__info">{{this.tema}}</h3></div>
+                    <div class="aulas__aula">
+                        <h2 class="aulas__aula__title">Aula {{this.numero_aula}}</h2>
+                        <h3 class="aulas__aula__info"><b>Data:</b> <span class="timestamp">{{this.data}}</span></h3>
+                        <h3 class="aulas__aula__info"><b>Tema:</b> {{this.tema}}</h3>
+
+                        {{#if links}}
+
+                            {{#each links}}
+
+                            <a target="_blank" rel="noreferrer" href="{{this.link}}" class="aulas__aula__link">Link: {{this.nome}}</a>
+
+                            {{/each}}
+
+
+                        {{/if}}
                     </div>
 
                 {{/each}}

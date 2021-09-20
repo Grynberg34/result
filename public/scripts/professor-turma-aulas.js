@@ -46,3 +46,33 @@ for (var i=0; i < presença.length; i++) {
     }
 
 }
+
+
+// Adicionar link
+
+var form__button = document.getElementsByClassName('form-link__button');
+
+for (var i=0; i < form__button.length; i++) {
+
+    form__button[i].addEventListener("click", function(i){
+        document.getElementsByClassName('form-link__button')[i].disabled = "true";
+        document.getElementsByClassName('form-link')[i].submit()
+    })
+
+}
+
+// Deletar link 
+
+var link__icon = document.getElementsByClassName('aulas__aula__links__icon');
+
+for (var i=0; i < link__icon.length; i++) {
+    link__icon[i].addEventListener("click", submitForm2)
+}
+
+function submitForm2() {
+    var id = this.id;
+
+    document.getElementsByClassName('form__input')[4].value = document.getElementById(id).id;
+
+    document.getElementById('form2').submit();
+}

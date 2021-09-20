@@ -41,17 +41,33 @@ body {
     .aulas__aula {
         border-bottom: 2px solid $laranja;
         padding: 2vw;
+        padding-top: 4vw;
+        padding-bottom: 4vw;
 
         .aulas__aula__title {
-            font-size: 14px;
+            font-size: 20px;
             color: $laranja;
             font-weight: 700;
+            margin-bottom: 2vw;
         }
 
         .aulas__aula__info {
             font-size: 14px;
             color: $cinza-claro;
             font-weight: 400;
+            margin-bottom: 2vw;
+        }
+
+        .aulas__aula__link {
+            display: block;
+            font-size: 12px;
+            color: $laranja;
+            margin-bottom: 1vw;
+
+            &:hover {
+                text-decoration: none;
+                color: $cinza-claro;
+            }
         }
     }
 }
@@ -76,13 +92,27 @@ body {
         
         .aulas__aula {
             padding: 5vw;
+            padding-top: 10vw;
+            padding-bottom: 10vw;
 
             .aulas__aula__info {
-                font-size: 12px;
+                font-size: 14px;
                 line-height: 1.5;
+                margin-bottom: 5vw;
             }
             .aulas__aula__title {
+                font-size: 24px;
+                margin-bottom: 5vw;
+            }
+
+            .aulas__aula__link {
                 font-size: 12px;
+                margin-bottom: 5vw;
+    
+                &:hover {
+                    text-decoration: none;
+                    color: $laranja;
+                }
             }
         }
     }

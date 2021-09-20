@@ -33,8 +33,38 @@
                             <h2 class="aulas__aula__title">Aula {{this.numero_aula}} <i class="aulas__aula__icon flaticon-diskette" id="{{this.id}}"></i></h2>
                             <p class="aulas__aula__info">Data: <input type="date" value="{{this.data}}" id="d{{this.id}}"></p>
                             <p class="aulas__aula__info">Tema: <input type="text" value="{{this.tema}}" id="t{{this.id}}"></p>
+
                             <p class="aulas__aula__info">Comentários:</p>
                             <textarea id="c{{this.id}}" class="aulas__aula__textarea" name="texto" rows="15" cols="50" maxlength="50000">{{this.comentarios}}</textarea> 
+
+
+                            {{#if links}}
+                                <div class="aulas__aula__links">
+                                    <p class="aulas__aula__info">Links:</p>
+                                    {{#each links}}
+
+                                        <div><a target="_blank" rel="noreferrer" class="aulas__aula__links__link" href="{{this.link}}">{{this.nome}}</a> <i class="aulas__aula__links__icon flaticon-trash" id="{{this.id}}"></i></div>
+
+                                    {{/each}}
+                                </div>
+
+                            {{/if}}
+
+                            <form action="/professor/{{../id}}/aulas/link" method="POST" class="form-link">
+
+                                <input id="numero_aula" type="number" name="numero_aula" value="{{this.id}}">
+
+                                <label class="form-link__label" for="nome"><b>Título</b></label>
+                                <input class="form-link__input" type="text" name="nome" id="nome" aria-required="true" required>
+
+                                <label class="form-link__label" for="link"><b>Link</b></label>
+                                <input class="form-link__input" type="text" name="link" id="link" aria-required="true" required>
+
+                                <button class="form-link__button">ADICIONAR</button>
+
+
+                            </form>
+
                         
                             {{#if chamada}}
 
@@ -86,6 +116,12 @@
         <input class="form__input" type="text" name="tema">
 
         <input class="form__input" type="date" name="data">
+
+    </form>
+
+    <form action="/professor/{{id}}/aulas/link/deletar" class="form" id="form2" method="POST">
+
+        <input class="form__input" type="text" name="link">
 
     </form>
 

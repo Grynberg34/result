@@ -115,6 +115,32 @@ body {
             }
         }
 
+        .aulas__aula__links {
+            margin-top: 2vw;
+            margin-bottom: 2vw;
+
+            .aulas__aula__links__link {
+                display: inline-block;
+                font-size: 12px;
+                font-weight: 600;
+                margin-bottom: 1vw;
+                color: $laranja;
+    
+                &:hover {
+                    text-decoration: none;
+                    color: $cinza-claro;
+                }
+            }
+
+            .aulas__aula__links__icon {
+                margin-left: 10px;
+                color: $cinza-claro;
+                cursor: pointer;
+                font-size: 12px;
+            }
+
+        }
+
         .aulas__aula__chamada {
 
             margin-top: 4vw;
@@ -163,7 +189,57 @@ body {
     color: $laranja;
 }
 
-#form {
+#form, #form2 {
+    display: none;
+}
+
+.form-link {
+    margin-top: 4vw;
+    padding: 40px;
+    border: 2px solid $laranja;
+    margin-bottom: 4vw;
+    margin-left: 2vw;
+    margin-right: 2vw;
+
+    .form-link__label {
+        display: block;
+        font-size: 14px;
+        color: $laranja;
+        text-align: center;
+        margin-bottom: 1vw;
+    }
+
+    .form-link__input {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 2vw;
+        font-size: 12px;
+    }
+
+    .form-link__button {
+        display: block;
+        font-size: 12px;
+        font-weight: 600;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 4vw;
+        color: $laranja;
+        text-align: center;
+        width: 30%;
+        border: 2px solid $laranja;
+        padding: 10px;
+        background: none;
+
+        &:hover {
+            text-decoration: none;
+            color: $cinza-claro;
+            border: 2px solid $cinza-claro;
+        }
+    }
+}
+
+#numero_aula {
     display: none;
 }
 
@@ -218,10 +294,41 @@ body {
                 }
             }
 
+            .aulas__aula__links {
+                margin-top: 5vw;
+                margin-bottom: 10vw;
+
+                .aulas__aula__links__link {
+                    margin-bottom: 2.5vw;
+                }
+            }
+
             .aulas__aula__link {
                 width: 70%;
                 margin-top: 10vw;
             }
+        }
+    }
+
+    .form-link {
+        margin-top: 4vw;
+        padding: 40px;
+        border: 2px solid $laranja;
+        margin-bottom: 4vw;
+        margin-left: 2vw;
+        margin-right: 2vw;
+    
+        .form-link__label {
+            margin-bottom: 2.5vw;
+        }
+    
+        .form-link__input {
+            margin-bottom: 5vw;
+        }
+    
+        .form-link__button {
+            margin-top: 10vw;
+            width: 50%;
         }
     }
 
