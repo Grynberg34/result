@@ -64,7 +64,7 @@ module.exports = {
       await Material.create({
         nome: nome,
         nivel: nivel,
-        link: req.files[0].location,
+        link: 'https://grynberg34.nyc3.digitaloceanspaces.com/Trabalhos/Result-Materiais/' + req.files[0].originalname,
       })
       .catch(function(err){
         console.log(err)
