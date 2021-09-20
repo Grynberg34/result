@@ -1,4 +1,4 @@
-var select = document.getElementsByClassName('menu__select')[0];
+var select = document.getElementsByClassName('menu__select')[1];
 
 select.addEventListener("change", mostrarGabarito);
 
