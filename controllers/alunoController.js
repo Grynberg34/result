@@ -224,6 +224,10 @@ module.exports = {
             include: [Avaliação]
         });
 
+        if (!avaliacao) {
+            res.redirect('/aluno/avaliacoes');
+        }
+
         var perguntas = [];
         for (var i = 0; i < avaliacao.Avaliação.numero_perguntas; i++) {
             perguntas.push(i+1);
