@@ -25,7 +25,6 @@ module.exports = {
                 { where: { id: aluno_id } }
             )
             .then(function(){
-                console.log('Update 1');
                 res.redirect('/admin/alunos');
             })
             .catch(function(err){

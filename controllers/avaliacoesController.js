@@ -96,8 +96,6 @@ module.exports = {
                 if (avaliacao.tipo == "múltipla escolha" || avaliacao.tipo == "completar texto") {
 
                     var value = parseInt(avaliacao.numero_perguntas) + 1
-
-                    console.log(value)
         
                     for (var i = 1; i < value; i++) {
         

@@ -48,8 +48,6 @@ module.exports = {
             professorId: professor.id
         }});
 
-        console.log(semestre);
-
         if (semestre == null) {
             res.redirect('/professor')
         }
@@ -112,7 +110,6 @@ module.exports = {
         var nome = req.body.nome;
         var link = req.body.link;
 
-        console.log(id);
 
         await Link_Aula.create({
             nome: nome,

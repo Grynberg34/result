@@ -138,8 +138,6 @@ module.exports = {
         include: [User],
         order: [[`User`, `nome`, `ASC`]]});
 
-        console.log(alunos.length)
-
         var semestre = await Semestre.findByPk(sid, {
             include: [Turma]
         });
