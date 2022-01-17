@@ -131,8 +131,19 @@ module.exports = {
 
         var niveis = [];
 
+        var semestreAtual = await Semestre.findOne({
+            where: {
+                turmaId: aluno.turmaId,
+                concluido: 0
+            }
+        });
+
+        niveis.push(semestreAtual.nivel)
+
 
         Chamada.findAll({where: {alunoId: aluno.id}}).then(async function(chamadas){
+
+            
             
             for (var i=0; i < chamadas.length; i++) {
                 var aula = await Aula.findOne({where: {id: chamadas[i].aulaId}});
