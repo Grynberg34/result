@@ -108,8 +108,14 @@ module.exports = {
                 };
     
                 var num_presenças = presenças.length;
-    
-                var percentual = Math.floor(((num_presenças * 100) / num_aulas));
+
+                if (num_aulas == 0) {
+                    var percentual = 0;
+                }
+                
+                else {
+                    var percentual = Math.floor(((num_presenças * 100) / num_aulas));
+                }
 
                 res.render('aluno-aulas', {aulas, chamadas, num_aulas, num_presenças, percentual});
             })
