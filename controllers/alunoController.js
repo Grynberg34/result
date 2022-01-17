@@ -45,10 +45,13 @@ module.exports = {
         });
 
 
+        console.log(semestre[0].professorId)
+
         var professor = await Professor.findOne({
-            id: { id: semestre.professorId },
+        where: { id: semestre[0].professorId },
             include: [User]
         });
+
 
         res.render('aluno', {aluno, semestre, professor});
     },
