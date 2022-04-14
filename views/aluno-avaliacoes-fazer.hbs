@@ -38,43 +38,55 @@
 
             </div>
 
-            <div class="col-md-2"></div>
+            <div class="col-md-1"></div>
 
-            <div class="col-md-4 avaliacao">
+            <div class="col-md-7 avaliacao">
 
                 <h1 class="avaliacao__title">AVALIAÇÃO {{avaliacao.numero}}</h1>
                 <p class="avaliacao__subtitle">{{avaliacao.Avaliação.nome}}</p>
 
 
-                <div class="avaliacao__perguntas">
-                    <h2 class="avaliacao__perguntas__title">PERGUNTAS</h2>
-                    <p class="avaliacao__perguntas__texto">{{avaliacao.Avaliação.texto}}</p>
-                </div>
+                <div class="container-fluid">
+                    <div class="row">
 
-                <div class="avaliacao__respostas">
-                    <h2 class="avaliacao__respostas__title">RESPOSTAS</h2>
+                        <div class="col-md-8">
+                            <div class="avaliacao__perguntas">
+                                <h2 class="avaliacao__perguntas__title">PERGUNTAS</h2>
+                                <p class="avaliacao__perguntas__texto">{{avaliacao.Avaliação.texto}}</p>
+                            </div>
+                        </div>
 
-                    <form id="form" method="POST">
-                        {{#each perguntas}}
+                        <div class="col-md-4">
 
-                            <label class="avaliacao__respostas__label" for="{{this}}">Pergunta {{this}}</label>
+                            <div class="avaliacao__respostas">
+                                <h2 class="avaliacao__respostas__title">RESPOSTAS</h2>
 
-                            {{#if ../aberta}}
-                                <input class="avaliacao__respostas__input" type="text" name="{{this}}">
+                                <form id="form" method="POST">
+                                    {{#each perguntas}}
 
-                                {{else}}
+                                        <label class="avaliacao__respostas__label" for="{{this}}">Pergunta {{this}}</label>
 
-                                <textarea class="avaliacao__respostas__textarea" name="{{this}}" id="" cols="30" rows="10"></textarea>
+                                        {{#if ../aberta}}
+                                            <input class="avaliacao__respostas__input" type="text" name="{{this}}">
 
-                            {{/if}}
+                                            {{else}}
 
-                        {{/each}}
+                                            <textarea class="avaliacao__respostas__textarea" name="{{this}}" id="" cols="30" rows="10"></textarea>
 
-                        <input type="number" name="avaliacao" id="avaliacao" value="{{a_id}}">
+                                        {{/if}}
 
-                        <button class="avaliacao__respostas__button">ENVIAR</button>
-                    </form>
+                                    {{/each}}
 
+                                    <input type="number" name="avaliacao" id="avaliacao" value="{{a_id}}">
+
+                                    <button class="avaliacao__respostas__button">ENVIAR</button>
+                                </form>
+
+                            </div>
+
+                        </div>
+
+                    </div>
                 </div>
 
             </div>

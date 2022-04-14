@@ -55,8 +55,14 @@ body {
     }
 
     .avaliacao__respostas {
+        position: fixed;
+        margin-left: auto;
+        margin-right: auto;
         padding: 2vw;
+        padding-bottom: 4vw;
         border: 2px solid $laranja;
+        height: 70vh;
+        overflow-y: scroll;
 
         .avaliacao__respostas__title {
             font-size: 20px;

@@ -71,7 +71,11 @@ module.exports = {
             include: [Turma]
         })
         .then(async function(semestre){
-            var aulas = await Aula.findAll({where:{ semestreId: semestre[0].id }});
+            var aulas = await Aula.findAll({where:{ semestreId: semestre[0].id },
+                order: [
+                    ['numero_aula', 'DESC'],
+                ]
+            });
 
             for (var i=0; i < aulas.length; i++) {
                 var links = await Link_Aula.findAll({where:
