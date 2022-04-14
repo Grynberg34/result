@@ -344,6 +344,10 @@ body {
 }
 
 @media only screen and (max-width: 767px) {
+  body {
+    overflow-x: hidden;
+  }
+
   .avaliacao {
     margin-top: 20vw;
     margin-bottom: 40vw;
@@ -361,6 +365,8 @@ body {
     margin-bottom: 10vw;
   }
   .avaliacao .avaliacao__respostas {
+    position: unset;
+    height: unset;
     margin-top: 20vw;
     padding: 8vw;
   }
