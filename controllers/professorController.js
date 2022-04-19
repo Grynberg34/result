@@ -72,7 +72,11 @@ module.exports = {
     mostrarAulasSemestreTurma: async function (req,res) {
         var id = req.params.id;
 
-        var aulas = await Aula.findAll({where: {semestreId: id}});
+        var aulas = await Aula.findAll({where: {semestreId: id},
+            order: [
+                ['numero_aula', 'DESC'],
+            ]}
+        );
 
         for (var i=0; i < aulas.length; i++) {
 
