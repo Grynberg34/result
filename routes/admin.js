@@ -48,6 +48,8 @@ router.get('/turmas/ver', checkAuthentication, adminController.mostrarTurmas);
 
 router.get('/turmas/ver/:id', checkAuthentication, adminController.mostrarTurmaPorId);
 
+router.get('/turmas/ver/:id', checkAuthentication, adminController.deletarTurmaPorId);
+
 router.get('/turmas/ver/:id/criar-semestre', checkAuthentication, semestresController.mostrarFormularioSemestre);
 
 router.post('/turmas/ver/:id/criar-semestre', checkAuthentication, semestresController.criarSemestre);

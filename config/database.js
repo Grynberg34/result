@@ -1,8 +1,8 @@
 const { Sequelize } = require('sequelize');
 
-var connection = new Sequelize('resultenglish', 'adminf4', 'english2020@', {
+var connection = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASS, {
 
-  host: 'resultenglish.mysql.uhserver.com',
+  host: process.env.DB_HOST,
   dialect: 'mysql',
   define: {
     timestamps: false

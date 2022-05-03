@@ -61,6 +61,15 @@
         </div>
     </div>
 
+    <div class="delete">
+        <form id="delete__form" action="/admin/alunos/deletar" method="POST">
+            <input class="delete__input" type="text" id="del" name="del">
+            <label class="delete__label">deletar usuário?</label>
+            <button id="deleteSubmit" class="delete__button" type="button">sim</button>
+        </form>
+        <button id="deleteReturn" class="delete__button">não</button>
+    </div>
+
     <!--Bootstrap-->
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

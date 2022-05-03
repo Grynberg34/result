@@ -101,4 +101,16 @@ module.exports = {
         res.render('admin-turmas-turma', {turma, alunos, atual, concluidos});
     },
 
+    deletarTurmaPorId: async function (req,res) {
+        var id = req.params.id;
+
+        await Turma.destroy({
+            where: {
+              id: id
+            }
+          });
+
+        res.redirect('/admin/turmas/ver')
+    },
+
 }
