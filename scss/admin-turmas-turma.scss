@@ -11,6 +11,61 @@ body {
 
 .delete {
     display: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25vh;
+
+    .delete__input {
+        display: none;
+    }
+
+    .delete__label {
+        display: block;
+        font-size: 20px;
+        color: $laranja;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .delete__aluno {
+        font-size: 14px;
+        color: $cinza-claro;
+        text-align: center;
+        margin-bottom: 4vh;
+        margin-top: 4vh;
+    }
+
+    .delete__select {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 15vw;
+        text-align: center;
+
+    }
+
+    .delete__button {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: $laranja;
+        color: $preto;
+        font-size: 14px;
+        font-weight: 700;
+        margin-top: 4vh;
+        margin-bottom: 4vh;
+        border: none;
+        width: 15vw;
+
+        &:hover {
+            background-color: $cinza-claro;
+        }
+
+        &:focus {
+            border: none;
+            outline: none;
+        }
+    }
 }
 
 .menu {
