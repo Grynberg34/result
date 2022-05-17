@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="/stylesheets/admin-avaliacoes-avaliacao.css">
+    <link rel="stylesheet" href="/stylesheets/admin-avaliacoes-colecoes.css">
     <link rel="stylesheet" href="/icons/font/flaticon.css">
     <link rel="stylesheet" href="https://use.typekit.net/gvd0wuw.css">
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
@@ -18,22 +18,25 @@
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6 menu">
-                <h1 class="menu__title">{{avaliacao.nome}} <a href="/admin/avaliacoes/ver/{{avaliacao.nivel}}/{{avaliacao.coleção}}/{{avaliacao.id}}/editar" class="menu__edit"><i class="flaticon-edit menu__edit__icon"></i></a></h1>
+                <h1 class="menu__title">COLEÇÕES</h1>
 
-                <div class="avaliacao">
+                <div class="colecoes">
 
-                    <h2 class="avaliacao__info"><span class="laranja">Nível:</span> {{avaliacao.nivel}}</h2>
-                    <h2 class="avaliacao__info"><span class="laranja">Tipo:</span> {{avaliacao.tipo}}</h2>
-                    <h2 class="avaliacao__info"><span class="laranja">Coleção:</span> {{avaliacao.coleção}}</h2>
-                    
-                    {{#if avaliacao.link}}
-                        <h2 class="avaliacao__info"><span class="laranja">Arquivo:</span> <a class="avaliacao__link" href="{{avaliacao.link}}">Download</a></h2>
-                    {{/if}}
-                    
+                    {{#each coleções}}
+
+                        <div class="colecoes__colecao">
+                            <a class="colecoes__colecao__link" href="/admin/avaliacoes/ver/{{this.nivel}}/{{this.coleção}}">{{this.coleção}}</a>
+                        </div>
+
+                    {{/each}}
+
+
                 </div>
 
 
-                <a href="/admin/avaliacoes/ver/{{avaliacao.nivel}}" class="menu__link">VOLTAR</a>
+
+
+                <a href="/admin/avaliacoes/ver" class="menu__link">VOLTAR</a>
             </div>
         </div>
     </div>

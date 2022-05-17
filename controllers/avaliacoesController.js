@@ -1,140 +1,148 @@
 const Avaliação = require("../models/Avaliação");
-const Gabarito = require("../models/Gabarito");
+const multer = require('multer');
+const aws = require('aws-sdk');
+const multerS3 = require('multer-s3');
+
+const spacesEndpoint = new aws.Endpoint('nyc3.digitaloceanspaces.com');
+const s3 = new aws.S3({
+  endpoint: spacesEndpoint,
+  accessKeyId: 'FKRSQNNKJW26VGVS25BI',
+  secretAccessKey: 'QTKl3LHzw6+Nk9q0uP4272oirY7irocmQn/VHmGdnA8',
+  region: 'nyc3'
+});
+
+const upload = multer({
+  storage: multerS3({
+    s3: s3,
+    bucket: 'grynberg34' + '/Trabalhos/Result-Avaliacoes/Avaliacoes',
+    acl: 'public-read',
+    contentType: multerS3.AUTO_CONTENT_TYPE,
+    metadata: function (req, file, cb) {
+      cb(null, {fieldName: file.fieldname});
+    },
+    key: function (req, file, cb) {
+      cb(null, file.originalname);
+    }
+  })
+}).array('zip', 1);
 
 module.exports = {
 
-    criarAvaliacao: async function (req,res) {
-        var nome = req.body.nome;
-        var nivel = req.body.nivel;
-        var tipo = req.body.tipo;
-        var texto = req.body.texto;
-        var numero = req.body.numero;
+  adicionarPastaAvaliação: function (req,res,next){
 
-        await Avaliação.create({
-            nome: nome,
-            nivel: nivel,
-            tipo: tipo,
-            texto: texto,
-            numero_perguntas: numero
-        }).then(async function (avaliacao) {
-            
-            if (tipo == "múltipla escolha" || tipo == "completar texto") {
-                var value = parseInt(numero) + 1
-    
-                for (var i = 1; i < value; i++) {
-    
-                    await Gabarito.create({
-                        numero_pergunta: i,
-                        resposta: req.body[i],
-                        avaliaçãoId: avaliacao.id
-                    })
-                }
-            }
-            
+    upload(req, res, function (error) {
+      if (error) {
+        console.log(error);
+        return res.render('error');
+      }
+      console.log('File uploaded successfully.');
+      next();
+    });
 
-        })            
-        .catch(function(err){
-            res.render('error')
-            console.log(err)
-        })
-        
-        res.redirect('/admin/avaliacoes')
+  },
+
+  criarAvaliacao: async function (req,res) {
+      var nome = req.body.nome;
+      var nivel = req.body.nivel;
+      var tipo = req.body.tipo;
+
+      await Avaliação.create({
+        nome: nome,
+        nivel: nivel,
+        tipo: tipo,
+        link: 'https://grynberg34.nyc3.digitaloceanspaces.com/Trabalhos/Result-Avaliacoes/Avaliacoes/' + req.files[0].originalname
+      })           
+      .catch(function(err){
+        res.render('error')
+        console.log(err)
+      })
+      
+      res.redirect('/admin/avaliacoes')
 
 
+  },
+
+  mostrarMenuAvaliacoes: async function (req,res) {
+
+    var niveis = await Avaliação.findAll({group: 'nivel',
+    order: [['nivel', 'ASC']]});
+
+    res.render('admin-avaliacoes-niveis', {niveis});
+  },
+
+  mostrarColecoes: async function (req,res) {
+    var id = req.params.id;
+
+    var coleções = await Avaliação.findAll({
+    where: {
+      nivel: id
     },
+    group: 'coleção',
+    order: [['coleção', 'ASC']]});
 
-    mostrarMenuAvaliacoes: async function (req,res) {
+    res.render('admin-avaliacoes-colecoes', {coleções});
+  },
 
-        var niveis = await Avaliação.findAll({group: 'nivel',
-        order: [['nivel', 'ASC']]});
+  mostrarAvaliacoesColecao: async function (req,res) {
+    var id= req.params.id;
+    var cid = req.params.cid;
 
-        res.render('admin-avaliacoes-niveis', {niveis});
+    var avaliacoes = await Avaliação.findAll({where: {
+      nivel: id,
+      coleção: cid
     },
+    order: [['nome', 'ASC']]})
 
-    mostrarAvaliacoesPorNivel: async function (req,res) {
-        var id= req.params.id;
-        var avaliacoes = await Avaliação.findAll({where: {nivel: id},
-        order: [['nome', 'ASC']]})
-  
-        res.render('admin-avaliacoes-nivel', {avaliacoes, id});
-    },
+    res.render('admin-avaliacoes-nivel', {avaliacoes, id, cid});
+  },
 
-    mostrarAvaliacao: async function (req,res) {
-        var id= req.params.sid;
-        var avaliacao = await Avaliação.findByPk(id);
+  mostrarAvaliacao: async function (req,res) {
+    var id= req.params.sid;
+    var avaliacao = await Avaliação.findByPk(id);
 
-        var gabaritos = await Gabarito.findAll({where: {avaliaçãoId: id },
-            order: [['numero_pergunta', 'ASC']]
-        })
-  
-        res.render('admin-avaliacoes-avaliacao', {avaliacao, gabaritos});
-    },
+    res.render('admin-avaliacoes-avaliacao', {avaliacao});
+  },
 
-    mostrarEditorAvaliacao: async function (req,res) {
-        var id = req.params.sid;
-        var avaliacao = await Avaliação.findByPk(id);
+  mostrarEditorAvaliacao: async function (req,res) {
+    var id = req.params.sid;
+    var avaliacao = await Avaliação.findByPk(id);
 
-        var gabaritos = await Gabarito.findAll({where: {avaliaçãoId: id },
-            order: [['numero_pergunta', 'ASC']]
-        })
-  
-        res.render('admin-avaliacoes-avaliacao-editar', {avaliacao, gabaritos});
-    },
+    res.render('admin-avaliacoes-avaliacao-editar', {avaliacao});
+  },
 
-    editarAvaliacao: async function (req,res) {
-        var id = req.params.sid;
-        var texto = req.body.texto;
+  editarAvaliacao: async function (req,res) {
+    var id = req.params.sid;
+    var nivel = req.params.id;
+    var coleção = req.params.cid;
+    var nome = req.body.nome;
+    var coleção = req.body.coleção;  
 
-        Avaliação.update(
-            { texto: texto },
-            { where: { id: id } }
-        )
-        .then(function(){
-            
-            Avaliação.findByPk(id)
-            .then(async function(avaliacao){
-                if (avaliacao.tipo == "múltipla escolha" || avaliacao.tipo == "completar texto") {
+    Avaliação.update(
+      { nome: nome,
+        coleção: coleção 
+      },
+      { where: { id: id } }
+    )
+    .catch(function(err){
+      res.render('error')
+      console.log(err)
+    })
 
-                    var value = parseInt(avaliacao.numero_perguntas) + 1
-        
-                    for (var i = 1; i < value; i++) {
-        
-                        await Gabarito.update({
-                            resposta: req.body[i],
-                            
-                        },
-                        {where: {avaliaçãoId: id, numero_pergunta: i}})
-                    }
+    res.redirect(`/admin/avaliacoes/ver/${nivel}/${coleção}/${id}`)
+  },
 
-                    
-                }
+  deletarAvaliacao: async function (req,res) {
+    var nivel = req.params.id;
+    var coleção = req.params.cid;
+    var id = req.body.avaliacao;
 
-                res.redirect(`/admin/avaliacoes/ver/${avaliacao.nivel}/${id}`)
-            })
-            .catch(function(err){
-                res.render('error')
-                console.log(err)
-            })
-
-
-        })
-        .catch(function(err){
-            res.render('error')
-            console.log(err)
-        })
-    },
-
-    deletarAvaliacao: async function (req,res) {
-        var nivel = req.params.id;
-        var id = req.body.avaliacao;
-
-        Avaliação.destroy({where: {id: id}}).then(function(){
-            res.redirect(`/admin/avaliacoes/ver/${nivel}`);
-        })
-        .catch(function(err){
-            res.render('error')
-            console.log(err)
-        });
-    }
+    Avaliação.destroy({where: {id: id}}).then(function(){
+      res.redirect(`/admin/avaliacoes/ver/${nivel}/${coleção}`);
+    })
+    .catch(function(err){
+      res.render('error')
+      console.log(err)
+    });
+  }
 
 }

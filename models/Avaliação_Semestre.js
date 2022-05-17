@@ -11,14 +11,6 @@ const Avaliação_Semestre = connection.define('Avaliação_Semestre', {
     autoIncrement: true,
     primaryKey: true   
   },
-  numero: { 
-    type: DataTypes.INTEGER,
-    allowNull: false,
-  },
-  pontos_pergunta: { 
-    type: DataTypes.INTEGER,
-    allowNull: false,
-  },
   pontos_total: { 
     type: DataTypes.INTEGER,
     allowNull: false,

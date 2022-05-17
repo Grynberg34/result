@@ -20,53 +20,26 @@
             <div class="col-md-6 menu">
                 <h1 class="menu__title">{{avaliacao.nome}} <i class="flaticon-trash menu__delete"></i></h1>
 
-                <div class="avaliacao">
+                <form class="menu__form" id="form" method="POST">
 
-                    <h2 class="avaliacao__info"><span class="laranja">Nível:</span> {{avaliacao.nivel}}</h2>
-                    <h2 class="avaliacao__info"><span class="laranja">Tipo:</span> {{avaliacao.tipo}}</h2>
-                    <h2 class="avaliacao__info"><span class="laranja">Número de perguntas:</span> {{avaliacao.numero_perguntas}}</h2>
-                    
-                </div>
+                    <label class="menu__label" for="nome">Nome da avaliação:</label>
+                    <input class="menu__input" type="text" name="nome" id="nome" value="{{avaliacao.nome}}">
 
-                <form id="form" method="POST">
-
-                    <div class="perguntas">
-                        <h2 class="perguntas__title">Perguntas</h2>
-                        <textarea id="texto" class="perguntas__textarea" name="texto" rows="25" cols="60" maxlength="10000">{{avaliacao.texto}}</textarea> 
-                    </div>
-
-                    {{#if gabaritos}}
-                        <div class="gabarito">
-
-                            <h2 class="gabarito__title">Gabarito</h2>
-
-                            <ul class="gabarito__lista">
-                                {{#each gabaritos}}
-
-                                    <li class="gabarito__lista__resposta"><span class="laranja">{{this.numero_pergunta}}:</span>
-
-                                        <input type="text" name="{{this.numero_pergunta}}" value="{{this.resposta}}" class="gabarito__lista__resposta__input">                                    
-                                    
-                                    </li>
-
-                                {{/each}}
-                            </ul>
-
-                        </div>
-                    {{/if}}
+                    <label class="menu__label" for="nome">Coleção:</label>
+                    <input class="menu__input" type="text" name="coleção" id="coleção" value="{{avaliacao.coleção}}">
 
                     <button class="menu__button" type="submit">SALVAR</button>
 
                 </form>
 
-                <form action="/admin/avaliacoes/ver/{{avaliacao.nivel}}/{{avaliacao.id}}/deletar" method="POST" class="delete" id="delete-form">
+                <form action="/admin/avaliacoes/ver/{{avaliacao.nivel}}/{{avaliacao.coleção}}/{{avaliacao.id}}/deletar" method="POST" class="delete" id="delete-form">
 
                     <input type="text" name="avaliacao" value="{{avaliacao.id}}">
 
                 </form>
 
 
-                <a href="/admin/avaliacoes/ver/{{avaliacao.nivel}}/{{avaliacao.id}}" class="menu__link">VOLTAR</a>
+                <a href="/admin/avaliacoes/ver/{{avaliacao.nivel}}/{{avaliacao.coleção}}/{{avaliacao.id}}" class="menu__link">VOLTAR</a>
             </div>
         </div>
     </div>

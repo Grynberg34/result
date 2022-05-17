@@ -18,14 +18,14 @@
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6 menu">
-                <h1 class="menu__title">AVALIAÇÕES {{id}}</h1>
+                <h1 class="menu__title">AVALIAÇÕES {{id}} | {{cid}}</h1>
 
                 <div class="avaliacoes">
 
                     {{#each avaliacoes}}
 
                         <div class="avaliacoes__avaliacao">
-                            <a class="avaliacoes__avaliacao__link" href="/admin/avaliacoes/ver/{{this.nivel}}/{{this.id}}">{{this.nome}}</a>
+                            <a class="avaliacoes__avaliacao__link" href="/admin/avaliacoes/ver/{{this.nivel}}/{{this.coleção}}/{{this.id}}">{{this.nome}}</a>
                         </div>
 
                     {{/each}}
@@ -36,7 +36,7 @@
 
 
 
-                <a href="/admin/avaliacoes/ver" class="menu__link">VOLTAR</a>
+                <a href="/admin/avaliacoes/ver/{{id}}" class="menu__link">VOLTAR</a>
             </div>
         </div>
     </div>

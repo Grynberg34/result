@@ -29,40 +29,35 @@ body {
   text-decoration: none;
   color: #f2780b;
 }
-.menu .menu__edit {
-  margin-left: 10px;
-  color: #f2780b;
-}
-.menu .menu__edit:hover {
-  text-decoration: none;
-  color: #d9d7d7;
-}
 
-.avaliacao {
-  margin-top: 4vw;
-  margin-bottom: 4vw;
-  border: 2px solid #f2780b;
-  padding: 20px;
+.colecoes {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
-.avaliacao .avaliacao__info {
-  font-size: 14px;
+.colecoes .colecoes__colecao {
+  border-top: 2px solid #f2780b;
+}
+.colecoes .colecoes__colecao:first-of-type {
+  border-top: none;
+}
+.colecoes .colecoes__colecao .colecoes__colecao__link {
+  display: block;
+  text-align: center;
+  font-size: 16px;
+  color: #f2780b;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+.colecoes .colecoes__colecao .colecoes__colecao__link:hover {
   color: #d9d7d7;
-  font-weight: 400;
-}
-.avaliacao .avaliacao__link {
-  color: #ffffff;
-  font-weight: 700;
-}
-.avaliacao .avaliacao__link:hover {
   text-decoration: none;
-  color: #f2780b;
-}
-
-.laranja {
-  color: #f2780b;
 }
 
 @media only screen and (max-width: 767px) {
+  .menu {
+    margin-top: 50vw;
+  }
   .menu .menu__row {
     margin-left: 5vw;
     margin-right: 5vw;
@@ -77,4 +72,4 @@ body {
   }
 }
 
-/*# sourceMappingURL=admin-avaliacoes-avaliacao.css.map */
+/*# sourceMappingURL=admin-avaliacoes-colecoes.css.map */

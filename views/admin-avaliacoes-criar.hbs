@@ -21,7 +21,7 @@
                 <h1 class="menu__title">AVALIAÇÃO</h1>
                 <div class="row menu__row">
 
-                    <form id="form" method="POST">
+                    <form id="form" method="POST" enctype="multipart/form-data">
                     
                         <label class="menu__label" for="nome">Nome da avaliação:</label>
                         <input class="menu__input" type="text" name="nome" id="nome">
@@ -37,6 +37,9 @@
 
                         </select>
 
+                        <label class="menu__label" for="coleção">Coleção</label>
+                        <input class="menu__input" type="text" name="coleção" id="coleção" aria-required="true" required>
+
                         <label class="menu__label" for="tipo">Tipo:</label>
                         <select class="menu__select" name="tipo" id="tipo">
                             <option value="" disabled selected></option>
@@ -45,17 +48,8 @@
                             <option value="perguntas abertas">Perguntas abertas</option>
                         </select>
 
-                        <label class="menu__label" for="texto">Texto das perguntas:</label>
-                        <textarea id="texto" class="menu__textarea" name="texto" rows="22" cols="40" maxlength="10000"></textarea> 
-
-                        <label class="menu__label" for="numero">Número de perguntas:</label>
-                        <input class="menu__input" type="number" name="numero" id="numero">
-
-                        <div class="gabarito">
-
-                            <h2 class="gabarito__title">Gabarito</h2>
-
-                        </div>
+                        <label class="menu__label" for="zip"><b>Selecionar arquivo</b></label>
+                        <input class="menu__input" type="file" name="zip"/>
 
 
                         <button class="menu__button" type="submit">CRIAR AVALIAÇÃO</button>

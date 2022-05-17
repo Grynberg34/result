@@ -22,13 +22,13 @@ const Avaliação = connection.define('Avaliação', {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    numero_perguntas: { 
-      type: DataTypes.INTEGER,
-      allowNull: false,
+    link: { 
+      type: DataTypes.STRING,
+      allowNull: true,
     },
-    texto: { 
-      type: DataTypes.STRING(50000),
-      allowNull: false,
+    coleção: { 
+      type: DataTypes.STRING,
+      allowNull: true,
     },
 },{
   tableName: 'avaliações'

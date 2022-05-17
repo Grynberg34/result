@@ -82,18 +82,20 @@ router.get('/avaliacoes/criar', checkAuthentication, function(req, res) {
   res.render('admin-avaliacoes-criar');
 });
 
-router.post('/avaliacoes/criar', checkAuthentication, avaliacoesController.criarAvaliacao);
+router.post('/avaliacoes/criar', checkAuthentication, avaliacoesController.adicionarPastaAvaliação, avaliacoesController.criarAvaliacao);
 
 router.get('/avaliacoes/ver', checkAuthentication, avaliacoesController.mostrarMenuAvaliacoes);
 
-router.get('/avaliacoes/ver/:id', checkAuthentication, avaliacoesController.mostrarAvaliacoesPorNivel);
+router.get('/avaliacoes/ver/:id', checkAuthentication, avaliacoesController.mostrarColecoes);
 
-router.get('/avaliacoes/ver/:id/:sid', checkAuthentication, avaliacoesController.mostrarAvaliacao);
+router.get('/avaliacoes/ver/:id/:cid', checkAuthentication, avaliacoesController.mostrarAvaliacoesColecao);
 
-router.get('/avaliacoes/ver/:id/:sid/editar', checkAuthentication, avaliacoesController.mostrarEditorAvaliacao);
+router.get('/avaliacoes/ver/:id/:cid/:sid', checkAuthentication, avaliacoesController.mostrarAvaliacao);
 
-router.post('/avaliacoes/ver/:id/:sid/editar', checkAuthentication, avaliacoesController.editarAvaliacao);
+router.get('/avaliacoes/ver/:id/:cid/:sid/editar', checkAuthentication, avaliacoesController.mostrarEditorAvaliacao);
 
-router.post('/avaliacoes/ver/:id/:sid/deletar', checkAuthentication, avaliacoesController.deletarAvaliacao);
+router.post('/avaliacoes/ver/:id/:cid/:sid/editar', checkAuthentication, avaliacoesController.editarAvaliacao);
+
+router.post('/avaliacoes/ver/:id/:cid/:sid/deletar', checkAuthentication, avaliacoesController.deletarAvaliacao);
 
 module.exports = router;

@@ -33,52 +33,43 @@ body {
             color: $laranja;
         }
     }
-
-    .menu__edit {
-        margin-left: 10px;
-        color: $laranja;
-
-        &:hover {
-            text-decoration: none;
-            color: $cinza-claro;
-        }
-    }
-
 }
 
-.avaliacao {
-    margin-top: 4vw;
-    margin-bottom: 4vw;
-    border: 2px solid $laranja;
-    padding: 20px;
+.colecoes {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 
-    .avaliacao__info {
-        font-size: 14px;
-        color: $cinza-claro;
-        font-weight: 400;
+    .colecoes__colecao {
+        border-top: 2px solid $laranja;
 
-    }
+        &:first-of-type {
+            border-top: none;
+        }
 
-    .avaliacao__link {
-        color: $branco;
-        font-weight: 700;
-
-        &:hover {
-            text-decoration: none;
+        .colecoes__colecao__link {
+            display: block;
+            text-align: center;
+            font-size: 16px;
             color: $laranja;
+            margin-top: 2vh;
+            margin-bottom: 2vh;
+
+            &:hover {
+                color: $cinza-claro;
+                text-decoration: none;
+            }
         }
     }
-}
 
-.laranja {
-    color: $laranja;
 }
-
 
 
 @media only screen and (max-width: 767px) {
 
     .menu {
+        margin-top: 50vw;
+
         .menu__row {
             margin-left: 5vw;
             margin-right: 5vw;
