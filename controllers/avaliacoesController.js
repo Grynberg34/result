@@ -24,14 +24,15 @@ const upload = multer({
       cb(null, file.originalname);
     }
   })
-}).array('zip', 1);
+}).array('files', 2);
 
 module.exports = {
 
-  adicionarPastaAvaliação: function (req,res,next){
+  adicionarAvaliação: function (req,res,next){
 
     upload(req, res, function (error) {
       if (error) {
+        console.log('error')
         console.log(error);
         return res.render('error');
       }
@@ -42,23 +43,26 @@ module.exports = {
   },
 
   criarAvaliacao: async function (req,res) {
-      var nome = req.body.nome;
-      var nivel = req.body.nivel;
-      var tipo = req.body.tipo;
+    var nome = req.body.nome;
+    var nivel = req.body.nivel;
+    var tipo = req.body.tipo;
+    var coleção = req.body.coleção;
 
-      await Avaliação.create({
-        nome: nome,
-        nivel: nivel,
-        tipo: tipo,
-        link: 'https://grynberg34.nyc3.digitaloceanspaces.com/Trabalhos/Result-Avaliacoes/Avaliacoes/' + req.files[0].originalname
-      })           
-      .catch(function(err){
-        res.render('error')
-        console.log(err)
-      })
-      
+    await Avaliação.create({
+      nome: nome,
+      nivel: nivel,
+      tipo: tipo,
+      coleção: coleção,
+      link: 'https://grynberg34.nyc3.digitaloceanspaces.com/Trabalhos/Result-Avaliacoes/Avaliacoes/' + req.files[0].originalname,
+      gabarito: 'https://grynberg34.nyc3.digitaloceanspaces.com/Trabalhos/Result-Avaliacoes/Avaliacoes/' + req.files[1].originalname
+    })
+    .then(function(){
       res.redirect('/admin/avaliacoes')
-
+    })          
+    .catch(function(err){
+      console.log(err)
+      return res.render('error')
+    });
 
   },
 
@@ -123,12 +127,14 @@ module.exports = {
       },
       { where: { id: id } }
     )
-    .catch(function(err){
-      res.render('error')
-      console.log(err)
+    .then(function(){
+      res.redirect(`/admin/avaliacoes/ver/${nivel}/${coleção}/${id}`)
     })
+    .catch(function(err){
+      console.log(err)
+      return res.render('error')
+    });
 
-    res.redirect(`/admin/avaliacoes/ver/${nivel}/${coleção}/${id}`)
   },
 
   deletarAvaliacao: async function (req,res) {
@@ -140,8 +146,8 @@ module.exports = {
       res.redirect(`/admin/avaliacoes/ver/${nivel}/${coleção}`);
     })
     .catch(function(err){
-      res.render('error')
       console.log(err)
+      return res.render('error')
     });
   }
 

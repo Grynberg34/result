@@ -30,6 +30,10 @@ const Avaliação = connection.define('Avaliação', {
       type: DataTypes.STRING,
       allowNull: true,
     },
+    gabarito: { 
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
 },{
   tableName: 'avaliações'
 });

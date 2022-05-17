@@ -28,9 +28,9 @@ module.exports = {
                 res.redirect('/admin/alunos');
             })
             .catch(function(err){
-                res.render('error')
                 console.log(err)
-            })
+                return res.render('error')
+            });
         }
 
         else {

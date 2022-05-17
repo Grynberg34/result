@@ -24,7 +24,7 @@
                     <form id="form" method="POST" enctype="multipart/form-data">
                     
                         <label class="menu__label" for="nome">Nome da avaliação:</label>
-                        <input class="menu__input" type="text" name="nome" id="nome">
+                        <input class="menu__input" type="text" name="nome" id="nome" required>
 
                         <label class="menu__label" for="nivel">Nível:</label>
                         <select name="nivel" class="menu__select" id="nivel" required>
@@ -41,15 +41,18 @@
                         <input class="menu__input" type="text" name="coleção" id="coleção" aria-required="true" required>
 
                         <label class="menu__label" for="tipo">Tipo:</label>
-                        <select class="menu__select" name="tipo" id="tipo">
+                        <select class="menu__select" name="tipo" id="tipo" required>
                             <option value="" disabled selected></option>
                             <option value="múltipla escolha">Múltipla escolha</option>
                             <option value="completar texto">Completar texto</option>
                             <option value="perguntas abertas">Perguntas abertas</option>
                         </select>
 
-                        <label class="menu__label" for="zip"><b>Selecionar arquivo</b></label>
-                        <input class="menu__input" type="file" name="zip"/>
+                        <label class="menu__label" for="avaliacao"><b>Selecionar arquivo de Avaliação</b></label>
+                        <input class="menu__input" type="file" name="files" required/>
+
+                        <label class="menu__label" for="gabarito"><b>Selecionar arquivo de Gabarito</b></label>
+                        <input class="menu__input" type="file" name="files" required/>
 
 
                         <button class="menu__button" type="submit">CRIAR AVALIAÇÃO</button>
@@ -71,7 +74,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-    <script src="/scripts/submitForm.js"></script>
     <script src="/scripts/admin-avaliacoes-criar.js"></script>
 
 </body>

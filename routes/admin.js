@@ -82,7 +82,7 @@ router.get('/avaliacoes/criar', checkAuthentication, function(req, res) {
   res.render('admin-avaliacoes-criar');
 });
 
-router.post('/avaliacoes/criar', checkAuthentication, avaliacoesController.adicionarPastaAvaliação, avaliacoesController.criarAvaliacao);
+router.post('/avaliacoes/criar', checkAuthentication, avaliacoesController.adicionarAvaliação, avaliacoesController.criarAvaliacao);
 
 router.get('/avaliacoes/ver', checkAuthentication, avaliacoesController.mostrarMenuAvaliacoes);
 

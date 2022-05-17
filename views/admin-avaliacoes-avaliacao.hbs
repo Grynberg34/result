@@ -27,9 +27,13 @@
                     <h2 class="avaliacao__info"><span class="laranja">Coleção:</span> {{avaliacao.coleção}}</h2>
                     
                     {{#if avaliacao.link}}
-                        <h2 class="avaliacao__info"><span class="laranja">Arquivo:</span> <a class="avaliacao__link" href="{{avaliacao.link}}">Download</a></h2>
+                        <h2 class="avaliacao__info"><span class="laranja">Avaliação:</span> <a class="avaliacao__link" href="{{avaliacao.link}}">Download</a></h2>
                     {{/if}}
                     
+                    {{#if avaliacao.gabarito}}
+                        <h2 class="avaliacao__info"><span class="laranja">Gabarito:</span> <a class="avaliacao__link" href="{{avaliacao.gabarito}}">Download</a></h2>
+                    {{/if}}
+
                 </div>
 
 
