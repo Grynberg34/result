@@ -235,4 +235,47 @@ module.exports = {
         });
 
     },
+    mostrarAvaliacaoAluno: async function (req,res) {
+        var a_id = req.params.id;
+        var id = req.user.id;
+
+        var aluno = await Aluno.findOne({where: {userId: id},
+            include: [Turma]
+        });
+
+        var avaliacao = await Avaliação_Semestre.findOne({where: {id: a_id},
+            include: [Avaliação]
+        });
+
+        if (!avaliacao) {
+            return res.redirect('/aluno/avaliacoes');
+        }
+
+        // Checar se aluno realizou a avaliação previamente
+
+        var nota = await Avaliação_Nota.findOne({where: {avaliação_semestreId: avaliacao.id, alunoId: aluno.id}});
+
+        // Checar se avaliação corresponde à turma do aluno
+
+        var semestre = await Semestre.findOne({where: {id: avaliacao.semestreId}});
+
+        if (semestre.turmaId == aluno.turmaId) {
+            var turma = true;
+        }
+
+        else {
+            var turma = false;
+        }
+
+        if (avaliacao.disponivel == false || nota || !turma) {
+            res.redirect('/aluno/avaliacoes');
+        }
+
+        else res.render('aluno-avaliacoes-fazer', {avaliacao, a_id});
+
+    },
+
+    receberRespostasAvaliacao: async function (req,res) {
+
+    }
 }

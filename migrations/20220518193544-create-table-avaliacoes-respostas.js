@@ -10,9 +10,6 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true   
       },
-      numero_pergunta: {
-        type: DataTypes.INTEGER
-      },
       resposta: {
         type: DataTypes.STRING(50000),
         allowNull: true

@@ -15,6 +15,10 @@ const Avaliação_Semestre = connection.define('Avaliação_Semestre', {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
+  numero: { 
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
   disponivel: { 
     type: DataTypes.BOOLEAN,
     allowNull: false,

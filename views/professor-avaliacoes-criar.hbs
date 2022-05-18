@@ -26,11 +26,11 @@
                     <select class="menu__select" name="a_id" id="a_id">
                         <option value="" disabled selected></option>
                         {{#each avaliacoes}}
-                        <option value="{{this.id}}">{{this.nome}} ({{this.numero_perguntas}})</option>
+                        <option value="{{this.id}}">({{this.coleção}}) {{this.nome}}</option>
                         {{/each}}
                     </select>
 
-                    <label class="menu__label" for="pontos"><b>Pontos por pergunta</b></label>
+                    <label class="menu__label" for="pontos"><b>Pontos totais:</b></label>
                     <input class="menu__input" type="number" name="pontos" id="pontos" aria-required="true" required>
 
 

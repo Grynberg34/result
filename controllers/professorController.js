@@ -663,7 +663,10 @@ module.exports = {
             
             var avaliacoes = await Avaliação.findAll({where: {
                 nivel: semestre.nivel
-            }});
+                },
+                group: 'coleção',
+                order: [['coleção', 'ASC']]
+            });
 
             res.render('professor-avaliacoes-criar', {id, avaliacoes})
         })
@@ -682,27 +685,18 @@ module.exports = {
 
         Avaliação.findByPk(a_id).then(async function(avaliacao){
 
-            if (avaliacao.tipo == 'perguntas abertas') {
-                var corrigido = false;
-            }
-            
-            else{
-                var corrigido = true;
-            }
-
-            var pontos_total = pontos * avaliacao.numero_perguntas;
-
             var numero_anterior = await Avaliação_Semestre.findAll({where: {
                 semestreId: id
-            }})
+            }});
 
             var numero_final = numero_anterior.length + 1;
+            
+            console.log(numero_final)
 
             Avaliação_Semestre.create({
                 numero: numero_final,
-                pontos_pergunta: pontos,
-                pontos_total: pontos_total,
-                corrigido: corrigido,
+                pontos_total: pontos,
+                corrigido: false,
                 semestreId: id,
                 avaliaçãoId: avaliacao.id
             })

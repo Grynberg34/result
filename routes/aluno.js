@@ -29,4 +29,8 @@ router.get('/materiais', checkAuthentication, alunoController.checarTurmaAluno, 
 
 router.get('/avaliacoes', checkAuthentication, alunoController.checarTurmaAluno, alunoController.mostrarAvaliacoes);
 
+router.get('/avaliacoes/:id', checkAuthentication, alunoController.checarTurmaAluno, alunoController.mostrarAvaliacaoAluno);
+
+router.post('/avaliacoes/:id', checkAuthentication, alunoController.checarTurmaAluno, alunoController.receberRespostasAvaliacao);
+
 module.exports = router;
