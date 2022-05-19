@@ -5,13 +5,39 @@ const Turma = require("../models/Turma");
 const User = require("../models/User");
 const Aula = require("../models/Aula");
 const Chamada = require("../models/Chamada");
-const Gabarito = require("../models/Gabarito");
 const Material = require("../models/Material");
 const Avaliação_Semestre = require("../models/Avaliação_Semestre");
 const Avaliação = require("../models/Avaliação");
 const Avaliação_Nota = require("../models/Avaliação_Nota");
 const Avaliação_Resposta = require("../models/Avaliação_Resposta");
 const Link_Aula = require("../models/Link_Aula");
+
+const multer = require('multer');
+const aws = require('aws-sdk');
+const multerS3 = require('multer-s3');
+
+const spacesEndpoint = new aws.Endpoint('nyc3.digitaloceanspaces.com');
+const s3 = new aws.S3({
+  endpoint: spacesEndpoint,
+  accessKeyId: 'FKRSQNNKJW26VGVS25BI',
+  secretAccessKey: 'QTKl3LHzw6+Nk9q0uP4272oirY7irocmQn/VHmGdnA8',
+  region: 'nyc3'
+});
+
+const upload = multer({
+  storage: multerS3({
+    s3: s3,
+    bucket: 'grynberg34' + '/Trabalhos/Result-Avaliacoes/Respostas',
+    acl: 'public-read',
+    contentType: multerS3.AUTO_CONTENT_TYPE,
+    metadata: function (req, file, cb) {
+      cb(null, {fieldName: file.fieldname});
+    },
+    key: function (req, file, cb) {
+      cb(null, file.originalname);
+    }
+  })
+}).array('resposta', 1);
 
 module.exports = {
 
@@ -275,7 +301,42 @@ module.exports = {
 
     },
 
-    receberRespostasAvaliacao: async function (req,res) {
+    adicionarResposta: function (req,res,next){
 
+        upload(req, res, function (error) {
+          if (error) {
+            console.log('error')
+            console.log(error);
+            return res.render('error');
+          }
+          console.log('File uploaded successfully.');
+          next();
+        });
+    
+    },
+
+    receberRespostasAvaliacao: async function (req,res) {
+        var id = req.user.id;
+        var a_id = req.params.id;
+
+        console.log(a_id)
+
+        var aluno = await Aluno.findOne({where: {userId: id}});
+
+        var avaliacao = await Avaliação_Semestre.findOne({where: {id: a_id}});
+
+        var semestre = await Semestre.findOne({where: {id: avaliacao.semestreId}});
+
+        if (a_id !== avaliacao_id || semestre.turmaId !== aluno.turmaId) {
+            return res.redirect('/aluno/avaliacoes');
+        }
+
+        await Avaliação_Resposta.create({
+            avaliação_semestreId: avaliacao.id,
+            alunoId: aluno.id,
+            resposta: `https://grynberg34.nyc3.digitaloceanspaces.com/Trabalhos/Result-Avaliacoes/Avaliacoes/` + req.files[0].originalname
+        });
+
+        res.redirect('/aluno/avaliacoes');
     }
 }

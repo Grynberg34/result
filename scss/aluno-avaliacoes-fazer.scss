@@ -16,117 +16,74 @@ body {
     margin-bottom: 10vw;
 
     .avaliacao__title {
+        margin-bottom: 1vw;
         font-size: 30px;
         color: $laranja;
-        margin-bottom: 1vw;
         text-align: center;
         font-weight: 800;
     }
 
     .avaliacao__subtitle {
+        margin-bottom: 2vw;
         font-size: 16px;
         color: $cinza-claro;
         text-align: center;
-        margin-bottom: 4vw;
         font-style: italic;
         font-weight: 400;
     }
 
-    .avaliacao__perguntas {
+    .avaliacao__link {
+        display: block;
         margin-bottom: 4vw;
-        padding: 2vw;
-        border: 2px solid $cinza-claro;
+        font-size: 16px;
+        color: $laranja;
+        text-align: center;
+        font-weight: 400;
 
-        .avaliacao__perguntas__title {
-            font-size: 20px;
-            color: $cinza-claro;
-            margin-bottom: 2vw;
-            text-align: center;
-            font-weight: 700;
-        }
-    
-        .avaliacao__perguntas__texto {
-            font-size: 12px;
-            color: $cinza-claro;
-            text-align: justify;
-            white-space: pre-wrap;
-            line-height: 2;
+        &:hover {
+            color: $branco;
+            text-decoration: none;
         }
     }
 
-    .avaliacao__respostas {
-        position: fixed;
+
+}
+
+.form {
+    .form__label {
+        display: block;
+        font-size: 16px;
+        text-align: center;
+        color: $laranja;
+        margin-top: 4vh;
+        margin-bottom: 2vh;
         margin-left: auto;
         margin-right: auto;
-        padding: 2vw;
-        padding-bottom: 4vw;
-        border: 2px solid $laranja;
-        height: 70vh;
-        overflow-y: scroll;
+    }
+    
+    .form__input {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        width: 40%;
+        text-align: center;
+        color: $branco;
+    }
 
-        .avaliacao__respostas__title {
-            font-size: 20px;
-            color: $laranja;
-            margin-bottom: 2vw;
-            text-align: center;
-            font-weight: 700;
+    .form__button {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 14px;
+        font-weight: 800;
+        padding: 10px;
+        margin-top: 8vh;
+        background-color: $laranja;
+        border: none;
+
+        &:hover {
+            background-color: $cinza-claro;
         }
-
-        .avaliacao__respostas__label {
-            display: block;
-            font-size: 14px;
-            color: $laranja;
-            margin-bottom: 1vw;
-        }
-
-        .avaliacao__respostas__input {
-            display: block;
-            margin-bottom: 2vw;
-            padding-left: 0.5vw;
-            font-size: 14px;
-
-            &:focus {
-                outline: none;
-            }
-        }
-
-        .avaliacao__respostas__textarea {
-            display: block;
-            margin-bottom: 2vw;
-            font-size: 12px;
-            width: 100%;
-            padding: 1vw;
-
-            &:focus {
-                outline: none;
-            }
-        }
-
-        .avaliacao__respostas__button {
-            display: block;
-            font-size: 14px;
-            font-weight: 600;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 4vw;
-            color: $laranja;
-            text-align: center;
-            width: 50%;
-            border: 2px solid $laranja;
-            padding: 10px;
-            background: none;
-
-            &:hover {
-                text-decoration: none;
-                color: $cinza-claro;
-                border: 2px solid $cinza-claro;
-            }
-
-            &:focus {
-                outline: none;
-            }
-        }
-
     }
 }
 
@@ -158,38 +115,6 @@ body {
         .avaliacao__subtitle {
             margin-bottom: 10vw;
         }
-
-        .avaliacao__perguntas {
-            padding: 8vw;
-
-            .avaliacao__perguntas__title {
-                margin-bottom: 10vw;
-            }
-        }
-
-        .avaliacao__respostas {
-            position: unset;
-            height: unset;
-            margin-top: 20vw;
-            padding: 8vw;
-
-            .avaliacao__respostas__title {
-                margin-bottom: 10vw;
-            }
-
-            .avaliacao__respostas__label {
-                margin-bottom: 4vw;
-            }
-
-            .avaliacao__respostas__input, .avaliacao__respostas__textarea {
-                margin-bottom: 10vw;
-            }
-
-            .avaliacao__respostas__button {
-                margin-top: 20vw;
-            }
-        }
     }
-    
 
 }

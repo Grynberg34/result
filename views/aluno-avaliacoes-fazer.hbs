@@ -44,18 +44,18 @@
 
                 <h1 class="avaliacao__title">AVALIAÇÃO {{avaliacao.numero}}</h1>
                 <h2 class="avaliacao__subtitle">{{avaliacao.Avaliação.nome}}</h2>
-                <h2 class="avaliacao__subtitle">{{avaliacao.Avaliação.link}}</h2>
+                <a class="avaliacao__link" target="_blank" rel="noreferrer" href="{{avaliacao.Avaliação.link}}">Download da Avaliação</a>
 
 
                 <div class="container-fluid">
-                    <form id="form" method="POST" enctype="multipart/form-data">
+                    <form class="form" id="form" method="POST" enctype="multipart/form-data">
                     
 
-                        <label class="menu__label" for="avaliacao"><b>Selecionar arquivo com Respostas</b></label>
-                        <input class="menu__input" type="file" name="files" required/>
+                        <label class="form__label" for="resposta"><b>Selecionar arquivo com Respostas</b></label>
+                        <input class="form__input" type="file" name="resposta" required/>
 
 
-                        <button class="menu__button" type="submit">ENVIAR AVALIAÇÃO</button>
+                        <button class="form__button" type="submit">ENVIAR AVALIAÇÃO</button>
 
                     </form>
 

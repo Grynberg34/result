@@ -236,102 +236,64 @@ body {
   margin-bottom: 10vw;
 }
 .avaliacao .avaliacao__title {
+  margin-bottom: 1vw;
   font-size: 30px;
   color: #f2780b;
-  margin-bottom: 1vw;
   text-align: center;
   font-weight: 800;
 }
 .avaliacao .avaliacao__subtitle {
+  margin-bottom: 2vw;
   font-size: 16px;
   color: #d9d7d7;
   text-align: center;
-  margin-bottom: 4vw;
   font-style: italic;
   font-weight: 400;
 }
-.avaliacao .avaliacao__perguntas {
+.avaliacao .avaliacao__link {
+  display: block;
   margin-bottom: 4vw;
-  padding: 2vw;
-  border: 2px solid #d9d7d7;
-}
-.avaliacao .avaliacao__perguntas .avaliacao__perguntas__title {
-  font-size: 20px;
-  color: #d9d7d7;
-  margin-bottom: 2vw;
-  text-align: center;
-  font-weight: 700;
-}
-.avaliacao .avaliacao__perguntas .avaliacao__perguntas__texto {
-  font-size: 12px;
-  color: #d9d7d7;
-  text-align: justify;
-  white-space: pre-wrap;
-  line-height: 2;
-}
-.avaliacao .avaliacao__respostas {
-  position: fixed;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 2vw;
-  padding-bottom: 4vw;
-  border: 2px solid #f2780b;
-  height: 70vh;
-  overflow-y: scroll;
-}
-.avaliacao .avaliacao__respostas .avaliacao__respostas__title {
-  font-size: 20px;
-  color: #f2780b;
-  margin-bottom: 2vw;
-  text-align: center;
-  font-weight: 700;
-}
-.avaliacao .avaliacao__respostas .avaliacao__respostas__label {
-  display: block;
-  font-size: 14px;
-  color: #f2780b;
-  margin-bottom: 1vw;
-}
-.avaliacao .avaliacao__respostas .avaliacao__respostas__input {
-  display: block;
-  margin-bottom: 2vw;
-  padding-left: 0.5vw;
-  font-size: 14px;
-}
-.avaliacao .avaliacao__respostas .avaliacao__respostas__input:focus {
-  outline: none;
-}
-.avaliacao .avaliacao__respostas .avaliacao__respostas__textarea {
-  display: block;
-  margin-bottom: 2vw;
-  font-size: 12px;
-  width: 100%;
-  padding: 1vw;
-}
-.avaliacao .avaliacao__respostas .avaliacao__respostas__textarea:focus {
-  outline: none;
-}
-.avaliacao .avaliacao__respostas .avaliacao__respostas__button {
-  display: block;
-  font-size: 14px;
-  font-weight: 600;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 4vw;
+  font-size: 16px;
   color: #f2780b;
   text-align: center;
-  width: 50%;
-  border: 2px solid #f2780b;
-  padding: 10px;
-  background: none;
+  font-weight: 400;
 }
-.avaliacao .avaliacao__respostas .avaliacao__respostas__button:hover {
+.avaliacao .avaliacao__link:hover {
+  color: #ffffff;
   text-decoration: none;
-  color: #d9d7d7;
-  border: 2px solid #d9d7d7;
 }
-.avaliacao .avaliacao__respostas .avaliacao__respostas__button:focus {
-  outline: none;
+
+.form .form__label {
+  display: block;
+  font-size: 16px;
+  text-align: center;
+  color: #f2780b;
+  margin-top: 4vh;
+  margin-bottom: 2vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+.form .form__input {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 40%;
+  text-align: center;
+  color: #ffffff;
+}
+.form .form__button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 14px;
+  font-weight: 800;
+  padding: 10px;
+  margin-top: 8vh;
+  background-color: #f2780b;
+  border: none;
+}
+.form .form__button:hover {
+  background-color: #d9d7d7;
 }
 
 .laranja_bold {
@@ -357,30 +319,6 @@ body {
   }
   .avaliacao .avaliacao__subtitle {
     margin-bottom: 10vw;
-  }
-  .avaliacao .avaliacao__perguntas {
-    padding: 8vw;
-  }
-  .avaliacao .avaliacao__perguntas .avaliacao__perguntas__title {
-    margin-bottom: 10vw;
-  }
-  .avaliacao .avaliacao__respostas {
-    position: unset;
-    height: unset;
-    margin-top: 20vw;
-    padding: 8vw;
-  }
-  .avaliacao .avaliacao__respostas .avaliacao__respostas__title {
-    margin-bottom: 10vw;
-  }
-  .avaliacao .avaliacao__respostas .avaliacao__respostas__label {
-    margin-bottom: 4vw;
-  }
-  .avaliacao .avaliacao__respostas .avaliacao__respostas__input, .avaliacao .avaliacao__respostas .avaliacao__respostas__textarea {
-    margin-bottom: 10vw;
-  }
-  .avaliacao .avaliacao__respostas .avaliacao__respostas__button {
-    margin-top: 20vw;
   }
 }
 
