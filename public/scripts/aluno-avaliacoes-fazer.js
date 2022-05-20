@@ -1,6 +1,8 @@
-document.getElementsByClassName('avaliacao__respostas__button')[0].addEventListener('click', submitForm);
+var form = document.getElementById('form');
+var submitButton = document.getElementsByClassName('form__button')[0];
 
-function submitForm() {
-    document.getElementsByClassName('avaliacao__respostas__button')[0].disabled = "true";
-    document.getElementById('form').submit()
-}
+form.addEventListener('submit', function() {
+
+   submitButton.setAttribute('disabled', 'disabled');
+			
+}, false);

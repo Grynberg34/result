@@ -56,6 +56,15 @@ body {
             color: $cinza-claro;
             font-weight: 400;
             margin-bottom: 1vw;
+
+            .avaliacoes__avaliacao__info__link {
+                color: $branco;
+
+                &:hover {
+                    color: $laranja;
+                    text-decoration: none;
+                }
+            }
         }
 
         .avaliacoes__avaliacao__button {

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="/stylesheets/aluno-avaliacoes.css">
+    <link rel="stylesheet" href="/stylesheets/aluno-avaliacoes-fazer.css">
     <link rel="stylesheet" href="/icons/font/flaticon.css">
     <link rel="stylesheet" href="https://use.typekit.net/gvd0wuw.css">
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
@@ -12,7 +12,11 @@
     <title>Result - English in the family | Aluno</title>
 </head>
 <body>
-
+    
+    <nav>
+        <input type="checkbox" id="hamburger1" />
+        <label class="label" for="hamburger1"></label>
+    </nav>
 
     <div class="container-fluid">
         <div class="row">
@@ -34,45 +38,18 @@
 
             </div>
 
-            <div class="col-md-2"></div>
+            <div class="col-md-1"></div>
 
-            <div class="col-md-4 avaliacoes">
+            <div class="col-md-7 avaliacao">
 
-                <h1 class="avaliacoes__title">AVALIAÇÕES</h1>
-
-                <h2 class="avaliacoes__pontos">Pontos: {{pontos}}</h2>
-
-                {{#each avaliacoes}}
-
-                    <div class="avaliacoes__avaliacao">
-                        <h2 class="avaliacoes__avaliacao__title">Avaliação {{this.numero}}</h2>
-                        <h3 class="avaliacoes__avaliacao__info"><span class="laranja_bold">Nota:</span> <span class="nota">{{this.nota}}</span></h3>
-                        <h3 class="avaliacoes__avaliacao__info"><span class="laranja_bold">Pontos:</span> {{this.pontos_total}}</h3>
-                        <h3 class="avaliacoes__avaliacao__info"><span class="laranja_bold">Tipo:</span> <span class="tipo">{{this.Avaliação.tipo}}</span></h3>
-                        
-
-                        {{#if this.disponivel}}
-                            <a id="{{this.id}}" href="/aluno/avaliacoes/{{this.id}}" class="avaliacoes__avaliacao__button">FAZER</a>
-                            {{else}}
-                            <h3 class="avaliacoes__avaliacao__info"><span class="laranja_bold">Arquivo enviado:</span> <span class="tipo"><a class="avaliacoes__avaliacao__info__link" href="{{this.link_resposta}}" target="_blank" rel="noreferrer">Download</a></span></h3>
-
-                            {{#if this.corrigido}}
-                                <h3 class="avaliacoes__avaliacao__info"><span class="laranja_bold">Gabarito:</span> <span class="tipo"><a class="avaliacoes__avaliacao__info__link" href="{{this.Avaliação.gabarito}}" target="_blank" rel="noreferrer">Download</a></span></h3>
-                            {{/if}}
-                        {{/if}}
-                    </div>
-
-                {{/each}}
-
+                <h1 class="avaliacao__title">ERRO NO ENVIO</h1>
+                <h2 class="avaliacao__subtitle">Renomeie o arquivo e envie novamente o arquivo</h2>
+                <a class="avaliacao__link" href="/aluno/avaliacoes/{{avaliacao.id}}">Voltar para avaliação</a>
 
             </div>
         </div>
     </div>
 
-    <nav>
-        <input type="checkbox" id="hamburger1" />
-        <label class="label" for="hamburger1"></label>
-    </nav>
 
     <!--Bootstrap-->
 
@@ -81,7 +58,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <script src="/scripts/menu_aluno.js"></script>
-    <script src="/scripts/aluno-avaliacoes.js"></script>
 
 </body>
 </html>

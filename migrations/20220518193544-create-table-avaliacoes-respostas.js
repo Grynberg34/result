@@ -11,8 +11,9 @@ module.exports = {
         primaryKey: true   
       },
       resposta: {
-        type: DataTypes.STRING(50000),
-        allowNull: true
+        type: DataTypes.STRING(500),
+        allowNull: false,
+        unique: true
       },
       avaliação_semestreId: {
         type: DataTypes.INTEGER,

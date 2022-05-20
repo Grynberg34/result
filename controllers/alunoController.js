@@ -244,12 +244,14 @@ module.exports = {
 
             for (var i=0; i < avaliacoes.length; i++) {
                 
-                var nota = await Avaliação_Nota.findOne({where: {avaliação_semestreId: avaliacoes[i].id, alunoId: aluno.id}});
+                var resposta = await Avaliação_Resposta.findOne({where: {avaliação_semestreId: avaliacoes[i].id, alunoId: aluno.id}});
 
-                if (nota) {
+                if (resposta) {
                     avaliacoes[i].disponivel = false;
-                    pontos = pontos + nota.nota;
-                    avaliacoes[i].nota = nota.nota;
+
+                    avaliacoes[i].link_resposta = resposta.resposta;
+
+                    console.log(avaliacoes[i].link_resposta)
                 }
             }
 
@@ -318,25 +320,32 @@ module.exports = {
     receberRespostasAvaliacao: async function (req,res) {
         var id = req.user.id;
         var a_id = req.params.id;
-
-        console.log(a_id)
+        var avaliacao_id = req.body.avaliacao;
 
         var aluno = await Aluno.findOne({where: {userId: id}});
-
+        
         var avaliacao = await Avaliação_Semestre.findOne({where: {id: a_id}});
-
+        
         var semestre = await Semestre.findOne({where: {id: avaliacao.semestreId}});
 
         if (a_id !== avaliacao_id || semestre.turmaId !== aluno.turmaId) {
+            console.log('err')
             return res.redirect('/aluno/avaliacoes');
+        } else {
+            await Avaliação_Resposta.create({
+                avaliação_semestreId: avaliacao.id,
+                alunoId: aluno.id,
+                resposta: `https://grynberg34.nyc3.digitaloceanspaces.com/Trabalhos/Result-Avaliacoes/Respostas/` + req.files[0].originalname
+            }).then(function(){
+                res.redirect('/aluno/avaliacoes');
+            })
+            .catch(function(err){
+                console.log(avaliacao)
+                res.render('error-aluno-avaliacao', {avaliacao});
+                console.log(err);
+            });
+    
         }
 
-        await Avaliação_Resposta.create({
-            avaliação_semestreId: avaliacao.id,
-            alunoId: aluno.id,
-            resposta: `https://grynberg34.nyc3.digitaloceanspaces.com/Trabalhos/Result-Avaliacoes/Avaliacoes/` + req.files[0].originalname
-        });
-
-        res.redirect('/aluno/avaliacoes');
     }
 }

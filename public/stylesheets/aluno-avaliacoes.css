@@ -273,6 +273,13 @@ body {
   font-weight: 400;
   margin-bottom: 1vw;
 }
+.avaliacoes .avaliacoes__avaliacao .avaliacoes__avaliacao__info .avaliacoes__avaliacao__info__link {
+  color: #ffffff;
+}
+.avaliacoes .avaliacoes__avaliacao .avaliacoes__avaliacao__info .avaliacoes__avaliacao__info__link:hover {
+  color: #f2780b;
+  text-decoration: none;
+}
 .avaliacoes .avaliacoes__avaliacao .avaliacoes__avaliacao__button {
   display: block;
   font-size: 14px;
