@@ -25,8 +25,21 @@ body {
         font-size: 16px;
         color: $laranja;
         font-weight: 600;
-        margin-bottom: 4vw;
+        margin-bottom: 2vw;
         text-align: center;
+    }
+
+    .menu__link {
+        display: block;
+        text-align: center;
+        font-size: 16px;
+        color: $branco;
+        margin-bottom: 4vw;
+
+        &:hover {
+            color: $laranja;
+            text-decoration: none;
+        }
     }
 }
 
@@ -43,18 +56,6 @@ body {
     }
 }
 
-.perguntas {
-    padding: 40px;
-    border: 2px solid $cinza-claro;
-
-
-    .perguntas__text {
-        font-size: 12px;
-        color: $cinza-claro;
-        text-align: justify;
-        white-space: pre-wrap;
-    }
-}
 
 .aluno {
     padding: 40px;
@@ -99,31 +100,27 @@ body {
             width: 25%;
             margin-left: auto;
             margin-right: auto;
+            margin-bottom: 2vw;
+        }
+
+        .aluno__nota__link {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 14px;
+            color: $laranja;
+            font-weight: 700;
+
+            &:hover {
+                color: $branco;
+                text-decoration: none;
+            }
         }
 
     }
 }
 
-.resposta {
-    margin-bottom: 2vw;
-    padding-top: 2vw;
-    border-top: 2px solid $cinza-claro;
 
-    .resposta__numero {
-        font-size: 18px;
-        color: $laranja;
-        font-weight: 800;
-        margin-bottom: 1vw;
-    }
-
-    .resposta__texto {
-        font-size: 12px;
-        color: $cinza-claro;
-        text-align: justify;
-        white-space: pre-wrap;
-        padding-bottom: 2vw;
-    }
-}
 
 .laranja {
     color: $laranja;

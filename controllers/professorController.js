@@ -656,6 +656,51 @@ module.exports = {
 
     },
 
+    abrirFecharGabarito: async function (req,res) {
+        var id = req.params.id;
+        var a_id = req.body.a_id_gabarito;
+
+        Avaliação_Semestre.findByPk(a_id).then(function(avaliacao){
+
+            console.log(avaliacao.corrigido)
+
+            if (avaliacao.corrigido == true) {
+                Avaliação_Semestre.update(
+                    { corrigido: false },
+                    { where: { id: a_id } }
+                ).then(function(){
+                    console.log('ok')
+                    return res.redirect(`/professor/${id}/avaliacoes`)
+                })
+                .catch(function(err){
+                    res.render('error')
+                    console.log(err)
+                })
+            }
+            else if (avaliacao.corrigido == false) {
+
+                Avaliação_Semestre.update(
+                    { corrigido: true },
+                    { where: { id: a_id } }
+                ).then(function(){
+                    return res.redirect(`/professor/${id}/avaliacoes`)
+                })
+                .catch(function(err){
+                    res.render('error')
+                    console.log(err)
+                })
+
+            }
+
+        })
+        .catch(function(err){
+            res.render('error')
+            console.log(err)
+        })
+
+
+    },
+
     mostrarFormularioAvaliacoes: async function (req,res) {
         var id = req.params.id;
 
@@ -747,10 +792,23 @@ module.exports = {
                 avaliação_semestreId: avaliacao.id
             }});
 
-            alunos[i].nota = nota.nota;
+            var resposta = await Avaliação_Resposta.findOne({where: {
+                alunoId: alunos[i].id,
+                avaliação_semestreId: avaliacao.id
+            }});
+
+            alunos[i].resposta = resposta.resposta;
+
+            if (nota) {
+                alunos[i].nota = nota.nota;
+            } else {
+                alunos[i].nota = "";
+            }
         }
 
-        res.render('professor-avaliacoes-corrigir', {avaliacao, id, alunos, respostas})
+        console.log(avaliacao.Avaliação)
+
+        res.render('professor-avaliacoes-corrigir', {avaliacao, id, alunos})
 
     },
 
@@ -760,10 +818,10 @@ module.exports = {
         var aluno_id = req.body.aluno_id;
         var nota = req.body.nota;
 
-        await Avaliação_Nota.update(
-            { nota: nota },
-            { where: { alunoId: aluno_id,
-            avaliação_semestreId: sid } 
+        await Avaliação_Nota.create({ 
+            alunoId: aluno_id,
+            avaliação_semestreId: sid,
+            nota: nota 
         });
 
         res.redirect(`/professor/${id}/avaliacoes/corrigir/${sid}`)

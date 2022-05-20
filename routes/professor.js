@@ -56,6 +56,8 @@ router.get('/:id/avaliacoes', checkAuthentication, professorController.checarSem
 
 router.post('/:id/avaliacoes', checkAuthentication, professorController.checarSemestreProfessor, professorController.abrirFecharAvaliacao);
 
+router.post('/:id/avaliacoes/gabarito', checkAuthentication, professorController.checarSemestreProfessor, professorController.abrirFecharGabarito);
+
 router.get('/:id/avaliacoes/criar', checkAuthentication, professorController.checarSemestreProfessor, professorController.mostrarFormularioAvaliacoes);
 
 router.post('/:id/avaliacoes/criar', checkAuthentication, professorController.checarSemestreProfessor, professorController.criarAvaliacaoSemestre);

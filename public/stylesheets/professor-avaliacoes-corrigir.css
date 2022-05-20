@@ -22,8 +22,19 @@ body {
   font-size: 16px;
   color: #f2780b;
   font-weight: 600;
-  margin-bottom: 4vw;
+  margin-bottom: 2vw;
   text-align: center;
+}
+.menu .menu__link {
+  display: block;
+  text-align: center;
+  font-size: 16px;
+  color: #ffffff;
+  margin-bottom: 4vw;
+}
+.menu .menu__link:hover {
+  color: #f2780b;
+  text-decoration: none;
 }
 
 .voltar {
@@ -36,17 +47,6 @@ body {
 .voltar:hover {
   text-decoration: none;
   color: #f2780b;
-}
-
-.perguntas {
-  padding: 40px;
-  border: 2px solid #d9d7d7;
-}
-.perguntas .perguntas__text {
-  font-size: 12px;
-  color: #d9d7d7;
-  text-align: justify;
-  white-space: pre-wrap;
 }
 
 .aluno {
@@ -89,25 +89,19 @@ body {
   width: 25%;
   margin-left: auto;
   margin-right: auto;
-}
-
-.resposta {
   margin-bottom: 2vw;
-  padding-top: 2vw;
-  border-top: 2px solid #d9d7d7;
 }
-.resposta .resposta__numero {
-  font-size: 18px;
+.aluno .aluno__nota .aluno__nota__link {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 14px;
   color: #f2780b;
-  font-weight: 800;
-  margin-bottom: 1vw;
+  font-weight: 700;
 }
-.resposta .resposta__texto {
-  font-size: 12px;
-  color: #d9d7d7;
-  text-align: justify;
-  white-space: pre-wrap;
-  padding-bottom: 2vw;
+.aluno .aluno__nota .aluno__nota__link:hover {
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .laranja {

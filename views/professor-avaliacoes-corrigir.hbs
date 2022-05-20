@@ -22,9 +22,7 @@
 
                 <h2 class="menu__subtitle">{{avaliacao.Avaliação.nome}}</h2>
 
-                <div class="perguntas">
-                    <p class="perguntas__text">{{avaliacao.Avaliação.texto}}</p>
-                </div>
+                <a target="_blank" rel="noreferrer" href="{{avaliacao.Avaliação.gabarito}}" class="menu__link">Gabarito</a>
                 
                 {{#each alunos}}
 
@@ -34,17 +32,9 @@
                         <div class="aluno__nota">
                             <label class="aluno__nota__label">Nota:</label>
                             <input id="n{{this.id}}" class="aluno__nota__input" type="number" value="{{this.nota}}" max="{{../avaliacao.pontos_total}}">
+                            <a class="aluno__nota__link" target="_blank" rel="noreferrer" href="{{this.resposta}}">Download do arquivo</a>
                         </div>
 
-                    </div>
-
-                {{/each}}
-
-                {{#each respostas}}
-
-                    <div class="resposta {{this.alunoId}}">
-                        <h4 class="resposta__numero">({{this.numero_pergunta}})</h4>
-                        <p class="resposta__texto">{{this.resposta}}</p>
                     </div>
 
                 {{/each}}

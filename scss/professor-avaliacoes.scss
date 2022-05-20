@@ -107,6 +107,27 @@ body {
             }
         }
 
+        .avaliacoes__avaliacao__button--gabarito {
+            display: block;
+            border: 2px solid $laranja;
+            background: none;
+            padding: 10px;
+            color: $laranja;
+            text-align: center;
+            font-weight: 600;
+            margin-top: 2vw;
+            margin-bottom: 2vw;
+            margin-left: auto;
+            margin-right: auto;
+            width: 30%;
+
+            &:hover {
+                text-decoration: none;
+                color: $cinza-claro;
+                border: 2px solid $cinza-claro;
+            }
+        }
+
         .avaliacoes__avaliacao__notas {
             margin-top: 4vw;
             margin-bottom: 4vw;

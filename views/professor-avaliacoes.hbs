@@ -38,8 +38,6 @@
                             
                             <p class="avaliacoes__avaliacao__info"><span class="laranja">Tipo:</span> {{this.Avaliação.tipo}}</p>
 
-                            <p class="avaliacoes__avaliacao__info"><span class="laranja">Pontos por pergunta:</span> {{this.pontos_pergunta}}</p>
-
                             <p class="avaliacoes__avaliacao__info"><span class="laranja">Total de pontos:</span> <span class="pontos">{{this.pontos_total}}</span></p>
 
                             {{#if notas}}
@@ -73,25 +71,24 @@
 
                             {{/if}}
 
+                            
+                            <a href="/professor/{{../id}}/avaliacoes/corrigir/{{this.id}}" class="avaliacoes__avaliacao__button" id="{{this.id}}">CORRIGIR</a>
 
                             {{#if corrigido}}
 
+                                <button class="avaliacoes__avaliacao__button" id="{{this.id}}">OCULTAR GABARITO</button>
+
                                 {{else}}
 
-                                <a href="/professor/{{../id}}/avaliacoes/corrigir/{{this.id}}" class="avaliacoes__avaliacao__button" id="{{this.id}}">CORRIGIR</a>
+                                <button class="avaliacoes__avaliacao__button--gabarito" id="{{this.id}}">MOSTRAR GABARITO</button>
 
                             {{/if}}
-
 
                         </div>
 
                     {{/each}}
 
-
                 </div>
-
-
-
 
                 <a href="/professor/{{id}}" class="menu__link">VOLTAR</a>
             </div>
@@ -104,6 +101,11 @@
 
     </form>
 
+    <form method="POST" id="form_gabarito" action="/professor/{{id}}/avaliacoes/gabarito">
+
+        <input type="text" name="a_id_gabarito" id="a_id_gabarito">
+
+    </form>
 
     <!--Bootstrap-->
 

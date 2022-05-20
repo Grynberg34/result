@@ -1,21 +1,3 @@
-var resposta = document.getElementsByClassName('resposta');
-var aluno = document.getElementsByClassName('aluno');
-
-for (var i=0; i < resposta.length; i++) {
-
-    for (var e=0; e < aluno.length; e++) {
-
-        if (resposta[i].classList.contains(aluno[e].id)) {
-
-            aluno[e].appendChild(resposta[i])
-
-        }
-
-
-    }
-    
-};
-
 // Submit Form
 
 var icons = document.getElementsByClassName('aluno__icon');
