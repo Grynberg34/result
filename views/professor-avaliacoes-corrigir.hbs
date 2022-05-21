@@ -27,7 +27,7 @@
                 {{#each alunos}}
 
                     <div id="{{this.id}}" class="aluno">
-                        <h3 class="aluno__nome">{{this.User.nome}} <i id="a{{this.id}}" class="aluno__icon flaticon-diskette"></i></h3>
+                        <h3 class="aluno__nome">{{this.User.nome}} <i id="a{{this.id}}" class="aluno__icon flaticon-diskette"></i> <i id="d{{this.id}}" class="flaticon-trash aluno__icon--delete"></i></h3>
 
                         <div class="aluno__nota">
                             <label class="aluno__nota__label">Nota:</label>
@@ -55,6 +55,11 @@
 
     </form>
 
+    <form id="form__delete" method="POST" action="/professor/{{id}}/avaliacoes/corrigir/{{avaliacao.id}}/deletar">
+
+        <input class="form__delete__input" type="number" name="aluno_id">
+
+    </form>
 
     <!--Bootstrap-->
 

@@ -803,8 +803,6 @@ module.exports = {
             }
         }
 
-        console.log(avaliacao.Avaliação)
-
         res.render('professor-avaliacoes-corrigir', {avaliacao, id, alunos})
 
     },
@@ -823,6 +821,29 @@ module.exports = {
 
         res.redirect(`/professor/${id}/avaliacoes/corrigir/${sid}`)
 
+    },
+
+    deletarEnvioAvaliacao: async function (req,res) {
+        var id = req.params.id;
+        var sid = req.params.sid;
+        var aluno_id = req.body.aluno_id;
+
+        await Avaliação_Resposta.destroy({
+            where: {
+                alunoId: aluno_id,
+                avaliação_semestreId: sid
+            }
+        });
+
+        await Avaliação_Nota.destroy({
+            where: {
+                alunoId: aluno_id,
+                avaliação_semestreId: sid
+            }
+        });
+
+        res.redirect(`/professor/${id}/avaliacoes/corrigir/${sid}`)
+        
     }
 
 }

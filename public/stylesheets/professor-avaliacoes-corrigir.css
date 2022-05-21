@@ -60,6 +60,12 @@ body {
   cursor: pointer;
   font-size: 16px;
 }
+.aluno .aluno__icon--delete {
+  margin-left: 20px;
+  color: #d9d7d7;
+  cursor: pointer;
+  font-size: 16px;
+}
 .aluno .aluno__nome {
   font-size: 22px;
   color: #f2780b;
@@ -108,7 +114,7 @@ body {
   color: #f2780b;
 }
 
-#form {
+#form, #form__delete {
   display: none;
 }
 

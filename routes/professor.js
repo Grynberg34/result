@@ -71,4 +71,6 @@ router.get('/:id/avaliacoes/corrigir/:sid', checkAuthentication, professorContro
 
 router.post('/:id/avaliacoes/corrigir/:sid', checkAuthentication, professorController.checarSemestreProfessor, professorController.salvarNotaAvaliacao);
 
+router.post('/:id/avaliacoes/corrigir/:sid/deletar', checkAuthentication, professorController.checarSemestreProfessor, professorController.deletarEnvioAvaliacao);
+
 module.exports = router;

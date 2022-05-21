@@ -253,6 +253,13 @@ module.exports = {
 
                     console.log(avaliacoes[i].link_resposta)
                 }
+
+                var nota = await Avaliação_Nota.findOne({where: {avaliação_semestreId: avaliacoes[i].id, alunoId: aluno.id}});
+
+                if (nota) {
+                    pontos = pontos + nota.nota;
+                    avaliacoes[i].nota = nota.nota;
+                }
             }
 
             res.render('aluno-avaliacoes', {avaliacoes, pontos});
