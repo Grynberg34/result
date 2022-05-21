@@ -137,7 +137,7 @@ body {
   margin-bottom: 1vw;
 }
 
-#form {
+#form, #form_gabarito {
   display: none;
 }
 

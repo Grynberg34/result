@@ -662,14 +662,11 @@ module.exports = {
 
         Avaliação_Semestre.findByPk(a_id).then(function(avaliacao){
 
-            console.log(avaliacao.corrigido)
-
             if (avaliacao.corrigido == true) {
                 Avaliação_Semestre.update(
                     { corrigido: false },
                     { where: { id: a_id } }
                 ).then(function(){
-                    console.log('ok')
                     return res.redirect(`/professor/${id}/avaliacoes`)
                 })
                 .catch(function(err){
