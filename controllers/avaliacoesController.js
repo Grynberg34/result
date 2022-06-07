@@ -117,7 +117,6 @@ module.exports = {
   editarAvaliacao: async function (req,res) {
     var id = req.params.sid;
     var nivel = req.params.id;
-    var coleção = req.params.cid;
     var nome = req.body.nome;
     var coleção = req.body.coleção;  
 
@@ -125,7 +124,7 @@ module.exports = {
       { nome: nome,
         coleção: coleção 
       },
-      { where: { id: id } }
+      { where: { id: id,  } }
     )
     .then(function(){
       res.redirect(`/admin/avaliacoes/ver/${nivel}/${coleção}/${id}`)

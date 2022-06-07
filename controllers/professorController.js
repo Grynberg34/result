@@ -813,11 +813,37 @@ module.exports = {
         var aluno_id = req.body.aluno_id;
         var nota = req.body.nota;
 
-        await Avaliação_Nota.create({ 
-            alunoId: aluno_id,
-            avaliação_semestreId: sid,
-            nota: nota 
+        var avaliação_nota = await Avaliação_Nota.findOne({
+            where: {
+                alunoId: aluno_id,
+                avaliação_semestreId: sid,
+            }
         });
+
+        console.log(avaliação_nota);
+
+        if (avaliação_nota) {
+            await Avaliação_Nota.update(           
+                {   
+                    alunoId: aluno_id,
+                    avaliação_semestreId: sid,
+                    nota: nota 
+                },
+                { where: 
+                    { 
+                        alunoId: aluno_id,
+                        avaliação_semestreId: sid,
+                    }
+                } 
+            )
+        } else {
+            await Avaliação_Nota.create({ 
+                alunoId: aluno_id,
+                avaliação_semestreId: sid,
+                nota: nota 
+            });
+        }
+
 
         res.redirect(`/professor/${id}/avaliacoes/corrigir/${sid}`)
 
