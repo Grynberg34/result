@@ -67,7 +67,6 @@ module.exports = {
   },
 
   mostrarMenuAvaliacoes: async function (req,res) {
-
     var niveis = await Avaliação.findAll({group: 'nivel',
     order: [['nivel', 'ASC']]});
 
