@@ -701,6 +701,7 @@ module.exports = {
     mostrarFormularioAvaliacoes: async function (req,res) {
         var id = req.params.id;
 
+        
         Semestre.findByPk(id).then(async function(semestre){
             
             var avaliacoes = await Avaliação.findAll({where: {
