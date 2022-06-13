@@ -707,8 +707,7 @@ module.exports = {
             var avaliacoes = await Avaliação.findAll({where: {
                 nivel: semestre.nivel
                 },
-                group: 'coleção',
-                order: [['coleção', 'ASC']]
+                order: [['coleção', 'ASC'], ['nome', 'ASC']]
             });
 
             res.render('professor-avaliacoes-criar', {id, avaliacoes})
