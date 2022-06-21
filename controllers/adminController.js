@@ -104,6 +104,8 @@ module.exports = {
     deletarTurmaPorId: async function (req,res) {
         var id = req.params.id;
 
+        console.log(id)
+
         await Turma.destroy({
             where: {
               id: id

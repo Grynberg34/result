@@ -48,7 +48,7 @@ router.get('/turmas/ver', checkAuthentication, adminController.mostrarTurmas);
 
 router.get('/turmas/ver/:id', checkAuthentication, adminController.mostrarTurmaPorId);
 
-router.get('/turmas/ver/:id', checkAuthentication, adminController.deletarTurmaPorId);
+router.post('/turmas/ver/:id', checkAuthentication, adminController.deletarTurmaPorId);
 
 router.get('/turmas/ver/:id/criar-semestre', checkAuthentication, semestresController.mostrarFormularioSemestre);
 
@@ -64,9 +64,11 @@ router.post('/turmas/ver/:id/semestres/:sid/alterar-link', checkAuthentication, 
 
 router.get('/materiais', checkAuthentication, materiaisController.mostrarMenuMateriais);
 
-router.get('/materiais/nivel/:id', checkAuthentication, materiaisController.mostrarMateriaisPorNivel);
+router.get('/materiais/nivel/:id', checkAuthentication, materiaisController.mostrarColecoes);
 
-router.post('/materiais/nivel/:id', checkAuthentication, materiaisController.removerMaterial);
+router.get('/materiais/nivel/:id/:sid', checkAuthentication, materiaisController.mostrarMateriaisPorColecao);
+
+router.post('/materiais/nivel/:id/:sid', checkAuthentication, materiaisController.removerMaterial);
 
 router.get('/materiais/adicionar', checkAuthentication, function(req, res) {
   res.render('admin-materiais-adicionar');

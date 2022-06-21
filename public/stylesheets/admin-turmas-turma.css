@@ -81,6 +81,11 @@ body {
   text-decoration: none;
   color: #f2780b;
 }
+.menu .menu__icon {
+  margin-left: 10px;
+  color: #f2780b;
+  cursor: pointer;
+}
 
 .alunos {
   border-left: 2px solid #d9d7d7;

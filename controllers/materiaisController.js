@@ -36,12 +36,27 @@ module.exports = {
       res.render('admin-materiais', {niveis});
     },
 
-    mostrarMateriaisPorNivel: async function (req,res) {
+    mostrarColecoes: async function (req,res) {
+      var id = req.params.id;
+  
+      var coleções = await Material.findAll({
+      where: {
+        nivel: id
+      },
+      group: 'coleção',
+      order: [['coleção', 'ASC']]});
+  
+      res.render('admin-materiais-colecoes', {coleções});
+    },
+  
+
+    mostrarMateriaisPorColecao: async function (req,res) {
       var id= req.params.id;
-      var materiais = await Material.findAll({where: {nivel: id},
+      var sid = req.params.sid;
+      var materiais = await Material.findAll({where: {nivel: id, coleção: sid},
       order: [['nome', 'ASC']]});
 
-      res.render('admin-materiais-nivel', {materiais, id});
+      res.render('admin-materiais-lista', {materiais, id, sid});
     },
 
     adicionarPastaMaterial: function (req,res,next){

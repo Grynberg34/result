@@ -21,6 +21,10 @@ const Material = connection.define('Material', {
     link: {
       type: DataTypes.STRING,
     },
+    coleção: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
 },{
   tableName: 'materiais'
 });
