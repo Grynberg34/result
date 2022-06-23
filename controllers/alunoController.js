@@ -71,8 +71,6 @@ module.exports = {
         });
 
 
-        console.log(semestre[0].professorId)
-
         var professor = await Professor.findOne({
         where: { id: semestre[0].professorId },
             include: [User]
@@ -181,8 +179,6 @@ module.exports = {
 
 
         Chamada.findAll({where: {alunoId: aluno.id}}).then(async function(chamadas){
-
-            
             
             for (var i=0; i < chamadas.length; i++) {
                 var aula = await Aula.findOne({where: {id: chamadas[i].aulaId}});
@@ -195,17 +191,17 @@ module.exports = {
 
             }
 
-
-            var materiais = [];
+            var coleções = [];
 
             for (var i=0; i < niveis.length; i++) {
+
                 
-                await Material.findAll({where: {nivel: niveis[i]},
-                order: [['nome', 'ASC']]}).then(function(materiais_nivel){
+                await Material.findAll({where: {nivel: niveis[i]}, group: 'coleção',
+                order: [['coleção', 'ASC']]}).then(function(materiais_colecao){
 
 
-                    for (var i=0; i < materiais_nivel.length; i++) {
-                        materiais.push(materiais_nivel[i])
+                    for (var i=0; i < materiais_colecao.length; i++) {
+                        coleções.push(materiais_colecao[i])
                     }
 
                 })        
@@ -216,13 +212,68 @@ module.exports = {
 
             };
 
-            res.render('aluno-materiais', {materiais, niveis});
+            res.render('aluno-materiais', {niveis, coleções});
 
         })
         .catch(function(err){
             res.render('error');
             console.log(err);
         });
+
+    },
+
+    mostrarMateriaisColecao: async function (req,res) {
+        var coleção_nome = req.params.id;
+        var id = req.user.id;
+        var aluno = await Aluno.findOne({where: {userId: id}});
+        var coleção= await Material.findOne({where: {coleção: coleção_nome}})
+
+        var niveis = [];
+
+        var semestreAtual = await Semestre.findOne({
+            where: {
+                turmaId: aluno.turmaId,
+                concluido: 0
+            }
+        });
+
+        niveis.push(semestreAtual.nivel)
+
+
+        await Chamada.findAll({where: {alunoId: aluno.id}}).then(async function(chamadas){
+            
+            for (var i=0; i < chamadas.length; i++) {
+                var aula = await Aula.findOne({where: {id: chamadas[i].aulaId}});
+
+                var semestre = await Semestre.findOne({where: { id: aula.semestreId}});
+
+                if (!niveis.includes(semestre.nivel)) {
+                    niveis.push(semestre.nivel)
+                }
+
+            }
+        
+        });
+
+        var nivel_autorizado = false;
+
+        for (var e=0; e < niveis.length; e++) {
+            if (coleção && niveis[e] == coleção.nivel) {
+                nivel_autorizado = true;
+
+            }
+        }
+
+        var materiais = await Material.findAll({order: [['nome', 'ASC']],
+            where: {
+            coleção: coleção_nome
+        }});
+
+        if (nivel_autorizado === true) {
+            res.render('aluno-materiais-colecao', {materiais, coleção_nome})
+        } else {
+            res.redirect('/aluno/materiais')
+        }
 
     },
 
@@ -251,7 +302,6 @@ module.exports = {
 
                     avaliacoes[i].link_resposta = resposta.resposta;
 
-                    console.log(avaliacoes[i].link_resposta)
                 }
 
                 var nota = await Avaliação_Nota.findOne({where: {avaliação_semestreId: avaliacoes[i].id, alunoId: aluno.id}});
@@ -314,7 +364,6 @@ module.exports = {
 
         upload(req, res, function (error) {
           if (error) {
-            console.log('error')
             console.log(error);
             return res.render('error');
           }
@@ -347,7 +396,6 @@ module.exports = {
                 res.redirect('/aluno/avaliacoes');
             })
             .catch(function(err){
-                console.log(avaliacao)
                 res.render('error-aluno-avaliacao', {avaliacao});
                 console.log(err);
             });

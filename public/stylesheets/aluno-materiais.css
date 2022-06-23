@@ -256,6 +256,17 @@ body {
 .materiais .materiais__link:last-of-type {
   border: none;
 }
+.materiais .materiais__link--voltar {
+  display: block;
+  margin-top: 6vh;
+  text-align: center;
+  color: #d9d7d7;
+  font-size: 14px;
+}
+.materiais .materiais__link--voltar:hover {
+  text-decoration: none;
+  color: #f2780b;
+}
 .materiais .materiais__nivel {
   margin-top: 4vw;
   margin-bottom: 4vw;

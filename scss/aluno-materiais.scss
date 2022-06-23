@@ -40,6 +40,19 @@ body {
         }
     }
 
+    .materiais__link--voltar {
+        display: block;
+        margin-top: 6vh;
+        text-align: center;
+        color: $cinza-claro;
+        font-size: 14px;
+
+        &:hover {
+            text-decoration: none;
+            color: $laranja;
+        }
+    }
+
     .materiais__nivel {
         margin-top: 4vw;
         margin-bottom: 4vw;

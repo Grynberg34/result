@@ -1,0 +1,116 @@
+@import 'colors.scss';
+
+body {
+    font-family: 'work-sans', sans-serif;
+    background-color: $preto;
+    background-image: url('/images/fundo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.menu {
+    margin-top: 10vw;
+    margin-bottom: 10vw;
+
+    .menu__title {
+        font-size: 20px;
+        color: $cinza-claro;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .menu__link {
+        display: block;
+        margin-top: 6vh;
+        text-align: center;
+        color: $cinza-claro;
+        font-size: 14px;
+
+        &:hover {
+            text-decoration: none;
+            color: $laranja;
+        }
+    }
+}
+
+.materiais {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+    .materiais__material {
+        border-top: 2px solid $laranja;
+        text-align: center;
+
+        &:first-of-type {
+            border-top: none;
+        }
+
+        .materiais__material__link {
+            display: inline-block;
+            text-align: center;
+            font-size: 16px;
+            color: $laranja;
+            margin-top: 2vh;
+            margin-bottom: 2vh;
+
+            &:hover {
+                color: $cinza-claro;
+                text-decoration: none;
+            }
+        }
+
+        .materiais__material__icon {
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 14px;
+            color: $cinza-claro;
+            text-align: center;
+            cursor: pointer;
+        }
+    }
+
+}
+
+#form {
+    display: none;
+}
+
+
+@media only screen and (max-width: 767px) {
+
+    .menu {
+        margin-top: 50vw;
+
+        .menu__row {
+            margin-left: 5vw;
+            margin-right: 5vw;
+            margin-bottom: 2vh;
+
+            .menu__row__col {
+                &:hover {
+                    background-color: $laranja;
+                }
+            }
+        }
+    }
+
+    .menu__link {
+        &:hover {
+            color: $cinza-claro;
+        }
+    }
+
+    .materiais {
+        width: 100%;
+
+        .materiais__material {
+            .materiais__material__link {
+                font-size: 14px;
+            }
+        }
+    }
+
+}

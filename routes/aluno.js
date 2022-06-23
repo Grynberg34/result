@@ -27,6 +27,8 @@ router.get('/aulas', checkAuthentication, alunoController.checarTurmaAluno, alun
 
 router.get('/materiais', checkAuthentication, alunoController.checarTurmaAluno, alunoController.mostrarMateriais);
 
+router.get('/materiais/:id', checkAuthentication, alunoController.checarTurmaAluno, alunoController.mostrarMateriaisColecao);
+
 router.get('/avaliacoes', checkAuthentication, alunoController.checarTurmaAluno, alunoController.mostrarAvaliacoes);
 
 router.get('/avaliacoes/:id', checkAuthentication, alunoController.checarTurmaAluno, alunoController.mostrarAvaliacaoAluno);

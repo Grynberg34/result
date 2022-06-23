@@ -266,15 +266,17 @@ module.exports = {
         
     },
 
-    mostrarMaterial: async function (req,res) {
+    mostrarColecoes: async function (req,res) {
         var id = req.params.id;
 
         Semestre.findByPk(id).then(async function (semestre) {
 
-            var materiais = await Material.findAll({where: {nivel: semestre.nivel},
-                order: [['nome', 'ASC']]})
+            var coleções = await Material.findAll({where: {nivel: semestre.nivel},
+                group: 'coleção',
+                order: [['coleção', 'ASC']]
+            })
 
-            res.render('professor-materiais', {materiais, id})
+            res.render('professor-colecoes', {coleções, id})
 
         })
         .catch(function(err){
@@ -282,6 +284,21 @@ module.exports = {
             console.log(err)
         })
 
+
+    },
+
+    mostrarMaterial: async function (req,res) {
+        var id = req.params.id;
+        var coleção_nome = req.params.sid;
+
+        var materiais = await Material.findAll({order: [['nome', 'ASC']],
+            where: {
+            coleção: coleção_nome
+        }});
+
+        console.log(materiais)
+
+        res.render('professor-colecoes-materiais', {id, coleção_nome, materiais})
 
     },
 

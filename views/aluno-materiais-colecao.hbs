@@ -38,25 +38,16 @@
 
             <div class="col-md-4 materiais">
 
-                <h1 class="materiais__title">MATERIAIS DIDÁTICOS</h1>
+                <h1 class="materiais__title">{{coleção_nome}}</h1>
 
-                {{#each niveis}}
 
-                    <div id="{{this}}" class="materiais__nivel">
-
-                        <h2 class="materiais__nivel__title">{{this}}</h2>
-
-                    </div>
-
-                {{/each}}
-
-                {{#each coleções}}
+                {{#each materiais}}
                 
-                    <a class="materiais__link {{this.nivel}}" href="/aluno/materiais/{{this.coleção}}">{{this.coleção}}</a>
+                    <a class="materiais__link" href="{{this.link}}">{{this.nome}}</a>
 
                 {{/each}}
 
-
+                <a class="materiais__link--voltar" href="/aluno/materiais">VOLTAR</a>
 
             </div>
         </div>
@@ -74,7 +65,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <script src="/scripts/menu_aluno.js"></script>
-    <script src="/scripts/aluno-materiais.js"></script>
 
 </body>
 </html>

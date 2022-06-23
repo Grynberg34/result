@@ -44,7 +44,9 @@ router.get('/:id/aulas/chamada/:sid', checkAuthentication, professorController.c
 
 router.post('/:id/aulas/chamada/:sid', checkAuthentication, professorController.checarSemestreProfessor, professorController.fazerChamada);
 
-router.get('/:id/materiais', checkAuthentication, professorController.checarSemestreProfessor, professorController.mostrarMaterial);
+router.get('/:id/materiais', checkAuthentication, professorController.checarSemestreProfessor, professorController.mostrarColecoes);
+
+router.get('/:id/materiais/:sid', checkAuthentication, professorController.checarSemestreProfessor, professorController.mostrarMaterial);
 
 router.get('/:id/alunos', checkAuthentication, professorController.checarSemestreProfessor, professorController.mostrarAlunos);
 

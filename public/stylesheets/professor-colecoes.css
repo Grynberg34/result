@@ -37,6 +37,7 @@ body {
 }
 .materiais .materiais__material {
   border-top: 2px solid #f2780b;
+  text-align: center;
 }
 .materiais .materiais__material:first-of-type {
   border-top: none;
@@ -91,4 +92,4 @@ body {
   }
 }
 
-/*# sourceMappingURL=professor-materiais.css.map */
+/*# sourceMappingURL=professor-colecoes.css.map */
