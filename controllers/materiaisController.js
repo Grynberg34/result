@@ -75,10 +75,12 @@ module.exports = {
     adicionarMaterial: async function (req, res) {
       var nome = req.body.nome;
       var nivel = req.body.nivel;
+      var coleção = req.body.coleção;
 
       await Material.create({
         nome: nome,
         nivel: nivel,
+        coleção: coleção,
         link: 'https://grynberg34.nyc3.digitaloceanspaces.com/Trabalhos/Result-Materiais/' + req.files[0].originalname,
       })
       .catch(function(err){
