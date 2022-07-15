@@ -513,6 +513,14 @@ module.exports = {
                     altura = 0 + ((i-18) *25)
                 }
 
+                if (i == 40) {
+                    doc.addPage()
+                }
+
+                if (i > 39) {
+                    altura = 0 + ((i-39) *25)
+                }
+
                 var dia = chamadas[i].Aula.data.substr(8,2);
                 var anohora = chamadas[i].Aula.data.substr(0, 4);
                 var mes = chamadas[i].Aula.data.substr(5,2);
@@ -526,10 +534,7 @@ module.exports = {
 
             }
 
-            doc.moveTo(0, 100)
-            .lineTo(0, 470)
-            .lineTo(650, 470)
-            .stroke();   
+            doc.addPage(); 
 
             var avaliacoes = await Avaliação_Semestre.findAll({where: {semestreId: semestre.id}});
 
@@ -552,14 +557,14 @@ module.exports = {
                 }] });
 
 
-                if (i < 7) {
+                if (i < 21) {
                     var largura = 100
-                    var altura = 570 + (i * 25);
+                    var altura = 100 + (i * 25);
                 }
 
-                else if (i > 6) {
+                else if (i > 20) {
                     var largura = 320
-                    var altura = 570 + ((i-7) * 25);
+                    var altura = 100 + ((i-21) * 25);
                 }
 
                 if (nota) {
@@ -582,7 +587,7 @@ module.exports = {
             doc
             .fontSize(14)
             .fillColor('#000000')
-            .text(`Pontos: ${pontos_aluno}/${pontos_total} (${percentual_pontos}%)`, 100, 520, {align: 'center'});
+            .text(`Pontos: ${pontos_aluno}/${pontos_total} (${percentual_pontos}%)`, 100, 50, {align: 'center'});
     
             doc.end();
 
