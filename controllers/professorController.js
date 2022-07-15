@@ -459,6 +459,7 @@ module.exports = {
 
             var pdf_number = Math.floor(Math.random() * 10001);
 
+
             doc.pipe(fs.createWriteStream(`./public/relatorios/relatorio_${id}_${pdf_number}.pdf`));
 
             doc.image('./public/images/logo.png', 400, 15, {fit: [100, 100], align: 'center', valign: 'center'})
@@ -483,7 +484,7 @@ module.exports = {
             doc.moveTo(0, 150)
             .lineTo(0, 150)
             .lineTo(650, 150)
-            .stroke();               
+            .stroke();     
 
             doc
             .fontSize(14)
@@ -500,14 +501,16 @@ module.exports = {
                     var presença = 'presente'
                 }
 
-                if (i < 8) {
-                    var largura = 100
-                    var altura = 250 + (i * 25);
+
+                var largura = 100
+                var altura = 250 + (i * 25);
+
+                if (i == 19) {
+                    doc.addPage()
                 }
 
-                else if (i > 7) {
-                    var largura = 400
-                    var altura = 250 + ((i-8) * 25);
+                if (i > 18) {
+                    altura = 0 + ((i-18) *25)
                 }
 
                 var dia = chamadas[i].Aula.data.substr(8,2);
@@ -523,7 +526,7 @@ module.exports = {
 
             }
 
-            doc.moveTo(0, 470)
+            doc.moveTo(0, 100)
             .lineTo(0, 470)
             .lineTo(650, 470)
             .stroke();   
