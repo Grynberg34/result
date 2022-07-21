@@ -513,12 +513,12 @@ module.exports = {
                     altura = 0 + ((i-18) *25)
                 }
 
-                if (i == 40) {
+                if (i == 46) {
                     doc.addPage()
                 }
 
-                if (i > 39) {
-                    altura = 0 + ((i-39) *25)
+                if (i > 45) {
+                    altura = 0 + ((i-45) *25)
                 }
 
                 var dia = chamadas[i].Aula.data.substr(8,2);
@@ -571,7 +571,7 @@ module.exports = {
                     pontos_aluno = pontos_aluno + nota.nota;
                     doc
                     .fontSize(10)
-                    .text(`Avaliação ${nota.Avaliação_Semestre.numero} (${nota.Avaliação_Semestre.Avaliação.tipo}): ${nota.nota}/${nota.Avaliação_Semestre.pontos_total} `, largura, altura);
+                    .text(`Avaliação ${nota.Avaliação_Semestre.numero}: ${nota.nota}/${nota.Avaliação_Semestre.pontos_total} `, largura, altura);
                 }
 
             }
