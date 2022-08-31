@@ -613,6 +613,8 @@ module.exports = {
                 order: [['id', 'ASC']]
             });
 
+            var notas_total = 0;
+
             for (var i=0; i < avaliacoes.length; i++) {
 
 
@@ -623,13 +625,15 @@ module.exports = {
                     model: Aluno,
                     include: User
                 }],
-                order: [[`Aluno`,`User`, `nome`, `ASC`]]})
+                order: [[`Aluno`,`User`, `nome`, `ASC`]]});
     
                 avaliacoes[i].notas = notas;
+
+                notas_total = notas_total + avaliacoes[i].pontos_total
     
             }
 
-            res.render('professor-avaliacoes', {id, avaliacoes})
+            res.render('professor-avaliacoes', {id, avaliacoes, notas_total})
         })
         .catch(function(err){
             res.render('error')
