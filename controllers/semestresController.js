@@ -226,14 +226,23 @@ module.exports = {
                     var presença = 'presente'
                 }
 
-                if (a < 8) {
-                    var largura = 100
-                    var altura = 250 + (a * 25);
+                var largura = 100
+                var altura = 250 + (a * 25);
+
+                if (a == 19) {
+                    doc.addPage()
                 }
 
-                else if (a > 7) {
-                    var largura = 400
-                    var altura = 250 + ((a-8) * 25);
+                if (a > 18) {
+                    altura = 0 + ((a-18) *25)
+                }
+
+                if (a == 46) {
+                    doc.addPage()
+                }
+
+                if (a > 45) {
+                    altura = 0 + ((a-45) *25)
                 }
 
                 var dia = chamadas[a].Aula.data.substr(8,2);
@@ -274,14 +283,14 @@ module.exports = {
                 }] });
 
 
-                if (o < 7) {
+                if (o < 21) {
                     var largura = 100
-                    var altura = 570 + (o * 25);
+                    var altura = 100 + (o * 25);
                 }
 
-                else if (o > 6) {
+                else if (o > 20) {
                     var largura = 320
-                    var altura = 570 + ((o-7) * 25);
+                    var altura = 100 + ((o-21) * 25);
                 }
 
 
