@@ -6,15 +6,15 @@ const multerS3 = require('multer-s3');
 const spacesEndpoint = new aws.Endpoint('nyc3.digitaloceanspaces.com');
 const s3 = new aws.S3({
   endpoint: spacesEndpoint,
-  accessKeyId: 'FKRSQNNKJW26VGVS25BI',
-  secretAccessKey: 'QTKl3LHzw6+Nk9q0uP4272oirY7irocmQn/VHmGdnA8',
+  accessKeyId: 'DO00CU82TYMLLY8N4X8P',
+  secretAccessKey: 'IP32uFvkxBmV1wZ524O7FNOogSJas3L/yL45erSuYg0',
   region: 'nyc3'
 });
 
 const upload = multer({
   storage: multerS3({
     s3: s3,
-    bucket: 'grynberg34' + '/Trabalhos/Result-Avaliacoes/Avaliacoes',
+    bucket: 'result' + '/Trabalhos/Result-Avaliacoes/Avaliacoes',
     acl: 'public-read',
     contentType: multerS3.AUTO_CONTENT_TYPE,
     metadata: function (req, file, cb) {
@@ -53,8 +53,8 @@ module.exports = {
       nivel: nivel,
       tipo: tipo,
       coleção: coleção,
-      link: 'https://grynberg34.nyc3.digitaloceanspaces.com/Trabalhos/Result-Avaliacoes/Avaliacoes/' + req.files[0].originalname,
-      gabarito: 'https://grynberg34.nyc3.digitaloceanspaces.com/Trabalhos/Result-Avaliacoes/Avaliacoes/' + req.files[1].originalname
+      link: 'https://result.nyc3.digitaloceanspaces.com/Trabalhos/Result-Avaliacoes/Avaliacoes/' + req.files[0].originalname,
+      gabarito: 'https://result.nyc3.digitaloceanspaces.com/Trabalhos/Result-Avaliacoes/Avaliacoes/' + req.files[1].originalname
     })
     .then(function(){
       res.redirect('/admin/avaliacoes')
