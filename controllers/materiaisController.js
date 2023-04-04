@@ -7,15 +7,15 @@ const multerS3 = require('multer-s3');
 const spacesEndpoint = new aws.Endpoint('nyc3.digitaloceanspaces.com');
 const s3 = new aws.S3({
   endpoint: spacesEndpoint,
-  accessKeyId: 'DO00CU82TYMLLY8N4X8P',
-  secretAccessKey: 'IP32uFvkxBmV1wZ524O7FNOogSJas3L/yL45erSuYg0',
+  accessKeyId: 'FKRSQNNKJW26VGVS25BI',
+  secretAccessKey: 'QTKl3LHzw6+Nk9q0uP4272oirY7irocmQn/VHmGdnA8',
   region: 'nyc3'
 });
 
 const upload = multer({
   storage: multerS3({
     s3: s3,
-    bucket: 'result' + '/Trabalhos/Result-Materiais',
+    bucket: 'grynberg34' + '/Trabalhos/Result-Materiais',
     acl: 'public-read',
     contentType: multerS3.AUTO_CONTENT_TYPE,
     metadata: function (req, file, cb) {
@@ -81,7 +81,7 @@ module.exports = {
         nome: nome,
         nivel: nivel,
         coleção: coleção,
-        link: 'https://result.nyc3.digitaloceanspaces.com/Trabalhos/Result-Materiais/' + req.files[0].originalname,
+        link: 'https://grynberg34.nyc3.digitaloceanspaces.com/Trabalhos/Result-Materiais/' + req.files[0].originalname,
       })
       .catch(function(err){
         console.log(err)

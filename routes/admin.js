@@ -58,6 +58,8 @@ router.get('/turmas/ver/:id/semestres/:sid', checkAuthentication, semestresContr
 
 router.get('/turmas/ver/:id/semestres/:sid/relatorio', checkAuthentication, semestresController.gerarRelatorioSemestre);
 
+router.get('/turmas/ver/:id/semestres/:sid/relatorio/pdf', checkAuthentication, semestresController.gerarPDF);
+
 router.post('/turmas/ver/:id/semestres/:sid', checkAuthentication, semestresController.concluirSemestre);
 
 router.post('/turmas/ver/:id/semestres/:sid/alterar-link', checkAuthentication, semestresController.alterarLinkSemestre);

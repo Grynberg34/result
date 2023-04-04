@@ -1,0 +1,130 @@
+body {
+  font-family: "work-sans", sans-serif;
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.menu {
+  margin-top: 10vw;
+  margin-bottom: 4vw;
+}
+.menu .menu__title {
+  font-size: 40px;
+  color: #000000;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1vw;
+}
+.menu .menu__subtitle {
+  font-size: 20px;
+  color: #000000;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 4vw;
+}
+.menu .menu__info {
+  font-size: 20px;
+  color: #000000;
+  font-weight: 500;
+  margin-bottom: 10px;
+  margin-bottom: 2vw;
+}
+.menu .menu__link {
+  display: inline-block;
+  text-align: center;
+  color: #000000;
+  padding: 0.5vw;
+  font-size: 14px;
+  background-color: #f2780b;
+  width: fit-content;
+  font-weight: 700;
+}
+.menu .menu__link:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.aluno {
+  padding: 2vw;
+  border: 1px solid #f2780b;
+  margin-bottom: 20vw;
+}
+.aluno .aluno__title {
+  font-size: 30px;
+  color: #f2780b;
+  font-weight: 700;
+  margin-bottom: 4vw;
+}
+.aluno .aluno__estatisticas {
+  font-size: 16px;
+  color: #000000;
+  font-weight: 500;
+  margin-bottom: 2vw;
+}
+.aluno .aluno__chamadas {
+  margin-bottom: 4vw;
+  padding-top: 2vw;
+}
+.aluno .aluno__chamadas .aluno__chamadas__title {
+  font-size: 24px;
+  color: #f2780b;
+  font-weight: 700;
+  margin-bottom: 2vw;
+}
+.aluno .aluno__chamadas .aluno__chamadas__aula {
+  font-size: 14px;
+  color: #000000;
+  margin-bottom: 1vw;
+}
+.aluno .aluno__avaliacoes {
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+  border-top: 1px solid #f2780b;
+  border-bottom: 1px solid #f2780b;
+}
+.aluno .aluno__avaliacoes .aluno__avaliacoes__title {
+  font-size: 24px;
+  color: #f2780b;
+  font-weight: 700;
+  margin-bottom: 2vw;
+}
+.aluno .aluno__avaliacoes .aluno__avaliacoes__avaliacao {
+  font-size: 14px;
+  color: #000000;
+  margin-bottom: 1vw;
+}
+
+@page {
+  size: A4 portrait;
+  margin: 40px;
+}
+.laranja {
+  color: #f2780b;
+}
+
+#link {
+  display: inline-block;
+}
+
+@media only screen and (max-width: 767px) {
+  .menu {
+    margin-top: 20vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+  .menu .menu__button {
+    width: 50%;
+  }
+  .menu .menu__option {
+    margin-top: 10vw;
+    width: 50%;
+  }
+
+  .menu__link:hover {
+    color: #d9d7d7;
+  }
+}
+
+/*# sourceMappingURL=admin-semestres-relatorio.css.map */

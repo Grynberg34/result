@@ -52,8 +52,6 @@ router.get('/:id/alunos', checkAuthentication, professorController.checarSemestr
 
 router.get('/:id/alunos/:sid', checkAuthentication, professorController.checarSemestreProfessor, professorController.mostrarAlunoPorId);
 
-router.get('/:id/alunos/:sid/relatorio', checkAuthentication, professorController.checarSemestreProfessor, professorController.gerarRelatorioAluno);
-
 router.get('/:id/avaliacoes', checkAuthentication, professorController.checarSemestreProfessor, professorController.mostrarAvaliacoes);
 
 router.post('/:id/avaliacoes', checkAuthentication, professorController.checarSemestreProfessor, professorController.abrirFecharAvaliacao);
