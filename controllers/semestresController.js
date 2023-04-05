@@ -278,7 +278,8 @@ module.exports = {
     gerarPDF: async function (req, res) {
         var id = req.params.id;
         var sid = req.params.sid;
-
+        
+        const options = {};
         const stats = await PCR(options);
 
         const browser = await puppeteer.launch({ headless: true, args: ["--no-sandbox"], executablePath: stats.executablePath });
