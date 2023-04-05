@@ -27,6 +27,7 @@
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "puppeteer": "^19.8.0",
+    "puppeteer-chromium-resolver": "^19.3.2",
     "sass": "^1.32.4",
     "sequelize": "^5.3.5",
     "sequelize-cli": "^6.2.0",

@@ -9,7 +9,7 @@ const Avaliação_Nota = require("../models/Avaliação_Nota");
 const Avaliação = require("../models/Avaliação");
 const Avaliação_Semestre = require("../models/Avaliação_Semestre");
 const puppeteer = require('puppeteer');
-import { executablePath } from "puppeteer";
+const PCR = require("puppeteer-chromium-resolver");
 
 module.exports = {
 
@@ -279,7 +279,9 @@ module.exports = {
         var id = req.params.id;
         var sid = req.params.sid;
 
-        const browser = await puppeteer.launch({ headless: true, executablePath: executablePath(), });
+        const stats = await PCR(options);
+
+        const browser = await puppeteer.launch({ headless: true, args: ["--no-sandbox"], executablePath: stats.executablePath });
         const page = await browser.newPage();
 
         await page.goto(`https://result-english.com/login`, {waitUntil: 'networkidle0'});
