@@ -279,7 +279,7 @@ module.exports = {
         var sid = req.params.sid;
 
         const browser = await puppeteer.launch({         
-            headless: true, 
+            headless: false, 
             executablePath: '/usr/bin/chromium-browser',
             args: ['--no-sandbox']
         });
