@@ -278,11 +278,7 @@ module.exports = {
         var id = req.params.id;
         var sid = req.params.sid;
 
-        const browser = await puppeteer.launch({         
-            headless: false, 
-            executablePath: '/usr/bin/chromium-browser',
-            args: ['--no-sandbox']
-        });
+        const browser = await puppeteer.launch({executablePath: 'google-chrome-stable'});
         const page = await browser.newPage();
 
         await page.goto(`https://result-english.com/login`, {waitUntil: 'networkidle0'});
