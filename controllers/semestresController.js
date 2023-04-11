@@ -280,6 +280,7 @@ module.exports = {
 
         const browser = await puppeteer.launch({executablePath: 'google-chrome-stable', args:['--no-sandbox']});
         const page = await browser.newPage();
+        await page.setDefaultNavigationTimeout(0); 
 
         await page.goto(`https://result-english.com/login`, {waitUntil: 'networkidle0'});
         await page.type('#email', process.env.ADMIN_EMAIL)
@@ -287,7 +288,7 @@ module.exports = {
         await page.click('#submit')
         await page.waitForNavigation({ waitUntil: 'networkidle0' }),
 
-        await page.goto(`https://result-english.com/admin/turmas/ver/${id}/semestres/${sid}/relatorio`, {waitUntil: 'networkidle0'});
+        await page.goto(`https://result-english.com/admin/turmas/ver/${id}/semestres/${sid}/relatorio`, {waitUntil: 'load', timeout: 0});
         const pdf = await page.pdf({ format: 'A4' });
         await browser.close();
         
